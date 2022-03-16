@@ -21,8 +21,16 @@ const Layout: React.FC<Props> = ({children}) => {
 const Lanterns: React.FC<Props> = () => {
   return (
     <View style={styles.latternsContainer}>
-      <Image source={IMAGES.latterns1} style={styles.latterns} />
-      <Image source={IMAGES.latterns2} style={styles.latterns} />
+      <Image
+        source={IMAGES.latterns1}
+        style={styles.latterns}
+        resizeMode="contain"
+      />
+      <Image
+        source={IMAGES.latterns2}
+        style={styles.latterns}
+        resizeMode="contain"
+      />
     </View>
   );
 };

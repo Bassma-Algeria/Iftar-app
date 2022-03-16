@@ -19,9 +19,9 @@ const Welcom: React.FC<Props> = () => {
 
           <View style={styles.desc}>
             <Header variant="h4" style={styles.descText}>
-              أنت تواجه صعوبة في إيجاد مطاعم الرحمة خلال شهر رمضان المبارك
+              أنت تواجه صعوبة في إيجاد مطاعم الرحمة خلال شهر رمضان المبارك.
             </Header>
-            <Header variant="h4" style={styles.descText}>
+            <Header variant="h3" style={styles.descText}>
               تطبيق إفطار سيسهل عليك ذلك
             </Header>
           </View>

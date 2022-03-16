@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
 
   content: {
     flex: 1,
-    marginTop: 280,
+    marginTop: '60%',
     padding: SPACING.l,
   },
 
   latternsContainer: {
     position: 'absolute',
-    top: 0,
+    top: -30,
     width: '100%',
     flexDirection: 'row',
     alignItems: 'flex-start',
