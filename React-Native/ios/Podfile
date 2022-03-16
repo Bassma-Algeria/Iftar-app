@@ -18,6 +18,8 @@ target 'my_app' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'my_appTests' do
     inherit! :complete
     # Pods for testing
