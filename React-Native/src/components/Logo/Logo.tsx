@@ -3,7 +3,7 @@ import {View, Animated} from 'react-native';
 
 import {styles} from './Logo.style';
 
-import {IMAGES} from '../../utils/constants/Images';
+import {ICONS} from '../../utils/constants/Icons';
 
 import {Header} from '../Header/Header';
 
@@ -26,7 +26,7 @@ const Logo: React.FC<Props> = props => {
 const Moon: React.FC<Props> = () => {
   return (
     <Animated.Image
-      source={IMAGES.moon}
+      source={ICONS.moon}
       style={[styles.moon, {transform: [{rotate: '0deg'}]}]}
       resizeMode="contain"
     />

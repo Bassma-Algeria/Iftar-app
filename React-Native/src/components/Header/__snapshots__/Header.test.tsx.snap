@@ -1,13 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Header Component should be able to change add custom styles 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#7C4908",
+        "fontFamily": "Cairo-Regular",
+        "fontSize": 16,
+      },
+      Object {
+        "backgroundColor": "#000",
+      },
+    ]
+  }
+>
+  Hello
+</Text>
+`;
+
 exports[`Header Component should be able to change the color 1`] = `
 <Text
   style={
-    Object {
-      "color": "#000",
-      "fontFamily": "Cairo-Regular",
-      "fontSize": 16,
-    }
+    Array [
+      Object {
+        "color": "#000",
+        "fontFamily": "Cairo-Regular",
+        "fontSize": 16,
+      },
+      undefined,
+    ]
   }
 >
   Hello
@@ -17,11 +39,14 @@ exports[`Header Component should be able to change the color 1`] = `
 exports[`Header Component should be able to change the font weight 1`] = `
 <Text
   style={
-    Object {
-      "color": "#7C4908",
-      "fontFamily": "Cairo-ExtraBold",
-      "fontSize": 16,
-    }
+    Array [
+      Object {
+        "color": "#7C4908",
+        "fontFamily": "Cairo-ExtraBold",
+        "fontSize": 16,
+      },
+      undefined,
+    ]
   }
 >
   Hello
@@ -31,11 +56,14 @@ exports[`Header Component should be able to change the font weight 1`] = `
 exports[`Header Component should have mutiple variant and change the size depend on the variant 1`] = `
 <Text
   style={
-    Object {
-      "color": "#7C4908",
-      "fontFamily": "Cairo-Bold",
-      "fontSize": 30,
-    }
+    Array [
+      Object {
+        "color": "#7C4908",
+        "fontFamily": "Cairo-Bold",
+        "fontSize": 30,
+      },
+      undefined,
+    ]
   }
 >
   Hello
@@ -45,11 +73,14 @@ exports[`Header Component should have mutiple variant and change the size depend
 exports[`Header Component should renders correctly with the default styles 1`] = `
 <Text
   style={
-    Object {
-      "color": "#7C4908",
-      "fontFamily": "Cairo-Regular",
-      "fontSize": 16,
-    }
+    Array [
+      Object {
+        "color": "#7C4908",
+        "fontFamily": "Cairo-Regular",
+        "fontSize": 16,
+      },
+      undefined,
+    ]
   }
 >
   Hello

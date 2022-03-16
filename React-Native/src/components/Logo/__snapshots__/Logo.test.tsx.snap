@@ -2,40 +2,51 @@
 
 exports[`Logo Cpmponent should render correclty without animation 1`] = `
 <View>
-  <Text
+  <View
     style={
       Object {
-        "color": "#7C4908",
-        "fontFamily": "Cairo-Bold",
-        "fontSize": 35,
+        "alignItems": "baseline",
       }
     }
   >
-    إفطار
-  </Text>
-  <Image
-    collapsable={false}
-    nativeID="animatedComponent"
-    resizeMode="contain"
-    source={
-      Object {
-        "process": [Function],
-      }
-    }
-    style={
-      Object {
-        "height": 22,
-        "left": 3,
-        "position": "absolute",
-        "top": -5,
-        "transform": Array [
+    <Text
+      style={
+        Array [
           Object {
-            "rotate": "0deg",
+            "color": "#7C4908",
+            "fontFamily": "Cairo-Bold",
+            "fontSize": 35,
           },
-        ],
-        "width": 22,
+          undefined,
+        ]
       }
-    }
-  />
+    >
+      إفطار
+    </Text>
+    <Image
+      collapsable={false}
+      nativeID="animatedComponent"
+      resizeMode="contain"
+      source={
+        Object {
+          "process": [Function],
+        }
+      }
+      style={
+        Object {
+          "height": 22,
+          "left": 3,
+          "position": "absolute",
+          "top": -5,
+          "transform": Array [
+            Object {
+              "rotate": "0deg",
+            },
+          ],
+          "width": 22,
+        }
+      }
+    />
+  </View>
 </View>
 `;

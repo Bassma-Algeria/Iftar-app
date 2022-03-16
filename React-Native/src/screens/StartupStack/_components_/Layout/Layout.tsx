@@ -1,8 +1,9 @@
 import React from 'react';
-import {ScrollView, View} from 'react-native';
+import {Image, ScrollView, View} from 'react-native';
+
+import {IMAGES} from '../../../../utils/constants/Images';
 
 import {styles} from './Layout.style';
-import {Lanterns} from './_components_/Lanterns';
 
 interface Props {}
 
@@ -13,6 +14,16 @@ const Layout: React.FC<Props> = ({children}) => {
 
       <View style={styles.content}>{children}</View>
     </ScrollView>
+  );
+};
+
+// TODO: add the animation
+const Lanterns: React.FC<Props> = () => {
+  return (
+    <View style={styles.latternsContainer}>
+      <Image source={IMAGES.latterns1} style={styles.latterns} />
+      <Image source={IMAGES.latterns2} style={styles.latterns} />
+    </View>
   );
 };
 

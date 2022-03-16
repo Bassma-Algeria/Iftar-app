@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Component should renders correctly 1`] = `
+exports[`Button Component should have custom styles when padding the style props 1`] = `
 <View
   accessible={true}
+  collapsable={false}
   focusable={false}
+  nativeID="animatedComponent"
   onClick={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -11,10 +13,73 @@ exports[`Button Component should renders correctly 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={Object {}}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "borderRadius": 30,
+      "justifyContent": "center",
+      "opacity": 1,
+      "padding": 13,
+      "width": "100%",
+    }
+  }
 >
-  <Text>
-    Click
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFCF1",
+          "fontFamily": "Cairo-SemiBold",
+          "fontSize": 20,
+        },
+        undefined,
+      ]
+    }
+  >
+    click
+  </Text>
+</View>
+`;
+
+exports[`Button Component should renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#B66D12",
+      "borderRadius": 30,
+      "justifyContent": "center",
+      "opacity": 1,
+      "padding": 13,
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFCF1",
+          "fontFamily": "Cairo-SemiBold",
+          "fontSize": 20,
+        },
+        undefined,
+      ]
+    }
+  >
+    click
   </Text>
 </View>
 `;

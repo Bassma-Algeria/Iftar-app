@@ -29,6 +29,13 @@ describe('Header Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should be able to change add custom styles', () => {
+    const tree = rendered
+      .create(<Header style={{backgroundColor: '#000'}}>Hello</Header>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should run the function passed in the props when pressed', () => {
     const mockFunction = jest.fn();
     const instance = render(<Header onPress={mockFunction}>Click</Header>);

@@ -23,12 +23,9 @@ const Header: React.FC<Props> = ({
   if (fontWeight) {
     elementStyles.fontFamily = FONTS[fontWeight];
   }
-  if (style) {
-    Object.assign(elementStyles, style);
-  }
 
   return (
-    <Text onPress={onPress} style={elementStyles}>
+    <Text onPress={onPress} style={[elementStyles, style]}>
       {children}
     </Text>
   );

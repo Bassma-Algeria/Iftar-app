@@ -6,6 +6,6 @@ import {Button} from './Button';
 
 const buttonStories = storiesOf('Button', module);
 
-buttonStories.add('Primary', () => (
-  <Button onPress={action('clicked')}>Click</Button>
+buttonStories.add('Default', () => (
+  <Button onPress={action('clicked')} label={'click'} />
 ));
