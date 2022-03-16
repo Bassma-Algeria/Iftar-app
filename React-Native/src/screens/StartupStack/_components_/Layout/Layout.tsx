@@ -9,7 +9,7 @@ interface Props {}
 
 const Layout: React.FC<Props> = ({children}) => {
   return (
-    <ScrollView style={styles.background}>
+    <ScrollView style={styles.container}>
       <Lanterns />
 
       <View style={styles.content}>{children}</View>

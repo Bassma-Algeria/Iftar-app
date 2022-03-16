@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     width: '100%',
-    flex: 1,
   },
 
   desc: {
