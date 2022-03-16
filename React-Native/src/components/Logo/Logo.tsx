@@ -15,8 +15,10 @@ interface Props {
 const Logo: React.FC<Props> = props => {
   return (
     <View>
-      <Header variant="h1">إفطار</Header>
-      <Moon {...props} />
+      <View style={styles.container}>
+        <Header variant="h1">إفطار</Header>
+        <Moon {...props} />
+      </View>
     </View>
   );
 };

@@ -6,11 +6,13 @@
 function loadStories() {
   require('../components/Button/Button.stories');
   require('../components/Header/Header.stories');
+  require('../components/Logo/Logo.stories');
 }
 
 const stories = [
   '../components/Button/Button.stories',
   '../components/Header/Header.stories',
+  '../components/Logo/Logo.stories',
 ];
 
 module.exports = {
