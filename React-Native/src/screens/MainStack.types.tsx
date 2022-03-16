@@ -1,8 +1,12 @@
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {NavigatorScreenParams} from '@react-navigation/native';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+import type {HomeStackParamsList} from './HomeStack/HomeStack.types';
+import type {StartupStackStackParamsList} from './StartupStack/StartupStack.types';
 
 export type MainStackParamsList = {
-  StartupStack: undefined;
-  HomeStack: undefined;
+  StartupStack: NavigatorScreenParams<StartupStackStackParamsList>;
+  HomeStack: NavigatorScreenParams<HomeStackParamsList>;
 };
 
 export type MainStackScreenProps<

@@ -8,9 +8,11 @@ import {Logo} from '../../../../components/Logo/Logo';
 import {Header} from '../../../../components/Header/Header';
 import {Button} from '../../../../components/Button/Button';
 
-interface Props {}
+import type {StartupStackScreenProps} from '../../StartupStack.types';
 
-const Welcom: React.FC<Props> = () => {
+interface Props extends StartupStackScreenProps<'Welcom'> {}
+
+const Welcom: React.FC<Props> = ({navigation}) => {
   return (
     <>
       <Layout>
@@ -29,7 +31,10 @@ const Welcom: React.FC<Props> = () => {
       </Layout>
 
       <View style={styles.buttonContainer}>
-        <Button label="إبدأ الآن !" />
+        <Button
+          label="إبدأ الآن !"
+          onPress={() => navigation.replace('ChooseUsageType')}
+        />
       </View>
     </>
   );

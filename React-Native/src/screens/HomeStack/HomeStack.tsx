@@ -9,7 +9,7 @@ import {HomeStackParamsList} from './HomeStack.types';
 import {MainStackScreenProps} from '../MainStack.types';
 
 // screens
-import {Home} from './screens/Home/Home';
+import {Map} from './screens/Map/Map';
 
 interface Props extends MainStackScreenProps<'HomeStack'> {}
 
@@ -22,7 +22,7 @@ const HomeStack: React.FC<Props> = () => {
 
   return (
     <Stack.Navigator screenOptions={screensOptions}>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Map" component={Map} />
     </Stack.Navigator>
   );
 };

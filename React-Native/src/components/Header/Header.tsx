@@ -1,11 +1,17 @@
 import React from 'react';
-import {StyleProp, Text, TextStyle} from 'react-native';
+import {GestureResponderEvent, StyleProp, Text, TextStyle} from 'react-native';
 
 import {FONTS, styles} from './Header.style';
 
 import {COLORS} from '../../theme/Colors';
 
-import type {Props} from './Header.types';
+interface Props {
+  variant?: keyof typeof styles;
+  color?: keyof typeof COLORS;
+  fontWeight?: keyof typeof FONTS;
+  style?: StyleProp<TextStyle>;
+  onPress?: (event: GestureResponderEvent) => void;
+}
 
 const Header: React.FC<Props> = ({
   children,

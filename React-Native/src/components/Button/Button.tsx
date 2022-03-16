@@ -26,8 +26,8 @@ const Button: React.FC<Props> = ({onPress, label, style}) => {
   return (
     <Shadow
       viewStyle={styles.container}
-      distance={4}
-      startColor={COLORS.primaryShadow}>
+      startColor={COLORS.primaryShadow}
+      distance={4}>
       <TouchableOpacity
         style={[styles.button, style]}
         onPress={onPress}

@@ -1,15 +1,14 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-// import {fireEvent, render} from '@testing-library/react-native';
 
-import {Home} from './Home';
+import {Map} from './Map';
 
-describe('HomeStack -> Home Screen', () => {
+describe('HomeStack -> Map Screen', () => {
   const props: any = {};
 
   it.skip('should renders correctly', () => {
-    const tree = renderer.create(<Home {...props} />).toJSON();
+    const tree = renderer.create(<Map {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

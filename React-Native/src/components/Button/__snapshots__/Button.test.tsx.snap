@@ -50,7 +50,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -114,7 +114,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -178,7 +178,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -242,7 +242,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -310,7 +310,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -389,7 +389,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -468,7 +468,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -550,7 +550,7 @@ exports[`Button Component should have custom styles when padding the style props
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -687,7 +687,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -751,7 +751,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -815,7 +815,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -879,7 +879,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -947,7 +947,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -1026,7 +1026,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -1105,7 +1105,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]
@@ -1187,7 +1187,7 @@ exports[`Button Component should renders correctly 1`] = `
             gradient={
               Array [
                 0.8823529411764706,
-                -1716098030,
+                -1632211950,
                 1,
                 11955218,
               ]

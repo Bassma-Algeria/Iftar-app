@@ -7,12 +7,14 @@ function loadStories() {
   require('../components/Button/Button.stories');
   require('../components/Header/Header.stories');
   require('../components/Logo/Logo.stories');
+  require('../screens/StartupStack/_components_/Layout/Layout.stories');
 }
 
 const stories = [
   '../components/Button/Button.stories',
   '../components/Header/Header.stories',
   '../components/Logo/Logo.stories',
+  '../screens/StartupStack/_components_/Layout/Layout.stories',
 ];
 
 module.exports = {

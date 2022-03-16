@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import {Welcom} from './Welcom';
+import {ChooseUsageType} from './ChooseUsageType';
 
-describe('<WelcomScreen />', () => {
+describe('ChooseUsageType Screen ', () => {
   it('should render correctly', () => {
     const props: any = {};
-    const tree = renderer.create(<Welcom {...props} />).toJSON();
+    const tree = renderer.create(<ChooseUsageType {...props} />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
