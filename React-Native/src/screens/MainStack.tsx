@@ -4,10 +4,9 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 
-// types
-import {MainStackParamsList} from './MainStack.types';
+import type {MainStackParamsList} from './MainStack.types';
 
-// stacks
+import {StartupStack} from './StartupStack/StartupStack';
 import {HomeStack} from './HomeStack/HomeStack';
 
 interface Props {}
@@ -21,6 +20,7 @@ const MainStack: React.FC<Props> = () => {
 
   return (
     <Stack.Navigator screenOptions={screensOptions}>
+      <Stack.Screen name="StartupStack" component={StartupStack} />
       <Stack.Screen name="HomeStack" component={HomeStack} />
     </Stack.Navigator>
   );

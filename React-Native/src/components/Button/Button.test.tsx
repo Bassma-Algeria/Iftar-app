@@ -4,7 +4,7 @@ import rendered from 'react-test-renderer';
 import {TouchableHighlight} from 'react-native';
 import {fireEvent, render} from '@testing-library/react-native';
 
-import {Button} from './ Button';
+import {Button} from './Button';
 
 describe('Button Component', () => {
   it('should renders correctly', () => {

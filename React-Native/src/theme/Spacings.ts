@@ -1,9 +1,11 @@
-// you app spacings
 const SPACING = {
-  // m: 5,
-  // s: 10,
-  // l: 15,
-  // xl: 20
+  s: 5,
+  m: 10,
+  l: 15,
+  xl: 20,
+  xxl: 25,
+  large: 30,
+  larger: 35,
+  extraLarge: 40,
 };
-
 export {SPACING};

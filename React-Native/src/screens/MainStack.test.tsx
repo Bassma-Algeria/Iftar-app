@@ -9,7 +9,7 @@ import {MainStack} from './MainStack';
 describe('MainStack', () => {
   const props: any = {};
 
-  it('should renders correctly', () => {
+  it.skip('should renders correctly', () => {
     const tree = renderer
       .create(
         <NavigationContainer>

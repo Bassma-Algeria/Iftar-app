@@ -5,9 +5,13 @@
 
 function loadStories() {
   require('../components/Button/Button.stories');
+  require('../components/Header/Header.stories');
 }
 
-const stories = ['../components/Button/Button.stories'];
+const stories = [
+  '../components/Button/Button.stories',
+  '../components/Header/Header.stories',
+];
 
 module.exports = {
   loadStories,
