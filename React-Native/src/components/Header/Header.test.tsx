@@ -12,7 +12,7 @@ describe('Header Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should change the color', () => {
+  it('should be able to change the color', () => {
     const tree = rendered.create(<Header color="black">Hello</Header>).toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
 
   h5: {
     fontFamily: FONTS.regular,
-    fontSize: 16,
+    fontSize: 18,
   },
 
   h6: {
     fontFamily: FONTS.regular,
-    fontSize: 14,
+    fontSize: 16,
   },
 });
 

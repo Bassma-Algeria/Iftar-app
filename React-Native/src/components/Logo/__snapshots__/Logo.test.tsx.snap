@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Cpmponent should render correclty without animation 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "color": "#7C4908",
+        "fontFamily": "Cairo-Bold",
+        "fontSize": 35,
+      }
+    }
+  >
+    إفطار
+  </Text>
+  <Image
+    collapsable={false}
+    nativeID="animatedComponent"
+    resizeMode="contain"
+    source={
+      Object {
+        "process": [Function],
+      }
+    }
+    style={
+      Object {
+        "height": 22,
+        "left": 3,
+        "position": "absolute",
+        "top": -5,
+        "transform": Array [
+          Object {
+            "rotate": "0deg",
+          },
+        ],
+        "width": 22,
+      }
+    }
+  />
+</View>
+`;
