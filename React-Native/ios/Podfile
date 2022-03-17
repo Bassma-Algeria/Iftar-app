@@ -12,15 +12,9 @@ target 'my_app' do
     :hermes_enabled => false
   )
 
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
 
-  pod 'react-native-blur', :path => '../node_modules/@react-native-community/blur'
 
-  pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
-  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
-
-  pod 'react-native-geolocation-service', :path => '../node_modules/react-native-geolocation-service'
 
   target 'my_appTests' do
     inherit! :complete
