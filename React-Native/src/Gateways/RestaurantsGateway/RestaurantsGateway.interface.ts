@@ -1,6 +1,6 @@
 interface RestaurantInfo {
-  name: string;
   restaurantId: string;
+  name: string;
   ownerName: string;
   openingTime: Date;
   closingTime: Date;
@@ -11,4 +11,5 @@ interface RestaurantInfo {
 export interface IRestaurantsGateway {
   getRestaurants(): Promise<RestaurantInfo[]>;
   addRestaurant(info: RestaurantInfo): Promise<void>;
+  searchFor(keyword: string): Promise<RestaurantInfo | undefined>;
 }
