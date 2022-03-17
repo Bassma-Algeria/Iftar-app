@@ -12,10 +12,6 @@ target 'my_app' do
     :hermes_enabled => false
   )
 
-
-
-
-
   target 'my_appTests' do
     inherit! :complete
     # Pods for testing
