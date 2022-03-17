@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import {SPACING} from '../../../../theme/Spacings';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,6 +10,26 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+
+  markerContainer: {
+    alignItems: 'center',
+  },
+
+  pin: {
+    width: 40,
+    height: 40,
+  },
 });
 
-export {styles};
+const mapStyle = [
+  {
+    featureType: 'landscape',
+    stylers: [
+      {
+        color: '#f9f6eb',
+      },
+    ],
+  },
+];
+
+export {styles, mapStyle};

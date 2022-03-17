@@ -7,7 +7,7 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transformIgnorePatterns: [
-    'node_modules/(?!(@react-native|react-native|react-clone-referenced-element|react-navigation|react-native-shadow-2)/)',
+    'node_modules/(?!(@react-native|react-native|react-clone-referenced-element|react-navigation|react-native-shadow-2|react-native-maps|react-native-geolocation-service)/)',
   ],
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',

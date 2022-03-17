@@ -1,4 +1,4 @@
-interface RestaurantInfo {
+export interface RestaurantInfo {
   restaurantId: string;
   name: string;
   ownerName: string;
@@ -10,6 +10,6 @@ interface RestaurantInfo {
 
 export interface IRestaurantsGateway {
   getRestaurants(): Promise<RestaurantInfo[]>;
-  addRestaurant(info: RestaurantInfo): Promise<void>;
-  searchFor(keyword: string): Promise<RestaurantInfo | undefined>;
+  // addRestaurant(info: RestaurantInfo): Promise<void>;
+  // searchFor(keyword: string): Promise<RestaurantInfo | undefined>;
 }

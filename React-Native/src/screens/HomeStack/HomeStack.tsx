@@ -5,8 +5,8 @@ import {
 } from '@react-navigation/native-stack';
 
 // types
-import {HomeStackParamsList} from './HomeStack.types';
-import {MainStackScreenProps} from '../MainStack.types';
+import type {HomeStackParamsList} from './HomeStack.types';
+import type {MainStackScreenProps} from '../MainStack.types';
 
 // screens
 import {Map} from './screens/Map/Map';
