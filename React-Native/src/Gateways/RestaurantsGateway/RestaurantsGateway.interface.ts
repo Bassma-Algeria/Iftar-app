@@ -5,6 +5,7 @@ export interface RestaurantInfo {
   openingTime: Date;
   closingTime: Date;
   pictures: string[];
+  ownerNumber: string;
   location: {latitude: number; longitude: number};
 }
 

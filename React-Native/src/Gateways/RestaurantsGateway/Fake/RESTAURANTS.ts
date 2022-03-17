@@ -8,7 +8,11 @@ export const RESTAURANTS: RestaurantInfo[] = [
     location: {latitude: 37.421083, longitude: -122.084},
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
-    pictures: [],
+    pictures: [
+      'https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg',
+      'https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg',
+    ],
+    ownerNumber: '07 98 98 09 75',
   },
   {
     restaurantId: '1',
@@ -18,6 +22,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [],
+    ownerNumber: '07 98 98 09 75',
   },
   {
     restaurantId: '2',
@@ -27,6 +32,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [],
+    ownerNumber: '07 98 98 09 75',
   },
   {
     restaurantId: '3',
@@ -36,6 +42,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [],
+    ownerNumber: '07 98 98 09 75',
   },
   {
     restaurantId: '4',
@@ -45,6 +52,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [],
+    ownerNumber: '07 98 98 09 75',
   },
   {
     restaurantId: '5',
@@ -54,6 +62,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [],
+    ownerNumber: '07 98 98 09 75',
   },
   {
     restaurantId: '6',
@@ -63,6 +72,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [],
+    ownerNumber: '07 98 98 09 75',
   },
   {
     restaurantId: '7',
@@ -72,5 +82,6 @@ export const RESTAURANTS: RestaurantInfo[] = [
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [],
+    ownerNumber: '07 98 98 09 75',
   },
 ];
