@@ -60,6 +60,7 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
 
 const RestaurantMarker: React.FC<RestaurantInfo> = props => {
   const {setSelectedRestaurantId} = useMapContext();
+
   return (
     <Marker
       coordinate={props.location}

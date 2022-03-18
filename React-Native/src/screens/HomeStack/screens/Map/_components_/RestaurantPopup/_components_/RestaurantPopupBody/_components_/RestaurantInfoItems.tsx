@@ -1,11 +1,11 @@
 import {View, ImageSourcePropType, Image} from 'react-native';
 import React from 'react';
 
-import {styles} from '../../../Map.style';
+import {styles} from '../../../../../Map.style';
 
-import {ICONS} from '../../../../../../../utils/constants/Icons';
+import {ICONS} from '../../../../../../../../../utils/constants/Icons';
 
-import {Header} from '../../../../../../../components/Header/Header';
+import {Header} from '../../../../../../../../../components/Header/Header';
 
 interface Props {
   closingTime: Date;

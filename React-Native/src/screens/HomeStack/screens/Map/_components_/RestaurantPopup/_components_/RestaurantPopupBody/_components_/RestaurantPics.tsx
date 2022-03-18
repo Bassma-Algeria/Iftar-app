@@ -2,12 +2,13 @@ import React from 'react';
 import {Dimensions, Image} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
-import {styles} from '../../../Map.style';
+import {styles} from '../../../../../Map.style';
 
 interface Props {
   pictures: string[];
 }
 
+// TODO: when there is no pics render a placeholder
 const RestaurantPics: React.FC<Props> = ({pictures}) => {
   return (
     <Carousel

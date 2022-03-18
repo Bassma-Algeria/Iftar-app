@@ -31,6 +31,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
+  popupOverlay: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    zIndex: 2,
+    top: 0,
+  },
+
   restaurantPopupContainer: {
     backgroundColor: COLORS.green,
     position: 'absolute',
@@ -41,6 +49,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 40,
     elevation: 40,
     shadowColor: COLORS.primaryShadow,
+    zIndex: 3,
   },
 
   loader: {
