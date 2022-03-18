@@ -1,19 +1,14 @@
-// import {View, Text} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import GoogleMapView, {Marker} from 'react-native-maps';
-import {Image} from 'react-native';
+import React from 'react';
+import GoogleMapView from 'react-native-maps';
 
 import {mapStyle, styles} from '../../Map.style';
 
-import {restuarantsGateway} from '../../../../../../Gateways';
-import type {RestaurantInfo} from '../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+import type {LocationCords} from '../../../../../../@types/LocationCords';
 
 import {useLocation} from './_hooks_/useLocation';
 
-import {ICONS} from '../../../../../../utils/constants/Icons';
-
 import {Header} from '../../../../../../components/Header/Header';
-import {useMapContext} from '../../_hooks_/useMapContext';
+import {RestaurantsMarkers} from './_components_/RestaurantsMarkers';
 
 const MapView: React.FC = () => {
   const {currentLocation, error} = useLocation();
@@ -30,17 +25,10 @@ const MapView: React.FC = () => {
 };
 
 interface MapProps {
-  initialLocation: {latitude: number; longitude: number};
+  initialLocation: LocationCords;
 }
 
-// TODO: Add the loading while the restaurants are fetching
 const Map: React.FC<MapProps> = ({initialLocation}) => {
-  const [restaurants, setRestaurants] = useState<RestaurantInfo[]>();
-
-  useEffect(() => {
-    restuarantsGateway.getRestaurants().then(setRestaurants);
-  }, []);
-
   return (
     <GoogleMapView
       showsUserLocation
@@ -51,24 +39,8 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
         latitudeDelta: 0.08,
         longitudeDelta: 0.03,
       }}>
-      {restaurants?.map(info => (
-        <RestaurantMarker {...info} key={info.restaurantId} />
-      ))}
+      <RestaurantsMarkers />
     </GoogleMapView>
-  );
-};
-
-const RestaurantMarker: React.FC<RestaurantInfo> = props => {
-  const {setSelectedRestaurantId} = useMapContext();
-
-  return (
-    <Marker
-      coordinate={props.location}
-      style={styles.markerContainer}
-      onPress={() => setSelectedRestaurantId(props.restaurantId)}>
-      <Header fontWeight="semibold">{props.name}</Header>
-      <Image source={ICONS.pin} style={styles.pin} resizeMode="contain" />
-    </Marker>
   );
 };
 

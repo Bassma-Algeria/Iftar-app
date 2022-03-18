@@ -16,7 +16,7 @@ import {Loader as DefaultLoader} from '../../../../../../../../components/Loader
 import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
 
-const RestaurantPopupBody = () => {
+const RestaurantPopupBody: React.FC = () => {
   const {selectedRestaurantId} = useMapContext();
   const {restaurantInfo} = useRestaurantFetcher(selectedRestaurantId);
 
@@ -27,11 +27,18 @@ const RestaurantPopupBody = () => {
   );
 };
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return <DefaultLoader style={styles.loader} color="brown" size={50} />;
 };
 
 const RestaurantInfoView: React.FC<RestaurantInfo> = props => {
+  const {setDestinationCoords, setSelectedRestaurantId} = useMapContext();
+
+  const handleDirectionButtonClick = () => {
+    setSelectedRestaurantId(undefined);
+    setDestinationCoords(props.location);
+  };
+
   return (
     <>
       <Header variant="h3" fontWeight="bold" style={styles.restaurantTitle}>
@@ -43,7 +50,11 @@ const RestaurantInfoView: React.FC<RestaurantInfo> = props => {
       <View style={styles.restaurantDetails}>
         <RestaurantInfoItems {...props} />
 
-        <Button label="أظهر الطريق" icon={ICONS.leftArrow} />
+        <Button
+          label="أظهر الطريق"
+          icon={ICONS.leftArrow}
+          onPress={handleDirectionButtonClick}
+        />
       </View>
     </>
   );

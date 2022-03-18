@@ -1,3 +1,5 @@
+import type {LocationCords} from '../../@types/LocationCords';
+
 export interface RestaurantInfo {
   restaurantId: string;
   name: string;
@@ -6,7 +8,7 @@ export interface RestaurantInfo {
   closingTime: Date;
   pictures: string[];
   ownerNumber: string;
-  location: {latitude: number; longitude: number};
+  location: LocationCords;
 }
 
 export interface IRestaurantsGateway {
