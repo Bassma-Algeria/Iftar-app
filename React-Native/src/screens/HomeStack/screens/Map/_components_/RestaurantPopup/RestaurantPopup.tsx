@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, Animated, View} from 'react-native';
+import React from 'react';
+import {Animated, View} from 'react-native';
 
 import {styles} from '../../Map.style';
 
@@ -9,14 +9,13 @@ import {ICONS} from '../../../../../../utils/constants/Icons';
 
 import {usePopupAnimation} from './_hooks_/usePopupAnimation';
 import {useMapContext} from '../../_hooks_/useMapContext';
+import {useRestaurantFetcher} from './_hooks_/useRestaurantFetcher';
 
 import {Header} from '../../../../../../components/Header/Header';
 import {Button} from '../../../../../../components/Button/Button';
+import {Loader as DefaultLoader} from '../../../../../../components/Loader/Loader';
 import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
-import {restuarantsGateway} from '../../../../../../Gateways';
-import {COLORS} from '../../../../../../theme/Colors';
-import {useRestaurantFetcher} from './_hooks_/useRestaurantFetcher';
 
 const RestaurantPopup: React.FC = () => {
   const {selectedRestaurantId} = useMapContext();
@@ -39,9 +38,7 @@ const RestaurantPopup: React.FC = () => {
 };
 
 const Loader = () => {
-  return (
-    <ActivityIndicator style={styles.loader} color={COLORS.brown} size={50} />
-  );
+  return <DefaultLoader style={styles.loader} color="brown" size={50} />;
 };
 
 const RestaurantInfoView: React.FC<RestaurantInfo> = props => {

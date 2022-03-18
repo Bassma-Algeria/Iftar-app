@@ -782,6 +782,7 @@ Array [
               "alignItems": "center",
               "backgroundColor": "#B87015",
               "borderRadius": 30,
+              "flexDirection": "row-reverse",
               "justifyContent": "center",
               "opacity": 1,
               "padding": 13,

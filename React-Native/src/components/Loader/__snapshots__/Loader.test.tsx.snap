@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Component should be able to add custom styles 1`] = `
+<ActivityIndicator
+  style={
+    Object {
+      "margin": 50,
+    }
+  }
+/>
+`;
+
+exports[`Loader Component should be able to change the color 1`] = `
+<ActivityIndicator
+  color="brown"
+/>
+`;
+
+exports[`Loader Component should be able to change the size 1`] = `
+<ActivityIndicator
+  size={60}
+/>
+`;
+
+exports[`Loader Component should render correctly with the default style 1`] = `<ActivityIndicator />`;
