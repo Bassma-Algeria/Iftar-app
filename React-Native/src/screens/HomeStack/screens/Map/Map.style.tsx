@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
     shadowColor: COLORS.primaryShadow,
   },
 
+  loader: {
+    padding: 40,
+  },
+
   restaurantTitle: {
     alignSelf: 'center',
     margin: 20,

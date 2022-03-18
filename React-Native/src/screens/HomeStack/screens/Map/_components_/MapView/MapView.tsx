@@ -13,6 +13,7 @@ import {useLocation} from './_hooks_/useLocation';
 import {ICONS} from '../../../../../../utils/constants/Icons';
 
 import {Header} from '../../../../../../components/Header/Header';
+import {useMapContext} from '../../_hooks_/useMapContext';
 
 const MapView: React.FC = () => {
   const {currentLocation, error} = useLocation();
@@ -58,8 +59,12 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
 };
 
 const RestaurantMarker: React.FC<RestaurantInfo> = props => {
+  const {setSelectedRestaurantId} = useMapContext();
   return (
-    <Marker coordinate={props.location} style={styles.markerContainer}>
+    <Marker
+      coordinate={props.location}
+      style={styles.markerContainer}
+      onPress={() => setSelectedRestaurantId(props.restaurantId)}>
       <Header fontWeight="semibold">{props.name}</Header>
       <Image source={ICONS.pin} style={styles.pin} resizeMode="contain" />
     </Marker>
