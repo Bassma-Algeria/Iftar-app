@@ -12,7 +12,7 @@ describe('Button Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should have custom styles when padding the style props', () => {
+  it('should have custom styles when adding the style props', () => {
     const tree = rendered
       .create(<Button label="click" style={{backgroundColor: '#fff'}} />)
       .toJSON();

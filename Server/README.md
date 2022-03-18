@@ -4,8 +4,8 @@
 ##### Authentication
 	- Register new restaurant.
 	- Login to a restaurant.
-	- forget password
 	- email confirmation (not sure)
+	- forget password
 	
 ##### Restaurants
 	- search for restaurants.
