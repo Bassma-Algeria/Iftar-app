@@ -1,8 +1,10 @@
 import React from 'react';
 import {
+  Image,
   ImageSourcePropType,
   StyleProp,
   TouchableOpacity,
+  View,
   ViewStyle,
 } from 'react-native';
 import {Shadow} from 'react-native-shadow-2';
@@ -21,8 +23,7 @@ interface Props {
   style?: StyleProp<ViewStyle>;
 }
 
-// TODO: add the icon configs when you need the button with icon
-const Button: React.FC<Props> = ({onPress, label, style}) => {
+const Button: React.FC<Props> = ({onPress, label, icon, style}) => {
   return (
     <Shadow
       viewStyle={styles.container}
@@ -35,8 +36,18 @@ const Button: React.FC<Props> = ({onPress, label, style}) => {
         <Header color="whiteShade" variant="h4" fontWeight="semibold">
           {label}
         </Header>
+
+        {icon && <Icon icon={icon} />}
       </TouchableOpacity>
     </Shadow>
+  );
+};
+
+const Icon: React.FC<{icon: ImageSourcePropType}> = ({icon}) => {
+  return (
+    <View style={styles.iconContainer}>
+      <Image source={icon} resizeMode="contain" style={styles.icon} />
+    </View>
   );
 };
 

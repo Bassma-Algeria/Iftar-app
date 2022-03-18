@@ -14,6 +14,17 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row-reverse',
+  },
+
+  iconContainer: {
+    width: 22,
+    marginRight: 20,
+    bottom: 2,
+  },
+
+  icon: {
+    width: '100%',
   },
 });
 

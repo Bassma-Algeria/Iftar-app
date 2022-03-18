@@ -5,6 +5,7 @@ import {TouchableOpacity} from 'react-native';
 import {fireEvent, render} from '@testing-library/react-native';
 
 import {Button} from './Button';
+import {ICONS} from '../../utils/constants/Icons';
 
 describe('Button Component', () => {
   it('should renders correctly', () => {
@@ -15,6 +16,14 @@ describe('Button Component', () => {
   it('should have custom styles when adding the style props', () => {
     const tree = rendered
       .create(<Button label="click" style={{backgroundColor: '#fff'}} />)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should show the icon when passing the icon prop', () => {
+    const tree = rendered
+      .create(<Button label="click" icon={ICONS.location} />)
       .toJSON();
 
     expect(tree).toMatchSnapshot();

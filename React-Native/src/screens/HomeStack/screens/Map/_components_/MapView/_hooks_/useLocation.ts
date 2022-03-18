@@ -38,7 +38,7 @@ const askForLocationPermission = async (): Promise<boolean> => {
   const granted = await request(locationPermission, {
     title: 'Iftar',
     message: 'Iftar would like access to your location ',
-    buttonPositive: 'Yeah Accept',
+    buttonPositive: 'Yeah Of course',
   });
 
   return granted === RESULTS.GRANTED;
