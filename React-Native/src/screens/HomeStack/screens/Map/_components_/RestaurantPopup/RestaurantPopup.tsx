@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Animated, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {styles} from '../../Map.style';
 
@@ -7,8 +8,8 @@ import type {RestaurantInfo} from '../../../../../../Gateways/RestaurantsGateway
 
 import {ICONS} from '../../../../../../utils/constants/Icons';
 
-import {usePopupAnimation} from './_hooks_/usePopupAnimation';
 import {useMapContext} from '../../_hooks_/useMapContext';
+import {usePopupAnimation} from './_hooks_/usePopupAnimation';
 import {useRestaurantFetcher} from './_hooks_/useRestaurantFetcher';
 
 import {Header} from '../../../../../../components/Header/Header';
@@ -18,10 +19,24 @@ import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
 
 const RestaurantPopup: React.FC = () => {
-  const {selectedRestaurantId} = useMapContext();
+  const navigation = useNavigation();
+  const {selectedRestaurantId, setSelectedRestaurantId} = useMapContext();
 
   const {translateY} = usePopupAnimation(selectedRestaurantId);
   const {restaurantInfo} = useRestaurantFetcher(selectedRestaurantId);
+
+  useEffect(() => {
+    if (!selectedRestaurantId) {
+      return;
+    }
+
+    const unsubscribe = navigation.addListener('beforeRemove', e => {
+      e.preventDefault();
+      setSelectedRestaurantId(undefined);
+    });
+
+    return unsubscribe;
+  }, [navigation, selectedRestaurantId, setSelectedRestaurantId]);
 
   return (
     <Animated.View

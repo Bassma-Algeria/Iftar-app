@@ -17,7 +17,7 @@ const usePopupAnimation = (restaurantId: string | undefined) => {
   const closePopup = useCallback(() => {
     Animated.timing(translateY, {
       toValue: screenHeight,
-      duration: 400,
+      duration: 200,
       useNativeDriver: true,
     }).start();
   }, [translateY, screenHeight]);
