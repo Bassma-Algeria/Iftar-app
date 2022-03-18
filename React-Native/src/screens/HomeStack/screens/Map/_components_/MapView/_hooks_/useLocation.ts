@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
-import {PermissionsAndroid} from 'react-native';
+import {Platform} from 'react-native';
+import {request, PERMISSIONS, RESULTS} from 'react-native-permissions';
 import Geolocation from 'react-native-geolocation-service';
 
 interface Location {
@@ -29,13 +30,18 @@ const useLocation = () => {
 };
 
 const askForLocationPermission = async (): Promise<boolean> => {
-  const {ACCESS_FINE_LOCATION} = PermissionsAndroid.PERMISSIONS;
+  const granted = await request(
+    Platform.select({
+      android: PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION,
+      ios: PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
+    }),
+    {
+      title: 'Iftar',
+      message: 'Iftar would like access to your location ',
+    },
+  );
 
-  return PermissionsAndroid.request(ACCESS_FINE_LOCATION)
-    .then(result => {
-      return result === PermissionsAndroid.RESULTS.GRANTED;
-    })
-    .catch(() => false);
+  return granted === RESULTS.GRANTED;
 };
 
 export {useLocation};

@@ -11,16 +11,9 @@ target 'my_app' do
     # to enable hermes on iOS, change `false` to `true` and then install pods
     :hermes_enabled => false
   )
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
 
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
-
-  pod 'react-native-blur', :path => '../node_modules/@react-native-community/blur'
-
-  pod 'RNSVG', :path => '../node_modules/react-native-svg'
-
-  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
-
-  pod 'react-native-geolocation-service', :path => '../node_modules/react-native-geolocation-service'
 
   target 'my_appTests' do
     inherit! :complete

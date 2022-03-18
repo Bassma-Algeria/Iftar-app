@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* my_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* my_appTests.m */; };
+		11765F1FB83242DBB0C346E6 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 217FACEF483145429A12429F /* Cairo-SemiBold.ttf */; };
+		12E6325405AE44E6BEC65CA0 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8AB447893544D38B8A8FBA0 /* Cairo-Light.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6172F2D35A4C3AA820D92908 /* libPods-my_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-my_app.a */; };
-		7EF68E3733C33B6898317E18 /* libPods-my_app-my_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-my_app-my_appTests.a */; };
+		237B0C7E7B6278021961E83D /* libPods-my_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688F7DC339AFC947966B11B /* libPods-my_app.a */; };
+		3362B1D3895548C5A44CFA80 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1F71726C5D47B2BD3326B0 /* Cairo-Bold.ttf */; };
+		50CF93EB6B134580B70DC757 /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 307EA11F27D44BC4AF78C532 /* Cairo-Medium.ttf */; };
+		787C6597F4DD4106A298F2FB /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6223E503E361425FA7E6A893 /* Cairo-Regular.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		0AC8578DD04D4CF08FF810B1 /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53643BF6FA244691BAA24658 /* Cairo-Black.ttf */; };
-		EB205D9306374D80824882F0 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 395D94EBD5004D969A5C1C46 /* Cairo-Bold.ttf */; };
-		14D46C94CC8E4479B1A6AD17 /* Cairo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB463B676D69417DAE1B7D60 /* Cairo-ExtraBold.ttf */; };
-		F39529766CCB437EB51EBCC2 /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 275808E4E76144EC91368E30 /* Cairo-ExtraLight.ttf */; };
-		222456E6665E4E45A0FA9CCA /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1082FE914E99B63402A3 /* Cairo-Light.ttf */; };
-		2DAE74EA287446B69D654BFF /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BBDBE5075804E76BCABA19D /* Cairo-Medium.ttf */; };
-		CE7D652C77F742EBA1F4CD39 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54747BC8F84442B8B42C33F7 /* Cairo-Regular.ttf */; };
-		A684E0EE7DA74D16800439E3 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BF83C54AE984D39B585C720 /* Cairo-SemiBold.ttf */; };
+		A8D5B0362B1E436A978EB92D /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5001F83AA2424297A76CC675 /* Cairo-ExtraLight.ttf */; };
+		D2EB3112375B407EBF78845E /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2423500D07F84DD0AE2EBF4F /* Cairo-Black.ttf */; };
+		DD805D79076C7997E512D11B /* libPods-my_app-my_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-my_app-my_appTests.a */; };
+		E74FF60281044F61B8D98DE7 /* Cairo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21FF6669E0BC47BD82C9CACF /* Cairo-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,28 +38,28 @@
 		00E356EE1AD99517003FC87E /* my_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = my_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* my_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = my_appTests.m; sourceTree = "<group>"; };
+		03806B57AA76E8459CF4C4EC /* Pods-my_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app.release.xcconfig"; path = "Target Support Files/Pods-my_app/Pods-my_app.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* my_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = my_app/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = my_app/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = my_app/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = my_app/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = my_app/main.m; sourceTree = "<group>"; };
-		1D0AE47A65C8663E3B452821 /* Pods-my_app-my_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app-my_appTests.release.xcconfig"; path = "Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests.release.xcconfig"; sourceTree = "<group>"; };
-		6423831EA8574132BED9D8CC /* libPods-my_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C97AB639B58BBB4B15BBE30 /* Pods-my_app-my_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app-my_appTests.debug.xcconfig"; path = "Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		217FACEF483145429A12429F /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-SemiBold.ttf"; path = "../src/assets/fonts/Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
+		21FF6669E0BC47BD82C9CACF /* Cairo-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-ExtraBold.ttf"; path = "../src/assets/fonts/Cairo-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2423500D07F84DD0AE2EBF4F /* Cairo-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Black.ttf"; path = "../src/assets/fonts/Cairo-Black.ttf"; sourceTree = "<group>"; };
+		2839BF484E66F25A262110C8 /* Pods-my_app-my_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app-my_appTests.release.xcconfig"; path = "Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		307EA11F27D44BC4AF78C532 /* Cairo-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Medium.ttf"; path = "../src/assets/fonts/Cairo-Medium.ttf"; sourceTree = "<group>"; };
+		3688F7DC339AFC947966B11B /* libPods-my_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB50E6FA471854559016C3C /* Pods-my_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app.debug.xcconfig"; path = "Target Support Files/Pods-my_app/Pods-my_app.debug.xcconfig"; sourceTree = "<group>"; };
+		5001F83AA2424297A76CC675 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-ExtraLight.ttf"; path = "../src/assets/fonts/Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6223E503E361425FA7E6A893 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Regular.ttf"; path = "../src/assets/fonts/Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		6317EC8864E9EBF5347F014A /* Pods-my_app-my_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app-my_appTests.debug.xcconfig"; path = "Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = my_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ABFE59519B596E51CEFDCCC0 /* libPods-my_app-my_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my_app-my_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0A881CF5CF3F2B244570E2A /* Pods-my_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app.debug.xcconfig"; path = "Target Support Files/Pods-my_app/Pods-my_app.debug.xcconfig"; sourceTree = "<group>"; };
-		D00AAFFCFCFDA5787532823F /* Pods-my_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app.release.xcconfig"; path = "Target Support Files/Pods-my_app/Pods-my_app.release.xcconfig"; sourceTree = "<group>"; };
+		BB1F71726C5D47B2BD3326B0 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Bold.ttf"; path = "../src/assets/fonts/Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-my_app-my_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my_app-my_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8AB447893544D38B8A8FBA0 /* Cairo-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Light.ttf"; path = "../src/assets/fonts/Cairo-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		53643BF6FA244691BAA24658 /* Cairo-Black.ttf */ = {isa = PBXFileReference; name = "Cairo-Black.ttf"; path = "../src/assets/fonts/Cairo-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		395D94EBD5004D969A5C1C46 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; name = "Cairo-Bold.ttf"; path = "../src/assets/fonts/Cairo-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EB463B676D69417DAE1B7D60 /* Cairo-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Cairo-ExtraBold.ttf"; path = "../src/assets/fonts/Cairo-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		275808E4E76144EC91368E30 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Cairo-ExtraLight.ttf"; path = "../src/assets/fonts/Cairo-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B4FC1082FE914E99B63402A3 /* Cairo-Light.ttf */ = {isa = PBXFileReference; name = "Cairo-Light.ttf"; path = "../src/assets/fonts/Cairo-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1BBDBE5075804E76BCABA19D /* Cairo-Medium.ttf */ = {isa = PBXFileReference; name = "Cairo-Medium.ttf"; path = "../src/assets/fonts/Cairo-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		54747BC8F84442B8B42C33F7 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; name = "Cairo-Regular.ttf"; path = "../src/assets/fonts/Cairo-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6BF83C54AE984D39B585C720 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; name = "Cairo-SemiBold.ttf"; path = "../src/assets/fonts/Cairo-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF68E3733C33B6898317E18 /* libPods-my_app-my_appTests.a in Frameworks */,
+				DD805D79076C7997E512D11B /* libPods-my_app-my_appTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6172F2D35A4C3AA820D92908 /* libPods-my_app.a in Frameworks */,
+				237B0C7E7B6278021961E83D /* libPods-my_app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,10 +116,22 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				6423831EA8574132BED9D8CC /* libPods-my_app.a */,
-				ABFE59519B596E51CEFDCCC0 /* libPods-my_app-my_appTests.a */,
+				3688F7DC339AFC947966B11B /* libPods-my_app.a */,
+				C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-my_app-my_appTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52DA9C246B8F88B9EE6EB5DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EB50E6FA471854559016C3C /* Pods-my_app.debug.xcconfig */,
+				03806B57AA76E8459CF4C4EC /* Pods-my_app.release.xcconfig */,
+				6317EC8864E9EBF5347F014A /* Pods-my_app-my_appTests.debug.xcconfig */,
+				2839BF484E66F25A262110C8 /* Pods-my_app-my_appTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -137,8 +149,8 @@
 				00E356EF1AD99517003FC87E /* my_appTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				E233CBF5F47BEE60B243DCF8 /* Pods */,
-				1800E6D435C04D57869767A8 /* Resources */,
+				8F7ACF2D52804FF190F374BA /* Resources */,
+				52DA9C246B8F88B9EE6EB5DD /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -154,33 +166,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
+		8F7ACF2D52804FF190F374BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C0A881CF5CF3F2B244570E2A /* Pods-my_app.debug.xcconfig */,
-				D00AAFFCFCFDA5787532823F /* Pods-my_app.release.xcconfig */,
-				6C97AB639B58BBB4B15BBE30 /* Pods-my_app-my_appTests.debug.xcconfig */,
-				1D0AE47A65C8663E3B452821 /* Pods-my_app-my_appTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		1800E6D435C04D57869767A8 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				53643BF6FA244691BAA24658 /* Cairo-Black.ttf */,
-				395D94EBD5004D969A5C1C46 /* Cairo-Bold.ttf */,
-				EB463B676D69417DAE1B7D60 /* Cairo-ExtraBold.ttf */,
-				275808E4E76144EC91368E30 /* Cairo-ExtraLight.ttf */,
-				B4FC1082FE914E99B63402A3 /* Cairo-Light.ttf */,
-				1BBDBE5075804E76BCABA19D /* Cairo-Medium.ttf */,
-				54747BC8F84442B8B42C33F7 /* Cairo-Regular.ttf */,
-				6BF83C54AE984D39B585C720 /* Cairo-SemiBold.ttf */,
+				2423500D07F84DD0AE2EBF4F /* Cairo-Black.ttf */,
+				BB1F71726C5D47B2BD3326B0 /* Cairo-Bold.ttf */,
+				21FF6669E0BC47BD82C9CACF /* Cairo-ExtraBold.ttf */,
+				5001F83AA2424297A76CC675 /* Cairo-ExtraLight.ttf */,
+				E8AB447893544D38B8A8FBA0 /* Cairo-Light.ttf */,
+				307EA11F27D44BC4AF78C532 /* Cairo-Medium.ttf */,
+				6223E503E361425FA7E6A893 /* Cairo-Regular.ttf */,
+				217FACEF483145429A12429F /* Cairo-SemiBold.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -189,12 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "my_appTests" */;
 			buildPhases = (
-				A130D646172E58E1D159D8F2 /* [CP] Check Pods Manifest.lock */,
+				8E3A8148C6BD8F5046AD9E2A /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */,
-				4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */,
+				CDFDE959873A729ED736FB76 /* [CP] Embed Pods Frameworks */,
+				26354AFFA62670DA51F6912F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,14 +210,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "my_app" */;
 			buildPhases = (
-				3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */,
+				59DF44C85ABF4E7F3B07CEA2 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */,
-				ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */,
+				1896250D217BE0B4C6E739C9 /* [CP] Embed Pods Frameworks */,
+				5A5D7D79FD0453DBFD5BBB5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,14 +278,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				0AC8578DD04D4CF08FF810B1 /* Cairo-Black.ttf in Resources */,
-				EB205D9306374D80824882F0 /* Cairo-Bold.ttf in Resources */,
-				14D46C94CC8E4479B1A6AD17 /* Cairo-ExtraBold.ttf in Resources */,
-				F39529766CCB437EB51EBCC2 /* Cairo-ExtraLight.ttf in Resources */,
-				222456E6665E4E45A0FA9CCA /* Cairo-Light.ttf in Resources */,
-				2DAE74EA287446B69D654BFF /* Cairo-Medium.ttf in Resources */,
-				CE7D652C77F742EBA1F4CD39 /* Cairo-Regular.ttf in Resources */,
-				A684E0EE7DA74D16800439E3 /* Cairo-SemiBold.ttf in Resources */,
+				D2EB3112375B407EBF78845E /* Cairo-Black.ttf in Resources */,
+				3362B1D3895548C5A44CFA80 /* Cairo-Bold.ttf in Resources */,
+				E74FF60281044F61B8D98DE7 /* Cairo-ExtraBold.ttf in Resources */,
+				A8D5B0362B1E436A978EB92D /* Cairo-ExtraLight.ttf in Resources */,
+				12E6325405AE44E6BEC65CA0 /* Cairo-Light.ttf in Resources */,
+				50CF93EB6B134580B70DC757 /* Cairo-Medium.ttf in Resources */,
+				787C6597F4DD4106A298F2FB /* Cairo-Regular.ttf in Resources */,
+				11765F1FB83242DBB0C346E6 /* Cairo-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,24 +306,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */ = {
+		1896250D217BE0B4C6E739C9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */ = {
+		26354AFFA62670DA51F6912F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59DF44C85ABF4E7F3B07CEA2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -345,24 +362,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */ = {
+		5A5D7D79FD0453DBFD5BBB5E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A130D646172E58E1D159D8F2 /* [CP] Check Pods Manifest.lock */ = {
+		8E3A8148C6BD8F5046AD9E2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -384,38 +401,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */ = {
+		CDFDE959873A729ED736FB76 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -470,7 +470,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C97AB639B58BBB4B15BBE30 /* Pods-my_app-my_appTests.debug.xcconfig */;
+			baseConfigurationReference = 6317EC8864E9EBF5347F014A /* Pods-my_app-my_appTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -497,7 +497,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D0AE47A65C8663E3B452821 /* Pods-my_app-my_appTests.release.xcconfig */;
+			baseConfigurationReference = 2839BF484E66F25A262110C8 /* Pods-my_app-my_appTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -521,7 +521,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0A881CF5CF3F2B244570E2A /* Pods-my_app.debug.xcconfig */;
+			baseConfigurationReference = 4EB50E6FA471854559016C3C /* Pods-my_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -547,7 +547,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D00AAFFCFCFDA5787532823F /* Pods-my_app.release.xcconfig */;
+			baseConfigurationReference = 03806B57AA76E8459CF4C4EC /* Pods-my_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
