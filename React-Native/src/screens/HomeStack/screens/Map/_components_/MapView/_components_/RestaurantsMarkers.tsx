@@ -29,15 +29,15 @@ const RestaurantsMarkers: React.FC = () => {
   );
 };
 
-const RestaurantMarker: React.FC<RestaurantInfo> = props => {
-  const {setSelectedRestaurantId} = useMapContext();
+const RestaurantMarker: React.FC<RestaurantInfo> = restaurantInfo => {
+  const {setSelectedRestaurant} = useMapContext();
 
   return (
     <Marker
-      coordinate={props.location}
-      style={styles.markerContainer}
-      onPress={() => setSelectedRestaurantId(props.restaurantId)}>
-      <Header fontWeight="semibold">{props.name}</Header>
+      coordinate={restaurantInfo.location}
+      onPress={() => setSelectedRestaurant(restaurantInfo)}
+      style={styles.markerContainer}>
+      <Header fontWeight="semibold">{restaurantInfo.name}</Header>
       <Image source={ICONS.pin} style={styles.pin} resizeMode="contain" />
     </Marker>
   );

@@ -5,7 +5,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
     restaurantId: '0',
     closingTime: new Date(),
     openingTime: new Date(),
-    location: {latitude: 37.421083, longitude: -122.084},
+    location: {latitude: 37.421083, longitude: -122.104},
     name: 'اسم المطعم',
     ownerName: 'عبد القادر',
     pictures: [

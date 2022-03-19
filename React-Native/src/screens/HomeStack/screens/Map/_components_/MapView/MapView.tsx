@@ -9,6 +9,7 @@ import {useLocation} from './_hooks_/useLocation';
 
 import {Header} from '../../../../../../components/Header/Header';
 import {RestaurantsMarkers} from './_components_/RestaurantsMarkers';
+import {PathToRestaurant} from './_components_/PathToRestaurant/PathToRestaurant';
 
 const MapView: React.FC = () => {
   const {currentLocation, error} = useLocation();
@@ -40,6 +41,7 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
         longitudeDelta: 0.03,
       }}>
       <RestaurantsMarkers />
+      <PathToRestaurant currentLocation={initialLocation} />
     </GoogleMapView>
   );
 };

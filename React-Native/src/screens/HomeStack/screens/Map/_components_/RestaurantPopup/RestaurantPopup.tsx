@@ -11,20 +11,20 @@ import {RestaurantPopupBody} from './_components_/RestaurantPopupBody/Restaurant
 
 const RestaurantPopup: React.FC = () => {
   const navigation = useNavigation();
-  const {selectedRestaurantId, setSelectedRestaurantId} = useMapContext();
+  const {selectedRestaurant, setSelectedRestaurant} = useMapContext();
 
   useEffect(() => {
-    if (!selectedRestaurantId) {
+    if (!selectedRestaurant) {
       return;
     }
 
     const unsubscribe = navigation.addListener('beforeRemove', e => {
       e.preventDefault();
-      setSelectedRestaurantId(undefined);
+      setSelectedRestaurant(undefined);
     });
 
     return unsubscribe;
-  }, [navigation, selectedRestaurantId, setSelectedRestaurantId]);
+  }, [navigation, selectedRestaurant, setSelectedRestaurant]);
 
   return (
     <>
@@ -35,19 +35,19 @@ const RestaurantPopup: React.FC = () => {
 };
 
 const Overlay: React.FC = () => {
-  const {selectedRestaurantId, setSelectedRestaurantId} = useMapContext();
+  const {selectedRestaurant, setSelectedRestaurant} = useMapContext();
 
-  return selectedRestaurantId ? (
+  return selectedRestaurant ? (
     <Pressable
       style={styles.popupOverlay}
-      onPress={() => setSelectedRestaurantId(undefined)}
+      onPress={() => setSelectedRestaurant(undefined)}
     />
   ) : null;
 };
 
 const AnimatedPopup: React.FC = () => {
-  const {selectedRestaurantId} = useMapContext();
-  const {translateY} = usePopupAnimation(selectedRestaurantId);
+  const {selectedRestaurant} = useMapContext();
+  const {translateY} = usePopupAnimation(selectedRestaurant);
 
   return (
     <Animated.View

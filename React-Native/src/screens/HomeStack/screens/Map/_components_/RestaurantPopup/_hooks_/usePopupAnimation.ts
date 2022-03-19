@@ -1,7 +1,9 @@
 import {useCallback, useEffect, useRef} from 'react';
-import {Animated, Dimensions} from 'react-native';
+import {Animated, Dimensions, Easing} from 'react-native';
 
-const usePopupAnimation = (restaurantId: string | undefined) => {
+import {RestaurantInfo} from '../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+
+const usePopupAnimation = (restaurantId: RestaurantInfo | undefined) => {
   const screenHeight = Dimensions.get('screen').height;
 
   const translateY = useRef(new Animated.Value(screenHeight)).current;
@@ -10,6 +12,7 @@ const usePopupAnimation = (restaurantId: string | undefined) => {
     Animated.timing(translateY, {
       toValue: 0,
       duration: 400,
+      easing: Easing.circle,
       useNativeDriver: true,
     }).start();
   }, [translateY]);
