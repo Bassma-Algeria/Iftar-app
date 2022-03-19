@@ -7,7 +7,7 @@ interface Params {
   destinationLocation: LocationCords;
 }
 
-const getDirections = async (params: Params): LocationCords[] => {
+const getDirections = async (params: Params): Promise<LocationCords[]> => {
   try {
     const KEY = 'AIzaSyCPoVKbYZ1VDQGzSBsZaAXATVNhNYATwi0';
 
@@ -20,7 +20,7 @@ const getDirections = async (params: Params): LocationCords[] => {
     const respJson = await resp.json();
     const points = decode(respJson.routes[0].overview_polyline.points);
 
-    const coords = points.map((point, index) => {
+    const coords = points.map(point => {
       return {
         latitude: point[0],
         longitude: point[1],

@@ -1,6 +1,7 @@
 const COLORS = {
   white: '#fff',
   black: '#000',
+  orange: '#CA8B32',
   primary: '#B87015',
   primaryShadow: '#b66c129f',
   brown: '#7C4908',
