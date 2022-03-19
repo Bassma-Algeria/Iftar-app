@@ -13,12 +13,13 @@ import {styles} from '../Input.style';
 
 interface Props {
   label: string;
-  keyboardType?: KeyboardTypeOptions | undefined;
   icon: ImageSourcePropType;
+  keyboardType?: KeyboardTypeOptions;
 }
 
 const Input: React.FC<Props> = ({label, icon, keyboardType}) => {
   const [input, onInputChange] = React.useState<string>('');
+
   return (
     <View style={styles.inputHolder}>
       <Shadow distance={6} startColor={'#00000010'}>
@@ -27,9 +28,9 @@ const Input: React.FC<Props> = ({label, icon, keyboardType}) => {
           <TextInput
             style={styles.input}
             onChangeText={onInputChange}
-            value={input}
             placeholder={label}
             keyboardType={keyboardType}
+            value={input}
           />
         </View>
       </Shadow>

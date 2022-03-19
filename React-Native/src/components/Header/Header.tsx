@@ -10,6 +10,7 @@ interface Props {
   color?: keyof typeof COLORS;
   fontWeight?: keyof typeof FONTS;
   style?: StyleProp<TextStyle>;
+  align?: 'auto' | 'left' | 'right' | 'center' | 'justify';
   onPress?: (event: GestureResponderEvent) => void;
 }
 
@@ -19,6 +20,7 @@ const Header: React.FC<Props> = ({
   color = 'brown',
   fontWeight,
   onPress,
+  align,
   style,
 }) => {
   let elementStyles: StyleProp<TextStyle> = {
@@ -28,6 +30,10 @@ const Header: React.FC<Props> = ({
 
   if (fontWeight) {
     elementStyles.fontFamily = FONTS[fontWeight];
+  }
+
+  if (align) {
+    elementStyles.textAlign = align;
   }
 
   return (

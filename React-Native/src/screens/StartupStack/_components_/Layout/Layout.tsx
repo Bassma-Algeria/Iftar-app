@@ -1,15 +1,17 @@
 import React from 'react';
-import {Image, ScrollView, View} from 'react-native';
+import {Image, ScrollView, StyleProp, View, ViewStyle} from 'react-native';
 
 import {IMAGES} from '../../../../utils/constants/Images';
 
 import {styles} from './Layout.style';
 
-interface Props {}
+interface Props {
+  style?: StyleProp<ViewStyle>;
+}
 
-const Layout: React.FC<Props> = ({children}) => {
+const Layout: React.FC<Props> = ({children, style}) => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={[styles.container, style]}>
       <Lanterns />
 
       <View style={styles.content}>{children}</View>

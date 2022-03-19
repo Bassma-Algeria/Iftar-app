@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ScrollView} from 'react-native';
+import {View} from 'react-native';
 
 import {styles} from './Register.style';
 
@@ -15,30 +15,28 @@ interface Props {}
 
 const Register: React.FC<Props> = () => {
   return (
-    <ScrollView style={styles.mainContainer}>
-      <Layout>
-        <View style={styles.container}>
-          <Header color="brown" variant="h1" fontWeight="semibold">
-            تسجيل
-          </Header>
-          <Input
-            label="البريد الالكتروني"
-            keyboardType="default"
-            icon={ICONS.email}
-          />
-          <PasswordInput label="كلمة المرور" />
-          <PasswordInput label="تأكيد كلمة المرور" />
-          <Input
-            label="رقم الهاتف"
-            keyboardType="numeric"
-            icon={ICONS.phoneLightColor}
-          />
-        </View>
-      </Layout>
+    <Layout style={styles.container}>
+      <Header color="brown" align="center" variant="h1" fontWeight="semibold">
+        تسجيل
+      </Header>
+
+      <Input
+        label="البريد الالكتروني"
+        keyboardType="default"
+        icon={ICONS.email}
+      />
+      <PasswordInput label="كلمة المرور" />
+      <PasswordInput label="تأكيد كلمة المرور" />
+      <Input
+        label="رقم الهاتف"
+        keyboardType="numeric"
+        icon={ICONS.phoneLightColor}
+      />
+
       <View style={styles.buttonContainer}>
         <Button label="سجل الآن" />
       </View>
-    </ScrollView>
+    </Layout>
   );
 };
 

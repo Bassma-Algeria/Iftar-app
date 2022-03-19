@@ -6,6 +6,8 @@
 function loadStories() {
   require('../components/Button/Button.stories');
   require('../components/Header/Header.stories');
+  require('../components/Inputs/passwordInput/PasswordInput.stories');
+  require('../components/Inputs/TextInput/Input.stories');
   require('../components/Loader/Loader.stories');
   require('../components/Logo/Logo.stories');
   require('../screens/StartupStack/_components_/Layout/Layout.stories');
@@ -14,6 +16,8 @@ function loadStories() {
 const stories = [
   '../components/Button/Button.stories',
   '../components/Header/Header.stories',
+  '../components/Inputs/passwordInput/PasswordInput.stories',
+  '../components/Inputs/TextInput/Input.stories',
   '../components/Loader/Loader.stories',
   '../components/Logo/Logo.stories',
   '../screens/StartupStack/_components_/Layout/Layout.stories',

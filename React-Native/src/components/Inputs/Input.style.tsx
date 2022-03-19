@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: '100%',
   },
+
   inputContainer: {
     paddingLeft: 20,
     paddingRight: 20,
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'space-around',
   },
+
   input: {
     height: 60,
     width: '90%',

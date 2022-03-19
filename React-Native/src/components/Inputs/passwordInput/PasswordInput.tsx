@@ -14,9 +14,9 @@ interface Props {
 const PasswordInput: React.FC<Props> = ({label}) => {
   const [input, onInputChange] = React.useState<string>('');
   const [hidePassword, setHidePassword] = React.useState<boolean>(true);
-  const handleHidePasswordChange = () => {
-    setHidePassword(!hidePassword);
-  };
+
+  const handleHidePasswordChange = () => setHidePassword(!hidePassword);
+
   return (
     <View style={styles.inputHolder}>
       <Shadow distance={6} startColor={'#00000010'}>
