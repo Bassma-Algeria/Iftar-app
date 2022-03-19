@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {SPACING} from '../../../../theme/Spacings.ts';
-import {COLORS} from '../../../../theme/Colors.ts';
+import {SPACING} from '../../../../theme/Spacings';
+import {COLORS} from '../../../../theme/Colors';
 
 const styles = StyleSheet.create({
   mainContainer: {
     height: '100%',
     width: '100%',
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.beige,
   },
   layout: {
     backgroundColor: 'black',

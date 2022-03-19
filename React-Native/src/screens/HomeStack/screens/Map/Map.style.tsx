@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
 
   restaurantPopupContainer: {
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.beige,
     position: 'absolute',
     bottom: 0,
     left: 0,

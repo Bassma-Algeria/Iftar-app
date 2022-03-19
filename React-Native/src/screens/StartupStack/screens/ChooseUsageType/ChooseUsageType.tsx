@@ -30,7 +30,9 @@ const ChooseUsageType: React.FC<Props> = ({navigation}) => {
 
         <Button
           label="أضف مطعم"
-          // onPress={() => navigation.navigate('StartupStack', {screen: 'Login'})}
+          onPress={() =>
+            navigation.navigate('StartupStack', {screen: 'Register'})
+          }
         />
       </View>
     </>

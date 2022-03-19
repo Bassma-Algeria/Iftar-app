@@ -10,6 +10,7 @@ import type {MainStackScreenProps} from '../MainStack.types';
 import {Welcom} from './screens/Welcom/Welcom';
 import {ChooseUsageType} from './screens/ChooseUsageType/ChooseUsageType';
 import {Register} from './screens/Register/Register';
+
 interface Props extends MainStackScreenProps<'StartupStack'> {}
 
 const Stack = createNativeStackNavigator<StartupStackStackParamsList>();

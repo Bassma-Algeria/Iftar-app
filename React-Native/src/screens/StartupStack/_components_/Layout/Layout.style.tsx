@@ -5,7 +5,7 @@ import {SPACING} from '../../../../theme/Spacings';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.beige,
     width: '100%',
     height: '100%',
   },
