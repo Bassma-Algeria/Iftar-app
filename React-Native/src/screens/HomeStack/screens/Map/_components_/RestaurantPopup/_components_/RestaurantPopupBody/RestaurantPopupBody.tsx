@@ -30,11 +30,11 @@ const Loader: React.FC = () => {
 };
 
 const RestaurantInfoView: React.FC<RestaurantInfo> = props => {
-  const {setDestinationCoords, setSelectedRestaurant} = useMapContext();
+  const {setDestinationLocation, setSelectedRestaurant} = useMapContext();
 
   const handleDirectionButtonClick = () => {
     setSelectedRestaurant(undefined);
-    setDestinationCoords(props.location);
+    setDestinationLocation(props.location);
   };
 
   return (

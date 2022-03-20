@@ -9,8 +9,8 @@ interface MapContextValues {
     React.SetStateAction<RestaurantInfo | undefined>
   >;
 
-  destinationCoords?: LocationCords;
-  setDestinationCoords: React.Dispatch<
+  destinationLocation?: LocationCords;
+  setDestinationLocation: React.Dispatch<
     React.SetStateAction<LocationCords | undefined>
   >;
 }
@@ -22,15 +22,16 @@ export const MapContext = createContext<MapContextValues | undefined>(
 const MapContextProvider: React.FC = ({children}) => {
   const [selectedRestaurant, setSelectedRestaurant] =
     useState<RestaurantInfo>();
-  const [destinationCoords, setDestinationCoords] = useState<LocationCords>();
+  const [destinationLocation, setDestinationLocation] =
+    useState<LocationCords>();
 
   return (
     <MapContext.Provider
       value={{
         selectedRestaurant,
         setSelectedRestaurant,
-        destinationCoords,
-        setDestinationCoords,
+        destinationLocation,
+        setDestinationLocation,
       }}>
       {children}
     </MapContext.Provider>

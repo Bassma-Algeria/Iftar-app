@@ -1,38 +1,39 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Polyline} from 'react-native-maps';
 
 import {LocationCords} from '../../../../../../../../@types/LocationCords';
+
 import {COLORS} from '../../../../../../../../theme/Colors';
+
 import {useMapContext} from '../../../../_hooks_/useMapContext';
-import {getDirections} from './_utils_/getDirection';
+import {usePathCoordinatesFetcher} from './_hooks_/usePathCoordinatesFetcher';
 
 interface Props {
   currentLocation: LocationCords;
 }
 
 const PathToRestaurant: React.FC<Props> = ({currentLocation}) => {
-  const {destinationCoords} = useMapContext();
-  const [pathCoords, setPathCoords] = useState<LocationCords[]>();
+  const {destinationLocation} = useMapContext();
+  const {coordinates} = usePathCoordinatesFetcher(
+    currentLocation,
+    destinationLocation,
+  );
 
-  useEffect(() => {
-    if (!destinationCoords) {
-      return;
-    }
+  return coordinates ? <Path coordinates={coordinates} /> : null;
+};
 
-    setPathCoords(undefined);
-    getDirections({
-      startLocation: currentLocation,
-      destinationLocation: destinationCoords,
-    }).then(setPathCoords);
-  }, [currentLocation, destinationCoords]);
+interface PathProps {
+  coordinates: LocationCords[];
+}
 
-  return pathCoords ? (
+const Path: React.FC<PathProps> = ({coordinates}) => {
+  return (
     <Polyline
-      coordinates={pathCoords}
+      coordinates={coordinates}
       strokeColor={COLORS.orange}
       strokeWidth={5}
     />
-  ) : null;
+  );
 };
 
 export {PathToRestaurant};
