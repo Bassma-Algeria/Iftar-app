@@ -18,17 +18,8 @@ const testHandler =
     let owner: IRestaurantOwner;
     const ownersGateway = new RestaurantOwnersGateway(ownersPersistence);
 
-    const getRestaurantEntity = () => {
-      const owner = new RestaurantOwner(ownerInfo.email, ownerInfo.password);
-      owner.createdAt = ownerInfo.createdAt;
-      owner.ownerId = ownerInfo.ownerId;
-      owner.phoneNumber = ownerInfo.phoneNumber;
-
-      return owner;
-    };
-
     beforeEach(() => {
-      owner = getRestaurantEntity();
+      owner = new RestaurantOwner(ownerInfo);
     });
 
     afterEach(() => {

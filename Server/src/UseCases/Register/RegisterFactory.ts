@@ -16,11 +16,11 @@ class RegisterFactory {
   ) {}
 
   async register(userInfo: RegistrationBody) {
-    const { email, password, confirmPassword, phoneNumber } = userInfo;
-    const owner = new RestaurantOwner(email, password);
-    owner.phoneNumber = phoneNumber;
+    const owner = new RestaurantOwner(userInfo);
 
-    if (password !== confirmPassword) this.WrongConfirmPasswordException();
+    const { confirmPassword } = userInfo;
+    if (owner.password !== confirmPassword.trim())
+      this.WrongConfirmPasswordException();
 
     const existingOwner = await this.findOwnerByEmail(owner.email);
     if (existingOwner) this.EmailExistException();

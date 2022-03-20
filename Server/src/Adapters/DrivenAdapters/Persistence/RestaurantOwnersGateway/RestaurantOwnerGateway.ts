@@ -19,23 +19,14 @@ class RestaurantOwnersGateway implements IRestaurantOwnersGateway {
   async save(owner: IRestaurantOwner): Promise<IRestaurantOwner> {
     const ownerInfo = await this.restaurantOwnersPersistence.save(owner.info());
 
-    return this.getOwnerEntity(ownerInfo);
+    return new RestaurantOwner(ownerInfo);
   }
 
   async getByEmail(email: string): Promise<IRestaurantOwner | undefined> {
     const ownerInfo = await this.restaurantOwnersPersistence.getByEmail(email);
     if (!ownerInfo) return undefined;
 
-    return this.getOwnerEntity(ownerInfo);
-  }
-
-  private getOwnerEntity(ownerInfo: OwerInfo) {
-    const owner = new RestaurantOwner(ownerInfo.email, ownerInfo.password);
-    owner.createdAt = ownerInfo.createdAt;
-    owner.ownerId = ownerInfo.ownerId;
-    owner.phoneNumber = ownerInfo.phoneNumber;
-
-    return owner;
+    return new RestaurantOwner(ownerInfo);
   }
 }
 

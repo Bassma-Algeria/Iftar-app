@@ -10,38 +10,80 @@ export interface IRestaurantOwner {
   info(): NonFunctionProperties<IRestaurantOwner>;
 }
 
+type ConstructurParams = Partial<NonFunctionProperties<IRestaurantOwner>> & {
+  email: string;
+  password: string;
+};
+
 const makeRestaurantOwner = (idGenerator: IIdGenerator) => {
   return class RestaurantOwner implements IRestaurantOwner {
-    ownerId: string;
-    email: string;
-    password: string;
-    createdAt: Date;
+    private _ownerId?: string;
+    private _email?: string;
+    private _password?: string;
+    private _createdAt?: Date;
     private _phoneNumber?: string;
 
-    constructor(email: string, password: string) {
-      email = email.trim().toLocaleLowerCase();
-      password = password.trim();
+    constructor(params: ConstructurParams) {
+      this.email = params.email;
+      this.password = params.password;
+      this.phoneNumber = params.phoneNumber;
+      this.ownerId = params.ownerId || idGenerator.generate();
+      this.createdAt = params.createdAt || new Date();
+    }
 
+    public get ownerId(): string {
+      if (!this._ownerId) this.IdNotSetException();
+      return this._ownerId;
+    }
+
+    public set ownerId(id: string) {
+      if (!id) this.InvalidIdException();
+      this._ownerId = id;
+    }
+
+    public get email(): string {
+      if (!this._email) this.EmailNotSetException();
+      return this._email;
+    }
+
+    public set email(email: string) {
+      email = email.trim().toLowerCase();
       if (!this.isValidEmail(email)) this.InvalidEmailException();
+
+      this._email = email;
+    }
+
+    public get password(): string {
+      if (!this._password) this.PasswordNotSetException();
+      return this._password;
+    }
+
+    public set password(password: string) {
+      password = password.trim();
       if (!this.isValidPassword(password)) this.InvalidPasswordException();
 
-      this.ownerId = idGenerator.generate();
-      this.email = email;
-      this.password = password;
-      this.createdAt = new Date();
+      this._password = password;
+    }
+
+    public get createdAt(): Date {
+      if (!this._createdAt) this.CreatedAtNotSetException();
+      return this._createdAt;
+    }
+
+    public set createdAt(date: Date) {
+      this._createdAt = date;
     }
 
     public get phoneNumber(): string {
       if (!this._phoneNumber) this.NumberNotSetException();
-
       return this._phoneNumber;
     }
 
     public set phoneNumber(number: string | undefined) {
       number = number?.replace(/ /g, "");
 
-      if (!this.isValidPhoneNumber(number))
-        throw new Error("invalid phone number");
+      if (number && !this.isValidPhoneNumber(number))
+        this.InvalidPhoneNumberException();
 
       this._phoneNumber = number;
     }
@@ -64,12 +106,8 @@ const makeRestaurantOwner = (idGenerator: IIdGenerator) => {
       return !!password;
     }
 
-    private isValidPhoneNumber(number?: string): boolean {
-      return !!number && PHONE_NUMBER_PATTERN.test(number);
-    }
-
-    private NumberNotSetException(): never {
-      throw new Error("phone number not set");
+    private isValidPhoneNumber(number: string): boolean {
+      return PHONE_NUMBER_PATTERN.test(number);
     }
 
     private InvalidEmailException(): never {
@@ -78,6 +116,34 @@ const makeRestaurantOwner = (idGenerator: IIdGenerator) => {
 
     private InvalidPasswordException(): never {
       throw new Error("invalid password");
+    }
+
+    private InvalidIdException(): never {
+      throw new Error("invalid ownerId");
+    }
+
+    private InvalidPhoneNumberException(): never {
+      throw new Error("invalid phone number");
+    }
+
+    private NumberNotSetException(): never {
+      throw new Error("phone number not set");
+    }
+
+    private IdNotSetException(): never {
+      throw new Error("id not set");
+    }
+
+    private EmailNotSetException(): never {
+      throw new Error("email not set");
+    }
+
+    private PasswordNotSetException(): never {
+      throw new Error("password not set");
+    }
+
+    private CreatedAtNotSetException(): never {
+      throw new Error("createdAt not set");
     }
   };
 };
