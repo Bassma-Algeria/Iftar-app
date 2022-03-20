@@ -1,4 +1,4 @@
-import type { IRestaurantOwnersGateway } from "../../Ports/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway.interface";
+import type { IRestaurantOwnersGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway.interface";
 
 import { RestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwner";
 import type { IRestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwnerFactory";
@@ -23,7 +23,7 @@ class RegisterFactory {
     if (password !== confirmPassword) this.WrongConfirmPasswordException();
 
     const existingOwner = await this.findOwnerByEmail(owner.email);
-    if (existingOwner) throw new Error("email already used");
+    if (existingOwner) this.EmailExistException();
 
     await this.saveOwner(owner);
   }
@@ -38,6 +38,10 @@ class RegisterFactory {
 
   private WrongConfirmPasswordException(): never {
     throw new Error("Confirm Password didn't match the password");
+  }
+
+  private EmailExistException(): never {
+    throw new Error("email already used");
   }
 }
 

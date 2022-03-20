@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
 import { FakeIdGenerator } from "../../../src/Adapters/DrivenAdapters/IdGenerator/FakeIdGenerator";
-import { IIdGenerator } from "../../../src/Ports/IdGenerator/IdGenerator.interface";
+import { IIdGenerator } from "../../../src/Ports/DrivenPorts/IdGenerator/IdGenerator.interface";
 
 // const testHandler = (idGenerator: IIdGenerator) => () => {
 //   it("should generate a unique id every time", () => {

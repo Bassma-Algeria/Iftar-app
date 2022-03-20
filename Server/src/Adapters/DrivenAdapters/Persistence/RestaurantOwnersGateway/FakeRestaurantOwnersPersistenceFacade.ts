@@ -14,9 +14,7 @@ class FakeRestaurantOwnersPersistenceFacade
     return ownerInfo;
   }
 
-  async getByEmail(
-    email: string
-  ): Promise<NonFunctionProperties<IRestaurantOwner> | undefined> {
+  async getByEmail(email: string) {
     let targetOwner: OwerInfo | undefined;
 
     this.store.forEach((ownerInfo) => {
@@ -24,6 +22,10 @@ class FakeRestaurantOwnersPersistenceFacade
     });
 
     return targetOwner;
+  }
+
+  async deleteAll() {
+    this.store.clear();
   }
 }
 

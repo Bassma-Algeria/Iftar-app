@@ -1,6 +1,5 @@
 import type { NonFunctionProperties } from "../../@types/helperTypes";
-
-import type { IIdGenerator } from "../../Ports/IdGenerator/IdGenerator.interface";
+import type { IIdGenerator } from "../../Ports/DrivenPorts/IdGenerator/IdGenerator.interface";
 
 export interface IRestaurantOwner {
   ownerId: string;
