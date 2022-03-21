@@ -68,6 +68,18 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
 
+  picturesPlaceholder: {
+    width: '90%',
+    height: 200,
+    borderRadius: 20,
+    borderStyle: 'dashed',
+    borderWidth: 6,
+    borderColor: COLORS.primary,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
   restaurantDetails: {
     padding: 35,
     paddingBottom: 20,
