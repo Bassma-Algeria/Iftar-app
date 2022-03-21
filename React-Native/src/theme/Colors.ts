@@ -8,6 +8,7 @@ const COLORS = {
   brownShade: '#B66D12',
   beige: '#F4E6CA',
   whiteShade: '#FFFCF1',
+  red: '#bb0000',
 };
 
 export {COLORS};

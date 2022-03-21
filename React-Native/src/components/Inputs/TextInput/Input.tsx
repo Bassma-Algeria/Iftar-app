@@ -15,11 +15,12 @@ interface Props {
   label: string;
   icon: ImageSourcePropType;
   keyboardType?: KeyboardTypeOptions;
+  setText: (e: string) => void;
+
+  text: string;
 }
 
-const Input: React.FC<Props> = ({label, icon, keyboardType}) => {
-  const [input, onInputChange] = React.useState<string>('');
-
+const Input: React.FC<Props> = ({label, icon, keyboardType, setText, text}) => {
   return (
     <View style={styles.inputHolder}>
       <Shadow distance={6} startColor={'#00000010'}>
@@ -27,10 +28,10 @@ const Input: React.FC<Props> = ({label, icon, keyboardType}) => {
           <Image source={icon} resizeMode="contain" />
           <TextInput
             style={styles.input}
-            onChangeText={onInputChange}
+            onChangeText={setText}
             placeholder={label}
             keyboardType={keyboardType}
-            value={input}
+            value={text}
           />
         </View>
       </Shadow>

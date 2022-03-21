@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 
 import {styles} from './Register.style';
@@ -10,7 +10,6 @@ import {Header} from '../../../../components/Header/Header';
 import {Input} from '../../../../components/Inputs/TextInput/Input';
 import {PasswordInput} from '../../../../components/Inputs/passwordInput/PasswordInput';
 import {Button} from '../../../../components/Button/Button';
-
 interface Props {}
 
 const Register: React.FC<Props> = () => {
@@ -19,20 +18,7 @@ const Register: React.FC<Props> = () => {
       <Header color="brown" align="center" variant="h1" fontWeight="semibold">
         تسجيل
       </Header>
-
-      <Input
-        label="البريد الالكتروني"
-        keyboardType="default"
-        icon={ICONS.email}
-      />
-      <PasswordInput label="كلمة المرور" />
-      <PasswordInput label="تأكيد كلمة المرور" />
-      <Input
-        label="رقم الهاتف"
-        keyboardType="numeric"
-        icon={ICONS.phoneLightColor}
-      />
-
+      <RegisterationForm />
       <View style={styles.buttonContainer}>
         <Button label="سجل الآن" />
       </View>
@@ -40,4 +26,40 @@ const Register: React.FC<Props> = () => {
   );
 };
 
+interface RegisterProps {}
+const RegisterationForm: React.FC<RegisterProps> = () => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [confirmPassword, setConfirmPassword] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
+  return (
+    <>
+      <Input
+        text={email}
+        setText={setEmail}
+        label="البريد الالكتروني"
+        keyboardType="default"
+        icon={ICONS.email}
+      />
+      <PasswordInput
+        password={password}
+        setPassword={setPassword}
+        label="كلمة المرور"
+      />
+      <PasswordInput
+        password={confirmPassword}
+        setPassword={setConfirmPassword}
+        label="تأكيد كلمة المرور"
+      />
+
+      <Input
+        text={phone}
+        setText={setPhone}
+        label="رقم الهاتف"
+        keyboardType="numeric"
+        icon={ICONS.phoneLightColor}
+      />
+    </>
+  );
+};
 export {Register};

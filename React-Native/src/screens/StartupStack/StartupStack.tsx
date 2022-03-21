@@ -10,6 +10,7 @@ import type {MainStackScreenProps} from '../MainStack.types';
 import {Welcom} from './screens/Welcom/Welcom';
 import {ChooseUsageType} from './screens/ChooseUsageType/ChooseUsageType';
 import {Register} from './screens/Register/Register';
+import {Login} from './screens/Login/Login';
 
 interface Props extends MainStackScreenProps<'StartupStack'> {}
 
@@ -25,6 +26,7 @@ const StartupStack: React.FC<Props> = () => {
       <Stack.Screen name="Welcom" component={Welcom} />
       <Stack.Screen name="ChooseUsageType" component={ChooseUsageType} />
       <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
   );
 };
