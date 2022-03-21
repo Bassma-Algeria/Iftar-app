@@ -2,5 +2,6 @@ import { IRestaurantOwner } from "../../../../Domain/RestaurantOwner/RestaurantO
 
 export interface IRestaurantOwnersGateway {
   getByEmail(email: string): Promise<IRestaurantOwner | undefined>;
+  getByPhone(phoneNumber: string): Promise<IRestaurantOwner | undefined>;
   save(owner: IRestaurantOwner): Promise<IRestaurantOwner>;
 }

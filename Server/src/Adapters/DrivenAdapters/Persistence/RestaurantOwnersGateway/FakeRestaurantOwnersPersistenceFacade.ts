@@ -24,6 +24,16 @@ class FakeRestaurantOwnersPersistenceFacade
     return targetOwner;
   }
 
+  async getByPhone(phone: string) {
+    let targetOwner: OwerInfo | undefined;
+
+    this.store.forEach((ownerInfo) => {
+      if (ownerInfo.phoneNumber === phone) targetOwner = ownerInfo;
+    });
+
+    return targetOwner;
+  }
+
   async deleteAll() {
     this.store.clear();
   }

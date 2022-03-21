@@ -38,6 +38,15 @@ const testHandler =
 
       expect(returnedOwner?.info()).to.deep.equal(ownerInfo);
     });
+
+    it("should add an owner and get him per phone number", async () => {
+      await ownersGateway.save(owner);
+      const returnedOwner = await ownersGateway.getByPhone(
+        ownerInfo.phoneNumber
+      );
+
+      expect(returnedOwner?.info()).to.deep.equal(ownerInfo);
+    });
   };
 
 describe("RestaurantOwnersGateway", () => {

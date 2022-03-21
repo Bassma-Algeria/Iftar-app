@@ -7,6 +7,7 @@ import { OwerInfo } from "./@types/Helpers";
 
 export interface IRestaurantOwnersPersistenceFacade {
   getByEmail(email: string): Promise<OwerInfo | undefined>;
+  getByPhone(phone: string): Promise<OwerInfo | undefined>;
   save(info: OwerInfo): Promise<OwerInfo>;
   deleteAll(): Promise<void>;
 }
@@ -24,6 +25,13 @@ class RestaurantOwnersGateway implements IRestaurantOwnersGateway {
 
   async getByEmail(email: string): Promise<IRestaurantOwner | undefined> {
     const ownerInfo = await this.restaurantOwnersPersistence.getByEmail(email);
+    if (!ownerInfo) return undefined;
+
+    return new RestaurantOwner(ownerInfo);
+  }
+
+  async getByPhone(email: string): Promise<IRestaurantOwner | undefined> {
+    const ownerInfo = await this.restaurantOwnersPersistence.getByPhone(email);
     if (!ownerInfo) return undefined;
 
     return new RestaurantOwner(ownerInfo);

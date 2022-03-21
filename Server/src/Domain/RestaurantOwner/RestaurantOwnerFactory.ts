@@ -111,11 +111,11 @@ const makeRestaurantOwner = (idGenerator: IIdGenerator) => {
     }
 
     private InvalidEmailException(): never {
-      throw new Error("invalid email");
+      throw { email: "invalid email" };
     }
 
     private InvalidPasswordException(): never {
-      throw new Error("invalid password");
+      throw { password: "invalid password" };
     }
 
     private InvalidIdException(): never {
@@ -123,7 +123,7 @@ const makeRestaurantOwner = (idGenerator: IIdGenerator) => {
     }
 
     private InvalidPhoneNumberException(): never {
-      throw new Error("invalid phone number");
+      throw { phoneNumber: "invalid phone number" };
     }
 
     private NumberNotSetException(): never {
