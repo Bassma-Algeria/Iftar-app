@@ -10,11 +10,7 @@ import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
 
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 
-/**
- * 3 - should get a token when the credentials are correct
- */
-
-describe("Register UseCase", () => {
+describe("Registration & Login Use cases", () => {
   const userInfo = getResturantOwnerInfo();
 
   const registrationBody = { ...userInfo, confirmPassword: userInfo.password };
@@ -133,7 +129,7 @@ describe("Register UseCase", () => {
     expect(tokenFromLogin).to.equal(tokenFromRegister);
   });
 
-  it("should login normally when trying with an email with uppercase, or with some spaces in the left and right", async () => {
+  it("should login normally when trying with an email with uppercased letters, or with some spaces in the left and right", async () => {
     await registerFactory.register(registrationBody);
 
     await expect(
@@ -145,7 +141,7 @@ describe("Register UseCase", () => {
     ).to.eventually.include("Bearer ");
 
     await expect(
-      loginFactory.login({ ...registrationBody, password: `  ${registrationBody.password}` })
+      loginFactory.login({ ...registrationBody, password: `  ${registrationBody.password}  ` })
     ).to.eventually.include("Bearer ");
   });
 
