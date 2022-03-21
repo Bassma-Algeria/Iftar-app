@@ -5,9 +5,14 @@ import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/Driven
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
 import { FakeTokenManager } from "../../src/Adapters/DrivenAdapters/TokenManager/FakeTokenManager";
 
+import { LoginFactory } from "../../src/UseCases/Login/LoginFactory";
 import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
 
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
+
+/**
+ * 3 - should get a token when the credentials are correct
+ */
 
 describe("Register UseCase", () => {
   const userInfo = getResturantOwnerInfo();
@@ -19,6 +24,12 @@ describe("Register UseCase", () => {
     new RestaurantOwnersGateway(ownersPersistence),
     new FakePasswordManager(),
     new FakeTokenManager()
+  );
+
+  const loginFactory = new LoginFactory(
+    new RestaurantOwnersGateway(ownersPersistence),
+    new FakeTokenManager(),
+    new FakePasswordManager()
   );
 
   afterEach(() => {
@@ -84,5 +95,65 @@ describe("Register UseCase", () => {
     const token2 = await registerFactory.register({ ...registrationBody, ...secondOwner });
 
     expect(token1).to.include("Bearer ").and.not.equal(token2);
+  });
+
+  it("should not be able to login with an invalid email or empty password", async () => {
+    await expect(
+      loginFactory.login({ ...registrationBody, email: "invalid" })
+    ).to.eventually.be.rejected.and.have.property("email");
+
+    await expect(
+      loginFactory.login({ ...registrationBody, password: "" })
+    ).to.eventually.be.rejected.and.have.property("password");
+  });
+
+  it("should not be able to login with none exsisting email", async () => {
+    await expect(loginFactory.login(registrationBody)).to.eventually.be.rejected.and.have.property(
+      "credentials"
+    );
+  });
+
+  it("should not be able to login with wrong password", async () => {
+    await registerFactory.register(registrationBody);
+
+    await expect(
+      loginFactory.login({ ...registrationBody, password: "wrongPassword" })
+    ).to.eventually.be.rejected.and.have.property("credentials");
+  });
+
+  it("should get a Bearer token when the credentials are correct", async () => {
+    await registerFactory.register(registrationBody);
+    await expect(loginFactory.login(registrationBody)).to.eventually.include("Bearer ");
+  });
+
+  it("should get the same Bearer token when register and login with same credentials", async () => {
+    const tokenFromRegister = await registerFactory.register(registrationBody);
+    const tokenFromLogin = await loginFactory.login(registrationBody);
+
+    expect(tokenFromLogin).to.equal(tokenFromRegister);
+  });
+
+  it("should login normally when trying with an email with uppercase, or with some spaces in the left and right", async () => {
+    await registerFactory.register(registrationBody);
+
+    await expect(
+      loginFactory.login({ ...registrationBody, email: registrationBody.email.toUpperCase() })
+    ).to.eventually.include("Bearer ");
+
+    await expect(
+      loginFactory.login({ ...registrationBody, email: `  ${registrationBody.email}` })
+    ).to.eventually.include("Bearer ");
+
+    await expect(
+      loginFactory.login({ ...registrationBody, password: `  ${registrationBody.password}` })
+    ).to.eventually.include("Bearer ");
+  });
+
+  it("should not be able to login just with the correct password literrally", async () => {
+    await registerFactory.register(registrationBody);
+
+    await expect(
+      loginFactory.login({ ...registrationBody, password: registrationBody.password.toUpperCase() })
+    ).to.eventually.be.rejected.have.property("credentials");
   });
 });

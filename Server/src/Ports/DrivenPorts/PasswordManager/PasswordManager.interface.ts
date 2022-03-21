@@ -1,3 +1,4 @@
 export interface IPasswordManager {
-  hash(key: string): Promise<string>;
+  hash(password: string): Promise<string>;
+  isMatch(literal: string, hash: string): Promise<boolean>;
 }
