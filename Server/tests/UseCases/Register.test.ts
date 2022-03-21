@@ -3,13 +3,11 @@ import { expect } from "chai";
 import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/PasswordManager/FakePasswordManager";
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
+import { FakeTokenManager } from "../../src/Adapters/DrivenAdapters/TokenManager/FakeTokenManager";
 
 import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
-import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 
-/**
- * 7 - when the values are correct, register the user and return a token
- */
+import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 
 describe("Register UseCase", () => {
   const userInfo = getResturantOwnerInfo();
@@ -19,7 +17,8 @@ describe("Register UseCase", () => {
   const ownersPersistence = new FakeRestaurantOwnersPersistenceFacade();
   const registerFactory = new RegisterFactory(
     new RestaurantOwnersGateway(ownersPersistence),
-    new FakePasswordManager()
+    new FakePasswordManager(),
+    new FakeTokenManager()
   );
 
   afterEach(() => {
@@ -72,10 +71,18 @@ describe("Register UseCase", () => {
 
   it("should hash the password before saving the owner", async () => {
     await registerFactory.register(registrationBody);
-    const savedOwner = await ownersPersistence.getByEmail(
-      registrationBody.email
-    );
+    const savedOwner = await ownersPersistence.getByEmail(registrationBody.email);
 
     expect(savedOwner?.password).to.not.equal(registrationBody.password);
+  });
+
+  it("should return a unique token when everything is ok", async () => {
+    const firstOwner = { email: "first@gmail.com", phoneNumber: "0798 98 09 75" };
+    const secondOwner = { email: "second@gmail.com", phoneNumber: "0598 98 09 75" };
+
+    const token1 = await registerFactory.register({ ...registrationBody, ...firstOwner });
+    const token2 = await registerFactory.register({ ...registrationBody, ...secondOwner });
+
+    expect(token1).to.include("Bearer ").and.not.equal(token2);
   });
 });

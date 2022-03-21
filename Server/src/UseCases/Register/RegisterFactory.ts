@@ -1,5 +1,6 @@
 import type { IRestaurantOwnersGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway.interface";
 import type { IPasswordManager } from "../../Ports/DrivenPorts/PasswordManager/PasswordManager.interface";
+import { ITokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
 
 import { RestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwner";
 import type { IRestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwnerFactory";
@@ -14,14 +15,15 @@ interface RegistrationBody {
 class RegisterFactory {
   constructor(
     private readonly restaurantOwnersGateway: IRestaurantOwnersGateway,
-    private readonly passwordManager: IPasswordManager
+    private readonly passwordManager: IPasswordManager,
+    private readonly tokenManager: ITokenManager
   ) {}
 
   async register(registrationBody: RegistrationBody) {
-    const owner = new RestaurantOwner(registrationBody);
+    const { email, password, confirmPassword, phoneNumber } = registrationBody;
+    const owner = new RestaurantOwner({ email, password, phoneNumber });
 
-    const confirmPassword = registrationBody.confirmPassword.trim();
-    if (owner.password !== confirmPassword) this.WrongConfirmPasswordException();
+    if (owner.password !== confirmPassword.trim()) this.WrongConfirmPasswordException();
 
     const ownerWithSameEmail = await this.findOwnerByEmail(owner.email);
     if (ownerWithSameEmail) this.EmailExistException();
@@ -29,13 +31,11 @@ class RegisterFactory {
     const ownerWithSamePhone = await this.findOwnerByPhone(owner.phoneNumber);
     if (ownerWithSamePhone) this.PhoneExistException();
 
-    owner.password = await this.passwordManager.hash(owner.password);
+    owner.password = await this.hashPassword(owner.password);
 
     await this.saveOwner(owner);
-  }
 
-  private async saveOwner(owner: IRestaurantOwner) {
-    await this.restaurantOwnersGateway.save(owner);
+    return this.tokenManager.generateToken(owner.ownerId);
   }
 
   private findOwnerByEmail(email: string) {
@@ -44,6 +44,14 @@ class RegisterFactory {
 
   private findOwnerByPhone(phoneNumber: string) {
     return this.restaurantOwnersGateway.getByPhone(phoneNumber);
+  }
+
+  private async saveOwner(owner: IRestaurantOwner) {
+    await this.restaurantOwnersGateway.save(owner);
+  }
+
+  private hashPassword(password: string) {
+    return this.passwordManager.hash(password);
   }
 
   private WrongConfirmPasswordException(): never {
