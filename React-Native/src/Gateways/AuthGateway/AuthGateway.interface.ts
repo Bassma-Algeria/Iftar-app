@@ -1,9 +1,9 @@
-interface LoginInfo {
+export interface LoginInfo {
   email: string;
   password: string;
 }
 
-interface SignupInfo extends LoginInfo {
+export interface SignupInfo extends LoginInfo {
   confirmPassword: string;
   phoneNumber: string;
 }
