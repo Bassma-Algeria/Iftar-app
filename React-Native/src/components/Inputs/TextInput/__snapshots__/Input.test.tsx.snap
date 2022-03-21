@@ -6,7 +6,7 @@ exports[`<Input /> should render correctly 1`] = `
     Object {
       "marginBottom": 10,
       "marginTop": 20,
-      "width": "85%",
+      "width": "100%",
     }
   }
 >
@@ -610,6 +610,8 @@ exports[`<Input /> should render correctly 1`] = `
             "display": "flex",
             "flexDirection": "row",
             "justifyContent": "space-around",
+            "paddingLeft": 20,
+            "paddingRight": 20,
             "width": "100%",
           }
         }
@@ -618,17 +620,15 @@ exports[`<Input /> should render correctly 1`] = `
           resizeMode="contain"
         />
         <TextInput
-          onChangeText={[Function]}
           style={
             Object {
-              "backgroundColor": "white",
+              "borderRadius": 10,
               "fontFamily": "Cairo-Regular",
               "height": 60,
               "textAlign": "right",
-              "width": "80%",
+              "width": "90%",
             }
           }
-          value=""
         />
       </View>
     </View>

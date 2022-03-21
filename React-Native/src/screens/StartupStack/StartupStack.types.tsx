@@ -4,6 +4,7 @@ export type StartupStackStackParamsList = {
   Welcom: undefined;
   ChooseUsageType: undefined;
   Register: undefined;
+  Login: undefined;
 };
 
 export type StartupStackScreenProps<
