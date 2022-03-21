@@ -35,7 +35,7 @@ class RegisterFactory {
 
     await this.saveOwner(owner);
 
-    return this.tokenManager.generateToken(owner.ownerId);
+    return this.generateToken(owner.ownerId);
   }
 
   private findOwnerByEmail(email: string) {
@@ -52,6 +52,10 @@ class RegisterFactory {
 
   private hashPassword(password: string) {
     return this.passwordManager.hash(password);
+  }
+
+  private generateToken(ownerId: string) {
+    return this.tokenManager.generateToken(ownerId);
   }
 
   private WrongConfirmPasswordException(): never {
