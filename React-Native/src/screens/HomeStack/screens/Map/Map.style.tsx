@@ -13,6 +13,14 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 
+  mapLoadingMessage: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 30,
+    backgroundColor: COLORS.beige,
+  },
+
   markerContainer: {
     alignItems: 'center',
   },

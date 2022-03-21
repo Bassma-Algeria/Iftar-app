@@ -14,10 +14,7 @@ interface Props {
 
 const PathToRestaurant: React.FC<Props> = ({currentLocation}) => {
   const {destinationLocation} = useMapContext();
-  const {coordinates} = usePathCoordinatesFetcher(
-    currentLocation,
-    destinationLocation,
-  );
+  const {coordinates} = usePathCoordinatesFetcher(currentLocation, destinationLocation);
 
   return coordinates ? <Path coordinates={coordinates} /> : null;
 };
@@ -27,13 +24,7 @@ interface PathProps {
 }
 
 const Path: React.FC<PathProps> = ({coordinates}) => {
-  return (
-    <Polyline
-      coordinates={coordinates}
-      strokeColor={COLORS.orange}
-      strokeWidth={5}
-    />
-  );
+  return <Polyline coordinates={coordinates} strokeColor={COLORS.orange} strokeWidth={5} />;
 };
 
 export {PathToRestaurant};

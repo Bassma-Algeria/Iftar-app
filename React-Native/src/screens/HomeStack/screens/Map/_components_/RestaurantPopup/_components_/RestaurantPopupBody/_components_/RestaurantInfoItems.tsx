@@ -11,16 +11,18 @@ interface Props {
   closingTime: Date;
   openingTime: Date;
   ownerNumber: string;
-  location: {latitude: number; longitude: number};
+  adress: string;
 }
 
-// TODO: Change the hard coded values
-const RestaurantInfoItems: React.FC<Props> = () => {
+const RestaurantInfoItems: React.FC<Props> = props => {
+  const openingHour = props.openingTime.getHours();
+  const closingHour = props.openingTime.getHours();
+
   return (
     <View style={styles.restaurantInfoItems}>
-      <InfoItem icon={ICONS.clock} text={`من الساعة 17 إلى الساعة 22`} />
-      <InfoItem icon={ICONS.location} text={`الحراش وسط`} />
-      <InfoItem icon={ICONS.phone} text={`07 84 56 33 01`} />
+      <InfoItem icon={ICONS.clock} text={`من الساعة ${openingHour} إلى الساعة ${closingHour}`} />
+      <InfoItem icon={ICONS.location} text={props.adress} />
+      <InfoItem icon={ICONS.phone} text={props.ownerNumber} />
     </View>
   );
 };
@@ -29,11 +31,7 @@ const InfoItem: React.FC<{text: string; icon: ImageSourcePropType}> = props => {
   return (
     <View style={styles.restaurantInfoItem}>
       <View style={styles.itemIconContainer}>
-        <Image
-          resizeMode="contain"
-          style={styles.itemIcon}
-          source={props.icon}
-        />
+        <Image resizeMode="contain" style={styles.itemIcon} source={props.icon} />
       </View>
 
       <Header variant="h5">{props.text}</Header>

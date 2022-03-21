@@ -38,10 +38,7 @@ const Overlay: React.FC = () => {
   const {selectedRestaurant, setSelectedRestaurant} = useMapContext();
 
   return selectedRestaurant ? (
-    <Pressable
-      style={styles.popupOverlay}
-      onPress={() => setSelectedRestaurant(undefined)}
-    />
+    <Pressable style={styles.popupOverlay} onPress={() => setSelectedRestaurant(undefined)} />
   ) : null;
 };
 
@@ -50,10 +47,8 @@ const AnimatedPopup: React.FC = () => {
   const {translateY} = usePopupAnimation(selectedRestaurant);
 
   return (
-    <Animated.View
-      style={[styles.restaurantPopupContainer, {transform: [{translateY}]}]}>
+    <Animated.View style={[styles.restaurantPopupContainer, {transform: [{translateY}]}]}>
       <View style={styles.popupTopBar} />
-
       <RestaurantPopupBody />
     </Animated.View>
   );

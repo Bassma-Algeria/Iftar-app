@@ -38,7 +38,7 @@ const RestaurantMarker: React.FC<RestaurantInfo> = restaurantInfo => {
       onPress={() => setSelectedRestaurant(restaurantInfo)}
       style={styles.markerContainer}>
       <Header fontWeight="semibold">{restaurantInfo.name}</Header>
-      <Image source={ICONS.pin} style={styles.pin} resizeMode="contain" />
+      <Image source={ICONS.restaurantMarker} style={styles.pin} resizeMode="contain" />
     </Marker>
   );
 };
