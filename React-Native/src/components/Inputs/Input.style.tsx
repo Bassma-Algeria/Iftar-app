@@ -3,10 +3,6 @@ import {StyleSheet} from 'react-native';
 import {FONTS} from '../Header/Header.style';
 
 const styles = StyleSheet.create({
-  inputHolder: {
-    width: '100%',
-  },
-
   inputContainer: {
     paddingLeft: 20,
     paddingRight: 20,
@@ -15,7 +11,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'white',
     borderRadius: 10,
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     height: 60,
   },
 

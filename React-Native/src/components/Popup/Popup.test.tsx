@@ -2,6 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {render} from '@testing-library/react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
 import {Popup} from './Popup';
 import {Text} from 'react-native';
@@ -10,9 +11,11 @@ describe('Popup Component', () => {
   it('should render correclty and closed when isOpen is false', () => {
     const tree = renderer
       .create(
-        <Popup isOpen={false}>
-          <Text>Some content</Text>
-        </Popup>,
+        <NavigationContainer>
+          <Popup isOpen={false}>
+            <Text>Some content</Text>
+          </Popup>
+        </NavigationContainer>,
       )
       .toJSON();
 
@@ -22,9 +25,11 @@ describe('Popup Component', () => {
   it('should open when isOpen is true', () => {
     const tree = renderer
       .create(
-        <Popup isOpen>
-          <Text>Some content</Text>
-        </Popup>,
+        <NavigationContainer>
+          <Popup isOpen>
+            <Text>Some content</Text>
+          </Popup>
+        </NavigationContainer>,
       )
       .toJSON();
 
@@ -35,9 +40,11 @@ describe('Popup Component', () => {
     const onOpen = jest.fn();
 
     render(
-      <Popup isOpen onOpen={onOpen}>
-        <Text>Some content</Text>
-      </Popup>,
+      <NavigationContainer>
+        <Popup isOpen onOpen={onOpen}>
+          <Text>Some content</Text>
+        </Popup>
+      </NavigationContainer>,
     );
 
     expect(onOpen).toBeCalledTimes(1);
@@ -47,9 +54,11 @@ describe('Popup Component', () => {
     const onClose = jest.fn();
 
     render(
-      <Popup isOpen={false} onClose={onClose}>
-        <Text>Some content</Text>
-      </Popup>,
+      <NavigationContainer>
+        <Popup isOpen={false} onClose={onClose}>
+          <Text>Some content</Text>
+        </Popup>
+      </NavigationContainer>,
     );
 
     expect(onClose).toBeCalledTimes(1);

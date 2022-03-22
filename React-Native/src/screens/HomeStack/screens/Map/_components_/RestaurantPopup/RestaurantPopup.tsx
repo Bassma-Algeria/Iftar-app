@@ -12,7 +12,7 @@ import {Header} from '../../../../../../components/Header/Header';
 
 const RestaurantPopup: React.FC = () => {
   const {selectedRestaurant, setSelectedRestaurant} = useMapContext();
-  const {adress, error} = useFromLocationCoordsToAdress();
+  const {adress, error} = useFromLocationCoordsToAdress(selectedRestaurant?.location);
 
   return (
     <Popup isOpen={!!selectedRestaurant} onClose={() => setSelectedRestaurant(undefined)}>

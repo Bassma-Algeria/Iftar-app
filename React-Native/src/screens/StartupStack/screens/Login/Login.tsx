@@ -29,10 +29,7 @@ interface ErrorsProps extends Partial<LoginFormProps> {
 }
 
 const Login: React.FC<Props> = ({navigation}) => {
-  const [loginInfo, setLoginInfo] = useState<LoginFormProps>({
-    email: '',
-    password: '',
-  });
+  const [loginInfo, setLoginInfo] = useState<LoginFormProps>({email: '', password: ''});
   const [loading, setLoading] = useState<boolean>(false);
   const [credentialserror, setCredentialsError] = useState<string>('');
 
@@ -55,6 +52,7 @@ const Login: React.FC<Props> = ({navigation}) => {
         });
     }
   };
+
   return (
     <Layout style={styles.layout}>
       <View style={styles.container}>
@@ -71,7 +69,7 @@ const Login: React.FC<Props> = ({navigation}) => {
         <Header color="brown" align="right" variant="h6" fontWeight="regular" style={styles.text}>
           نسيت كلمة المرور
         </Header>
-        {!credentialserror && (
+        {!!credentialserror && (
           <Header color="red" align="center" variant="h3" fontWeight="regular">
             {credentialserror}
           </Header>
@@ -83,10 +81,7 @@ const Login: React.FC<Props> = ({navigation}) => {
             <Button
               label="تسجيل الدخول"
               onPress={() => {
-                LoginUser({
-                  email: loginInfo.email,
-                  password: loginInfo.password,
-                });
+                LoginUser(loginInfo);
               }}
             />
           )}
@@ -113,41 +108,46 @@ interface LoginProps {
   setCredentialsError: Dispatch<SetStateAction<string>>;
 }
 
-const LoginForm: React.FC<LoginProps> = ({
-  email,
-  password,
-  setLoginInfo,
-  loginInfo,
-  setCredentialsError,
-}) => {
-  const setEmail = (e: string) => {
-    setLoginInfo({...loginInfo, email: e});
-    setCredentialsError('');
-  };
-  const setPassword = (e: string) => {
-    setLoginInfo({...loginInfo, password: e});
-    setCredentialsError('');
-  };
-
+const LoginForm: React.FC<LoginProps> = props => {
   return (
     <View style={styles.form}>
-      <Input
-        text={email}
-        setText={setEmail}
-        label="البريد الالكتروني"
-        keyboardType="default"
-        icon={ICONS.email}
-        pattern={new RegExp(/^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/)}
-        type="Email"
-        style={styles.spaceInputs}
-      />
-      <PasswordInput
+      <EmailInput {...props} />
+      {/* <PasswordInput
         password={password}
         setPassword={setPassword}
         label="كلمة المرور"
         style={styles.spaceInputs}
-      />
+      /> */}
     </View>
   );
 };
+
+const EmailInput: React.FC<LoginProps> = ({loginInfo, setLoginInfo}) => {
+  const [error, setError] = useState<string>('');
+
+  const onTextChange = (value: string) => {
+    setError('');
+
+    if (value && !EMAIL_PATTERN.test(value)) {
+      setError('should have a valid email');
+    }
+
+    setLoginInfo({...loginInfo, email: value});
+  };
+
+  return (
+    <Input
+      value={loginInfo.email}
+      onTextChange={onTextChange}
+      icon={ICONS.email}
+      style={styles.spaceInputs}
+      placeholder="البريد الالكتروني"
+      keyboardType="email-address"
+      error={error}
+    />
+  );
+};
+
+const EMAIL_PATTERN = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 export {Login};

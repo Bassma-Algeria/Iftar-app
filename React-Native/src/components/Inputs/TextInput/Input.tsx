@@ -17,64 +17,35 @@ import {Header} from '../../Header/Header';
 import {styles} from '../Input.style';
 
 interface Props {
-  label: string;
+  placeholder: string;
   icon: ImageSourcePropType;
+  value: string;
+  onTextChange: (text: string) => void;
   keyboardType?: KeyboardTypeOptions;
-  setText: (e: string) => void;
-  text: string;
-  pattern?: RegExp;
-  type?: string;
+  iconPosition?: 'left' | 'right';
   style?: StyleProp<ViewStyle>;
+  error?: string;
 }
 
-const Input: React.FC<Props> = ({
-  label,
-  icon,
-  keyboardType,
-  setText,
-  text,
-  pattern,
-  type,
-  style,
-}) => {
-  const [inputError, setinputError] = useState<string>('');
-  const setInput = (t: string) => {
-    if (!t) {
-      setinputError(`${type} cannot be empty`);
-    } else {
-      setinputError('');
-    }
-    setText(t);
-  };
-  const setPatternError = (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => {
-    if (e.nativeEvent.text) {
-      if (!pattern?.test(e.nativeEvent.text)) {
-        setinputError(`This field needs to be an ${type?.toLocaleLowerCase()}`);
-      } else {
-        setinputError('');
-      }
-    }
-  };
+const Input: React.FC<Props> = props => {
   return (
     <>
-      <View style={[styles.inputHolder, style]}>
-        <Shadow distance={6} startColor={'#00000010'}>
-          <View style={styles.inputContainer}>
-            <Image source={icon} resizeMode="contain" />
-            <TextInput
-              style={styles.input}
-              onChangeText={setInput}
-              placeholder={label}
-              keyboardType={keyboardType}
-              value={text}
-              onEndEditing={setPatternError}
-            />
-          </View>
-        </Shadow>
-      </View>
-      {!!inputError && (
+      <Shadow distance={6} startColor={'#00000010'} containerViewStyle={props.style}>
+        <View style={styles.inputContainer}>
+          <Image source={props.icon} resizeMode="contain" />
+          <TextInput
+            style={styles.input}
+            value={props.value}
+            onChangeText={props.onTextChange}
+            placeholder={props.placeholder}
+            keyboardType={props.keyboardType}
+          />
+        </View>
+      </Shadow>
+
+      {!!props.error && (
         <Header color="red" align="right" variant="h6" fontWeight="regular">
-          {inputError}
+          {props.error}
         </Header>
       )}
     </>
