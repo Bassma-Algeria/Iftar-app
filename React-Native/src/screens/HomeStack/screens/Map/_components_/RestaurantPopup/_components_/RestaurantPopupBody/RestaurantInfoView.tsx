@@ -11,25 +11,8 @@ import {useMapContext} from '../../../../_hooks_/useMapContext';
 
 import {Button} from '../../../../../../../../components/Button/Button';
 import {Header} from '../../../../../../../../components/Header/Header';
-import {Loader} from '../../../../../../../../components/Loader/Loader';
 import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
-import {useFromLocationCoordsToAdress} from './_hooks_/useFromLocationCoordsToAdress';
-
-const RestaurantPopupBody: React.FC = () => {
-  const {selectedRestaurant} = useMapContext();
-  const {adress, error} = useFromLocationCoordsToAdress(selectedRestaurant?.location);
-
-  return !adress || !selectedRestaurant ? (
-    <Loader style={styles.loader} color="brown" size={50} />
-  ) : error ? (
-    <Header align="center" variant="h5" fontWeight="bold" style={styles.loader}>
-      يرجى التحقق من الاتصال بالإنترنت ، والمحاول مرة أخرى
-    </Header>
-  ) : (
-    <RestaurantInfoView {...selectedRestaurant} adress={adress} />
-  );
-};
 
 interface Params extends RestaurantInfo {
   adress: string;
@@ -60,4 +43,4 @@ const RestaurantInfoView: React.FC<Params> = props => {
   );
 };
 
-export {RestaurantPopupBody};
+export {RestaurantInfoView};

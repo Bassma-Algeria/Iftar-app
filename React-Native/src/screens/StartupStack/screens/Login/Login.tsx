@@ -18,19 +18,13 @@ import {Loader} from '../../../../components/Loader/Loader';
 
 interface Props extends StartupStackScreenProps<'Login'> {}
 
-interface ErrorProps {
-  PropErrorState: boolean;
-  PropErrorMessage: string;
-}
-
-interface ErrorsProps {
-  email: ErrorProps;
-  password: ErrorProps;
-  credentials: ErrorProps;
-}
 interface LoginFormProps {
   email: string;
   password: string;
+}
+
+interface ErrorsProps extends Partial<LoginFormProps> {
+  credentials?: string;
 }
 
 const Login: React.FC<Props> = ({navigation}) => {
@@ -39,20 +33,7 @@ const Login: React.FC<Props> = ({navigation}) => {
     password: '',
   });
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<ErrorsProps>({
-    email: {
-      PropErrorState: false,
-      PropErrorMessage: '',
-    },
-    password: {
-      PropErrorState: false,
-      PropErrorMessage: '',
-    },
-    credentials: {
-      PropErrorState: false,
-      PropErrorMessage: '',
-    },
-  });
+  const [error, setError] = useState<ErrorsProps>();
 
   const LoginUser = (userInfo: LoginInfo) => {
     const RestaurentOwner = new RestaurantsOwnersFakeGateway();
@@ -103,12 +84,7 @@ const Login: React.FC<Props> = ({navigation}) => {
           error={error}
           loginInfo={loginInfo}
         />
-        <Header
-          color="brown"
-          align="right"
-          variant="h6"
-          fontWeight="regular"
-          style={styles.text}>
+        <Header color="brown" align="right" variant="h6" fontWeight="regular" style={styles.text}>
           نسيت كلمة المرور
         </Header>
         {error.credentials.PropErrorState ? (
@@ -228,29 +204,15 @@ const LoginForm: React.FC<LoginProps> = ({
         icon={ICONS.email}
       />
       {error.email.PropErrorState ? (
-        <Header
-          color="red"
-          align="right"
-          variant="h6"
-          fontWeight="regular"
-          style={styles.text}>
+        <Header color="red" align="right" variant="h6" fontWeight="regular" style={styles.text}>
           {error.email.PropErrorMessage}
         </Header>
       ) : (
         <></>
       )}
-      <PasswordInput
-        password={password}
-        setPassword={setPassword}
-        label="كلمة المرور"
-      />
+      <PasswordInput password={password} setPassword={setPassword} label="كلمة المرور" />
       {error.password.PropErrorState ? (
-        <Header
-          color="red"
-          align="right"
-          variant="h6"
-          fontWeight="regular"
-          style={styles.text}>
+        <Header color="red" align="right" variant="h6" fontWeight="regular" style={styles.text}>
           {error.password.PropErrorMessage}
         </Header>
       ) : (

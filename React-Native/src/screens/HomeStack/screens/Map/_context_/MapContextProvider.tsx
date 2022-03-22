@@ -5,25 +5,17 @@ import type {RestaurantInfo} from '../../../../../Gateways/RestaurantsGateway/Re
 
 interface MapContextValues {
   selectedRestaurant?: RestaurantInfo;
-  setSelectedRestaurant: React.Dispatch<
-    React.SetStateAction<RestaurantInfo | undefined>
-  >;
+  setSelectedRestaurant: React.Dispatch<React.SetStateAction<RestaurantInfo | undefined>>;
 
   destinationLocation?: LocationCords;
-  setDestinationLocation: React.Dispatch<
-    React.SetStateAction<LocationCords | undefined>
-  >;
+  setDestinationLocation: React.Dispatch<React.SetStateAction<LocationCords | undefined>>;
 }
 
-export const MapContext = createContext<MapContextValues | undefined>(
-  undefined,
-);
+export const MapContext = createContext<MapContextValues | undefined>(undefined);
 
 const MapContextProvider: React.FC = ({children}) => {
-  const [selectedRestaurant, setSelectedRestaurant] =
-    useState<RestaurantInfo>();
-  const [destinationLocation, setDestinationLocation] =
-    useState<LocationCords>();
+  const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantInfo>();
+  const [destinationLocation, setDestinationLocation] = useState<LocationCords>();
 
   return (
     <MapContext.Provider

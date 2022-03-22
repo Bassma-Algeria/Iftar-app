@@ -41,11 +41,7 @@ const RegisterationForm: React.FC<RegisterProps> = () => {
         keyboardType="default"
         icon={ICONS.email}
       />
-      <PasswordInput
-        password={password}
-        setPassword={setPassword}
-        label="كلمة المرور"
-      />
+      <PasswordInput password={password} setPassword={setPassword} label="كلمة المرور" />
       <PasswordInput
         password={confirmPassword}
         setPassword={setConfirmPassword}

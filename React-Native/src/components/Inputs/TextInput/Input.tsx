@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  TextInput,
-  View,
-  KeyboardTypeOptions,
-  Image,
-  ImageSourcePropType,
-} from 'react-native';
+import {TextInput, View, KeyboardTypeOptions, Image, ImageSourcePropType} from 'react-native';
 
 import {Shadow} from 'react-native-shadow-2';
 
@@ -22,20 +16,23 @@ interface Props {
 
 const Input: React.FC<Props> = ({label, icon, keyboardType, setText, text}) => {
   return (
-    <View style={styles.inputHolder}>
-      <Shadow distance={6} startColor={'#00000010'}>
-        <View style={styles.inputContainer}>
-          <Image source={icon} resizeMode="contain" />
-          <TextInput
-            style={styles.input}
-            onChangeText={setText}
-            placeholder={label}
-            keyboardType={keyboardType}
-            value={text}
-          />
+    // <View style={styles.inputHolder}>
+    <Shadow distance={6} startColor={'#00000010'}>
+      <View style={styles.inputContainer}>
+        <View style={styles.iconContainer}>
+          <Image source={icon} style={styles.icon} resizeMode="contain" />
         </View>
-      </Shadow>
-    </View>
+
+        <TextInput
+          style={styles.input}
+          onChangeText={setText}
+          placeholder={label}
+          keyboardType={keyboardType}
+          value={text}
+        />
+      </View>
+    </Shadow>
+    // </View>
   );
 };
 

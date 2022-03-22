@@ -10,6 +10,7 @@ function loadStories() {
   require('../components/Inputs/TextInput/Input.stories');
   require('../components/Loader/Loader.stories');
   require('../components/Logo/Logo.stories');
+  require('../components/Popup/Popup.stories');
   require('../screens/StartupStack/_components_/Layout/Layout.stories');
 }
 
@@ -20,6 +21,7 @@ const stories = [
   '../components/Inputs/TextInput/Input.stories',
   '../components/Loader/Loader.stories',
   '../components/Logo/Logo.stories',
+  '../components/Popup/Popup.stories',
   '../screens/StartupStack/_components_/Layout/Layout.stories',
 ];
 

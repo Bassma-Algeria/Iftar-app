@@ -1,10 +1,8 @@
-import {useCallback, useEffect, useRef} from 'react';
+import {useCallback, useRef} from 'react';
 import {Animated, Dimensions, Easing} from 'react-native';
 
-import {RestaurantInfo} from '../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
-
-const usePopupAnimation = (restaurantId: RestaurantInfo | undefined) => {
-  const screenHeight = Dimensions.get('screen').height;
+const usePopupAnimation = (onClose?: Function) => {
+  const screenHeight = Dimensions.get('window').height;
 
   const translateY = useRef(new Animated.Value(screenHeight)).current;
 
@@ -23,17 +21,10 @@ const usePopupAnimation = (restaurantId: RestaurantInfo | undefined) => {
       duration: 200,
       useNativeDriver: true,
     }).start();
-  }, [translateY, screenHeight]);
+    onClose?.();
+  }, [translateY, screenHeight, onClose]);
 
-  useEffect(() => {
-    if (restaurantId) {
-      openPopup();
-    } else {
-      closePopup();
-    }
-  }, [closePopup, openPopup, restaurantId]);
-
-  return {translateY};
+  return {translateY, openPopup, closePopup};
 };
 
 export {usePopupAnimation};

@@ -1,5 +1,5 @@
-// if you use expo remove this line
-import {AppRegistry, Platform} from 'react-native';
+import React from 'react';
+import {AppRegistry, Platform, View} from 'react-native';
 
 import {getStorybookUI, configure, addDecorator} from '@storybook/react-native';
 import {withKnobs} from '@storybook/addon-knobs';
@@ -13,11 +13,11 @@ import './rn-addons';
 addDecorator(withKnobs);
 
 // uncomment code above to center the element
-// addDecorator(Elem => (
-//   <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
-//     <Elem />
-//   </View>
-// ));
+addDecorator(Elem => (
+  <View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
+    <Elem />
+  </View>
+));
 
 // import stories
 configure(() => {

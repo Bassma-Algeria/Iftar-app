@@ -31,10 +31,7 @@ const Welcom: React.FC<Props> = ({navigation}) => {
       </Layout>
 
       <View style={styles.buttonContainer}>
-        <Button
-          label="إبدأ الآن !"
-          onPress={() => navigation.replace('ChooseUsageType')}
-        />
+        <Button label="إبدأ الآن !" onPress={() => navigation.replace('ChooseUsageType')} />
       </View>
     </>
   );

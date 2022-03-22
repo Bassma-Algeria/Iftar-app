@@ -7,6 +7,5 @@ export type StartupStackStackParamsList = {
   Login: undefined;
 };
 
-export type StartupStackScreenProps<
-  CurrentScreen extends keyof StartupStackStackParamsList,
-> = NativeStackScreenProps<StartupStackStackParamsList, CurrentScreen>;
+export type StartupStackScreenProps<CurrentScreen extends keyof StartupStackStackParamsList> =
+  NativeStackScreenProps<StartupStackStackParamsList, CurrentScreen>;

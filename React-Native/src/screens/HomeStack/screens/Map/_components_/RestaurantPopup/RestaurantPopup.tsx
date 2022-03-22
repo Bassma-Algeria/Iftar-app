@@ -1,56 +1,31 @@
-import React, {useEffect} from 'react';
-import {Animated, Pressable, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React from 'react';
 
 import {styles} from '../../Map.style';
 
 import {useMapContext} from '../../_hooks_/useMapContext';
-import {usePopupAnimation} from './_hooks_/usePopupAnimation';
+import {useFromLocationCoordsToAdress} from './_hooks_/useFromLocationCoordsToAdress';
 
-import {RestaurantPopupBody} from './_components_/RestaurantPopupBody/RestaurantPopupBody';
+import {RestaurantInfoView} from './_components_/RestaurantPopupBody/RestaurantInfoView';
+import {Popup} from '../../../../../../components/Popup/Popup';
+import {Loader} from '../../../../../../components/Loader/Loader';
+import {Header} from '../../../../../../components/Header/Header';
 
 const RestaurantPopup: React.FC = () => {
-  const navigation = useNavigation();
   const {selectedRestaurant, setSelectedRestaurant} = useMapContext();
-
-  useEffect(() => {
-    if (!selectedRestaurant) {
-      return;
-    }
-
-    const unsubscribe = navigation.addListener('beforeRemove', e => {
-      e.preventDefault();
-      setSelectedRestaurant(undefined);
-    });
-
-    return unsubscribe;
-  }, [navigation, selectedRestaurant, setSelectedRestaurant]);
+  const {adress, error} = useFromLocationCoordsToAdress();
 
   return (
-    <>
-      <Overlay />
-      <AnimatedPopup />
-    </>
-  );
-};
-
-const Overlay: React.FC = () => {
-  const {selectedRestaurant, setSelectedRestaurant} = useMapContext();
-
-  return selectedRestaurant ? (
-    <Pressable style={styles.popupOverlay} onPress={() => setSelectedRestaurant(undefined)} />
-  ) : null;
-};
-
-const AnimatedPopup: React.FC = () => {
-  const {selectedRestaurant} = useMapContext();
-  const {translateY} = usePopupAnimation(selectedRestaurant);
-
-  return (
-    <Animated.View style={[styles.restaurantPopupContainer, {transform: [{translateY}]}]}>
-      <View style={styles.popupTopBar} />
-      <RestaurantPopupBody />
-    </Animated.View>
+    <Popup isOpen={!!selectedRestaurant} onClose={() => setSelectedRestaurant(undefined)}>
+      {!adress || !selectedRestaurant ? (
+        <Loader style={styles.restaurantPopupLoader} color="brown" size={50} />
+      ) : error ? (
+        <Header align="center" variant="h5" fontWeight="bold" style={styles.restaurantPopupLoader}>
+          يرجى التحقق من الاتصال بالإنترنت ، والمحاول مرة أخرى
+        </Header>
+      ) : (
+        <RestaurantInfoView {...selectedRestaurant} adress={adress} />
+      )}
+    </Popup>
   );
 };
 

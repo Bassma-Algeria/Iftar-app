@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-import type {LocationCords} from '../../../../../../../../../@types/LocationCords';
+import type {LocationCords} from '../../../../../../../@types/LocationCords';
 
 const useFromLocationCoordsToAdress = (locationCoords?: LocationCords) => {
   const [adress, setAdress] = useState<string>();

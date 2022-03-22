@@ -10,6 +10,7 @@ const ICONS = {
   openEye: require('../../assets/icons/open-eye.png'),
   phoneLightColor: require('../../assets/icons/phone-light-color.png'),
   myLocation: require('../../assets/icons/my-location.png'),
+  search: require('../../assets/icons/search.png'),
 };
 
 export {ICONS};

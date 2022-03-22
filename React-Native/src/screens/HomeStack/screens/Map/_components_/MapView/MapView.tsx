@@ -48,11 +48,7 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
     <GoogleMapView
       customMapStyle={mapStyle}
       style={styles.map}
-      initialRegion={{
-        ...initialLocation,
-        latitudeDelta: 0.08,
-        longitudeDelta: 0.03,
-      }}>
+      initialRegion={{...initialLocation, latitudeDelta: 0.08, longitudeDelta: 0.03}}>
       <MyPositionMarker coordinates={initialLocation} />
 
       <PathToRestaurant currentLocation={initialLocation} />
