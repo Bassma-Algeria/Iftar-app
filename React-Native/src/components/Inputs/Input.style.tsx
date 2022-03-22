@@ -3,6 +3,10 @@ import {StyleSheet} from 'react-native';
 import {FONTS} from '../Header/Header.style';
 
 const styles = StyleSheet.create({
+  inputHolder: {
+    width: '100%',
+  },
+
   inputContainer: {
     paddingLeft: 20,
     paddingRight: 20,

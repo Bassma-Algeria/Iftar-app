@@ -1,8 +1,4 @@
-import type {
-  SignupInfo,
-  IAuthGateway,
-  LoginInfo,
-} from '../AuthGateway.interface';
+import type {SignupInfo, IAuthGateway, LoginInfo} from '../AuthGateway.interface';
 
 import {RESTAURANTSOWNERS} from './RESTAURANTSOWNERS';
 
@@ -12,10 +8,7 @@ class RestaurantsOwnersFakeGateway implements IAuthGateway {
       setTimeout(
         () =>
           RESTAURANTSOWNERS.map(e => {
-            if (
-              e.email === userInfo.email &&
-              e.password === userInfo.password
-            ) {
+            if (e.email === userInfo.email && e.password === userInfo.password) {
               resolve('token');
             } else {
               reject({message: 'Invalid credentials'});

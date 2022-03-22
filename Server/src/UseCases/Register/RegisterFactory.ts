@@ -1,6 +1,6 @@
 import type { IRestaurantOwnersGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway.interface";
 import type { IPasswordManager } from "../../Ports/DrivenPorts/PasswordManager/PasswordManager.interface";
-import { ITokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
+import type { ITokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
 
 import { RestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwner";
 import type { IRestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwnerFactory";
