@@ -4,6 +4,9 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 30,
   },
+  layout: {
+    marginTop: -40,
+  },
   form: {
     marginTop: 20,
   },
@@ -15,6 +18,10 @@ const styles = StyleSheet.create({
   },
   textSpacer: {
     marginTop: 10,
+  },
+  spaceInputs: {
+    marginTop: 20,
+    marginBottom: 10,
   },
 });
 

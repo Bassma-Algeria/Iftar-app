@@ -4,15 +4,12 @@ import {FONTS} from '../Header/Header.style';
 
 const styles = StyleSheet.create({
   inputHolder: {
-    marginTop: 20,
-    marginBottom: 10,
     width: '100%',
   },
 
   inputContainer: {
     paddingLeft: 20,
     paddingRight: 20,
-    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
