@@ -10,24 +10,15 @@ import {View} from 'react-native';
 import {Input} from '../../../../components/Inputs/TextInput/Input';
 import {PasswordInput} from '../../../../components/Inputs/passwordInput/PasswordInput';
 import {Button} from '../../../../components/Button/Button';
+import {Loader} from '../../../../components/Loader/Loader';
+
+import type {StartupStackScreenProps} from '../../StartupStack.types';
 
 import {LoginInfo} from '../../../../Gateways/AuthGateway/AuthGateway.interface';
-import type {StartupStackScreenProps} from '../../StartupStack.types';
 import {RestaurantsOwnersFakeGateway} from '../../../../Gateways/AuthGateway/Fake/RestaurantOwnersFakeGateway';
-import {Loader} from '../../../../components/Loader/Loader';
 
 interface Props extends StartupStackScreenProps<'Login'> {}
 
-interface ErrorProps {
-  PropErrorState: boolean;
-  PropErrorMessage: string;
-}
-
-interface ErrorsProps {
-  email: ErrorProps;
-  password: ErrorProps;
-  credentials: ErrorProps;
-}
 interface LoginFormProps {
   email: string;
   password: string;
@@ -39,36 +30,12 @@ const Login: React.FC<Props> = ({navigation}) => {
     password: '',
   });
   const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<ErrorsProps>({
-    email: {
-      PropErrorState: false,
-      PropErrorMessage: '',
-    },
-    password: {
-      PropErrorState: false,
-      PropErrorMessage: '',
-    },
-    credentials: {
-      PropErrorState: false,
-      PropErrorMessage: '',
-    },
-  });
+  const [credentialserror, setCredentialsError] = useState<string>('');
 
   const LoginUser = (userInfo: LoginInfo) => {
     const RestaurentOwner = new RestaurantsOwnersFakeGateway();
 
     if (!(userInfo.email || userInfo.password)) {
-      setError({
-        ...error,
-        email: {
-          PropErrorState: true,
-          PropErrorMessage: 'Email should not be empty',
-        },
-        password: {
-          PropErrorState: true,
-          PropErrorMessage: 'Password should not be empty',
-        },
-      });
     } else {
       setLoading(true);
       RestaurentOwner.login(userInfo)
@@ -76,13 +43,8 @@ const Login: React.FC<Props> = ({navigation}) => {
           console.log(resp);
         })
         .catch(err => {
-          setError({
-            ...error,
-            credentials: {
-              PropErrorState: true,
-              PropErrorMessage: err.message,
-            },
-          });
+          console.log(err.message);
+          setCredentialsError(err.message);
         })
         .finally(() => {
           setLoading(false);
@@ -90,7 +52,7 @@ const Login: React.FC<Props> = ({navigation}) => {
     }
   };
   return (
-    <Layout>
+    <Layout style={styles.layout}>
       <View style={styles.container}>
         <Header color="brown" align="center" variant="h1" fontWeight="semibold">
           تسجيل الدخول
@@ -99,24 +61,16 @@ const Login: React.FC<Props> = ({navigation}) => {
           email={loginInfo.email}
           password={loginInfo.password}
           setLoginInfo={setLoginInfo}
-          setError={setError}
-          error={error}
           loginInfo={loginInfo}
+          setCredentialsError={setCredentialsError}
         />
-        <Header
-          color="brown"
-          align="right"
-          variant="h6"
-          fontWeight="regular"
-          style={styles.text}>
+        <Header color="brown" align="right" variant="h6" fontWeight="regular" style={styles.text}>
           نسيت كلمة المرور
         </Header>
-        {error.credentials.PropErrorState ? (
+        {!credentialserror && (
           <Header color="red" align="center" variant="h3" fontWeight="regular">
-            {error.credentials.PropErrorMessage}
+            {credentialserror}
           </Header>
-        ) : (
-          <></>
         )}
         <View style={styles.buttonContainer}>
           {loading ? (
@@ -137,7 +91,7 @@ const Login: React.FC<Props> = ({navigation}) => {
           onPress={() => navigation.navigate('Register')}
           color="brown"
           align="center"
-          variant="h3"
+          variant="h4"
           fontWeight="regular"
           style={[styles.text, styles.textSpacer]}>
           أنت لا تملك حسابا ؟ سجل الآن
@@ -152,8 +106,7 @@ interface LoginProps {
   password: string;
   loginInfo: LoginFormProps;
   setLoginInfo: Dispatch<SetStateAction<LoginFormProps>>;
-  error: ErrorsProps;
-  setError: Dispatch<SetStateAction<ErrorsProps>>;
+  setCredentialsError: Dispatch<SetStateAction<string>>;
 }
 
 const LoginForm: React.FC<LoginProps> = ({
@@ -161,63 +114,17 @@ const LoginForm: React.FC<LoginProps> = ({
   password,
   setLoginInfo,
   loginInfo,
-  error,
-  setError,
+  setCredentialsError,
 }) => {
   const setEmail = (e: string) => {
     setLoginInfo({...loginInfo, email: e});
-    setError({
-      ...error,
-      credentials: {
-        PropErrorState: false,
-        PropErrorMessage: '',
-      },
-    });
-    if (!e) {
-      setError({
-        ...error,
-        email: {
-          PropErrorState: true,
-          PropErrorMessage: 'Email should not be empty',
-        },
-      });
-    } else {
-      setError({
-        ...error,
-        email: {
-          PropErrorState: false,
-          PropErrorMessage: '',
-        },
-      });
-    }
+    setCredentialsError('');
   };
   const setPassword = (e: string) => {
     setLoginInfo({...loginInfo, password: e});
-    setError({
-      ...error,
-      credentials: {
-        PropErrorState: false,
-        PropErrorMessage: '',
-      },
-    });
-    if (!e) {
-      setError({
-        ...error,
-        password: {
-          PropErrorState: true,
-          PropErrorMessage: 'Password should not be empty',
-        },
-      });
-    } else {
-      setError({
-        ...error,
-        password: {
-          PropErrorState: false,
-          PropErrorMessage: '',
-        },
-      });
-    }
+    setCredentialsError('');
   };
+
   return (
     <View style={styles.form}>
       <Input
@@ -226,36 +133,16 @@ const LoginForm: React.FC<LoginProps> = ({
         label="البريد الالكتروني"
         keyboardType="default"
         icon={ICONS.email}
+        pattern={new RegExp(/^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/)}
+        type="Email"
+        style={styles.spaceInputs}
       />
-      {error.email.PropErrorState ? (
-        <Header
-          color="red"
-          align="right"
-          variant="h6"
-          fontWeight="regular"
-          style={styles.text}>
-          {error.email.PropErrorMessage}
-        </Header>
-      ) : (
-        <></>
-      )}
       <PasswordInput
         password={password}
         setPassword={setPassword}
         label="كلمة المرور"
+        style={styles.spaceInputs}
       />
-      {error.password.PropErrorState ? (
-        <Header
-          color="red"
-          align="right"
-          variant="h6"
-          fontWeight="regular"
-          style={styles.text}>
-          {error.password.PropErrorMessage}
-        </Header>
-      ) : (
-        <></>
-      )}
     </View>
   );
 };
