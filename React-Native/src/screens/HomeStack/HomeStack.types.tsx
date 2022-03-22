@@ -4,6 +4,5 @@ export type HomeStackParamsList = {
   Map: undefined;
 };
 
-export type HomeStackScreenProps<
-  CurrentScreen extends keyof HomeStackParamsList,
-> = NativeStackScreenProps<HomeStackParamsList, CurrentScreen>;
+export type HomeStackScreenProps<CurrentScreen extends keyof HomeStackParamsList> =
+  NativeStackScreenProps<HomeStackParamsList, CurrentScreen>;

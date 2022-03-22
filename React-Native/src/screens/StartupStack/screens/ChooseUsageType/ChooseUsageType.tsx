@@ -29,8 +29,8 @@ const ChooseUsageType: React.FC<Props> = ({navigation}) => {
         <View style={styles.buttonsSeparator} />
 
         <Button
-          label="أضف مطعم"
-          onPress={() => navigation.navigate('StartupStack', {screen: 'Register'})}
+          label="أضف مطعم "
+          onPress={() => navigation.navigate('StartupStack', {screen: 'Login'})}
         />
       </View>
     </>

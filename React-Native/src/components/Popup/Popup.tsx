@@ -8,12 +8,13 @@ import {usePopupAnimation} from './_hooks_/usePopupAnimation';
 
 interface Props {
   isOpen: boolean;
+  onOpen?: Function;
   onClose?: Function;
 }
 
-const Popup: React.FC<Props> = ({isOpen, children, onClose}) => {
+const Popup: React.FC<Props> = ({isOpen, children, onOpen, onClose}) => {
   const navigation = useNavigation();
-  const {translateY, closePopup, openPopup} = usePopupAnimation(onClose);
+  const {translateY, closePopup, openPopup, isPopupOpened} = usePopupAnimation(onOpen, onClose);
 
   useEffect(() => {
     if (isOpen) {
@@ -38,7 +39,7 @@ const Popup: React.FC<Props> = ({isOpen, children, onClose}) => {
 
   return (
     <>
-      {isOpen && <Overlay onPress={closePopup} />}
+      {isPopupOpened && <Overlay closePopup={closePopup} />}
 
       <Animated.ScrollView style={[styles.container, {transform: [{translateY}]}]}>
         <View style={styles.topBar} />
@@ -50,11 +51,11 @@ const Popup: React.FC<Props> = ({isOpen, children, onClose}) => {
 };
 
 interface OverlayProp {
-  onPress: () => void;
+  closePopup: () => void;
 }
 
-const Overlay: React.FC<OverlayProp> = ({onPress}) => {
-  return <Pressable style={styles.overlay} onPress={onPress} />;
+const Overlay: React.FC<OverlayProp> = ({closePopup}) => {
+  return <Pressable style={styles.overlay} onPress={closePopup} />;
 };
 
 export {Popup};

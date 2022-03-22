@@ -1,9 +1,10 @@
-import {useCallback, useRef} from 'react';
+import {useCallback, useRef, useState} from 'react';
 import {Animated, Dimensions, Easing} from 'react-native';
 
-const usePopupAnimation = (onClose?: Function) => {
+const usePopupAnimation = (onOpen?: Function, onClose?: Function) => {
   const screenHeight = Dimensions.get('window').height;
 
+  const [isPopupOpened, setIsPopupOpened] = useState(false);
   const translateY = useRef(new Animated.Value(screenHeight)).current;
 
   const openPopup = useCallback(() => {
@@ -13,7 +14,9 @@ const usePopupAnimation = (onClose?: Function) => {
       easing: Easing.circle,
       useNativeDriver: true,
     }).start();
-  }, [translateY]);
+    onOpen?.();
+    setIsPopupOpened(true);
+  }, [translateY, onOpen]);
 
   const closePopup = useCallback(() => {
     Animated.timing(translateY, {
@@ -22,9 +25,10 @@ const usePopupAnimation = (onClose?: Function) => {
       useNativeDriver: true,
     }).start();
     onClose?.();
+    setIsPopupOpened(false);
   }, [translateY, screenHeight, onClose]);
 
-  return {translateY, openPopup, closePopup};
+  return {translateY, openPopup, closePopup, isPopupOpened};
 };
 
 export {usePopupAnimation};
