@@ -17,6 +17,8 @@ target 'my_app' do
 
   pod 'react-native-simple-toast', :path => '../node_modules/react-native-simple-toast'
 
+  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
+
   target 'my_appTests' do
     inherit! :complete
     # Pods for testing

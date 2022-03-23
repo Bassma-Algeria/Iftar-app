@@ -9,6 +9,7 @@ const COLORS = {
   beige: '#F4E6CA',
   whiteShade: '#FFFCF1',
   red: '#bb0000',
+  grey: '#C4C4C4',
 };
 
 export {COLORS};

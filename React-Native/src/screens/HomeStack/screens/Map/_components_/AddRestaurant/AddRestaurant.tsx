@@ -1,4 +1,3 @@
-import {Image, Pressable, View} from 'react-native';
 import React, {useState} from 'react';
 
 import {styles} from './AddRestaurant.style';
@@ -7,19 +6,18 @@ import {ICONS} from '../../../../../../utils/constants/Icons';
 
 import {Button} from '../../../../../../components/Button/Button';
 import {Popup} from '../../../../../../components/Popup/Popup';
-import {Header} from '../../../../../../components/Header/Header';
-import {Input} from '../../../../../../components/Inputs/TextInput/Input';
+import {SubmitButton} from './_components_/SubmitButton';
+import {AddRestaurantForm} from './_components_/AddRestaurantForm/AddRestaurantForm';
+
+import {AddRestaurantFormContextProvider} from './_context_/AddRestaurantFormContextProvider';
 
 const AddRestaurant: React.FC = () => {
-  const [isAddingRestaurantFormOpened, setIsAddingRestaurantFormOpened] = useState<boolean>(false);
+  const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
   return (
     <>
-      <AddRestaurantButton setIsPopupOpen={setIsAddingRestaurantFormOpened} />
-      <AddRestaurantFormPopup
-        isOpen={isAddingRestaurantFormOpened}
-        setIsPopupOpen={setIsAddingRestaurantFormOpened}
-      />
+      <AddRestaurantButton setIsPopupOpen={setIsFormOpen} />
+      <AddRestaurantFormPopup isOpen={isFormOpen} setIsPopupOpen={setIsFormOpen} />
     </>
   );
 };
@@ -46,43 +44,11 @@ const AddRestaurantFormPopup: React.FC<Props & {isOpen: boolean}> = ({isOpen, se
       onClose={() => setIsPopupOpen(false)}
       isOpen={isOpen}
       fullHight>
-      <View>
-        <View style={styles.inputsContainer}>
-          <Header style={styles.title} align="center">
-            يرجى إدخال بعض المعلومات الخاصة بالمطعم
-          </Header>
-
-          <Input placeholder="اسم مالك المطعم" style={styles.input} icon={ICONS.profilePrimary} />
-          <Input placeholder="اسم المطعم" style={styles.input} icon={ICONS.edit} />
-          <Input placeholder="الموقع" style={styles.input} icon={ICONS.locationFilled} />
-
-          <Header>اوقات العمل</Header>
-          <View style={styles.workTimesContainer}>
-            <Input placeholder="الى" style={styles.workTimeInput} icon={ICONS.clock} />
-            <Input placeholder="من" style={styles.workTimeInput} icon={ICONS.clock} />
-          </View>
-        </View>
-
-        <Pictures />
-      </View>
-
-      <Button style={styles.confirmInfoButtonContainer} icon={ICONS.done}>
-        تأكيد المعلومات
-      </Button>
+      <AddRestaurantFormContextProvider>
+        <AddRestaurantForm />
+        <SubmitButton />
+      </AddRestaurantFormContextProvider>
     </Popup>
-  );
-};
-
-const Pictures: React.FC = () => {
-  return (
-    <View style={styles.picturesContainer}>
-      <Pressable style={styles.addPicture}>
-        <View style={styles.addPictureIconContainer}>
-          <Image source={ICONS.addPicture} style={styles.addPictureIcon} resizeMode="contain" />
-        </View>
-        <Header fontWeight="semibold">أضف صورة</Header>
-      </Pressable>
-    </View>
   );
 };
 

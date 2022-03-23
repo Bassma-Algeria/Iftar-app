@@ -11,6 +11,8 @@ import {
 
 import {styles} from '../BaseInput.style';
 
+import {COLORS} from '../../../theme/Colors';
+
 import {BaseInput} from '../BaseInput';
 
 interface Props {
@@ -22,6 +24,7 @@ interface Props {
   iconPosition?: 'left' | 'right';
   style?: StyleProp<ViewStyle>;
   error?: string;
+  disable?: boolean;
 }
 
 const Input: React.FC<Props> = props => {
@@ -34,6 +37,8 @@ const Input: React.FC<Props> = props => {
         onChangeText={props.onTextChange}
         placeholder={props.placeholder}
         keyboardType={props.keyboardType}
+        placeholderTextColor={COLORS.grey}
+        editable={!props.disable}
       />
     </BaseInput>
   );

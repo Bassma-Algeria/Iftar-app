@@ -12,6 +12,8 @@ import {styles} from '../BaseInput.style';
 
 import {ICONS} from '../../../utils/constants/Icons';
 
+import {COLORS} from '../../../theme/Colors';
+
 import {BaseInput} from '../BaseInput';
 
 interface Props {
@@ -35,6 +37,7 @@ const PasswordInput: React.FC<Props> = props => {
         value={props.value}
         placeholder={props.placeholder}
         secureTextEntry={hidePassword}
+        placeholderTextColor={COLORS.grey}
       />
     </BaseInput>
   );
