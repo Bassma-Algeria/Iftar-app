@@ -7,14 +7,14 @@ import {ICONS} from '../../../../../utils/constants/Icons';
 import {Header} from '../../../../../components/Header/Header';
 import {View} from 'react-native';
 import {Input} from '../../../../../components/Inputs/TextInput/Input';
-import {PasswordInput} from '../../../../../components/Inputs/passwordInput/PasswordInput';
+import {PasswordInput} from '../../../../../components/Inputs/PasswordInput/PasswordInput';
 import {Button} from '../../../../../components/Button/Button';
 import {Loader} from '../../../../../components/Loader/Loader';
 
 import {useRegistrationContext} from '../../../_hooks_/UseRegistrationContext';
 
 import {SignupInfo} from '../../../../../Gateways/AuthGateway/AuthGateway.interface';
-import {RestaurentOwner} from '../../../../../Gateways';
+import {restaurentOwner} from '../../../../../Gateways';
 
 interface RegistrationProps {}
 
@@ -30,7 +30,8 @@ const RegisterationForm: React.FC<RegistrationProps> = () => {
       //Will add shaker
     } else {
       setLoading(true);
-      RestaurentOwner.signup(userInfo)
+      restaurentOwner
+        .signup(userInfo)
         .then((resp: any) => {
           console.log(resp);
         })
@@ -57,17 +58,8 @@ const RegisterationForm: React.FC<RegistrationProps> = () => {
       )}
 
       <View style={styles.buttonContainer}>
-        <Button
-          onPress={() => {
-            RegisterUser(registrationInfo);
-          }}>
-          {loading ? (
-            <Loader size={30} color="brown" />
-          ) : (
-            <Header color="whiteShade" variant="h4" fontWeight="semibold">
-              سجل الآن
-            </Header>
-          )}
+        <Button onPress={() => RegisterUser(registrationInfo)}>
+          {loading ? <Loader size={30} color="brown" /> : 'سجل الآن'}
         </Button>
       </View>
     </View>

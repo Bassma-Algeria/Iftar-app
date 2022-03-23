@@ -4,6 +4,6 @@ import {RestaurantsFakeGateway} from './RestaurantsGateway/Fake/RestaurantsFakeG
 import {IRestaurantsGateway} from './RestaurantsGateway/RestaurantsGateway.interface';
 
 const restuarantsGateway: IRestaurantsGateway = new RestaurantsFakeGateway();
-const RestaurentOwner: IAuthGateway = new RestaurantsOwnersFakeGateway();
+const restaurentOwner: IAuthGateway = new RestaurantsOwnersFakeGateway();
 
-export {restuarantsGateway, RestaurentOwner};
+export {restuarantsGateway, restaurentOwner};

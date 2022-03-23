@@ -11,6 +11,8 @@ import {Shadow} from 'react-native-shadow-2';
 
 import {COLORS} from '../../theme/Colors';
 
+import {Header} from '../Header/Header';
+
 // styles
 import {styles} from './Button.style';
 
@@ -24,7 +26,9 @@ const Button: React.FC<Props> = ({onPress, children, icon, style}) => {
   return (
     <Shadow viewStyle={styles.container} startColor={COLORS.primaryShadow} distance={4}>
       <TouchableOpacity style={[styles.button, style]} onPress={onPress} activeOpacity={0.8}>
-        {children}
+        <Header color="whiteShade" variant="h4" fontWeight="semibold">
+          {children}
+        </Header>
 
         {icon && <Icon icon={icon} />}
       </TouchableOpacity>

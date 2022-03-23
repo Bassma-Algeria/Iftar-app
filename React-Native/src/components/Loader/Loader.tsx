@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Loader: React.FC<Props> = props => {
-  return <ActivityIndicator {...props} />;
+  return <ActivityIndicator {...props} color={props.color && COLORS[props.color]} />;
 };
 
 export {Loader};

@@ -31,11 +31,7 @@ const Welcom: React.FC<Props> = ({navigation}) => {
       </Layout>
 
       <View style={styles.buttonContainer}>
-        <Button onPress={() => navigation.replace('ChooseUsageType')}>
-          <Header color="whiteShade" variant="h4" fontWeight="semibold">
-            إبدأ الآن !
-          </Header>
-        </Button>
+        <Button onPress={() => navigation.replace('ChooseUsageType')}>إبدأ الآن !</Button>
       </View>
     </>
   );

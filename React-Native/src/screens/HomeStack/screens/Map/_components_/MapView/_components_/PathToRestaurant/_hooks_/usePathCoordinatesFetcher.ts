@@ -44,7 +44,7 @@ const fetchDirectionCoords = async (params: Params) => {
 };
 
 const getDirectionUrl = ({destinationLocation, startLocation}: Params) => {
-  const KEY = 'AIzaSyCPoVKbYZ1VDQGzSBsZaAXATVNhNYATwi0';
+  const KEY = 'AIzaSyDMUiPh6nBOeX30N3U3W1f0GjpX_idS6D8';
   const startLoc = `${startLocation.latitude},${startLocation.longitude}`;
   const destLoc = `${destinationLocation.latitude},${destinationLocation.longitude}`;
 

@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 
-import {LoginContext} from '../_context_/LoginContext';
+import {LoginContext} from '../_context_/LoginContextProvider';
 
 const useLoginContext = () => {
   const values = useContext(LoginContext);

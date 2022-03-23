@@ -22,11 +22,17 @@ const styles = StyleSheet.create({
   },
 
   iconContainer: {
-    width: 40,
+    width: 22,
   },
 
   icon: {
     width: '100%',
+  },
+
+  errorText: {
+    paddingRight: 15,
+    fontSize: 12,
+    marginTop: -5,
   },
 });
 

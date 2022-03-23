@@ -8,7 +8,6 @@ import {Logo} from '../../../../components/Logo/Logo';
 import {Button} from '../../../../components/Button/Button';
 
 import type {MainStackScreenProps} from '../../../MainStack.types';
-import {Header} from '../../../../components/Header/Header';
 
 interface Props extends MainStackScreenProps<'StartupStack'> {}
 
@@ -23,17 +22,13 @@ const ChooseUsageType: React.FC<Props> = ({navigation}) => {
 
       <View style={styles.buttonsContainer}>
         <Button onPress={() => navigation.navigate('HomeStack', {screen: 'Map'})}>
-          <Header color="whiteShade" variant="h4" fontWeight="semibold">
-            إبحث عن مطعم
-          </Header>
+          إبحث عن مطعم
         </Button>
 
         <View style={styles.buttonsSeparator} />
 
         <Button onPress={() => navigation.navigate('StartupStack', {screen: 'Login'})}>
-          <Header color="whiteShade" variant="h4" fontWeight="semibold">
-            أضف مطعم
-          </Header>
+          أضف مطعم
         </Button>
       </View>
     </>

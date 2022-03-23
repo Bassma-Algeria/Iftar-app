@@ -9,10 +9,9 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import {Shadow} from 'react-native-shadow-2';
-import {Header} from '../../Header/Header';
+import {styles} from '../BaseInput.style';
 
-import {styles} from '../Input.style';
+import {BaseInput} from '../BaseInput';
 
 interface Props {
   placeholder: string;
@@ -23,36 +22,28 @@ interface Props {
   iconPosition?: 'left' | 'right';
   style?: StyleProp<ViewStyle>;
   error?: string;
-  size: number;
 }
 
 const Input: React.FC<Props> = props => {
-  let customStyle: StyleProp<ViewStyle> = {};
-  if (props.iconPosition === 'right') {
-    customStyle = {
-      flexDirection: 'row-reverse',
-    };
-  }
   return (
-    <>
-      <Shadow distance={6} startColor={'#00000010'} containerViewStyle={props.style}>
-        <View style={[styles.inputContainer, customStyle]}>
-          <Image width={props.size} source={props.icon} resizeMode="contain" />
-          <TextInput
-            style={styles.input}
-            value={props.value}
-            onChangeText={props.onTextChange}
-            placeholder={props.placeholder}
-            keyboardType={props.keyboardType}
-          />
-        </View>
-      </Shadow>
-      {!!props.error && (
-        <Header color="red" align="right" variant="h6" fontWeight="regular">
-          {props.error}
-        </Header>
-      )}
-    </>
+    <BaseInput {...props}>
+      <Icon icon={props.icon} />
+      <TextInput
+        style={styles.input}
+        value={props.value}
+        onChangeText={props.onTextChange}
+        placeholder={props.placeholder}
+        keyboardType={props.keyboardType}
+      />
+    </BaseInput>
+  );
+};
+
+const Icon: React.FC<{icon: ImageSourcePropType}> = ({icon}) => {
+  return (
+    <View style={styles.iconContainer}>
+      <Image source={icon} style={styles.icon} resizeMode="contain" />
+    </View>
   );
 };
 

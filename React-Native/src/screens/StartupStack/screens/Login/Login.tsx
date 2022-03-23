@@ -8,8 +8,7 @@ import {View} from 'react-native';
 
 import type {StartupStackScreenProps} from '../../StartupStack.types';
 
-import {LoginContextProvider} from '../../_context_/LoginContext';
-import {LoginForm} from './_components_/LoginForm';
+import {LoginForm} from './_components_/LoginForm/LoginForm';
 
 interface Props extends StartupStackScreenProps<'Login'> {}
 
@@ -20,9 +19,9 @@ const Login: React.FC<Props> = ({navigation}) => {
         <Header color="brown" align="center" variant="h1" fontWeight="semibold">
           تسجيل الدخول
         </Header>
-        <LoginContextProvider>
-          <LoginForm />
-        </LoginContextProvider>
+
+        <LoginForm />
+
         <Header
           onPress={() => navigation.navigate('Register')}
           color="brown"

@@ -29,7 +29,7 @@ const fetchAdressOf = async (coords: LocationCords): Promise<string> => {
 };
 
 const getAdressFetchingUrl = ({latitude, longitude}: LocationCords) => {
-  const KEY = 'AIzaSyCPoVKbYZ1VDQGzSBsZaAXATVNhNYATwi0';
+  const KEY = 'AIzaSyDMUiPh6nBOeX30N3U3W1f0GjpX_idS6D8';
   const latlng = `${latitude},${longitude}`;
 
   return `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latlng}&sensor=true&language=ar&result_type=administrative_area_level_1|administrative_area_level_2&key=${KEY}`;
