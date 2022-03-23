@@ -37,7 +37,9 @@ const RestaurantInfoView: React.FC<Params> = props => {
       <View style={styles.restaurantDetails}>
         <RestaurantInfoItems {...props} />
 
-        <Button label="أظهر الطريق" icon={ICONS.leftArrow} onPress={handleDirectionButtonClick} />
+        <Button icon={ICONS.leftArrow} onPress={handleDirectionButtonClick}>
+          أظهر الطريق
+        </Button>
       </View>
     </>
   );

@@ -9,6 +9,5 @@ export type MainStackParamsList = {
   HomeStack: NavigatorScreenParams<HomeStackParamsList>;
 };
 
-export type MainStackScreenProps<
-  CurrentScreen extends keyof MainStackParamsList,
-> = NativeStackScreenProps<MainStackParamsList, CurrentScreen>;
+export type MainStackScreenProps<CurrentScreen extends keyof MainStackParamsList> =
+  NativeStackScreenProps<MainStackParamsList, CurrentScreen>;

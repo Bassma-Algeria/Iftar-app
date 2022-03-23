@@ -27,7 +27,7 @@ interface Props {
 const Input: React.FC<Props> = props => {
   return (
     <BaseInput {...props}>
-      <Icon icon={props.icon} />
+      <Icon icon={props.icon} position={props.iconPosition} />
       <TextInput
         style={styles.input}
         value={props.value}
@@ -39,9 +39,20 @@ const Input: React.FC<Props> = props => {
   );
 };
 
-const Icon: React.FC<{icon: ImageSourcePropType}> = ({icon}) => {
+interface IconProps {
+  icon: ImageSourcePropType;
+  position?: 'left' | 'right';
+}
+
+const Icon: React.FC<IconProps> = ({icon, position}) => {
+  let customStyle: StyleProp<ViewStyle> = {};
+
+  if (position === 'right') {
+    customStyle.marginLeft = 5;
+  }
+
   return (
-    <View style={styles.iconContainer}>
+    <View style={[styles.iconContainer, customStyle]}>
       <Image source={icon} style={styles.icon} resizeMode="contain" />
     </View>
   );

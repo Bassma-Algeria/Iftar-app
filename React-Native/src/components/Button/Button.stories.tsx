@@ -7,14 +7,10 @@ import {ICONS} from '../../utils/constants/Icons';
 
 const buttonStories = storiesOf('Button', module);
 
-buttonStories.add('Without Icon', () => (
-  <Button onPress={action('clicked')} label={'إبدأ الآن !'} />
-));
+buttonStories.add('Without Icon', () => <Button onPress={action('clicked')}>إبدأ الآن !</Button>);
 
 buttonStories.add('With Icon', () => (
-  <Button
-    onPress={action('clicked')}
-    label={'إبدأ الآن !'}
-    icon={ICONS.leftArrow}
-  />
+  <Button onPress={action('clicked')} icon={ICONS.leftArrow}>
+    إبدأ الآن !
+  </Button>
 ));

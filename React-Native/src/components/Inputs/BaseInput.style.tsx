@@ -4,7 +4,7 @@ import {FONTS} from '../Header/Header.style';
 
 const styles = StyleSheet.create({
   inputContainer: {
-    paddingLeft: 20,
+    paddingLeft: 18,
     paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -22,11 +22,13 @@ const styles = StyleSheet.create({
   },
 
   iconContainer: {
-    width: 22,
+    width: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   icon: {
-    width: '100%',
+    width: '70%',
   },
 
   errorText: {
