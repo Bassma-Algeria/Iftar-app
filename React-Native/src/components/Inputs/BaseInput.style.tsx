@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'space-between',
     height: 60,
+    flex: 1,
   },
 
   input: {

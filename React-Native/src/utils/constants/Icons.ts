@@ -11,6 +11,7 @@ const ICONS = {
   phoneLightColor: require('../../assets/icons/phone-light-color.png'),
   myLocation: require('../../assets/icons/my-location.png'),
   search: require('../../assets/icons/search.png'),
+  profile: require('../../assets/icons/profile.png'),
 };
 
 export {ICONS};

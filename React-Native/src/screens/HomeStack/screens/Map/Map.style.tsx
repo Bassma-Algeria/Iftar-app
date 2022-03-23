@@ -11,7 +11,18 @@ const styles = StyleSheet.create({
     top: 0,
     padding: 10,
     width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     zIndex: 1,
+  },
+
+  profileIcon: {
+    marginRight: 10,
+  },
+
+  topBarInput: {
+    flex: 1,
   },
 
   map: {
