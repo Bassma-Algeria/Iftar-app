@@ -8,12 +8,12 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     width: '100%',
-    borderTopRightRadius: 40,
-    borderTopLeftRadius: 40,
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
     elevation: 40,
-    shadowColor: COLORS.primaryShadow,
+    shadowColor: COLORS.primary,
     zIndex: 3,
-    maxHeight: Dimensions.get('window').height,
+    maxHeight: Dimensions.get('window').height - 30,
   },
 
   overlay: {

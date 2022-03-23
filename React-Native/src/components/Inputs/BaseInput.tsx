@@ -21,7 +21,7 @@ const BaseInput: React.FC<Props> = ({children, ...props}) => {
 
   return (
     <>
-      <Shadow distance={6} startColor={'#00000010'} containerViewStyle={props.style}>
+      <Shadow distance={4} startColor={'#00000010'} containerViewStyle={props.style}>
         <View style={[styles.inputContainer, customStyle]}>{children}</View>
       </Shadow>
 

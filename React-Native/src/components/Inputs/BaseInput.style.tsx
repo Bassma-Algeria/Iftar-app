@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'space-between',
     height: 60,
-    flex: 1,
   },
 
   input: {
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
   },
 
   iconContainer: {
-    width: 30,
+    width: 25,
     alignItems: 'center',
     justifyContent: 'center',
   },

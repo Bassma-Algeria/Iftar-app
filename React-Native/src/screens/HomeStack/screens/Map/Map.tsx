@@ -10,6 +10,7 @@ import {MapContextProvider} from './_context_/MapContextProvider';
 import {MapView} from './_components_/MapView/MapView';
 import {RestaurantPopup} from './_components_/RestaurantPopup/RestaurantPopup';
 import {TopBar} from './_components_/TopBar/TopBar';
+import {AddRestaurant} from './_components_/AddRestaurant/AddRestaurant';
 
 interface Props extends HomeStackScreenProps<'Map'> {}
 
@@ -20,6 +21,7 @@ const Map: React.FC<Props> = () => {
         <TopBar />
         <MapView />
         <RestaurantPopup />
+        <AddRestaurant />
       </View>
     </MapContextProvider>
   );

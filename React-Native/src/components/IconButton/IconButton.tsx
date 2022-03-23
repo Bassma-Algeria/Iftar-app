@@ -1,7 +1,9 @@
 import React from 'react';
 import {TouchableOpacity, ViewStyle, StyleProp, Image, ImageSourcePropType} from 'react-native';
 import {Shadow} from 'react-native-shadow-2';
+
 import {COLORS} from '../../theme/Colors';
+
 import {styles} from './IconButton.style';
 
 interface Props {

@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 30,
     width: '100%',
+    height: 60,
     padding: 13,
     backgroundColor: COLORS.primary,
     alignItems: 'center',
@@ -18,9 +19,8 @@ const styles = StyleSheet.create({
   },
 
   iconContainer: {
-    width: 22,
+    width: 18,
     marginRight: 20,
-    bottom: 2,
   },
 
   icon: {

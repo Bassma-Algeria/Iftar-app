@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Animated, Pressable} from 'react-native';
+import {View, Animated, Pressable, ScrollView, StyleProp, ViewStyle} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {styles} from './Popup.style';
@@ -8,12 +8,15 @@ import {usePopupAnimation} from './_hooks_/usePopupAnimation';
 
 interface Props {
   isOpen: boolean;
+  fullHight?: boolean;
   onOpen?: Function;
   onClose?: Function;
+  containerStyle?: StyleProp<ViewStyle>;
 }
 
-const Popup: React.FC<Props> = ({isOpen, children, onOpen, onClose}) => {
+const Popup: React.FC<Props> = ({isOpen, children, onOpen, onClose, fullHight, containerStyle}) => {
   const navigation = useNavigation();
+  const height = fullHight ? '100%' : 'auto';
   const {translateY, closePopup, openPopup, isPopupOpened} = usePopupAnimation(onOpen, onClose);
 
   useEffect(() => {
@@ -41,11 +44,11 @@ const Popup: React.FC<Props> = ({isOpen, children, onOpen, onClose}) => {
     <>
       {isPopupOpened && <Overlay closePopup={closePopup} />}
 
-      <Animated.ScrollView style={[styles.container, {transform: [{translateY}]}]}>
+      <Animated.View style={[styles.container, {height, transform: [{translateY}]}]}>
         <View style={styles.topBar} />
 
-        {children}
-      </Animated.ScrollView>
+        <ScrollView contentContainerStyle={containerStyle}>{children}</ScrollView>
+      </Animated.View>
     </>
   );
 };
