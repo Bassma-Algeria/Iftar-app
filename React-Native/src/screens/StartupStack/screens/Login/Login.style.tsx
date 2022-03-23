@@ -1,11 +1,20 @@
+import {Dimensions} from 'react-native';
+
 import {StyleSheet} from 'react-native';
 
+const windowHeight = Dimensions.get('window').height;
+let margin: number;
+if (windowHeight <= 700) {
+  margin = -100;
+} else {
+  margin = -40;
+}
 const styles = StyleSheet.create({
   container: {
     marginTop: 30,
   },
   layout: {
-    marginTop: -40,
+    marginTop: margin,
   },
   form: {
     marginTop: 20,

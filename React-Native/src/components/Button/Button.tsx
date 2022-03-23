@@ -11,25 +11,20 @@ import {Shadow} from 'react-native-shadow-2';
 
 import {COLORS} from '../../theme/Colors';
 
-import {Header} from '../Header/Header';
-
 // styles
 import {styles} from './Button.style';
 
 interface Props {
-  label: string;
   icon?: ImageSourcePropType;
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
 }
 
-const Button: React.FC<Props> = ({onPress, label, icon, style}) => {
+const Button: React.FC<Props> = ({onPress, children, icon, style}) => {
   return (
     <Shadow viewStyle={styles.container} startColor={COLORS.primaryShadow} distance={4}>
       <TouchableOpacity style={[styles.button, style]} onPress={onPress} activeOpacity={0.8}>
-        <Header color="whiteShade" variant="h4" fontWeight="semibold">
-          {label}
-        </Header>
+        {children}
 
         {icon && <Icon icon={icon} />}
       </TouchableOpacity>

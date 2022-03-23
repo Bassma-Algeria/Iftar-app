@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   TextInput,
   View,
@@ -17,55 +17,37 @@ import {ICONS} from '../../../utils/constants/Icons';
 import {Header} from '../../Header/Header';
 
 interface Props {
-  label: string;
-  password: string;
-  setPassword: (e: string) => void;
+  value: string;
+  onTextChange: (text: string) => void;
+  error?: string;
+  placeholder: string;
   style?: StyleProp<ViewStyle>;
 }
 
-const PasswordInput: React.FC<Props> = ({label, setPassword, password, style}) => {
+const PasswordInput: React.FC<Props> = props => {
   const [hidePassword, setHidePassword] = React.useState<boolean>(true);
-  const [inputError, setinputError] = useState<string>('');
-  const setInput = (t: string) => {
-    if (!t) {
-      setinputError('Password cannot be empty');
-    } else {
-      setinputError('');
-    }
-    setPassword(t);
-  };
-  const setInputError = () => {
-    if (!password) {
-      setinputError('Password cannot be empty');
-    } else {
-      setinputError('');
-    }
-  };
   const handleHidePasswordChange = () => setHidePassword(!hidePassword);
 
   return (
     <>
-      <View style={[styles.inputHolder, style]}>
-        <Shadow distance={6} startColor={'#00000010'}>
-          <View style={styles.inputContainer}>
-            <EyeIcon
-              hidePassword={hidePassword}
-              handleHidePasswordChange={handleHidePasswordChange}
-            />
-            <TextInput
-              style={styles.input}
-              onChangeText={setInput}
-              value={password}
-              placeholder={label}
-              secureTextEntry={hidePassword}
-              onEndEditing={setInputError}
-            />
-          </View>
-        </Shadow>
-      </View>
-      {!!inputError && (
+      <Shadow distance={6} startColor={'#00000010'} containerViewStyle={props.style}>
+        <View style={styles.inputContainer}>
+          <EyeIcon
+            hidePassword={hidePassword}
+            handleHidePasswordChange={handleHidePasswordChange}
+          />
+          <TextInput
+            style={styles.input}
+            onChangeText={props.onTextChange}
+            value={props.value}
+            placeholder={props.placeholder}
+            secureTextEntry={hidePassword}
+          />
+        </View>
+      </Shadow>
+      {!!props.error && (
         <Header color="red" align="right" variant="h6" fontWeight="regular">
-          {inputError}
+          {props.error}
         </Header>
       )}
     </>

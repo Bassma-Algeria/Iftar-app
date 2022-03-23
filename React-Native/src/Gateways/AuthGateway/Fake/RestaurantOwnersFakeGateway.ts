@@ -19,13 +19,9 @@ class RestaurantsOwnersFakeGateway implements IAuthGateway {
     });
   }
   async signup(userInfo: SignupInfo): Promise<string> {
-    try {
-      return new Promise(() => {
-        setTimeout(() => 'random token', 400);
-      });
-    } catch (error: any) {
-      throw new Error(error);
-    }
+    return new Promise(resolve => {
+      setTimeout(() => resolve('random token'), 400);
+    });
   }
 }
 
