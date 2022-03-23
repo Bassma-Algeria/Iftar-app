@@ -10,7 +10,7 @@ exports[`<RegisterScreen /> should render correctly 1`] = `
         "width": "100%",
       },
       Object {
-        "marginTop": -70,
+        "marginTop": -60,
       },
     ]
   }
@@ -701,15 +701,27 @@ exports[`<RegisterScreen /> should render correctly 1`] = `
                 ]
               }
             >
-              <Image
-                resizeMode="contain"
-                source={
+              <View
+                style={
                   Object {
-                    "process": [Function],
+                    "width": 22,
                   }
                 }
-                width={20}
-              />
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    Object {
+                      "process": [Function],
+                    }
+                  }
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </View>
               <TextInput
                 keyboardType="email-address"
                 onChangeText={[Function]}
@@ -1325,17 +1337,20 @@ exports[`<RegisterScreen /> should render correctly 1`] = `
           >
             <View
               style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "white",
-                  "borderRadius": 10,
-                  "flexDirection": "row",
-                  "height": 60,
-                  "justifyContent": "space-between",
-                  "paddingLeft": 20,
-                  "paddingRight": 20,
-                  "width": "100%",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderRadius": 10,
+                    "flexDirection": "row",
+                    "height": 60,
+                    "justifyContent": "space-between",
+                    "paddingLeft": 20,
+                    "paddingRight": 20,
+                    "width": "100%",
+                  },
+                  Object {},
+                ]
               }
             >
               <View
@@ -1351,6 +1366,7 @@ exports[`<RegisterScreen /> should render correctly 1`] = `
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                testID="passwordIcon"
               >
                 <Image
                   resizeMode="contain"
@@ -1976,17 +1992,20 @@ exports[`<RegisterScreen /> should render correctly 1`] = `
           >
             <View
               style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "white",
-                  "borderRadius": 10,
-                  "flexDirection": "row",
-                  "height": 60,
-                  "justifyContent": "space-between",
-                  "paddingLeft": 20,
-                  "paddingRight": 20,
-                  "width": "100%",
-                }
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderRadius": 10,
+                    "flexDirection": "row",
+                    "height": 60,
+                    "justifyContent": "space-between",
+                    "paddingLeft": 20,
+                    "paddingRight": 20,
+                    "width": "100%",
+                  },
+                  Object {},
+                ]
               }
             >
               <View
@@ -2002,6 +2021,7 @@ exports[`<RegisterScreen /> should render correctly 1`] = `
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                testID="passwordIcon"
               >
                 <Image
                   resizeMode="contain"
@@ -2643,15 +2663,27 @@ exports[`<RegisterScreen /> should render correctly 1`] = `
                 ]
               }
             >
-              <Image
-                resizeMode="contain"
-                source={
+              <View
+                style={
                   Object {
-                    "process": [Function],
+                    "width": 22,
                   }
                 }
-                width={20}
-              />
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    Object {
+                      "process": [Function],
+                    }
+                  }
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </View>
               <TextInput
                 keyboardType="numeric"
                 onChangeText={[Function]}

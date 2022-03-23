@@ -47,12 +47,8 @@ interface IconProps {
 
 const EyeIcon: React.FC<IconProps> = ({hidePassword, togglePassword}) => {
   return (
-    <Pressable onPress={togglePassword}>
-      {hidePassword ? (
-        <Image source={ICONS.closedEye} resizeMode="contain" />
-      ) : (
-        <Image source={ICONS.openEye} resizeMode="contain" />
-      )}
+    <Pressable onPress={togglePassword} testID="passwordIcon">
+      <Image source={hidePassword ? ICONS.closedEye : ICONS.openEye} resizeMode="contain" />
     </Pressable>
   );
 };

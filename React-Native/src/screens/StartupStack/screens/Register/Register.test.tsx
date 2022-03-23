@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import {Register} from './Register';
 
-describe('<RegisterScreen />', () => {
+describe('Register Screen', () => {
   it('should render correctly', () => {
     const tree = renderer.create(<Register />).toJSON();
     expect(tree).toMatchSnapshot();

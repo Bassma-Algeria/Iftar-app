@@ -4,11 +4,14 @@ exports[`ChooseUsageType Screen  should render correctly 1`] = `
 Array [
   <RCTScrollView
     style={
-      Object {
-        "backgroundColor": "#F4E6CA",
-        "height": "100%",
-        "width": "100%",
-      }
+      Array [
+        Object {
+          "backgroundColor": "#F4E6CA",
+          "height": "100%",
+          "width": "100%",
+        },
+        undefined,
+      ]
     }
   >
     <View>
@@ -1369,7 +1372,7 @@ Array [
         <View
           accessible={true}
           collapsable={false}
-          focusable={false}
+          focusable={true}
           nativeID="animatedComponent"
           onClick={[Function]}
           onResponderGrant={[Function]}

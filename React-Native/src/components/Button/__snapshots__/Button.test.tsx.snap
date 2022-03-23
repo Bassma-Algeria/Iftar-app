@@ -630,9 +630,7 @@ exports[`Button Component should have custom styles when adding the style props 
             undefined,
           ]
         }
-      >
-        click
-      </Text>
+      />
     </View>
   </View>
 </View>
@@ -1268,9 +1266,7 @@ exports[`Button Component should renders correctly 1`] = `
             undefined,
           ]
         }
-      >
-        click
-      </Text>
+      />
     </View>
   </View>
 </View>
@@ -1906,9 +1902,7 @@ exports[`Button Component should show the icon when passing the icon prop 1`] = 
             undefined,
           ]
         }
-      >
-        click
-      </Text>
+      />
       <View
         style={
           Object {

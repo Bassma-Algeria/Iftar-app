@@ -12,7 +12,7 @@ exports[`Loader Component should be able to add custom styles 1`] = `
 
 exports[`Loader Component should be able to change the color 1`] = `
 <ActivityIndicator
-  color="brown"
+  color="#7C4908"
 />
 `;
 

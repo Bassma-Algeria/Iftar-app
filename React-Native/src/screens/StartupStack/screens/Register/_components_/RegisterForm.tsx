@@ -90,7 +90,6 @@ const EmailInput: React.FC<CustomInputProps> = ({setServerError}) => {
       placeholder="البريد الالكتروني"
       keyboardType="email-address"
       error={error}
-      size={20}
     />
   );
 };
@@ -164,10 +163,10 @@ const PhoneNumberInput: React.FC<CustomInputProps> = ({setServerError}) => {
       error={error}
       keyboardType="numeric"
       icon={ICONS.phoneLightColor}
-      size={20}
     />
   );
 };
 const EMAIL_PATTERN = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
 const PHONE_NUMBER_PATTER = /^(00213|\+213|0)(5|6|7)[0-9]{8}$/;
+
 export {RegisterationForm};

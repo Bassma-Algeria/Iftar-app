@@ -6,4 +6,6 @@ import {PasswordInput} from './PasswordInput';
 
 const PasswordInputStories = storiesOf('PasswordInput', module);
 
-PasswordInputStories.add('PasswordInput', () => <PasswordInput />);
+const props: any = {placeholder: 'كلمة المرور'};
+
+PasswordInputStories.add('PasswordInput', () => <PasswordInput {...props} />);
