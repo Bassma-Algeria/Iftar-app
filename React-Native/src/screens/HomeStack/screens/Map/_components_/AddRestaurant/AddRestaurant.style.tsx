@@ -42,13 +42,12 @@ const styles = StyleSheet.create({
   },
 
   picturesContainer: {
-    width: '100%',
     marginTop: 20,
-    marginBottom: 20,
+    height: 180,
   },
 
   addPicture: {
-    width: '60%',
+    width: '100%',
     height: 150,
     borderRadius: 20,
     borderStyle: 'dashed',
@@ -68,9 +67,23 @@ const styles = StyleSheet.create({
   },
 
   picture: {
-    width: '60%',
-    height: 200,
+    width: '100%',
+    height: 150,
     borderRadius: 20,
+  },
+
+  deletePicButtonContainer: {
+    position: 'absolute',
+    bottom: -40,
+    right: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    zIndex: 2,
+  },
+
+  deleteIcon: {
+    width: 20,
+    marginLeft: 10,
   },
 
   confirmInfoButtonContainer: {

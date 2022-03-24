@@ -10,6 +10,7 @@ import type {MainStackScreenProps} from '../MainStack.types';
 
 // screens
 import {Map} from './screens/Map/Map';
+import {Search} from './screens/Search/Search';
 
 interface Props extends MainStackScreenProps<'HomeStack'> {}
 
@@ -23,6 +24,7 @@ const HomeStack: React.FC<Props> = () => {
   return (
     <Stack.Navigator screenOptions={screensOptions}>
       <Stack.Screen name="Map" component={Map} />
+      <Stack.Screen name="Search" component={Search} />
     </Stack.Navigator>
   );
 };

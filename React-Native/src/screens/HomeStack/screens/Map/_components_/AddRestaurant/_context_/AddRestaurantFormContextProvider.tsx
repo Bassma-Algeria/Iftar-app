@@ -17,10 +17,10 @@ const AddRestaurantFormContextProvider: React.FC = ({children}) => {
     name: '',
     ownerName: '',
     pictures: [],
-    closingTime: '',
-    openingTime: '',
+    closingTime: {hour: 0, minut: 0},
+    openingTime: {hour: 0, minut: 0},
     locationCoords: undefined,
-    placeName: '',
+    locationName: '',
   });
 
   return (

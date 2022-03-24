@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {COLORS} from '../../theme/Colors';
 
 import {FONTS} from '../Header/Header.style';
 
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'right',
     fontFamily: FONTS.regular,
+    color: COLORS.black,
   },
 
   iconContainer: {

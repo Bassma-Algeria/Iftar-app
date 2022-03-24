@@ -3,8 +3,8 @@ import {COLORS} from '../../theme/Colors';
 
 const styles = StyleSheet.create({
   container: {
-    width: 50,
-    height: 50,
+    width: 48,
+    height: 48,
     borderRadius: 50,
     backgroundColor: COLORS.primary,
     alignItems: 'center',

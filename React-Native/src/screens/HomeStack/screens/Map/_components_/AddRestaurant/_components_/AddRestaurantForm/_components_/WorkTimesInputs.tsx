@@ -1,6 +1,6 @@
 import {Pressable, View} from 'react-native';
 import React, {useState} from 'react';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DateTimePicker, {DateTimePickerEvent} from '@react-native-community/datetimepicker';
 
 import {styles} from '../../../AddRestaurant.style';
 
@@ -8,44 +8,74 @@ import {ICONS} from '../../../../../../../../../utils/constants/Icons';
 
 import {useAddRestaurantContext} from '../../../_hooks_/useAddRestaurantContext';
 
+import type {Time} from '../../../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+
 import {Input} from '../../../../../../../../../components/Inputs/TextInput/Input';
 
-const WorkTimesInputs = () => {
-  const [showPicker, setShowPicker] = useState<boolean>(false);
+const WorkTimesInputs: React.FC = () => {
   const {restaurantInfo, setRestaurantInfo} = useAddRestaurantContext();
 
   return (
     <View style={styles.workTimesContainer}>
-      <Pressable style={styles.workTimeInput}>
-        <Input
-          placeholder="الى"
-          icon={ICONS.clock}
-          value={'helo'}
-          onTextChange={t => setRestaurantInfo({...restaurantInfo, closingTime: t})}
-          disable
-        />
-      </Pressable>
-
-      {/* {showPicker && (
-        <DateTimePicker
-          value={new Date()}
-          mode={'time'}
-          is24Hour={true}
-          // onChange={v => console.log(new Date(v.nativeEvent.timestamp))}
-        />
-      )} */}
-
-      <Pressable style={styles.workTimeInput}>
-        <Input
-          placeholder="من"
-          icon={ICONS.clock}
-          value={restaurantInfo.openingTime}
-          onTextChange={t => setRestaurantInfo({...restaurantInfo, openingTime: t})}
-          disable
-        />
-      </Pressable>
+      <TimeInput
+        placeholder="الى"
+        value={restaurantInfo.closingTime}
+        onChange={time => setRestaurantInfo({...restaurantInfo, closingTime: time})}
+      />
+      <TimeInput
+        placeholder="من"
+        value={restaurantInfo.openingTime}
+        onChange={time => setRestaurantInfo({...restaurantInfo, openingTime: time})}
+      />
     </View>
   );
+};
+
+interface Props {
+  placeholder: string;
+  value: Time;
+  onChange: (time: Time) => void;
+}
+
+const TimeInput: React.FC<Props> = ({value, onChange, placeholder}) => {
+  const timeToShow = getTimeToShow(value);
+  const [showTimePicker, setShowTimePicker] = useState<boolean>(false);
+
+  const onTimeChange = (e: DateTimePickerEvent) => {
+    setShowTimePicker(false);
+    if (!e.nativeEvent.timestamp) {
+      return;
+    }
+
+    const time = new Date(e.nativeEvent.timestamp);
+    onChange({hour: time.getHours(), minut: time.getMinutes()});
+  };
+
+  return (
+    <>
+      <Pressable style={styles.workTimeInput} onPress={() => setShowTimePicker(true)}>
+        <Input
+          placeholder={placeholder}
+          icon={ICONS.clock}
+          value={timeToShow}
+          onTextChange={() => {}}
+          disable
+        />
+      </Pressable>
+      {showTimePicker && (
+        <DateTimePicker value={new Date()} mode={'time'} is24Hour={true} onChange={onTimeChange} />
+      )}
+    </>
+  );
+};
+
+const getTimeToShow = (time: Time): string => {
+  const {hour, minut} = time;
+  if (!hour && !minut) {
+    return '';
+  }
+
+  return `${hour}`.padStart(2, '0') + ':' + `${minut}`.padStart(2, '0');
 };
 
 export {WorkTimesInputs};

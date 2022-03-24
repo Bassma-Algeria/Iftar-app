@@ -38,6 +38,12 @@ describe('Input component', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should be able to change the borderRadius of the input', () => {
+    const tree = renderer.create(<Input {...props} radius={30} />).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should call onTextChange each time the input value changed', () => {
     const onTextChange = jest.fn();
 

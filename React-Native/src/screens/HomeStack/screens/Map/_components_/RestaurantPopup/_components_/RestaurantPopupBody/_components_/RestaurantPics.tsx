@@ -10,11 +10,7 @@ interface Props {
 }
 
 const RestaurantPics: React.FC<Props> = ({pictures}) => {
-  return pictures.length ? (
-    <PicturesCarousel pictures={pictures} />
-  ) : (
-    <PicturesPlacholder />
-  );
+  return pictures.length ? <PicturesCarousel pictures={pictures} /> : <PicturesPlacholder />;
 };
 
 const PicturesPlacholder = () => {

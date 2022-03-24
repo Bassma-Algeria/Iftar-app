@@ -8,6 +8,7 @@ import {Header} from '../Header/Header';
 
 interface Props {
   iconPosition?: 'left' | 'right';
+  radius?: number;
   style?: StyleProp<ViewStyle>;
   error?: string;
 }
@@ -19,9 +20,17 @@ const BaseInput: React.FC<Props> = ({children, ...props}) => {
     customStyle.flexDirection = 'row-reverse';
   }
 
+  if (props.radius) {
+    customStyle.borderRadius = props.radius;
+  }
+
   return (
     <>
-      <Shadow distance={4} startColor={'#00000010'} containerViewStyle={props.style}>
+      <Shadow
+        distance={2}
+        offset={[0, 1]}
+        startColor={'#00000015'}
+        containerViewStyle={props.style}>
         <View style={[styles.inputContainer, customStyle]}>{children}</View>
       </Shadow>
 

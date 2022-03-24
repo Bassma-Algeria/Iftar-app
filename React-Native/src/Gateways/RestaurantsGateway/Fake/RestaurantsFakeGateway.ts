@@ -7,26 +7,35 @@ import type {
 import {RESTAURANTS} from './RESTAURANTS';
 
 class RestaurantsFakeGateway implements IRestaurantsGateway {
+  async searchFor(keyword: string): Promise<RestaurantInfo[]> {
+    return await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (keyword === 'wrong') {
+          reject();
+        }
+
+        const result = RESTAURANTS.filter(({name}) => name.includes(keyword));
+        resolve(result);
+      }, 600);
+    });
+  }
+
   async addRestaurant(info: RestaurantInfoToAdd): Promise<void> {
     return await new Promise((resolve, reject) => {
       setTimeout(() => {
         if (info.name === 'wrongName') {
           reject('something went wrong');
-        } else {
-          resolve();
         }
+
+        resolve();
       }, 600);
     });
   }
 
   async getRestaurants(): Promise<RestaurantInfo[]> {
-    try {
-      return new Promise(resolve => {
-        setTimeout(() => resolve(RESTAURANTS), 400);
-      });
-    } catch (error: any) {
-      throw new Error(error);
-    }
+    return new Promise(resolve => {
+      setTimeout(() => resolve(RESTAURANTS), 600);
+    });
   }
 }
 

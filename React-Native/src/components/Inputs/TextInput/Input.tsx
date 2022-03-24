@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   TextInput,
   View,
@@ -17,17 +17,27 @@ import {BaseInput} from '../BaseInput';
 
 interface Props {
   placeholder: string;
-  icon: ImageSourcePropType;
   value: string;
   onTextChange: (text: string) => void;
+  icon?: ImageSourcePropType;
   keyboardType?: KeyboardTypeOptions;
   iconPosition?: 'left' | 'right';
   style?: StyleProp<ViewStyle>;
   error?: string;
   disable?: boolean;
+  radius?: number;
+  focused?: boolean;
 }
 
 const Input: React.FC<Props> = props => {
+  const inputRef = useRef<TextInput>(null);
+
+  useEffect(() => {
+    if (props.focused) {
+      inputRef.current?.focus();
+    }
+  }, [props.focused]);
+
   return (
     <BaseInput {...props}>
       <Icon icon={props.icon} position={props.iconPosition} />
@@ -39,13 +49,14 @@ const Input: React.FC<Props> = props => {
         keyboardType={props.keyboardType}
         placeholderTextColor={COLORS.grey}
         editable={!props.disable}
+        ref={inputRef}
       />
     </BaseInput>
   );
 };
 
 interface IconProps {
-  icon: ImageSourcePropType;
+  icon?: ImageSourcePropType;
   position?: 'left' | 'right';
 }
 
@@ -56,11 +67,11 @@ const Icon: React.FC<IconProps> = ({icon, position}) => {
     customStyle.marginLeft = 5;
   }
 
-  return (
+  return icon ? (
     <View style={[styles.iconContainer, customStyle]}>
       <Image source={icon} style={styles.icon} resizeMode="contain" />
     </View>
-  );
+  ) : null;
 };
 
 export {Input};

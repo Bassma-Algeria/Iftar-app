@@ -25,7 +25,7 @@ interface Props {
 const Button: React.FC<Props> = ({onPress, children, icon, style}) => {
   return (
     <View style={style}>
-      <Shadow viewStyle={styles.container} startColor={COLORS.primaryShadow} distance={3}>
+      <Shadow viewStyle={styles.container} startColor={COLORS.primaryShadow} distance={2}>
         <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.95}>
           <Header color="whiteShade" variant="h4" fontWeight="semibold">
             {children}

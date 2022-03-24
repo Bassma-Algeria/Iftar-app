@@ -19,6 +19,8 @@ target 'my_app' do
 
   pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
   target 'my_appTests' do
     inherit! :complete
     # Pods for testing

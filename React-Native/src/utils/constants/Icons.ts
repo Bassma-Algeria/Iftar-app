@@ -18,6 +18,8 @@ const ICONS = {
   edit: require('../../assets/icons/edit.png'),
   addPicture: require('../../assets/icons/add-picture.png'),
   done: require('../../assets/icons/done.png'),
+  trash: require('../../assets/icons/trash.png'),
+  rightArrow: require('../../assets/icons/right-arrow.png'),
 };
 
 export {ICONS};
