@@ -34,7 +34,7 @@ const RestaurantMarker: React.FC<RestaurantInfo> = restaurantInfo => {
 
   return (
     <Marker
-      coordinate={restaurantInfo.location}
+      coordinate={restaurantInfo.locationCoords}
       onPress={() => setSelectedRestaurant(restaurantInfo)}
       style={styles.markerContainer}>
       <Header fontWeight="semibold">{restaurantInfo.name}</Header>

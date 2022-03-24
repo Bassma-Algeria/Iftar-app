@@ -11,7 +11,7 @@ class RestaurantsFakeGateway implements IRestaurantsGateway {
     return await new Promise((resolve, reject) => {
       setTimeout(() => {
         if (keyword === 'wrong') {
-          reject();
+          return reject('something went wrong');
         }
 
         const result = RESTAURANTS.filter(({name}) => name.includes(keyword));
