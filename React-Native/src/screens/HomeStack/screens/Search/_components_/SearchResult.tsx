@@ -1,7 +1,10 @@
 import React, {useLayoutEffect, useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {FlatList, Image, TouchableOpacity, View} from 'react-native';
 
 import {styles} from '../Search.style';
+
+import type {HomeStackScreenProps} from '../../../HomeStack.types';
 
 import type {RestaurantInfo} from '../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 import {restuarantsGateway} from '../../../../../Gateways';
@@ -12,8 +15,6 @@ import {showToast} from '../../../../../utils/helpers/showToast';
 
 import {Header} from '../../../../../components/Header/Header';
 import {Loader} from '../../../../../components/Loader/Loader';
-import {useNavigation} from '@react-navigation/native';
-import {HomeStackScreenProps} from '../../../HomeStack.types';
 
 interface Props {
   searchValue: string;
