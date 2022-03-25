@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   locationIcon: {
-    width: '100%',
+    width: '70%',
   },
 });
 

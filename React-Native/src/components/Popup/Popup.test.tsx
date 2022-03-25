@@ -63,4 +63,16 @@ describe('Popup Component', () => {
 
     expect(onClose).toBeCalledTimes(1);
   });
+
+  it('should be able to change the container style', () => {
+    const tree = render(
+      <NavigationContainer>
+        <Popup isOpen={false} containerStyle={{margin: 30}}>
+          <Text>Some content</Text>
+        </Popup>
+      </NavigationContainer>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

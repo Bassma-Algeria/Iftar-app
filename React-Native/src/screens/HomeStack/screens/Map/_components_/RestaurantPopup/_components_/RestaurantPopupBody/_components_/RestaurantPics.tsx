@@ -3,7 +3,7 @@ import {Dimensions, Image, View} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {Header} from '../../../../../../../../../components/Header/Header';
 
-import {styles} from '../../../../../Map.style';
+import {styles} from '../../../RestaurantPopup.style';
 
 interface Props {
   pictures: string[];

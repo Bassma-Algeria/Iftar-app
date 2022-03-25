@@ -12,6 +12,8 @@ import {showToast} from '../../../../../utils/helpers/showToast';
 
 import {Header} from '../../../../../components/Header/Header';
 import {Loader} from '../../../../../components/Loader/Loader';
+import {useNavigation} from '@react-navigation/native';
+import {HomeStackScreenProps} from '../../../HomeStack.types';
 
 interface Props {
   searchValue: string;
@@ -61,16 +63,20 @@ const Result: React.FC<{restaurants: RestaurantInfo[]}> = ({restaurants}) => {
   );
 };
 
-const RestaurantItem: React.FC<RestaurantInfo> = ({locationName, name, pictures}) => {
+const RestaurantItem: React.FC<RestaurantInfo> = props => {
+  const navigation = useNavigation<HomeStackScreenProps<'Search'>['navigation']>();
+
+  const handlePress = () => navigation.navigate('Map', {selectedRestaurant: props});
+
   return (
-    <TouchableOpacity style={styles.restaurant} activeOpacity={0.8}>
+    <TouchableOpacity style={styles.restaurant} activeOpacity={0.8} onPress={handlePress}>
       <View style={styles.restaurantInfo}>
         <Header variant="h4" fontWeight="bold">
-          {name}
+          {props.name}
         </Header>
 
         <View style={styles.locationContainer}>
-          <Header>{locationName}</Header>
+          <Header>{props.locationName}</Header>
 
           <View style={styles.locationIconContainer}>
             <Image source={ICONS.location} style={styles.locationIcon} resizeMode="contain" />
@@ -79,7 +85,7 @@ const RestaurantItem: React.FC<RestaurantInfo> = ({locationName, name, pictures}
       </View>
 
       <View style={styles.restaurantImageContainer}>
-        <RestaurantPicture uri={pictures[0]} />
+        <RestaurantPicture uri={props.pictures[0]} />
       </View>
     </TouchableOpacity>
   );

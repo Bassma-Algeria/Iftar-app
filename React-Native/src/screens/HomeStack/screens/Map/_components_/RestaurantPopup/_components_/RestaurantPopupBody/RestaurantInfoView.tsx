@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import React from 'react';
 
-import {styles} from '../../../../Map.style';
+import {styles} from '../../RestaurantPopup.style';
 
 import type {RestaurantInfo} from '../../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 
@@ -14,16 +14,12 @@ import {Header} from '../../../../../../../../components/Header/Header';
 import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
 
-interface Params extends RestaurantInfo {
-  adress: string;
-}
-
-const RestaurantInfoView: React.FC<Params> = props => {
+const RestaurantInfoView: React.FC<RestaurantInfo> = props => {
   const {setDestinationLocation, setSelectedRestaurant} = useMapContext();
 
   const handleDirectionButtonClick = () => {
     setSelectedRestaurant(undefined);
-    setDestinationLocation(props.location);
+    setDestinationLocation(props.locationCoords);
   };
 
   return (

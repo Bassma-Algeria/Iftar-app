@@ -1,7 +1,9 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
+import type {RestaurantInfo} from '../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+
 export type HomeStackParamsList = {
-  Map: undefined;
+  Map: undefined | {selectedRestaurant: RestaurantInfo};
   Search: undefined;
 };
 

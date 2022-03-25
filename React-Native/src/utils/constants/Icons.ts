@@ -2,6 +2,7 @@ const ICONS = {
   moon: require('../../assets/icons/moon.png'),
   restaurantMarker: require('../../assets/icons/restaurant-marker.png'),
   clock: require('../../assets/icons/clock.png'),
+  clockBrown: require('../../assets/icons/clock-brown.png'),
   location: require('../../assets/icons/location.png'),
   phone: require('../../assets/icons/phone.png'),
   leftArrow: require('../../assets/icons/left-arrow.png'),
