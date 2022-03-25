@@ -1,13 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component should be able to change the default style 1`] = `
+exports[`Input component should be able to change the borderRadius of the input 1`] = `
 <View
   pointerEvents="box-none"
-  style={
-    Object {
-      "margin": 40,
-    }
-  }
 >
   <View
     pointerEvents="none"
@@ -18,7 +13,7 @@ exports[`Input component should be able to change the default style 1`] = `
           "left": 0,
           "position": "absolute",
           "right": 0,
-          "top": 0,
+          "top": 1,
         },
         undefined,
       ]
@@ -26,7 +21,7 @@ exports[`Input component should be able to change the default style 1`] = `
   >
     <RNSVGSvgView
       bbHeight="100%"
-      bbWidth={7}
+      bbWidth={3}
       focusable={false}
       height="100%"
       style={
@@ -36,18 +31,18 @@ exports[`Input component should be able to change the default style 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
-            "top": 10,
+            "top": 30,
           },
           Object {
             "flex": 0,
             "height": "100%",
-            "width": 7,
+            "width": 3,
           },
         ]
       }
-      width={7}
+      width={3}
     >
       <RNSVGGroup>
         <RNSVGDefs>
@@ -55,7 +50,7 @@ exports[`Input component should be able to change the default style 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -82,15 +77,15 @@ exports[`Input component should be able to change the default style 1`] = `
               "fill",
             ]
           }
-          width={6}
+          width={2}
           x={0}
-          y={-20}
+          y={-60}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
       bbHeight="100%"
-      bbWidth={7}
+      bbWidth={3}
       focusable={false}
       height="100%"
       style={
@@ -102,16 +97,16 @@ exports[`Input component should be able to change the default style 1`] = `
           Object {
             "left": "100%",
             "position": "absolute",
-            "top": 10,
+            "top": 30,
           },
           Object {
             "flex": 0,
             "height": "100%",
-            "width": 7,
+            "width": 3,
           },
         ]
       }
-      width={7}
+      width={3}
     >
       <RNSVGGroup>
         <RNSVGDefs>
@@ -119,7 +114,7 @@ exports[`Input component should be able to change the default style 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -146,17 +141,17 @@ exports[`Input component should be able to change the default style 1`] = `
               "fill",
             ]
           }
-          width={6}
+          width={2}
           x={0}
-          y={-20}
+          y={-60}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={7}
+      bbHeight={3}
       bbWidth="100%"
       focusable={false}
-      height={7}
+      height={3}
       style={
         Array [
           Object {
@@ -164,13 +159,13 @@ exports[`Input component should be able to change the default style 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": 10,
+            "left": 30,
             "position": "absolute",
             "top": "100%",
           },
           Object {
             "flex": 0,
-            "height": 7,
+            "height": 3,
             "width": "100%",
           },
         ]
@@ -183,7 +178,7 @@ exports[`Input component should be able to change the default style 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -204,23 +199,23 @@ exports[`Input component should be able to change the default style 1`] = `
               "bottom",
             ]
           }
-          height={6}
+          height={2}
           propList={
             Array [
               "fill",
             ]
           }
           width="100%"
-          x={-20}
+          x={-60}
           y={0}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={7}
+      bbHeight={3}
       bbWidth="100%"
       focusable={false}
-      height={7}
+      height={3}
       style={
         Array [
           Object {
@@ -228,13 +223,13 @@ exports[`Input component should be able to change the default style 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": 10,
+            "left": 30,
             "position": "absolute",
-            "top": -6,
+            "top": -2,
           },
           Object {
             "flex": 0,
-            "height": 7,
+            "height": 3,
             "width": "100%",
           },
         ]
@@ -247,7 +242,7 @@ exports[`Input component should be able to change the default style 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -268,23 +263,23 @@ exports[`Input component should be able to change the default style 1`] = `
               "top",
             ]
           }
-          height={6}
+          height={2}
           propList={
             Array [
               "fill",
             ]
           }
           width="100%"
-          x={-20}
+          x={-60}
           y={0}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={33}
+      bbWidth={33}
       focusable={false}
-      height={17}
+      height={33}
       style={
         Array [
           Object {
@@ -292,30 +287,30 @@ exports[`Input component should be able to change the default style 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
-            "top": -6,
+            "top": -2,
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 33,
+            "width": 33,
           },
         ]
       }
-      width={17}
+      width={33}
     >
       <RNSVGGroup>
         <RNSVGDefs>
           <RNSVGRadialGradient
-            cx={16}
-            cy={16}
-            fx={16}
-            fy={16}
+            cx={32}
+            cy={32}
+            fx={32}
+            fy={32}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.9375,
+                335544320,
                 1,
                 0,
               ]
@@ -323,12 +318,12 @@ exports[`Input component should be able to change the default style 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="topLeft"
-            rx={16}
-            ry={16}
+            rx={32}
+            ry={32}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M0,16 a16,16 0 0 1 16 -16 v6 a10,10 0 0 0 -10,10 h-6 Z"
+          d="M0,32 a32,32 0 0 1 32 -32 v2 v30 h-30 h-2 Z"
           fill={
             Array [
               1,
@@ -344,10 +339,10 @@ exports[`Input component should be able to change the default style 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={33}
+      bbWidth={33}
       focusable={false}
-      height={17}
+      height={33}
       style={
         Array [
           Object {
@@ -357,21 +352,21 @@ exports[`Input component should be able to change the default style 1`] = `
           Object {
             "left": "100%",
             "position": "absolute",
-            "top": -6,
+            "top": -2,
             "transform": Array [
               Object {
-                "translateX": -10,
+                "translateX": -30,
               },
             ],
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 33,
+            "width": 33,
           },
         ]
       }
-      width={17}
+      width={33}
     >
       <RNSVGGroup
         matrix={
@@ -388,13 +383,13 @@ exports[`Input component should be able to change the default style 1`] = `
         <RNSVGDefs>
           <RNSVGRadialGradient
             cx={0}
-            cy={16}
+            cy={32}
             fx={0}
-            fy={16}
+            fy={32}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.9375,
+                335544320,
                 1,
                 0,
               ]
@@ -402,12 +397,12 @@ exports[`Input component should be able to change the default style 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="topRight"
-            rx={16}
-            ry={16}
+            rx={32}
+            ry={32}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M0,0 a16,16 0 0 1 16,16 h-6 a10,10 0 0 0 -10,-10 v-6 Z"
+          d="M0,0 a32,32 0 0 1 32,32 h-2 h-30 v-30 v-2 Z"
           fill={
             Array [
               1,
@@ -423,10 +418,10 @@ exports[`Input component should be able to change the default style 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={33}
+      bbWidth={33}
       focusable={false}
-      height={17}
+      height={33}
       style={
         Array [
           Object {
@@ -434,23 +429,23 @@ exports[`Input component should be able to change the default style 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
             "top": "100%",
             "transform": Array [
               Object {
-                "translateY": -10,
+                "translateY": -30,
               },
             ],
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 33,
+            "width": 33,
           },
         ]
       }
-      width={17}
+      width={33}
     >
       <RNSVGGroup
         matrix={
@@ -466,14 +461,14 @@ exports[`Input component should be able to change the default style 1`] = `
       >
         <RNSVGDefs>
           <RNSVGRadialGradient
-            cx={16}
+            cx={32}
             cy={0}
-            fx={16}
+            fx={32}
             fy={0}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.9375,
+                335544320,
                 1,
                 0,
               ]
@@ -481,12 +476,12 @@ exports[`Input component should be able to change the default style 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="bottomLeft"
-            rx={16}
-            ry={16}
+            rx={32}
+            ry={32}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M16,16 a16,16 0 0 1 -16,-16 h6 a10,10 0 0 0 10,10 v6 Z"
+          d="M32,32 a32,32 0 0 1 -32,-32 h2 h30 v30 v2 Z"
           fill={
             Array [
               1,
@@ -502,10 +497,10 @@ exports[`Input component should be able to change the default style 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={33}
+      bbWidth={33}
       focusable={false}
-      height={17}
+      height={33}
       style={
         Array [
           Object {
@@ -518,21 +513,21 @@ exports[`Input component should be able to change the default style 1`] = `
             "top": "100%",
             "transform": Array [
               Object {
-                "translateX": -10,
+                "translateX": -30,
               },
               Object {
-                "translateY": -10,
+                "translateY": -30,
               },
             ],
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 33,
+            "width": 33,
           },
         ]
       }
-      width={17}
+      width={33}
     >
       <RNSVGGroup
         matrix={
@@ -554,8 +549,8 @@ exports[`Input component should be able to change the default style 1`] = `
             fy={0}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.9375,
+                335544320,
                 1,
                 0,
               ]
@@ -563,12 +558,12 @@ exports[`Input component should be able to change the default style 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="bottomRight"
-            rx={16}
-            ry={16}
+            rx={32}
+            ry={32}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M16,0 a16,16 0 0 1 -16,16 v-6 a10,10 0 0 0 10,-10 h6 Z"
+          d="M32,0 a32,32 0 0 1 -32,32 v-2 v-30 h30 h2 Z"
           fill={
             Array [
               1,
@@ -580,6 +575,159 @@ exports[`Input component should be able to change the default style 1`] = `
               "fill",
             ]
           }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight="100%"
+      bbWidth="100%"
+      focusable={false}
+      height="100%"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "position": "absolute",
+          },
+          Object {
+            "flex": 0,
+            "height": "100%",
+            "width": "100%",
+          },
+        ]
+      }
+      width="100%"
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGMask
+            height="100%"
+            maskContentUnits={1}
+            maskTransform={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            maskUnits={0}
+            name="maskPaintBelow"
+            width="100%"
+            x="0%"
+            y="0%"
+          >
+            <RNSVGRect
+              fill={4294967295}
+              height="100%"
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width="100%"
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={30}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={30}
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={30}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -30,
+                  0,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={30}
+              x="100%"
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={30}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -30,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={30}
+              x={0}
+              y="100%"
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={30}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -30,
+                  -30,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={30}
+              x="100%"
+              y="100%"
+            />
+          </RNSVGMask>
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={4278190080}
+          fillOpacity={0.08}
+          height="100%"
+          mask="maskPaintBelow"
+          propList={
+            Array [
+              "fill",
+              "fillOpacity",
+            ]
+          }
+          width="100%"
+          x={0}
+          y={0}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
@@ -604,7 +752,820 @@ exports[`Input component should be able to change the default style 1`] = `
             "alignItems": "center",
             "backgroundColor": "white",
             "borderRadius": 10,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-between",
+            "paddingLeft": 18,
+            "paddingRight": 20,
+            "width": "100%",
+          },
+          Object {
+            "borderRadius": 30,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": 25,
+            },
+            Object {},
+          ]
+        }
+      >
+        <Image
+          resizeMode="contain"
+          source={
+            Object {
+              "process": [Function],
+            }
+          }
+          style={
+            Object {
+              "width": "70%",
+            }
+          }
+        />
+      </View>
+      <TextInput
+        editable={true}
+        placeholder="Email"
+        placeholderTextColor="#C4C4C4"
+        style={
+          Object {
+            "color": "#000",
             "flex": 1,
+            "fontFamily": "Cairo-Regular",
+            "textAlign": "right",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Input component should be able to change the default style 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "margin": 40,
+    }
+  }
+>
+  <View
+    pointerEvents="none"
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 1,
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight="100%"
+      bbWidth={3}
+      focusable={false}
+      height="100%"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": -2,
+            "position": "absolute",
+            "top": 10,
+          },
+          Object {
+            "flex": 0,
+            "height": "100%",
+            "width": 3,
+          },
+        ]
+      }
+      width={3}
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGLinearGradient
+            gradient={
+              Array [
+                0,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={0}
+            name="left"
+            x1="1"
+            x2="0"
+            y1="0"
+            y2="0"
+          />
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={
+            Array [
+              1,
+              "left",
+            ]
+          }
+          height="100%"
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          width={2}
+          x={0}
+          y={-20}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight="100%"
+      bbWidth={3}
+      focusable={false}
+      height="100%"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": "100%",
+            "position": "absolute",
+            "top": 10,
+          },
+          Object {
+            "flex": 0,
+            "height": "100%",
+            "width": 3,
+          },
+        ]
+      }
+      width={3}
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGLinearGradient
+            gradient={
+              Array [
+                0,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={0}
+            name="right"
+            x1="0"
+            x2="1"
+            y1="0"
+            y2="0"
+          />
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={
+            Array [
+              1,
+              "right",
+            ]
+          }
+          height="100%"
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          width={2}
+          x={0}
+          y={-20}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight={3}
+      bbWidth="100%"
+      focusable={false}
+      height={3}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": 10,
+            "position": "absolute",
+            "top": "100%",
+          },
+          Object {
+            "flex": 0,
+            "height": 3,
+            "width": "100%",
+          },
+        ]
+      }
+      width="100%"
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGLinearGradient
+            gradient={
+              Array [
+                0,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={0}
+            name="bottom"
+            x1="0"
+            x2="0"
+            y1="0"
+            y2="1"
+          />
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={
+            Array [
+              1,
+              "bottom",
+            ]
+          }
+          height={2}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          width="100%"
+          x={-20}
+          y={0}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight={3}
+      bbWidth="100%"
+      focusable={false}
+      height={3}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": 10,
+            "position": "absolute",
+            "top": -2,
+          },
+          Object {
+            "flex": 0,
+            "height": 3,
+            "width": "100%",
+          },
+        ]
+      }
+      width="100%"
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGLinearGradient
+            gradient={
+              Array [
+                0,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={0}
+            name="top"
+            x1="0"
+            x2="0"
+            y1="1"
+            y2="0"
+          />
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={
+            Array [
+              1,
+              "top",
+            ]
+          }
+          height={2}
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+          width="100%"
+          x={-20}
+          y={0}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight={13}
+      bbWidth={13}
+      focusable={false}
+      height={13}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": -2,
+            "position": "absolute",
+            "top": -2,
+          },
+          Object {
+            "flex": 0,
+            "height": 13,
+            "width": 13,
+          },
+        ]
+      }
+      width={13}
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGRadialGradient
+            cx={12}
+            cy={12}
+            fx={12}
+            fy={12}
+            gradient={
+              Array [
+                0.8333333333333334,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={1}
+            name="topLeft"
+            rx={12}
+            ry={12}
+          />
+        </RNSVGDefs>
+        <RNSVGPath
+          d="M0,12 a12,12 0 0 1 12 -12 v2 v10 h-10 h-2 Z"
+          fill={
+            Array [
+              1,
+              "topLeft",
+            ]
+          }
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight={13}
+      bbWidth={13}
+      focusable={false}
+      height={13}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": "100%",
+            "position": "absolute",
+            "top": -2,
+            "transform": Array [
+              Object {
+                "translateX": -10,
+              },
+            ],
+          },
+          Object {
+            "flex": 0,
+            "height": 13,
+            "width": 13,
+          },
+        ]
+      }
+      width={13}
+    >
+      <RNSVGGroup
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      >
+        <RNSVGDefs>
+          <RNSVGRadialGradient
+            cx={0}
+            cy={12}
+            fx={0}
+            fy={12}
+            gradient={
+              Array [
+                0.8333333333333334,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={1}
+            name="topRight"
+            rx={12}
+            ry={12}
+          />
+        </RNSVGDefs>
+        <RNSVGPath
+          d="M0,0 a12,12 0 0 1 12,12 h-2 h-10 v-10 v-2 Z"
+          fill={
+            Array [
+              1,
+              "topRight",
+            ]
+          }
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight={13}
+      bbWidth={13}
+      focusable={false}
+      height={13}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": -2,
+            "position": "absolute",
+            "top": "100%",
+            "transform": Array [
+              Object {
+                "translateY": -10,
+              },
+            ],
+          },
+          Object {
+            "flex": 0,
+            "height": 13,
+            "width": 13,
+          },
+        ]
+      }
+      width={13}
+    >
+      <RNSVGGroup
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      >
+        <RNSVGDefs>
+          <RNSVGRadialGradient
+            cx={12}
+            cy={0}
+            fx={12}
+            fy={0}
+            gradient={
+              Array [
+                0.8333333333333334,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={1}
+            name="bottomLeft"
+            rx={12}
+            ry={12}
+          />
+        </RNSVGDefs>
+        <RNSVGPath
+          d="M12,12 a12,12 0 0 1 -12,-12 h2 h10 v10 v2 Z"
+          fill={
+            Array [
+              1,
+              "bottomLeft",
+            ]
+          }
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight={13}
+      bbWidth={13}
+      focusable={false}
+      height={13}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "left": "100%",
+            "position": "absolute",
+            "top": "100%",
+            "transform": Array [
+              Object {
+                "translateX": -10,
+              },
+              Object {
+                "translateY": -10,
+              },
+            ],
+          },
+          Object {
+            "flex": 0,
+            "height": 13,
+            "width": 13,
+          },
+        ]
+      }
+      width={13}
+    >
+      <RNSVGGroup
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      >
+        <RNSVGDefs>
+          <RNSVGRadialGradient
+            cx={0}
+            cy={0}
+            fx={0}
+            fy={0}
+            gradient={
+              Array [
+                0.8333333333333334,
+                335544320,
+                1,
+                0,
+              ]
+            }
+            gradientTransform={null}
+            gradientUnits={1}
+            name="bottomRight"
+            rx={12}
+            ry={12}
+          />
+        </RNSVGDefs>
+        <RNSVGPath
+          d="M12,0 a12,12 0 0 1 -12,12 v-2 v-10 h10 h2 Z"
+          fill={
+            Array [
+              1,
+              "bottomRight",
+            ]
+          }
+          propList={
+            Array [
+              "fill",
+            ]
+          }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight="100%"
+      bbWidth="100%"
+      focusable={false}
+      height="100%"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "position": "absolute",
+          },
+          Object {
+            "flex": 0,
+            "height": "100%",
+            "width": "100%",
+          },
+        ]
+      }
+      width="100%"
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGMask
+            height="100%"
+            maskContentUnits={1}
+            maskTransform={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            maskUnits={0}
+            name="maskPaintBelow"
+            width="100%"
+            x="0%"
+            y="0%"
+          >
+            <RNSVGRect
+              fill={4294967295}
+              height="100%"
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width="100%"
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -10,
+                  0,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x="100%"
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -10,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x={0}
+              y="100%"
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -10,
+                  -10,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x="100%"
+              y="100%"
+            />
+          </RNSVGMask>
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={4278190080}
+          fillOpacity={0.08}
+          height="100%"
+          mask="maskPaintBelow"
+          propList={
+            Array [
+              "fill",
+              "fillOpacity",
+            ]
+          }
+          width="100%"
+          x={0}
+          y={0}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+  <View
+    onLayout={[Function]}
+    pointerEvents="box-none"
+    style={
+      Array [
+        Object {
+          "alignSelf": "flex-start",
+        },
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "white",
+            "borderRadius": 10,
             "flexDirection": "row",
             "height": 60,
             "justifyContent": "space-between",
@@ -624,7 +1585,7 @@ exports[`Input component should be able to change the default style 1`] = `
             Object {
               "alignItems": "center",
               "justifyContent": "center",
-              "width": 30,
+              "width": 25,
             },
             Object {
               "marginLeft": 5,
@@ -647,9 +1608,12 @@ exports[`Input component should be able to change the default style 1`] = `
         />
       </View>
       <TextInput
+        editable={true}
         placeholder="Email"
+        placeholderTextColor="#C4C4C4"
         style={
           Object {
+            "color": "#000",
             "flex": 1,
             "fontFamily": "Cairo-Regular",
             "textAlign": "right",
@@ -674,7 +1638,7 @@ exports[`Input component should be able to change the icon position 1`] = `
           "left": 0,
           "position": "absolute",
           "right": 0,
-          "top": 0,
+          "top": 1,
         },
         undefined,
       ]
@@ -682,7 +1646,7 @@ exports[`Input component should be able to change the icon position 1`] = `
   >
     <RNSVGSvgView
       bbHeight="100%"
-      bbWidth={7}
+      bbWidth={3}
       focusable={false}
       height="100%"
       style={
@@ -692,18 +1656,18 @@ exports[`Input component should be able to change the icon position 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
             "top": 10,
           },
           Object {
             "flex": 0,
             "height": "100%",
-            "width": 7,
+            "width": 3,
           },
         ]
       }
-      width={7}
+      width={3}
     >
       <RNSVGGroup>
         <RNSVGDefs>
@@ -711,7 +1675,7 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -738,7 +1702,7 @@ exports[`Input component should be able to change the icon position 1`] = `
               "fill",
             ]
           }
-          width={6}
+          width={2}
           x={0}
           y={-20}
         />
@@ -746,7 +1710,7 @@ exports[`Input component should be able to change the icon position 1`] = `
     </RNSVGSvgView>
     <RNSVGSvgView
       bbHeight="100%"
-      bbWidth={7}
+      bbWidth={3}
       focusable={false}
       height="100%"
       style={
@@ -763,11 +1727,11 @@ exports[`Input component should be able to change the icon position 1`] = `
           Object {
             "flex": 0,
             "height": "100%",
-            "width": 7,
+            "width": 3,
           },
         ]
       }
-      width={7}
+      width={3}
     >
       <RNSVGGroup>
         <RNSVGDefs>
@@ -775,7 +1739,7 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -802,17 +1766,17 @@ exports[`Input component should be able to change the icon position 1`] = `
               "fill",
             ]
           }
-          width={6}
+          width={2}
           x={0}
           y={-20}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={7}
+      bbHeight={3}
       bbWidth="100%"
       focusable={false}
-      height={7}
+      height={3}
       style={
         Array [
           Object {
@@ -826,7 +1790,7 @@ exports[`Input component should be able to change the icon position 1`] = `
           },
           Object {
             "flex": 0,
-            "height": 7,
+            "height": 3,
             "width": "100%",
           },
         ]
@@ -839,7 +1803,7 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -860,7 +1824,7 @@ exports[`Input component should be able to change the icon position 1`] = `
               "bottom",
             ]
           }
-          height={6}
+          height={2}
           propList={
             Array [
               "fill",
@@ -873,10 +1837,10 @@ exports[`Input component should be able to change the icon position 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={7}
+      bbHeight={3}
       bbWidth="100%"
       focusable={false}
-      height={7}
+      height={3}
       style={
         Array [
           Object {
@@ -886,11 +1850,11 @@ exports[`Input component should be able to change the icon position 1`] = `
           Object {
             "left": 10,
             "position": "absolute",
-            "top": -6,
+            "top": -2,
           },
           Object {
             "flex": 0,
-            "height": 7,
+            "height": 3,
             "width": "100%",
           },
         ]
@@ -903,7 +1867,7 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -924,7 +1888,7 @@ exports[`Input component should be able to change the icon position 1`] = `
               "top",
             ]
           }
-          height={6}
+          height={2}
           propList={
             Array [
               "fill",
@@ -937,10 +1901,10 @@ exports[`Input component should be able to change the icon position 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -948,30 +1912,30 @@ exports[`Input component should be able to change the icon position 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
-            "top": -6,
+            "top": -2,
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup>
         <RNSVGDefs>
           <RNSVGRadialGradient
-            cx={16}
-            cy={16}
-            fx={16}
-            fy={16}
+            cx={12}
+            cy={12}
+            fx={12}
+            fy={12}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -979,12 +1943,12 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="topLeft"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M0,16 a16,16 0 0 1 16 -16 v6 a10,10 0 0 0 -10,10 h-6 Z"
+          d="M0,12 a12,12 0 0 1 12 -12 v2 v10 h-10 h-2 Z"
           fill={
             Array [
               1,
@@ -1000,10 +1964,10 @@ exports[`Input component should be able to change the icon position 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -1013,7 +1977,7 @@ exports[`Input component should be able to change the icon position 1`] = `
           Object {
             "left": "100%",
             "position": "absolute",
-            "top": -6,
+            "top": -2,
             "transform": Array [
               Object {
                 "translateX": -10,
@@ -1022,12 +1986,12 @@ exports[`Input component should be able to change the icon position 1`] = `
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup
         matrix={
@@ -1044,13 +2008,13 @@ exports[`Input component should be able to change the icon position 1`] = `
         <RNSVGDefs>
           <RNSVGRadialGradient
             cx={0}
-            cy={16}
+            cy={12}
             fx={0}
-            fy={16}
+            fy={12}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -1058,12 +2022,12 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="topRight"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M0,0 a16,16 0 0 1 16,16 h-6 a10,10 0 0 0 -10,-10 v-6 Z"
+          d="M0,0 a12,12 0 0 1 12,12 h-2 h-10 v-10 v-2 Z"
           fill={
             Array [
               1,
@@ -1079,10 +2043,10 @@ exports[`Input component should be able to change the icon position 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -1090,7 +2054,7 @@ exports[`Input component should be able to change the icon position 1`] = `
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
             "top": "100%",
             "transform": Array [
@@ -1101,12 +2065,12 @@ exports[`Input component should be able to change the icon position 1`] = `
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup
         matrix={
@@ -1122,14 +2086,14 @@ exports[`Input component should be able to change the icon position 1`] = `
       >
         <RNSVGDefs>
           <RNSVGRadialGradient
-            cx={16}
+            cx={12}
             cy={0}
-            fx={16}
+            fx={12}
             fy={0}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -1137,12 +2101,12 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="bottomLeft"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M16,16 a16,16 0 0 1 -16,-16 h6 a10,10 0 0 0 10,10 v6 Z"
+          d="M12,12 a12,12 0 0 1 -12,-12 h2 h10 v10 v2 Z"
           fill={
             Array [
               1,
@@ -1158,10 +2122,10 @@ exports[`Input component should be able to change the icon position 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -1183,12 +2147,12 @@ exports[`Input component should be able to change the icon position 1`] = `
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup
         matrix={
@@ -1210,8 +2174,8 @@ exports[`Input component should be able to change the icon position 1`] = `
             fy={0}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -1219,12 +2183,12 @@ exports[`Input component should be able to change the icon position 1`] = `
             gradientTransform={null}
             gradientUnits={1}
             name="bottomRight"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M16,0 a16,16 0 0 1 -16,16 v-6 a10,10 0 0 0 10,-10 h6 Z"
+          d="M12,0 a12,12 0 0 1 -12,12 v-2 v-10 h10 h2 Z"
           fill={
             Array [
               1,
@@ -1236,6 +2200,159 @@ exports[`Input component should be able to change the icon position 1`] = `
               "fill",
             ]
           }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight="100%"
+      bbWidth="100%"
+      focusable={false}
+      height="100%"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "position": "absolute",
+          },
+          Object {
+            "flex": 0,
+            "height": "100%",
+            "width": "100%",
+          },
+        ]
+      }
+      width="100%"
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGMask
+            height="100%"
+            maskContentUnits={1}
+            maskTransform={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            maskUnits={0}
+            name="maskPaintBelow"
+            width="100%"
+            x="0%"
+            y="0%"
+          >
+            <RNSVGRect
+              fill={4294967295}
+              height="100%"
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width="100%"
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -10,
+                  0,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x="100%"
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -10,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x={0}
+              y="100%"
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -10,
+                  -10,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x="100%"
+              y="100%"
+            />
+          </RNSVGMask>
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={4278190080}
+          fillOpacity={0.08}
+          height="100%"
+          mask="maskPaintBelow"
+          propList={
+            Array [
+              "fill",
+              "fillOpacity",
+            ]
+          }
+          width="100%"
+          x={0}
+          y={0}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
@@ -1260,7 +2377,6 @@ exports[`Input component should be able to change the icon position 1`] = `
             "alignItems": "center",
             "backgroundColor": "white",
             "borderRadius": 10,
-            "flex": 1,
             "flexDirection": "row",
             "height": 60,
             "justifyContent": "space-between",
@@ -1280,7 +2396,7 @@ exports[`Input component should be able to change the icon position 1`] = `
             Object {
               "alignItems": "center",
               "justifyContent": "center",
-              "width": 30,
+              "width": 25,
             },
             Object {
               "marginLeft": 5,
@@ -1303,9 +2419,12 @@ exports[`Input component should be able to change the icon position 1`] = `
         />
       </View>
       <TextInput
+        editable={true}
         placeholder="Email"
+        placeholderTextColor="#C4C4C4"
         style={
           Object {
+            "color": "#000",
             "flex": 1,
             "fontFamily": "Cairo-Regular",
             "textAlign": "right",
@@ -1330,7 +2449,7 @@ exports[`Input component should render correctly, with the icon in the left by d
           "left": 0,
           "position": "absolute",
           "right": 0,
-          "top": 0,
+          "top": 1,
         },
         undefined,
       ]
@@ -1338,7 +2457,7 @@ exports[`Input component should render correctly, with the icon in the left by d
   >
     <RNSVGSvgView
       bbHeight="100%"
-      bbWidth={7}
+      bbWidth={3}
       focusable={false}
       height="100%"
       style={
@@ -1348,18 +2467,18 @@ exports[`Input component should render correctly, with the icon in the left by d
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
             "top": 10,
           },
           Object {
             "flex": 0,
             "height": "100%",
-            "width": 7,
+            "width": 3,
           },
         ]
       }
-      width={7}
+      width={3}
     >
       <RNSVGGroup>
         <RNSVGDefs>
@@ -1367,7 +2486,7 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -1394,7 +2513,7 @@ exports[`Input component should render correctly, with the icon in the left by d
               "fill",
             ]
           }
-          width={6}
+          width={2}
           x={0}
           y={-20}
         />
@@ -1402,7 +2521,7 @@ exports[`Input component should render correctly, with the icon in the left by d
     </RNSVGSvgView>
     <RNSVGSvgView
       bbHeight="100%"
-      bbWidth={7}
+      bbWidth={3}
       focusable={false}
       height="100%"
       style={
@@ -1419,11 +2538,11 @@ exports[`Input component should render correctly, with the icon in the left by d
           Object {
             "flex": 0,
             "height": "100%",
-            "width": 7,
+            "width": 3,
           },
         ]
       }
-      width={7}
+      width={3}
     >
       <RNSVGGroup>
         <RNSVGDefs>
@@ -1431,7 +2550,7 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -1458,17 +2577,17 @@ exports[`Input component should render correctly, with the icon in the left by d
               "fill",
             ]
           }
-          width={6}
+          width={2}
           x={0}
           y={-20}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={7}
+      bbHeight={3}
       bbWidth="100%"
       focusable={false}
-      height={7}
+      height={3}
       style={
         Array [
           Object {
@@ -1482,7 +2601,7 @@ exports[`Input component should render correctly, with the icon in the left by d
           },
           Object {
             "flex": 0,
-            "height": 7,
+            "height": 3,
             "width": "100%",
           },
         ]
@@ -1495,7 +2614,7 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -1516,7 +2635,7 @@ exports[`Input component should render correctly, with the icon in the left by d
               "bottom",
             ]
           }
-          height={6}
+          height={2}
           propList={
             Array [
               "fill",
@@ -1529,10 +2648,10 @@ exports[`Input component should render correctly, with the icon in the left by d
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={7}
+      bbHeight={3}
       bbWidth="100%"
       focusable={false}
-      height={7}
+      height={3}
       style={
         Array [
           Object {
@@ -1542,11 +2661,11 @@ exports[`Input component should render correctly, with the icon in the left by d
           Object {
             "left": 10,
             "position": "absolute",
-            "top": -6,
+            "top": -2,
           },
           Object {
             "flex": 0,
-            "height": 7,
+            "height": 3,
             "width": "100%",
           },
         ]
@@ -1559,7 +2678,7 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradient={
               Array [
                 0,
-                251658240,
+                335544320,
                 1,
                 0,
               ]
@@ -1580,7 +2699,7 @@ exports[`Input component should render correctly, with the icon in the left by d
               "top",
             ]
           }
-          height={6}
+          height={2}
           propList={
             Array [
               "fill",
@@ -1593,10 +2712,10 @@ exports[`Input component should render correctly, with the icon in the left by d
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -1604,30 +2723,30 @@ exports[`Input component should render correctly, with the icon in the left by d
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
-            "top": -6,
+            "top": -2,
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup>
         <RNSVGDefs>
           <RNSVGRadialGradient
-            cx={16}
-            cy={16}
-            fx={16}
-            fy={16}
+            cx={12}
+            cy={12}
+            fx={12}
+            fy={12}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -1635,12 +2754,12 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradientTransform={null}
             gradientUnits={1}
             name="topLeft"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M0,16 a16,16 0 0 1 16 -16 v6 a10,10 0 0 0 -10,10 h-6 Z"
+          d="M0,12 a12,12 0 0 1 12 -12 v2 v10 h-10 h-2 Z"
           fill={
             Array [
               1,
@@ -1656,10 +2775,10 @@ exports[`Input component should render correctly, with the icon in the left by d
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -1669,7 +2788,7 @@ exports[`Input component should render correctly, with the icon in the left by d
           Object {
             "left": "100%",
             "position": "absolute",
-            "top": -6,
+            "top": -2,
             "transform": Array [
               Object {
                 "translateX": -10,
@@ -1678,12 +2797,12 @@ exports[`Input component should render correctly, with the icon in the left by d
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup
         matrix={
@@ -1700,13 +2819,13 @@ exports[`Input component should render correctly, with the icon in the left by d
         <RNSVGDefs>
           <RNSVGRadialGradient
             cx={0}
-            cy={16}
+            cy={12}
             fx={0}
-            fy={16}
+            fy={12}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -1714,12 +2833,12 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradientTransform={null}
             gradientUnits={1}
             name="topRight"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M0,0 a16,16 0 0 1 16,16 h-6 a10,10 0 0 0 -10,-10 v-6 Z"
+          d="M0,0 a12,12 0 0 1 12,12 h-2 h-10 v-10 v-2 Z"
           fill={
             Array [
               1,
@@ -1735,10 +2854,10 @@ exports[`Input component should render correctly, with the icon in the left by d
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -1746,7 +2865,7 @@ exports[`Input component should render correctly, with the icon in the left by d
             "borderWidth": 0,
           },
           Object {
-            "left": -6,
+            "left": -2,
             "position": "absolute",
             "top": "100%",
             "transform": Array [
@@ -1757,12 +2876,12 @@ exports[`Input component should render correctly, with the icon in the left by d
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup
         matrix={
@@ -1778,14 +2897,14 @@ exports[`Input component should render correctly, with the icon in the left by d
       >
         <RNSVGDefs>
           <RNSVGRadialGradient
-            cx={16}
+            cx={12}
             cy={0}
-            fx={16}
+            fx={12}
             fy={0}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -1793,12 +2912,12 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradientTransform={null}
             gradientUnits={1}
             name="bottomLeft"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M16,16 a16,16 0 0 1 -16,-16 h6 a10,10 0 0 0 10,10 v6 Z"
+          d="M12,12 a12,12 0 0 1 -12,-12 h2 h10 v10 v2 Z"
           fill={
             Array [
               1,
@@ -1814,10 +2933,10 @@ exports[`Input component should render correctly, with the icon in the left by d
       </RNSVGGroup>
     </RNSVGSvgView>
     <RNSVGSvgView
-      bbHeight={17}
-      bbWidth={17}
+      bbHeight={13}
+      bbWidth={13}
       focusable={false}
-      height={17}
+      height={13}
       style={
         Array [
           Object {
@@ -1839,12 +2958,12 @@ exports[`Input component should render correctly, with the icon in the left by d
           },
           Object {
             "flex": 0,
-            "height": 17,
-            "width": 17,
+            "height": 13,
+            "width": 13,
           },
         ]
       }
-      width={17}
+      width={13}
     >
       <RNSVGGroup
         matrix={
@@ -1866,8 +2985,8 @@ exports[`Input component should render correctly, with the icon in the left by d
             fy={0}
             gradient={
               Array [
-                0.625,
-                251658240,
+                0.8333333333333334,
+                335544320,
                 1,
                 0,
               ]
@@ -1875,12 +2994,12 @@ exports[`Input component should render correctly, with the icon in the left by d
             gradientTransform={null}
             gradientUnits={1}
             name="bottomRight"
-            rx={16}
-            ry={16}
+            rx={12}
+            ry={12}
           />
         </RNSVGDefs>
         <RNSVGPath
-          d="M16,0 a16,16 0 0 1 -16,16 v-6 a10,10 0 0 0 10,-10 h6 Z"
+          d="M12,0 a12,12 0 0 1 -12,12 v-2 v-10 h10 h2 Z"
           fill={
             Array [
               1,
@@ -1892,6 +3011,159 @@ exports[`Input component should render correctly, with the icon in the left by d
               "fill",
             ]
           }
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      bbHeight="100%"
+      bbWidth="100%"
+      focusable={false}
+      height="100%"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "position": "absolute",
+          },
+          Object {
+            "flex": 0,
+            "height": "100%",
+            "width": "100%",
+          },
+        ]
+      }
+      width="100%"
+    >
+      <RNSVGGroup>
+        <RNSVGDefs>
+          <RNSVGMask
+            height="100%"
+            maskContentUnits={1}
+            maskTransform={
+              Array [
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+              ]
+            }
+            maskUnits={0}
+            name="maskPaintBelow"
+            width="100%"
+            x="0%"
+            y="0%"
+          >
+            <RNSVGRect
+              fill={4294967295}
+              height="100%"
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width="100%"
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x={0}
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -10,
+                  0,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x="100%"
+              y={0}
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  -10,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x={0}
+              y="100%"
+            />
+            <RNSVGRect
+              fill={4278190080}
+              height={10}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  -10,
+                  -10,
+                ]
+              }
+              propList={
+                Array [
+                  "fill",
+                ]
+              }
+              width={10}
+              x="100%"
+              y="100%"
+            />
+          </RNSVGMask>
+        </RNSVGDefs>
+        <RNSVGRect
+          fill={4278190080}
+          fillOpacity={0.08}
+          height="100%"
+          mask="maskPaintBelow"
+          propList={
+            Array [
+              "fill",
+              "fillOpacity",
+            ]
+          }
+          width="100%"
+          x={0}
+          y={0}
         />
       </RNSVGGroup>
     </RNSVGSvgView>
@@ -1916,7 +3188,6 @@ exports[`Input component should render correctly, with the icon in the left by d
             "alignItems": "center",
             "backgroundColor": "white",
             "borderRadius": 10,
-            "flex": 1,
             "flexDirection": "row",
             "height": 60,
             "justifyContent": "space-between",
@@ -1934,7 +3205,7 @@ exports[`Input component should render correctly, with the icon in the left by d
             Object {
               "alignItems": "center",
               "justifyContent": "center",
-              "width": 30,
+              "width": 25,
             },
             Object {},
           ]
@@ -1955,9 +3226,12 @@ exports[`Input component should render correctly, with the icon in the left by d
         />
       </View>
       <TextInput
+        editable={true}
         placeholder="Email"
+        placeholderTextColor="#C4C4C4"
         style={
           Object {
+            "color": "#000",
             "flex": 1,
             "fontFamily": "Cairo-Regular",
             "textAlign": "right",
@@ -1988,7 +3262,7 @@ Array [
             "left": 0,
             "position": "absolute",
             "right": 0,
-            "top": 0,
+            "top": 1,
           },
           undefined,
         ]
@@ -1996,7 +3270,7 @@ Array [
     >
       <RNSVGSvgView
         bbHeight="100%"
-        bbWidth={7}
+        bbWidth={3}
         focusable={false}
         height="100%"
         style={
@@ -2006,18 +3280,18 @@ Array [
               "borderWidth": 0,
             },
             Object {
-              "left": -6,
+              "left": -2,
               "position": "absolute",
               "top": 10,
             },
             Object {
               "flex": 0,
               "height": "100%",
-              "width": 7,
+              "width": 3,
             },
           ]
         }
-        width={7}
+        width={3}
       >
         <RNSVGGroup>
           <RNSVGDefs>
@@ -2025,7 +3299,7 @@ Array [
               gradient={
                 Array [
                   0,
-                  251658240,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2052,7 +3326,7 @@ Array [
                 "fill",
               ]
             }
-            width={6}
+            width={2}
             x={0}
             y={-20}
           />
@@ -2060,7 +3334,7 @@ Array [
       </RNSVGSvgView>
       <RNSVGSvgView
         bbHeight="100%"
-        bbWidth={7}
+        bbWidth={3}
         focusable={false}
         height="100%"
         style={
@@ -2077,11 +3351,11 @@ Array [
             Object {
               "flex": 0,
               "height": "100%",
-              "width": 7,
+              "width": 3,
             },
           ]
         }
-        width={7}
+        width={3}
       >
         <RNSVGGroup>
           <RNSVGDefs>
@@ -2089,7 +3363,7 @@ Array [
               gradient={
                 Array [
                   0,
-                  251658240,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2116,17 +3390,17 @@ Array [
                 "fill",
               ]
             }
-            width={6}
+            width={2}
             x={0}
             y={-20}
           />
         </RNSVGGroup>
       </RNSVGSvgView>
       <RNSVGSvgView
-        bbHeight={7}
+        bbHeight={3}
         bbWidth="100%"
         focusable={false}
-        height={7}
+        height={3}
         style={
           Array [
             Object {
@@ -2140,7 +3414,7 @@ Array [
             },
             Object {
               "flex": 0,
-              "height": 7,
+              "height": 3,
               "width": "100%",
             },
           ]
@@ -2153,7 +3427,7 @@ Array [
               gradient={
                 Array [
                   0,
-                  251658240,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2174,7 +3448,7 @@ Array [
                 "bottom",
               ]
             }
-            height={6}
+            height={2}
             propList={
               Array [
                 "fill",
@@ -2187,10 +3461,10 @@ Array [
         </RNSVGGroup>
       </RNSVGSvgView>
       <RNSVGSvgView
-        bbHeight={7}
+        bbHeight={3}
         bbWidth="100%"
         focusable={false}
-        height={7}
+        height={3}
         style={
           Array [
             Object {
@@ -2200,11 +3474,11 @@ Array [
             Object {
               "left": 10,
               "position": "absolute",
-              "top": -6,
+              "top": -2,
             },
             Object {
               "flex": 0,
-              "height": 7,
+              "height": 3,
               "width": "100%",
             },
           ]
@@ -2217,7 +3491,7 @@ Array [
               gradient={
                 Array [
                   0,
-                  251658240,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2238,7 +3512,7 @@ Array [
                 "top",
               ]
             }
-            height={6}
+            height={2}
             propList={
               Array [
                 "fill",
@@ -2251,10 +3525,10 @@ Array [
         </RNSVGGroup>
       </RNSVGSvgView>
       <RNSVGSvgView
-        bbHeight={17}
-        bbWidth={17}
+        bbHeight={13}
+        bbWidth={13}
         focusable={false}
-        height={17}
+        height={13}
         style={
           Array [
             Object {
@@ -2262,30 +3536,30 @@ Array [
               "borderWidth": 0,
             },
             Object {
-              "left": -6,
+              "left": -2,
               "position": "absolute",
-              "top": -6,
+              "top": -2,
             },
             Object {
               "flex": 0,
-              "height": 17,
-              "width": 17,
+              "height": 13,
+              "width": 13,
             },
           ]
         }
-        width={17}
+        width={13}
       >
         <RNSVGGroup>
           <RNSVGDefs>
             <RNSVGRadialGradient
-              cx={16}
-              cy={16}
-              fx={16}
-              fy={16}
+              cx={12}
+              cy={12}
+              fx={12}
+              fy={12}
               gradient={
                 Array [
-                  0.625,
-                  251658240,
+                  0.8333333333333334,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2293,12 +3567,12 @@ Array [
               gradientTransform={null}
               gradientUnits={1}
               name="topLeft"
-              rx={16}
-              ry={16}
+              rx={12}
+              ry={12}
             />
           </RNSVGDefs>
           <RNSVGPath
-            d="M0,16 a16,16 0 0 1 16 -16 v6 a10,10 0 0 0 -10,10 h-6 Z"
+            d="M0,12 a12,12 0 0 1 12 -12 v2 v10 h-10 h-2 Z"
             fill={
               Array [
                 1,
@@ -2314,10 +3588,10 @@ Array [
         </RNSVGGroup>
       </RNSVGSvgView>
       <RNSVGSvgView
-        bbHeight={17}
-        bbWidth={17}
+        bbHeight={13}
+        bbWidth={13}
         focusable={false}
-        height={17}
+        height={13}
         style={
           Array [
             Object {
@@ -2327,7 +3601,7 @@ Array [
             Object {
               "left": "100%",
               "position": "absolute",
-              "top": -6,
+              "top": -2,
               "transform": Array [
                 Object {
                   "translateX": -10,
@@ -2336,12 +3610,12 @@ Array [
             },
             Object {
               "flex": 0,
-              "height": 17,
-              "width": 17,
+              "height": 13,
+              "width": 13,
             },
           ]
         }
-        width={17}
+        width={13}
       >
         <RNSVGGroup
           matrix={
@@ -2358,13 +3632,13 @@ Array [
           <RNSVGDefs>
             <RNSVGRadialGradient
               cx={0}
-              cy={16}
+              cy={12}
               fx={0}
-              fy={16}
+              fy={12}
               gradient={
                 Array [
-                  0.625,
-                  251658240,
+                  0.8333333333333334,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2372,12 +3646,12 @@ Array [
               gradientTransform={null}
               gradientUnits={1}
               name="topRight"
-              rx={16}
-              ry={16}
+              rx={12}
+              ry={12}
             />
           </RNSVGDefs>
           <RNSVGPath
-            d="M0,0 a16,16 0 0 1 16,16 h-6 a10,10 0 0 0 -10,-10 v-6 Z"
+            d="M0,0 a12,12 0 0 1 12,12 h-2 h-10 v-10 v-2 Z"
             fill={
               Array [
                 1,
@@ -2393,10 +3667,10 @@ Array [
         </RNSVGGroup>
       </RNSVGSvgView>
       <RNSVGSvgView
-        bbHeight={17}
-        bbWidth={17}
+        bbHeight={13}
+        bbWidth={13}
         focusable={false}
-        height={17}
+        height={13}
         style={
           Array [
             Object {
@@ -2404,7 +3678,7 @@ Array [
               "borderWidth": 0,
             },
             Object {
-              "left": -6,
+              "left": -2,
               "position": "absolute",
               "top": "100%",
               "transform": Array [
@@ -2415,12 +3689,12 @@ Array [
             },
             Object {
               "flex": 0,
-              "height": 17,
-              "width": 17,
+              "height": 13,
+              "width": 13,
             },
           ]
         }
-        width={17}
+        width={13}
       >
         <RNSVGGroup
           matrix={
@@ -2436,14 +3710,14 @@ Array [
         >
           <RNSVGDefs>
             <RNSVGRadialGradient
-              cx={16}
+              cx={12}
               cy={0}
-              fx={16}
+              fx={12}
               fy={0}
               gradient={
                 Array [
-                  0.625,
-                  251658240,
+                  0.8333333333333334,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2451,12 +3725,12 @@ Array [
               gradientTransform={null}
               gradientUnits={1}
               name="bottomLeft"
-              rx={16}
-              ry={16}
+              rx={12}
+              ry={12}
             />
           </RNSVGDefs>
           <RNSVGPath
-            d="M16,16 a16,16 0 0 1 -16,-16 h6 a10,10 0 0 0 10,10 v6 Z"
+            d="M12,12 a12,12 0 0 1 -12,-12 h2 h10 v10 v2 Z"
             fill={
               Array [
                 1,
@@ -2472,10 +3746,10 @@ Array [
         </RNSVGGroup>
       </RNSVGSvgView>
       <RNSVGSvgView
-        bbHeight={17}
-        bbWidth={17}
+        bbHeight={13}
+        bbWidth={13}
         focusable={false}
-        height={17}
+        height={13}
         style={
           Array [
             Object {
@@ -2497,12 +3771,12 @@ Array [
             },
             Object {
               "flex": 0,
-              "height": 17,
-              "width": 17,
+              "height": 13,
+              "width": 13,
             },
           ]
         }
-        width={17}
+        width={13}
       >
         <RNSVGGroup
           matrix={
@@ -2524,8 +3798,8 @@ Array [
               fy={0}
               gradient={
                 Array [
-                  0.625,
-                  251658240,
+                  0.8333333333333334,
+                  335544320,
                   1,
                   0,
                 ]
@@ -2533,12 +3807,12 @@ Array [
               gradientTransform={null}
               gradientUnits={1}
               name="bottomRight"
-              rx={16}
-              ry={16}
+              rx={12}
+              ry={12}
             />
           </RNSVGDefs>
           <RNSVGPath
-            d="M16,0 a16,16 0 0 1 -16,16 v-6 a10,10 0 0 0 10,-10 h6 Z"
+            d="M12,0 a12,12 0 0 1 -12,12 v-2 v-10 h10 h2 Z"
             fill={
               Array [
                 1,
@@ -2550,6 +3824,159 @@ Array [
                 "fill",
               ]
             }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+      <RNSVGSvgView
+        bbHeight="100%"
+        bbWidth="100%"
+        focusable={false}
+        height="100%"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            Object {
+              "position": "absolute",
+            },
+            Object {
+              "flex": 0,
+              "height": "100%",
+              "width": "100%",
+            },
+          ]
+        }
+        width="100%"
+      >
+        <RNSVGGroup>
+          <RNSVGDefs>
+            <RNSVGMask
+              height="100%"
+              maskContentUnits={1}
+              maskTransform={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              maskUnits={0}
+              name="maskPaintBelow"
+              width="100%"
+              x="0%"
+              y="0%"
+            >
+              <RNSVGRect
+                fill={4294967295}
+                height="100%"
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                width="100%"
+                x={0}
+                y={0}
+              />
+              <RNSVGRect
+                fill={4278190080}
+                height={10}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                width={10}
+                x={0}
+                y={0}
+              />
+              <RNSVGRect
+                fill={4278190080}
+                height={10}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    -10,
+                    0,
+                  ]
+                }
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                width={10}
+                x="100%"
+                y={0}
+              />
+              <RNSVGRect
+                fill={4278190080}
+                height={10}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    -10,
+                  ]
+                }
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                width={10}
+                x={0}
+                y="100%"
+              />
+              <RNSVGRect
+                fill={4278190080}
+                height={10}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    -10,
+                    -10,
+                  ]
+                }
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                width={10}
+                x="100%"
+                y="100%"
+              />
+            </RNSVGMask>
+          </RNSVGDefs>
+          <RNSVGRect
+            fill={4278190080}
+            fillOpacity={0.08}
+            height="100%"
+            mask="maskPaintBelow"
+            propList={
+              Array [
+                "fill",
+                "fillOpacity",
+              ]
+            }
+            width="100%"
+            x={0}
+            y={0}
           />
         </RNSVGGroup>
       </RNSVGSvgView>
@@ -2574,7 +4001,6 @@ Array [
               "alignItems": "center",
               "backgroundColor": "white",
               "borderRadius": 10,
-              "flex": 1,
               "flexDirection": "row",
               "height": 60,
               "justifyContent": "space-between",
@@ -2594,7 +4020,7 @@ Array [
               Object {
                 "alignItems": "center",
                 "justifyContent": "center",
-                "width": 30,
+                "width": 25,
               },
               Object {
                 "marginLeft": 5,
@@ -2617,9 +4043,12 @@ Array [
           />
         </View>
         <TextInput
+          editable={true}
           placeholder="Email"
+          placeholderTextColor="#C4C4C4"
           style={
             Object {
+              "color": "#000",
               "flex": 1,
               "fontFamily": "Cairo-Regular",
               "textAlign": "right",

@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Popup Component should open when isOpen is true 1`] = `
-<RCTScrollView
+exports[`Popup Component should be able to change the container style 1`] = `
+<View
   collapsable={false}
   nativeID="animatedComponent"
-  scrollEventThrottle={0.0001}
   style={
     Object {
       "backgroundColor": "#F4E6CA",
-      "borderTopLeftRadius": 40,
-      "borderTopRightRadius": 40,
+      "borderTopLeftRadius": 30,
+      "borderTopRightRadius": 30,
       "bottom": 0,
       "elevation": 40,
+      "height": "auto",
       "left": 0,
-      "maxHeight": 1334,
+      "maxHeight": 1304,
       "position": "absolute",
-      "shadowColor": "#b66c129f",
+      "shadowColor": "#B87015",
       "transform": Array [
         Object {
           "translateY": 1334,
@@ -26,42 +26,98 @@ exports[`Popup Component should open when isOpen is true 1`] = `
     }
   }
 >
-  <View>
-    <View
-      style={
-        Object {
-          "alignSelf": "center",
-          "backgroundColor": "#B66D12",
-          "borderRadius": 3,
-          "height": 6,
-          "marginTop": 5,
-          "width": 80,
-        }
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#B66D12",
+        "borderRadius": 3,
+        "height": 6,
+        "marginTop": 5,
+        "width": 80,
       }
-    />
-    <Text>
-      Some content
-    </Text>
-  </View>
-</RCTScrollView>
+    }
+  />
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "margin": 30,
+      }
+    }
+  >
+    <View>
+      <Text>
+        Some content
+      </Text>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`Popup Component should open when isOpen is true 1`] = `
+<View
+  collapsable={false}
+  nativeID="animatedComponent"
+  style={
+    Object {
+      "backgroundColor": "#F4E6CA",
+      "borderTopLeftRadius": 30,
+      "borderTopRightRadius": 30,
+      "bottom": 0,
+      "elevation": 40,
+      "height": "auto",
+      "left": 0,
+      "maxHeight": 1304,
+      "position": "absolute",
+      "shadowColor": "#B87015",
+      "transform": Array [
+        Object {
+          "translateY": 1334,
+        },
+      ],
+      "width": "100%",
+      "zIndex": 3,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#B66D12",
+        "borderRadius": 3,
+        "height": 6,
+        "marginTop": 5,
+        "width": 80,
+      }
+    }
+  />
+  <RCTScrollView>
+    <View>
+      <Text>
+        Some content
+      </Text>
+    </View>
+  </RCTScrollView>
+</View>
 `;
 
 exports[`Popup Component should render correclty and closed when isOpen is false 1`] = `
-<RCTScrollView
+<View
   collapsable={false}
   nativeID="animatedComponent"
-  scrollEventThrottle={0.0001}
   style={
     Object {
       "backgroundColor": "#F4E6CA",
-      "borderTopLeftRadius": 40,
-      "borderTopRightRadius": 40,
+      "borderTopLeftRadius": 30,
+      "borderTopRightRadius": 30,
       "bottom": 0,
       "elevation": 40,
+      "height": "auto",
       "left": 0,
-      "maxHeight": 1334,
+      "maxHeight": 1304,
       "position": "absolute",
-      "shadowColor": "#b66c129f",
+      "shadowColor": "#B87015",
       "transform": Array [
         Object {
           "translateY": 1334,
@@ -72,22 +128,24 @@ exports[`Popup Component should render correclty and closed when isOpen is false
     }
   }
 >
-  <View>
-    <View
-      style={
-        Object {
-          "alignSelf": "center",
-          "backgroundColor": "#B66D12",
-          "borderRadius": 3,
-          "height": 6,
-          "marginTop": 5,
-          "width": 80,
-        }
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#B66D12",
+        "borderRadius": 3,
+        "height": 6,
+        "marginTop": 5,
+        "width": 80,
       }
-    />
-    <Text>
-      Some content
-    </Text>
-  </View>
-</RCTScrollView>
+    }
+  />
+  <RCTScrollView>
+    <View>
+      <Text>
+        Some content
+      </Text>
+    </View>
+  </RCTScrollView>
+</View>
 `;

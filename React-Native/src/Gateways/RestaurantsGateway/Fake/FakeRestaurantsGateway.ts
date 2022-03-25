@@ -6,7 +6,7 @@ import type {
 
 import {RESTAURANTS} from './RESTAURANTS';
 
-class RestaurantsFakeGateway implements IRestaurantsGateway {
+class FakeRestaurantsGateway implements IRestaurantsGateway {
   async searchFor(keyword: string): Promise<RestaurantInfo[]> {
     return await new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -39,4 +39,4 @@ class RestaurantsFakeGateway implements IRestaurantsGateway {
   }
 }
 
-export {RestaurantsFakeGateway};
+export {FakeRestaurantsGateway};
