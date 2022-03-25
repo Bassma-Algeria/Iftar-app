@@ -2,14 +2,14 @@ import React from 'react';
 
 import {styles} from './RestaurantPopup.style';
 
-import {useMapContext} from '../../_hooks_/useMapContext';
+import {useDiscoverModeContext} from '../../_hooks_/useDiscoverModeContext';
 
 import {RestaurantInfoView} from './_components_/RestaurantPopupBody/RestaurantInfoView';
 import {Popup} from '../../../../../../components/Popup/Popup';
 import {Loader} from '../../../../../../components/Loader/Loader';
 
 const RestaurantPopup: React.FC = () => {
-  const {selectedRestaurant, setSelectedRestaurant} = useMapContext();
+  const {selectedRestaurant, setSelectedRestaurant} = useDiscoverModeContext();
 
   return (
     <Popup isOpen={!!selectedRestaurant} onClose={() => setSelectedRestaurant(undefined)}>

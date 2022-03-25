@@ -9,7 +9,7 @@ import type {RestaurantInfo} from '../../../../../../../Gateways/RestaurantsGate
 
 import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {useMapContext} from '../../../_hooks_/useMapContext';
+import {useDiscoverModeContext} from '../../../_hooks_/useDiscoverModeContext';
 
 import {Header} from '../../../../../../../components/Header/Header';
 
@@ -30,7 +30,7 @@ const RestaurantsMarkers: React.FC = () => {
 };
 
 const RestaurantMarker: React.FC<RestaurantInfo> = restaurantInfo => {
-  const {setSelectedRestaurant} = useMapContext();
+  const {setSelectedRestaurant} = useDiscoverModeContext();
 
   return (
     <Marker

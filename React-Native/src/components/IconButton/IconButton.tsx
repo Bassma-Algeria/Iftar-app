@@ -15,7 +15,7 @@ interface Props {
 const IconButton: React.FC<Props> = ({icon, style, onPress}) => {
   return (
     <Shadow containerViewStyle={style} startColor={COLORS.primaryShadow} distance={2}>
-      <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.95}>
+      <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.9}>
         <Image source={icon} style={styles.icon} resizeMode="contain" />
       </TouchableOpacity>
     </Shadow>

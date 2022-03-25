@@ -7,7 +7,7 @@ import type {RestaurantInfo} from '../../../../../../../../Gateways/RestaurantsG
 
 import {ICONS} from '../../../../../../../../utils/constants/Icons';
 
-import {useMapContext} from '../../../../_hooks_/useMapContext';
+import {useDiscoverModeContext} from '../../../../_hooks_/useDiscoverModeContext';
 
 import {Button} from '../../../../../../../../components/Button/Button';
 import {Header} from '../../../../../../../../components/Header/Header';
@@ -15,7 +15,7 @@ import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
 
 const RestaurantInfoView: React.FC<RestaurantInfo> = props => {
-  const {setDestinationLocation, setSelectedRestaurant} = useMapContext();
+  const {setDestinationLocation, setSelectedRestaurant} = useDiscoverModeContext();
 
   const handleDirectionButtonClick = () => {
     setSelectedRestaurant(undefined);

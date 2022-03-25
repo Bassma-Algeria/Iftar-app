@@ -5,7 +5,7 @@ import {LocationCords} from '../../../../../../../../@types/LocationCords';
 
 import {COLORS} from '../../../../../../../../theme/Colors';
 
-import {useMapContext} from '../../../../_hooks_/useMapContext';
+import {useDiscoverModeContext} from '../../../../_hooks_/useDiscoverModeContext';
 import {usePathCoordinatesFetcher} from './_hooks_/usePathCoordinatesFetcher';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const PathToRestaurant: React.FC<Props> = ({currentLocation}) => {
-  const {destinationLocation} = useMapContext();
+  const {destinationLocation} = useDiscoverModeContext();
   const {coordinates} = usePathCoordinatesFetcher(currentLocation, destinationLocation);
 
   return coordinates ? <Path coordinates={coordinates} /> : null;

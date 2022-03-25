@@ -5,6 +5,7 @@ import type {RestaurantInfo} from '../../Gateways/RestaurantsGateway/Restaurants
 export type HomeStackParamsList = {
   Map: undefined | {selectedRestaurant: RestaurantInfo};
   Search: undefined;
+  Profile: undefined;
 };
 
 export type HomeStackScreenProps<CurrentScreen extends keyof HomeStackParamsList> =

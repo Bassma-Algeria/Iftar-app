@@ -1,13 +1,12 @@
+import {View} from 'react-native';
 import React from 'react';
 
 import {styles} from './Login.style';
 
-import {Layout} from '../../_components_/Layout/Layout';
-import {Header} from '../../../../components/Header/Header';
-import {View} from 'react-native';
-
 import type {StartupStackScreenProps} from '../../StartupStack.types';
 
+import {Layout} from '../../_components_/Layout/Layout';
+import {Header} from '../../../../components/Header/Header';
 import {LoginForm} from './_components_/LoginForm/LoginForm';
 
 interface Props extends StartupStackScreenProps<'Login'> {}

@@ -1,15 +1,16 @@
-import React, {createContext, useRef, useState} from 'react';
+import React, {createContext, useState, useRef} from 'react';
 import GoogleMapView from 'react-native-maps';
 
 import type {LocationCords} from '../../../../../@types/LocationCords';
-import type {RestaurantInfo} from '../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+
+type UsageModes = 'discover' | 'chooseLocation';
 
 interface MapContextValues {
-  selectedRestaurant?: RestaurantInfo;
-  setSelectedRestaurant: React.Dispatch<React.SetStateAction<RestaurantInfo | undefined>>;
+  currentLocation?: LocationCords;
+  setCurrentLocation: React.Dispatch<React.SetStateAction<LocationCords | undefined>>;
 
-  destinationLocation?: LocationCords;
-  setDestinationLocation: React.Dispatch<React.SetStateAction<LocationCords | undefined>>;
+  usageMode: UsageModes;
+  setUsageMode: React.Dispatch<React.SetStateAction<UsageModes>>;
 
   mapRef: React.RefObject<GoogleMapView>;
 }
@@ -17,19 +18,14 @@ interface MapContextValues {
 export const MapContext = createContext<MapContextValues | undefined>(undefined);
 
 const MapContextProvider: React.FC = ({children}) => {
-  const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantInfo>();
-  const [destinationLocation, setDestinationLocation] = useState<LocationCords>();
+  const [usageMode, setUsageMode] = useState<UsageModes>('discover');
+  const [currentLocation, setCurrentLocation] = useState<LocationCords>();
+
   const mapRef = useRef<GoogleMapView>(null);
 
   return (
     <MapContext.Provider
-      value={{
-        selectedRestaurant,
-        setSelectedRestaurant,
-        destinationLocation,
-        setDestinationLocation,
-        mapRef,
-      }}>
+      value={{currentLocation, setCurrentLocation, usageMode, setUsageMode, mapRef}}>
       {children}
     </MapContext.Provider>
   );

@@ -1,23 +1,30 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
 import GoogleMapView from 'react-native-maps';
+import {useRoute} from '@react-navigation/native';
 
 import {mapStyle, styles} from '../../Map.style';
 
 import type {LocationCords} from '../../../../../../@types/LocationCords';
+import type {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 import {useLocation} from './_hooks_/useLocation';
+
+import {useDiscoverModeContext} from '../../_hooks_/useDiscoverModeContext';
+import {useMapContext} from '../../_hooks_/useMapContext';
 
 import {Header} from '../../../../../../components/Header/Header';
 import {RestaurantsMarkers} from './_components_/RestaurantsMarkers';
 import {PathToRestaurant} from './_components_/PathToRestaurant/PathToRestaurant';
 import {MyPositionMarker} from './_components_/MyPositionMarker';
-import {useMapContext} from '../../_hooks_/useMapContext';
-import {useRoute} from '@react-navigation/native';
-import {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 const MapView: React.FC = () => {
   const {currentLocation, error} = useLocation();
+  const {setCurrentLocation} = useMapContext();
+
+  useEffect(() => {
+    setCurrentLocation(currentLocation);
+  }, [currentLocation, setCurrentLocation]);
 
   return !currentLocation ? (
     <LoadingMessage error={error} />
@@ -48,7 +55,9 @@ interface MapProps {
 
 const Map: React.FC<MapProps> = ({initialLocation}) => {
   const routes = useRoute<HomeStackScreenProps<'Map'>['route']>();
-  const {mapRef, setSelectedRestaurant} = useMapContext();
+
+  const {setSelectedRestaurant} = useDiscoverModeContext();
+  const {mapRef} = useMapContext();
 
   useEffect(() => {
     const selectedRestaurant = routes.params?.selectedRestaurant;

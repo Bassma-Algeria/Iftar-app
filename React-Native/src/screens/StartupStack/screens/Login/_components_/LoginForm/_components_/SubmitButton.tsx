@@ -21,7 +21,6 @@ const SubmitButton: React.FC = () => {
     }
 
     setIsLoading(true);
-
     restaurentOwner
       .login(loginInfo)
       .then(resp => console.log(resp))
