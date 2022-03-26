@@ -2,7 +2,7 @@ import {useContext} from 'react';
 
 import {AddRestaurantFormContext} from '../_context_/AddRestaurantFormContextProvider';
 
-const useAddRestaurantContext = () => {
+const useAddRestaurantFormContext = () => {
   const values = useContext(AddRestaurantFormContext);
 
   if (!values) {
@@ -12,4 +12,4 @@ const useAddRestaurantContext = () => {
   return values;
 };
 
-export {useAddRestaurantContext};
+export {useAddRestaurantFormContext};

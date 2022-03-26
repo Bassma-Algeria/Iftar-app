@@ -3,11 +3,11 @@ import React from 'react';
 
 import {styles} from '../../../RestaurantPopup.style';
 
-import type {Time} from '../../../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+import type {Time} from '../../../../../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 
-import {ICONS} from '../../../../../../../../../utils/constants/Icons';
+import {ICONS} from '../../../../../../../../../../../utils/constants/Icons';
 
-import {Header} from '../../../../../../../../../components/Header/Header';
+import {Header} from '../../../../../../../../../../../components/Header/Header';
 
 interface Props {
   closingTime: Time;

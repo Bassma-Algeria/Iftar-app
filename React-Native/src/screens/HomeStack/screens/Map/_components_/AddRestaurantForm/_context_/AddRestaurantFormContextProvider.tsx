@@ -11,17 +11,21 @@ interface AddRestaurantContextValues {
 
 const AddRestaurantFormContext = createContext<AddRestaurantContextValues | undefined>(undefined);
 
+const initialAddRestaurantFormState = {
+  name: '',
+  ownerName: '',
+  pictures: [],
+  closingTime: {hour: 0, minut: 0},
+  openingTime: {hour: 0, minut: 0},
+  locationCoords: undefined,
+  locationName: '',
+};
+
 const AddRestaurantFormContextProvider: React.FC = ({children}) => {
   const [serverError, setServerError] = useState<boolean>(false);
-  const [restaurantInfo, setRestaurantInfo] = useState<RestaurantInfoToAdd>({
-    name: '',
-    ownerName: '',
-    pictures: [],
-    closingTime: {hour: 0, minut: 0},
-    openingTime: {hour: 0, minut: 0},
-    locationCoords: undefined,
-    locationName: '',
-  });
+  const [restaurantInfo, setRestaurantInfo] = useState<RestaurantInfoToAdd>(
+    initialAddRestaurantFormState,
+  );
 
   return (
     <AddRestaurantFormContext.Provider
@@ -36,4 +40,4 @@ const AddRestaurantFormContextProvider: React.FC = ({children}) => {
   );
 };
 
-export {AddRestaurantFormContextProvider, AddRestaurantFormContext};
+export {AddRestaurantFormContextProvider, AddRestaurantFormContext, initialAddRestaurantFormState};

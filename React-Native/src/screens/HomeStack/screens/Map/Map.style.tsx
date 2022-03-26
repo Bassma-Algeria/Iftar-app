@@ -25,6 +25,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
+  addRestaurantButtonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    padding: 10,
+    paddingBottom: 20,
+    width: '100%',
+    zIndex: 1,
+  },
+
   map: {
     position: 'absolute',
     width: '100%',

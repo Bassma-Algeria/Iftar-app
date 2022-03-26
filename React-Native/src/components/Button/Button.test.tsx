@@ -33,4 +33,18 @@ describe('Button Component', () => {
 
     expect(mockFunction).toBeCalledTimes(1);
   });
+
+  it('should be able to make the button inactive and not run the onPress function in that case', () => {
+    const mockFunction = jest.fn();
+    const instance = render(
+      <Button inactive onPress={mockFunction}>
+        Click
+      </Button>,
+    );
+
+    fireEvent(instance.UNSAFE_getByType(TouchableOpacity), 'onPress');
+
+    expect(mockFunction).toBeCalledTimes(0);
+    expect(instance.toJSON()).toMatchSnapshot();
+  });
 });

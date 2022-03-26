@@ -21,7 +21,7 @@ const useLocation = () => {
       Geolocation.getCurrentPosition(
         position => setCurrentLocation(position.coords),
         err => setError(err.message),
-        {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
+        {enableHighAccuracy: true, timeout: 100000, maximumAge: 10000},
       );
     });
   }, []);

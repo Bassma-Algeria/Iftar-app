@@ -2,18 +2,18 @@ import {Pressable, View} from 'react-native';
 import React, {useState} from 'react';
 import DateTimePicker, {DateTimePickerEvent} from '@react-native-community/datetimepicker';
 
-import {styles} from '../../../AddRestaurant.style';
+import {styles} from '../AddRestaurantForm.style';
 
-import {ICONS} from '../../../../../../../../../utils/constants/Icons';
+import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {useAddRestaurantContext} from '../../../_hooks_/useAddRestaurantContext';
+import {useAddRestaurantFormContext} from '../_hooks_/useAddRestaurantFormContext';
 
-import type {Time} from '../../../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+import type {Time} from '../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 
-import {Input} from '../../../../../../../../../components/Inputs/TextInput/Input';
+import {Input} from '../../../../../../../components/Inputs/TextInput/Input';
 
 const WorkTimesInputs: React.FC = () => {
-  const {restaurantInfo, setRestaurantInfo} = useAddRestaurantContext();
+  const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();
 
   return (
     <View style={styles.workTimesContainer}>

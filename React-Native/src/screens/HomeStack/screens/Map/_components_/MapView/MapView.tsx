@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
-import GoogleMapView from 'react-native-maps';
+import GoogleMapView, {MapEvent} from 'react-native-maps';
 import {useRoute} from '@react-navigation/native';
 
 import {mapStyle, styles} from '../../Map.style';
@@ -10,6 +10,7 @@ import type {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 import {useLocation} from './_hooks_/useLocation';
 
+import {useChooseLocationModeContext} from '../../_hooks_/useChooseLocationModeContext';
 import {useDiscoverModeContext} from '../../_hooks_/useDiscoverModeContext';
 import {useMapContext} from '../../_hooks_/useMapContext';
 
@@ -17,6 +18,7 @@ import {Header} from '../../../../../../components/Header/Header';
 import {RestaurantsMarkers} from './_components_/RestaurantsMarkers';
 import {PathToRestaurant} from './_components_/PathToRestaurant/PathToRestaurant';
 import {MyPositionMarker} from './_components_/MyPositionMarker';
+import {SelectedLocationMarker} from './_components_/SelectedLocationMarker';
 
 const MapView: React.FC = () => {
   const {currentLocation, error} = useLocation();
@@ -56,8 +58,9 @@ interface MapProps {
 const Map: React.FC<MapProps> = ({initialLocation}) => {
   const routes = useRoute<HomeStackScreenProps<'Map'>['route']>();
 
+  const {setSelectedLocation} = useChooseLocationModeContext();
   const {setSelectedRestaurant} = useDiscoverModeContext();
-  const {mapRef} = useMapContext();
+  const {mapRef, usageMode} = useMapContext();
 
   useEffect(() => {
     const selectedRestaurant = routes.params?.selectedRestaurant;
@@ -70,16 +73,25 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
     mapRef.current?.animateToRegion({...locationCoords, latitudeDelta, longitudeDelta}, 1000);
   }, [mapRef, routes.params, setSelectedRestaurant]);
 
+  const handlePress = (e: MapEvent) => {
+    if (usageMode === 'chooseLocation') {
+      setSelectedLocation(e.nativeEvent.coordinate);
+    }
+  };
+
   return (
     <GoogleMapView
       customMapStyle={mapStyle}
       ref={mapRef}
       style={styles.map}
+      onPress={handlePress}
       initialRegion={{...initialLocation, latitudeDelta, longitudeDelta}}>
-      <MyPositionMarker coordinates={initialLocation} />
+      <MyPositionMarker />
 
       <PathToRestaurant currentLocation={initialLocation} />
       <RestaurantsMarkers />
+
+      <SelectedLocationMarker />
     </GoogleMapView>
   );
 };

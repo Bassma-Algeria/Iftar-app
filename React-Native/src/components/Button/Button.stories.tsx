@@ -14,3 +14,9 @@ buttonStories.add('With Icon', () => (
     إبدأ الآن !
   </Button>
 ));
+
+buttonStories.add('inactive', () => (
+  <Button onPress={action('clicked')} inactive icon={ICONS.leftArrow}>
+    إبدأ الآن !
+  </Button>
+));

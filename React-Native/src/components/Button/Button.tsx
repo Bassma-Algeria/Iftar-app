@@ -20,13 +20,26 @@ interface Props {
   icon?: ImageSourcePropType;
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
+  inactive?: boolean;
 }
 
-const Button: React.FC<Props> = ({onPress, children, icon, style}) => {
+const Button: React.FC<Props> = ({onPress, children, icon, inactive, style}) => {
+  const customStyles: StyleProp<ViewStyle> = {};
+
+  if (inactive) {
+    customStyles.opacity = 0.6;
+  }
+
+  const handlePress = () => {
+    if (!inactive) {
+      onPress?.();
+    }
+  };
+
   return (
-    <View style={style}>
+    <View style={[style, customStyles]}>
       <Shadow viewStyle={styles.container} startColor={COLORS.primaryShadow} distance={2}>
-        <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.9}>
+        <TouchableOpacity style={styles.button} onPress={handlePress} activeOpacity={0.9}>
           <Header color="whiteShade" variant="h4" fontWeight="semibold">
             {children}
           </Header>

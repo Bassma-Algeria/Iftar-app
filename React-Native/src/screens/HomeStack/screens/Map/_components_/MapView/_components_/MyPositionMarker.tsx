@@ -3,15 +3,19 @@ import {Image} from 'react-native';
 import {Marker} from 'react-native-maps';
 
 import {styles} from '../../../Map.style';
-import {LocationCords} from '../../../../../../../@types/LocationCords';
+
 import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-const MyPositionMarker: React.FC<{coordinates: LocationCords}> = ({coordinates}) => {
-  return (
-    <Marker coordinate={coordinates} style={styles.markerContainer}>
+import {useMapContext} from '../../../_hooks_/useMapContext';
+
+const MyPositionMarker: React.FC = () => {
+  const {currentLocation} = useMapContext();
+
+  return currentLocation ? (
+    <Marker coordinate={currentLocation} style={styles.markerContainer}>
       <Image source={ICONS.myLocation} style={styles.pin} resizeMode="contain" />
     </Marker>
-  );
+  ) : null;
 };
 
 export {MyPositionMarker};

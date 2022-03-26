@@ -1,16 +1,8 @@
 import {StyleSheet} from 'react-native';
+import {FONTS} from '../../../../../../components/Header/Header.style';
 import {COLORS} from '../../../../../../theme/Colors';
 
 const styles = StyleSheet.create({
-  addRestaurantButtonContainer: {
-    position: 'absolute',
-    bottom: 0,
-    padding: 10,
-    paddingBottom: 20,
-    width: '100%',
-    zIndex: 1,
-  },
-
   container: {
     justifyContent: 'space-between',
     minHeight: '95%',
@@ -28,6 +20,23 @@ const styles = StyleSheet.create({
 
   input: {
     marginBottom: 20,
+  },
+
+  locationInput: {
+    flex: 1,
+    textAlign: 'right',
+    fontFamily: FONTS.regular,
+    color: COLORS.black,
+  },
+
+  locationIconContainer: {
+    width: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  locationIcon: {
+    width: '70%',
   },
 
   workTimesContainer: {

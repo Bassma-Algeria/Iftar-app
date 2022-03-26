@@ -3,16 +3,16 @@ import React, {useEffect, useMemo, useRef, useState} from 'react';
 import Carousel from 'react-native-snap-carousel';
 import {launchImageLibrary} from 'react-native-image-picker';
 
-import {styles} from '../../../AddRestaurant.style';
+import {styles} from '../AddRestaurantForm.style';
 
-import {ICONS} from '../../../../../../../../../utils/constants/Icons';
+import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {useAddRestaurantContext} from '../../../_hooks_/useAddRestaurantContext';
+import {useAddRestaurantFormContext} from '../_hooks_/useAddRestaurantFormContext';
 
-import {Header} from '../../../../../../../../../components/Header/Header';
+import {Header} from '../../../../../../../components/Header/Header';
 
 const Pictures: React.FC = () => {
-  const {restaurantInfo} = useAddRestaurantContext();
+  const {restaurantInfo} = useAddRestaurantFormContext();
   const {pictures} = restaurantInfo;
 
   const [activeIndex, setActiveIndex] = useState<number>(pictures.length);
@@ -41,14 +41,14 @@ interface Props {
 }
 
 const CarouselItem: React.FC<Props> = ({activeIndex, index, uri}) => {
-  const {restaurantInfo} = useAddRestaurantContext();
+  const {restaurantInfo} = useAddRestaurantFormContext();
   const isLastElement = index === restaurantInfo.pictures.length;
 
   return isLastElement ? <AddPicture /> : <Picture uri={uri} isActive={index === activeIndex} />;
 };
 
 const AddPicture: React.FC = () => {
-  const {restaurantInfo, setRestaurantInfo} = useAddRestaurantContext();
+  const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();
 
   const handlePress = async () => {
     const {assets} = await launchImageLibrary({
@@ -89,7 +89,7 @@ const Picture: React.FC<PictureProps> = props => {
 };
 
 const DeletePictureButton: React.FC<PictureProps> = ({uri: currentUri, isActive}) => {
-  const {restaurantInfo, setRestaurantInfo} = useAddRestaurantContext();
+  const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();
   const opacity = useRef(new Animated.Value(0)).current;
 
   const showButton = useMemo(() => {

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {COLORS} from '../../../../../../theme/Colors';
+import {COLORS} from '../../../../../../../../theme/Colors';
 
 const styles = StyleSheet.create({
   restaurantPopupLoader: {

@@ -1,28 +1,34 @@
 import {useEffect, useState} from 'react';
 
-import type {LocationCords} from '../../../../../../../@types/LocationCords';
+import type {LocationCords} from '../../../../../../../../../@types/LocationCords';
+import {showToast} from '../../../../../../../../../utils/helpers/showToast';
 
 const useFromLocationCoordsToAdress = (locationCoords?: LocationCords) => {
   const [adress, setAdress] = useState<string>();
-  const [error, setError] = useState<string>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (!locationCoords) {
       return;
     }
 
-    fetchAdressOf(locationCoords).then(setAdress).catch(setError);
+    setIsLoading(true);
+    fetchAdressOf(locationCoords)
+      .then(setAdress)
+      .catch(() => showToast('يرجى التحقق من اتصالك بالإنترنت'))
+      .finally(() => setIsLoading(false));
   }, [locationCoords]);
 
-  return {adress, error};
+  return {adress, isLoading};
 };
 
 const fetchAdressOf = async (coords: LocationCords): Promise<string> => {
   try {
-    const response = await fetch(getAdressFetchingUrl(coords));
-    const {results} = await response.json();
+    return new Promise(resolve => setTimeout(() => resolve('الحراش وسط'), 900));
+    // const response = await fetch(getAdressFetchingUrl(coords));
+    // const {results} = await response.json();
 
-    return results[0].formatted_address;
+    // return results[0].formatted_address;
   } catch (error: any) {
     throw new Error(`Fetching Adress Error: ${error}`);
   }
