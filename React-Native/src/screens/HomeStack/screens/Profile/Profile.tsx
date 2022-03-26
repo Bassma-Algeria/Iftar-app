@@ -1,10 +1,14 @@
-import {View, Text, StatusBar} from 'react-native';
 import React from 'react';
+import {View, StatusBar} from 'react-native';
 
 import {styles} from './Profile.style';
 
-import {TopHead} from './_components_/TopHead';
 import {COLORS} from '../../../../theme/Colors';
+
+import {TopHead} from './_components_/TopHead';
+import {RestaurantsList} from './_components_/RestaurantsList';
+import {Settings} from './_components_/Settings';
+import {Seperator} from './_components_/Seperator';
 
 interface Props {}
 
@@ -15,7 +19,9 @@ const Profile: React.FC<Props> = () => {
       <TopHead />
 
       <View style={styles.content}>
-        <Text>Profile</Text>
+        <Settings />
+        <Seperator />
+        <RestaurantsList />
       </View>
     </View>
   );

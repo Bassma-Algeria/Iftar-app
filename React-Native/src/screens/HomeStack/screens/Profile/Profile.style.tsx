@@ -14,15 +14,15 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 10,
     borderBottomColor: COLORS.brown,
-    borderBottomWidth: 1,
+    borderBottomWidth: 0.7,
   },
 
   profileIconContainer: {
-    width: 30,
+    width: 27,
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 10,
-    bottom: 5,
+    marginLeft: 15,
+    bottom: 3,
   },
 
   profileIcon: {
@@ -30,7 +30,59 @@ const styles = StyleSheet.create({
   },
 
   content: {
+    paddingTop: 30,
     padding: 20,
+  },
+
+  item: {},
+
+  separator: {
+    width: '80%',
+    backgroundColor: COLORS.brown,
+    alignSelf: 'center',
+    height: 1,
+    marginTop: 30,
+    marginBottom: 30,
+  },
+
+  itemTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  arrowIconContainer: {
+    marginLeft: 10,
+    width: 18,
+  },
+
+  arrowIcon: {
+    width: '100%',
+  },
+
+  title: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  titleIconContainer: {
+    width: 30,
+    marginLeft: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  titleIcon: {
+    width: '70%',
+  },
+
+  itemDetails: {
+    // maxHeight: 100,
+  },
+
+  itemDetailsInput: {
+    marginTop: 20,
   },
 });
 

@@ -22,6 +22,10 @@ const ICONS = {
   trash: require('../../assets/icons/trash.png'),
   rightArrow: require('../../assets/icons/right-arrow.png'),
   profileBrown: require('../../assets/icons/profile-brown.png'),
+  topArrow: require('../../assets/icons/top-arrow.png'),
+  settings: require('../../assets/icons/settings.png'),
+  list: require('../../assets/icons/list.png'),
+  arrowDown: require('../../assets/icons/arrow-down.png'),
 };
 
 export {ICONS};
