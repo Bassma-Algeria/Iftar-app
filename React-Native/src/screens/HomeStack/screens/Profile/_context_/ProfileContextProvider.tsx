@@ -9,16 +9,6 @@ interface ProfileContextValues {
 
 const ProfileContext = createContext<ProfileContextValues | undefined>(undefined);
 
-const initialEditRestaurantFormState = {
-  name: '',
-  ownerName: '',
-  pictures: [],
-  closingTime: {hour: 0, minut: 0},
-  openingTime: {hour: 0, minut: 0},
-  locationCoords: undefined,
-  locationName: '',
-};
-
 const ProfileContextProvider: React.FC = ({children}) => {
   const [restaurantToEdit, setRestaurantToEdit] = useState<RestaurantInfo>();
 
@@ -33,4 +23,4 @@ const ProfileContextProvider: React.FC = ({children}) => {
   );
 };
 
-export {ProfileContextProvider, ProfileContext, initialEditRestaurantFormState};
+export {ProfileContextProvider, ProfileContext};

@@ -43,6 +43,18 @@ class FakeRestaurantsGateway implements IRestaurantsGateway {
       setTimeout(() => resolve(RESTAURANTS.slice(0, 3)), 900);
     });
   }
+
+  async editRestaurant(info: RestaurantInfo): Promise<void> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (info.name === 'wrong') {
+          reject('something went wrong');
+        } else {
+          resolve();
+        }
+      }, 900);
+    });
+  }
 }
 
 export {FakeRestaurantsGateway};

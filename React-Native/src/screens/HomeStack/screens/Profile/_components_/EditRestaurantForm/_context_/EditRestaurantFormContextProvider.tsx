@@ -46,4 +46,8 @@ const EditRestaurantFormContextProvider: React.FC<{restaurant?: RestaurantInfo}>
   );
 };
 
-export {EditRestaurantFormContextProvider, EditRestaurantFormContext};
+export {
+  EditRestaurantFormContextProvider,
+  EditRestaurantFormContext,
+  initialEditRestaurantFormState,
+};

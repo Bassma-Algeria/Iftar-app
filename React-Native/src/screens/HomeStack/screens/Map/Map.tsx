@@ -7,7 +7,6 @@ import type {HomeStackScreenProps} from '../../HomeStack.types';
 
 import {DiscoverModeContextProvider} from './_context_/DiscoverModeContextProvider';
 import {MapContextProvider} from './_context_/MapContextProvider';
-import {ChooseLocationModeContextProvider} from './_context_/ChooseLocationModeContextProvider';
 
 import {MapView} from './_components_/MapView/MapView';
 import {DiscoverMode} from './_components_/DiscoverMode/DiscoverMode';
@@ -20,15 +19,13 @@ const Map: React.FC<Props> = () => {
   return (
     <MapContextProvider>
       <DiscoverModeContextProvider>
-        <ChooseLocationModeContextProvider>
-          <View style={styles.container}>
-            <MapView />
-            <AddRestaurantFormPopup />
+        <View style={styles.container}>
+          <MapView />
+          <AddRestaurantFormPopup />
 
-            <DiscoverMode />
-            <ChooseLocationMode />
-          </View>
-        </ChooseLocationModeContextProvider>
+          <DiscoverMode />
+          <ChooseLocationMode />
+        </View>
       </DiscoverModeContextProvider>
     </MapContextProvider>
   );

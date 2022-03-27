@@ -10,7 +10,7 @@ import type {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 import {useLocation} from './_hooks_/useLocation';
 
-import {useChooseLocationModeContext} from '../../_hooks_/useChooseLocationModeContext';
+import {useChoosingLocationState} from '../../../../_hooks_/useChoosingLocationState';
 import {useDiscoverModeContext} from '../../_hooks_/useDiscoverModeContext';
 import {useMapContext} from '../../_hooks_/useMapContext';
 
@@ -58,7 +58,7 @@ interface MapProps {
 const Map: React.FC<MapProps> = ({initialLocation}) => {
   const routes = useRoute<HomeStackScreenProps<'Map'>['route']>();
 
-  const {setSelectedLocation} = useChooseLocationModeContext();
+  const {selectedLocation} = useChoosingLocationState();
   const {setSelectedRestaurant} = useDiscoverModeContext();
   const {mapRef, usageMode} = useMapContext();
 
@@ -75,7 +75,7 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
 
   const handlePress = (e: MapEvent) => {
     if (usageMode === 'chooseLocation') {
-      setSelectedLocation(e.nativeEvent.coordinate);
+      selectedLocation.set(e.nativeEvent.coordinate);
     }
   };
 

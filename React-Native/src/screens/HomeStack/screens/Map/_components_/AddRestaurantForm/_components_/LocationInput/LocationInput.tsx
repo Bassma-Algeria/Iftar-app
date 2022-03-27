@@ -7,7 +7,7 @@ import {ICONS} from '../../../../../../../../utils/constants/Icons';
 
 import {useFromLocationCoordsToAdress} from './_hooks_/useFromLocationCoordsToAdress';
 import {useAddRestaurantFormContext} from '../../_hooks_/useAddRestaurantFormContext';
-import {useChooseLocationModeContext} from '../../../../_hooks_/useChooseLocationModeContext';
+import {useChoosingLocationState} from '../../../../../../_hooks_/useChoosingLocationState';
 import {useMapContext} from '../../../../_hooks_/useMapContext';
 
 import type {LocationCords} from '../../../../../../../../@types/LocationCords';
@@ -18,14 +18,14 @@ import {Loader} from '../../../../../../../../components/Loader/Loader';
 const LocationInput = () => {
   const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();
   const {setUsageMode, setIsAddRestaurantFormOpen} = useMapContext();
-  const {setOnConfirm} = useChooseLocationModeContext();
+  const {onConfirm} = useChoosingLocationState();
 
   const {adress, isLoading} = useFromLocationCoordsToAdress(restaurantInfo.locationCoords);
 
   const handlePress = () => {
     setUsageMode('chooseLocation');
     setIsAddRestaurantFormOpen(false);
-    setOnConfirm(() => (coordinates: LocationCords) => {
+    onConfirm.set(() => (coordinates: LocationCords) => {
       setRestaurantInfo({...restaurantInfo, locationCoords: coordinates});
       setIsAddRestaurantFormOpen(true);
     });

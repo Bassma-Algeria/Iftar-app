@@ -4,24 +4,25 @@ import {styles} from '../ChooseLocationMode.style';
 
 import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {useChooseLocationModeContext} from '../../../_hooks_/useChooseLocationModeContext';
+import {useChoosingLocationState} from '../../../../../_hooks_/useChoosingLocationState';
 
 import {Button} from '../../../../../../../components/Button/Button';
 
 const ConfirmButton: React.FC = () => {
-  const {onConfirm, selectedLocation} = useChooseLocationModeContext();
+  const {onConfirm, selectedLocation} = useChoosingLocationState();
+  const location = selectedLocation.get();
 
   const handlePress = () => {
-    if (!selectedLocation) {
+    if (!location) {
       return;
     }
 
-    onConfirm?.(selectedLocation);
+    onConfirm.get()?.(location);
   };
 
   return (
     <Button
-      inactive={!selectedLocation}
+      inactive={!location}
       onPress={handlePress}
       style={styles.confirmButtonContainer}
       icon={ICONS.done}>

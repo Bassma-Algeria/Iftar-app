@@ -6,13 +6,16 @@ import {styles} from '../../../Map.style';
 
 import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {useChooseLocationModeContext} from '../../../_hooks_/useChooseLocationModeContext';
+import {useChoosingLocationState} from '../../../../../_hooks_/useChoosingLocationState';
 
 const SelectedLocationMarker: React.FC = () => {
-  const {selectedLocation} = useChooseLocationModeContext();
+  const {selectedLocation} = useChoosingLocationState();
+  const location = selectedLocation.get();
 
-  return selectedLocation ? (
-    <Marker coordinate={selectedLocation} style={styles.markerContainer}>
+  return location ? (
+    <Marker
+      coordinate={{latitude: location.latitude, longitude: location.longitude}}
+      style={styles.markerContainer}>
       <Image source={ICONS.restaurantMarker} style={styles.pin} resizeMode="contain" />
     </Marker>
   ) : null;

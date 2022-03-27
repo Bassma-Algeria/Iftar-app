@@ -6,7 +6,7 @@ import {restuarantsGateway} from '../../../../../../../Gateways';
 
 import {useMapContext} from '../../../_hooks_/useMapContext';
 import {useAddRestaurantFormContext} from '../_hooks_/useAddRestaurantFormContext';
-import {useChooseLocationModeContext} from '../../../_hooks_/useChooseLocationModeContext';
+import {useChoosingLocationState} from '../../../../../_hooks_/useChoosingLocationState';
 
 import {initialAddRestaurantFormState} from '../_context_/AddRestaurantFormContextProvider';
 
@@ -18,7 +18,7 @@ import {Loader} from '../../../../../../../components/Loader/Loader';
 
 const SubmitButton: React.FC = () => {
   const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();
-  const {setSelectedLocation} = useChooseLocationModeContext();
+  const {selectedLocation} = useChoosingLocationState();
   const {setUsageMode, setIsAddRestaurantFormOpen} = useMapContext();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -30,7 +30,7 @@ const SubmitButton: React.FC = () => {
       await restuarantsGateway.addRestaurant(restaurantInfo);
 
       setUsageMode('discover');
-      setSelectedLocation(undefined);
+      selectedLocation.set(undefined);
       setIsAddRestaurantFormOpen(false);
       setRestaurantInfo(initialAddRestaurantFormState);
       showToast('تمت إضافة المطعم بنجاح');
