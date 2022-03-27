@@ -21,7 +21,7 @@ const ChooseUsageType: React.FC<Props> = ({navigation}) => {
       </Layout>
 
       <View style={styles.buttonsContainer}>
-        <Button onPress={() => navigation.navigate('HomeStack', {screen: 'Profile'})}>
+        <Button onPress={() => navigation.navigate('HomeStack', {screen: 'Map'})}>
           إبحث عن مطعم
         </Button>
 

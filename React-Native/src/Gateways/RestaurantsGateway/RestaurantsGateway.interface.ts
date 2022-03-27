@@ -28,4 +28,5 @@ export interface IRestaurantsGateway {
   getRestaurants(): Promise<RestaurantInfo[]>;
   addRestaurant(info: RestaurantInfoToAdd): Promise<void>;
   searchFor(keyword: string): Promise<RestaurantInfo[]>;
+  getRestaurantsOfAuthUser(): Promise<RestaurantInfo[]>;
 }

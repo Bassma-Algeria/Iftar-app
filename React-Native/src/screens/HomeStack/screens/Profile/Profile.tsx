@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StatusBar} from 'react-native';
+import {View, StatusBar, ScrollView} from 'react-native';
 
 import {styles} from './Profile.style';
 
@@ -14,7 +14,7 @@ interface Props {}
 
 const Profile: React.FC<Props> = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <StatusBar backgroundColor={COLORS.beige} barStyle="dark-content" />
       <TopHead />
 
@@ -23,7 +23,7 @@ const Profile: React.FC<Props> = () => {
         <Seperator />
         <RestaurantsList />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

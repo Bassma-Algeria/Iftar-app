@@ -77,12 +77,13 @@ const styles = StyleSheet.create({
     width: '70%',
   },
 
-  itemDetails: {
-    // maxHeight: 100,
-  },
-
   itemDetailsInput: {
     marginTop: 20,
+  },
+
+  restaurantsListContainer: {
+    paddingTop: 10,
+    // alignItems: 'center',
   },
 });
 

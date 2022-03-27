@@ -37,6 +37,12 @@ class FakeRestaurantsGateway implements IRestaurantsGateway {
       setTimeout(() => resolve(RESTAURANTS), 600);
     });
   }
+
+  async getRestaurantsOfAuthUser(): Promise<RestaurantInfo[]> {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(RESTAURANTS.slice(0, 3)), 900);
+    });
+  }
 }
 
 export {FakeRestaurantsGateway};
