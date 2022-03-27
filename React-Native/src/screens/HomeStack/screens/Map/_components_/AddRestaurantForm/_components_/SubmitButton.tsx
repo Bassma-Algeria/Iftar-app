@@ -2,17 +2,19 @@ import React, {useState} from 'react';
 
 import {styles} from '../AddRestaurantForm.style';
 
+import {restuarantsGateway} from '../../../../../../../Gateways';
+
+import {useMapContext} from '../../../_hooks_/useMapContext';
 import {useAddRestaurantFormContext} from '../_hooks_/useAddRestaurantFormContext';
+import {useChooseLocationModeContext} from '../../../_hooks_/useChooseLocationModeContext';
+
+import {initialAddRestaurantFormState} from '../_context_/AddRestaurantFormContextProvider';
 
 import {ICONS} from '../../../../../../../utils/constants/Icons';
+import {showToast} from '../../../../../../../utils/helpers/showToast';
 
 import {Button} from '../../../../../../../components/Button/Button';
-import {restuarantsGateway} from '../../../../../../../Gateways';
 import {Loader} from '../../../../../../../components/Loader/Loader';
-import {showToast} from '../../../../../../../utils/helpers/showToast';
-import {useMapContext} from '../../../_hooks_/useMapContext';
-import {initialAddRestaurantFormState} from '../_context_/AddRestaurantFormContextProvider';
-import {useChooseLocationModeContext} from '../../../_hooks_/useChooseLocationModeContext';
 
 const SubmitButton: React.FC = () => {
   const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();

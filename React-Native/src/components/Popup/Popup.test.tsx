@@ -75,4 +75,16 @@ describe('Popup Component', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('should be able to change the background color', () => {
+    const tree = render(
+      <NavigationContainer>
+        <Popup isOpen backgroundColor="black">
+          <Text>Some content</Text>
+        </Popup>
+      </NavigationContainer>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

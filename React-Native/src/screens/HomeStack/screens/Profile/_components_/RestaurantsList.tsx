@@ -10,10 +10,13 @@ import {restuarantsGateway} from '../../../../../Gateways';
 
 import {showToast} from '../../../../../utils/helpers/showToast';
 
+import {useProfileContext} from '../_hooks_/useProfileContext';
+
 import {ProfileItem} from './shared/ProfileItem';
 import {Loader} from '../../../../../components/Loader/Loader';
-import {Header} from '../../../../../components/Header/Header';
 import {Input} from '../../../../../components/Inputs/TextInput/Input';
+
+import {Header} from '../../../../../components/Header/Header';
 
 const RestaurantsList: React.FC = () => {
   return <ProfileItem title="قائمة المطاعم" icon={ICONS.list} Details={List} />;
@@ -60,18 +63,16 @@ const Restaurants: React.FC<{restaurants: RestaurantInfo[]}> = ({restaurants}) =
 };
 
 const Restaurant: React.FC<RestaurantInfo> = info => {
-  const onPress = () => {
-    console.log(info);
-  };
+  const {setRestaurantToEdit} = useProfileContext();
 
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={() => setRestaurantToEdit(info)}>
       <Input
         placeholder=""
         value={info.name}
-        onTextChange={() => {}}
         icon={ICONS.edit}
         style={styles.itemDetailsInput}
+        onTextChange={() => {}}
         disable
       />
     </Pressable>

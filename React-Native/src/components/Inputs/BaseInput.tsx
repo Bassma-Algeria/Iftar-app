@@ -4,11 +4,14 @@ import {StyleProp, View, ViewStyle} from 'react-native';
 
 import {styles} from './BaseInput.style';
 
+import {COLORS} from '../../theme/Colors';
+
 import {Header} from '../Header/Header';
 
 interface Props {
   iconPosition?: 'left' | 'right';
   radius?: number;
+  backgroundColor?: keyof typeof COLORS;
   style?: StyleProp<ViewStyle>;
   error?: string;
 }
@@ -22,6 +25,10 @@ const BaseInput: React.FC<Props> = ({children, ...props}) => {
 
   if (props.radius) {
     customStyle.borderRadius = props.radius;
+  }
+
+  if (props.backgroundColor) {
+    customStyle.backgroundColor = COLORS[props.backgroundColor];
   }
 
   return (

@@ -27,6 +27,8 @@ interface Props {
   disable?: boolean;
   radius?: number;
   focused?: boolean;
+  backgroundColor?: keyof typeof COLORS;
+  placeholderColor?: string;
 }
 
 const Input: React.FC<Props> = props => {
@@ -47,7 +49,7 @@ const Input: React.FC<Props> = props => {
         onChangeText={props.onTextChange}
         placeholder={props.placeholder}
         keyboardType={props.keyboardType}
-        placeholderTextColor={COLORS.grey}
+        placeholderTextColor={props.placeholderColor || COLORS.grey}
         editable={!props.disable}
         ref={inputRef}
       />

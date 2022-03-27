@@ -11,6 +11,7 @@ const COLORS = {
   whiteShade: '#FFFCF1',
   red: '#bb0000',
   grey: '#C4C4C4',
+  greyShade: '#ACABAB',
 };
 
 export {COLORS};
