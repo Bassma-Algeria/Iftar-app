@@ -25,6 +25,9 @@ const SubmitButton: React.FC = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
+    console.log('====================================');
+    console.log(restaurantInfo);
+    console.log('====================================');
 
     try {
       await restuarantsGateway.addRestaurant(restaurantInfo);
