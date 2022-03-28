@@ -5,7 +5,7 @@ import {styles} from '../../AddRestaurantForm.style';
 
 import {ICONS} from '../../../../../../../../utils/constants/Icons';
 
-import {useFromLocationCoordsToAdress} from './_hooks_/useFromLocationCoordsToAdress';
+import {useFromLocationCoordsToAdress} from '../../../../../../_hooks_/useFromLocationCoordsToAdress';
 import {useAddRestaurantFormContext} from '../../_hooks_/useAddRestaurantFormContext';
 import {useChoosingLocationState} from '../../../../../../_hooks_/useChoosingLocationState';
 import {useMapContext} from '../../../../_hooks_/useMapContext';

@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react';
 
-import type {LocationCords} from '../../../../../../../../../@types/LocationCords';
-import {geoCodingGateway} from '../../../../../../../../../Gateways';
-import {showToast} from '../../../../../../../../../utils/helpers/showToast';
+import type {LocationCords} from '../../../@types/LocationCords';
+import {geoCodingGateway} from '../../../Gateways';
+import {showToast} from '../../../utils/helpers/showToast';
 
 const useFromLocationCoordsToAdress = (locationCoords?: LocationCords) => {
   const [adress, setAdress] = useState<string>();

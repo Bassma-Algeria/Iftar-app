@@ -9,7 +9,7 @@ import {ICONS} from '../../../../../../../../utils/constants/Icons';
 import type {HomeStackScreenProps} from '../../../../../../HomeStack.types';
 import type {LocationCords} from '../../../../../../../../@types/LocationCords';
 
-import {useFromLocationCoordsToAdress} from './_hooks_/useFromLocationCoordsToAdress';
+import {useFromLocationCoordsToAdress} from '../../../../../../_hooks_/useFromLocationCoordsToAdress';
 import {useEditRestaurantFormContext} from '../../_hooks_/useEditRestaurantFormContext';
 import {useChoosingLocationState} from '../../../../../../_hooks_/useChoosingLocationState';
 

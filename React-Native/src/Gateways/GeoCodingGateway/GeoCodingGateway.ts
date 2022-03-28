@@ -1,9 +1,8 @@
 import {LocationCords} from '../../@types/LocationCords';
+import {GoogleService} from '../_Helpers_/GoogleService';
 import type {IGeoCodingGateway} from './GeoCodingGateway.interface';
 
-class GoogleGeoCodingGateway implements IGeoCodingGateway {
-  private API_KEY = 'AIzaSyDMUiPh6nBOeX30N3U3W1f0GjpX_idS6D8';
-
+class GoogleGeoCodingGateway extends GoogleService implements IGeoCodingGateway {
   async getAdressNameOf(coords: LocationCords): Promise<string> {
     try {
       const response = await fetch(this.getAdressUrl(coords));
