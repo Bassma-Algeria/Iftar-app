@@ -21,6 +21,7 @@ const LocationInput = () => {
 
   const {onConfirm} = useChoosingLocationState();
   const {restaurantInfo, setRestaurantInfo} = useEditRestaurantFormContext();
+
   const {adress, isLoading} = useFromLocationCoordsToAdress(restaurantInfo.locationCoords);
 
   const handlePress = () => {

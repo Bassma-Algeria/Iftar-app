@@ -9,7 +9,6 @@ import type {LocationCords} from '../../../../../../@types/LocationCords';
 import type {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 import {useLocation} from './_hooks_/useLocation';
-
 import {useChoosingLocationState} from '../../../../_hooks_/useChoosingLocationState';
 import {useDiscoverModeContext} from '../../_hooks_/useDiscoverModeContext';
 import {useMapContext} from '../../_hooks_/useMapContext';

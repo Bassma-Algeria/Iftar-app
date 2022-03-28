@@ -1,6 +1,6 @@
 import {IAuthGateway} from './AuthGateway/AuthGateway.interface';
 import {RestaurantsOwnersFakeGateway} from './AuthGateway/Fake/RestaurantOwnersFakeGateway';
-import {GoogleDirectionGateway} from './DirectionGateway/DirectionGateway';
+import {MapBoxDirectionGateway} from './DirectionGateway/DirectionGateway';
 import {IDirectionGateway} from './DirectionGateway/DirectionGateway.interface';
 import {GeoapifyGeoCodingGateway} from './GeoCodingGateway/GeoCodingGateway';
 import {IGeoCodingGateway} from './GeoCodingGateway/GeoCodingGateway.interface';
@@ -10,6 +10,6 @@ import {IRestaurantsGateway} from './RestaurantsGateway/RestaurantsGateway.inter
 const restuarantsGateway: IRestaurantsGateway = new FakeRestaurantsGateway();
 const restaurentOwner: IAuthGateway = new RestaurantsOwnersFakeGateway();
 const geoCodingGateway: IGeoCodingGateway = new GeoapifyGeoCodingGateway();
-const directionGateway: IDirectionGateway = new GoogleDirectionGateway();
+const directionGateway: IDirectionGateway = new MapBoxDirectionGateway();
 
 export {restuarantsGateway, restaurentOwner, geoCodingGateway, directionGateway};
