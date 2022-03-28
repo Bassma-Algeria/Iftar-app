@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import React from 'react';
 
 import {styles} from '../../Profile.style';
@@ -21,13 +21,14 @@ const EditRestaurantFormPopup: React.FC = () => {
   return (
     <Popup
       backgroundColor="beigeShade"
-      containerStyle={styles.popupContainer}
-      onClose={() => setRestaurantToEdit(undefined)}
+      setIsOpen={() => setRestaurantToEdit(undefined)}
       isOpen={!!restaurantToEdit}
       fullHight>
       <EditRestaurantFormContextProvider restaurant={restaurantToEdit}>
-        <AddRestaurantForm />
-        <SubmitButton />
+        <ScrollView contentContainerStyle={styles.popupContainer}>
+          <AddRestaurantForm />
+          <SubmitButton />
+        </ScrollView>
       </EditRestaurantFormContextProvider>
     </Popup>
   );

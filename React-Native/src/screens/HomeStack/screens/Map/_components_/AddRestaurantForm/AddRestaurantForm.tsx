@@ -1,9 +1,10 @@
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import React from 'react';
 
 import {styles} from './AddRestaurantForm.style';
 
 import {useMapContext} from '../../_hooks_/useMapContext';
+import {useChoosingLocationState} from '../../../../_hooks_/useChoosingLocationState';
 
 import {AddRestaurantFormContextProvider} from './_context_/AddRestaurantFormContextProvider';
 
@@ -16,17 +17,26 @@ import {WorkTimesInputs} from './_components_/WorkTimesInputs';
 import {SubmitButton} from './_components_/SubmitButton';
 
 const AddRestaurantFormPopup: React.FC = () => {
-  const {isAddRestaurantFormOpen, setIsAddRestaurantFormOpen} = useMapContext();
+  const {isAddRestaurantFormOpen, setIsAddRestaurantFormOpen, setUsageMode} = useMapContext();
+  const {selectedLocation, onConfirm} = useChoosingLocationState();
+
+  const onClosePopup = () => {
+    setUsageMode('discover');
+    selectedLocation.set(undefined);
+    onConfirm.set(undefined);
+  };
 
   return (
     <Popup
-      containerStyle={styles.container}
-      onClose={() => setIsAddRestaurantFormOpen(false)}
+      onAutoClose={onClosePopup}
       isOpen={isAddRestaurantFormOpen}
+      setIsOpen={setIsAddRestaurantFormOpen}
       fullHight>
       <AddRestaurantFormContextProvider>
-        <AddRestaurantForm />
-        <SubmitButton />
+        <ScrollView contentContainerStyle={styles.container}>
+          <AddRestaurantForm />
+          <SubmitButton />
+        </ScrollView>
       </AddRestaurantFormContextProvider>
     </Popup>
   );

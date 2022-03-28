@@ -18,7 +18,7 @@ import {Loader} from '../../../../../../../components/Loader/Loader';
 
 const SubmitButton: React.FC = () => {
   const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();
-  const {selectedLocation} = useChoosingLocationState();
+  const {selectedLocation, onConfirm} = useChoosingLocationState();
   const {setUsageMode, setIsAddRestaurantFormOpen} = useMapContext();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -31,6 +31,7 @@ const SubmitButton: React.FC = () => {
 
       setUsageMode('discover');
       selectedLocation.set(undefined);
+      onConfirm.set(undefined);
       setIsAddRestaurantFormOpen(false);
       setRestaurantInfo(initialAddRestaurantFormState);
       showToast('تمت إضافة المطعم بنجاح');

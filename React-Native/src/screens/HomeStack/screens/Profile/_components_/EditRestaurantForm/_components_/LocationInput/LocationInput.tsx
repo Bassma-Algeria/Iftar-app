@@ -6,20 +6,21 @@ import {styles} from '../../../../Profile.style';
 
 import {ICONS} from '../../../../../../../../utils/constants/Icons';
 
+import type {HomeStackScreenProps} from '../../../../../../HomeStack.types';
+import type {LocationCords} from '../../../../../../../../@types/LocationCords';
+
 import {useFromLocationCoordsToAdress} from './_hooks_/useFromLocationCoordsToAdress';
 import {useEditRestaurantFormContext} from '../../_hooks_/useEditRestaurantFormContext';
+import {useChoosingLocationState} from '../../../../../../_hooks_/useChoosingLocationState';
 
 import {Input} from './_components_/Input';
 import {Loader} from '../../../../../../../../components/Loader/Loader';
-import {HomeStackScreenProps} from '../../../../../../HomeStack.types';
-import {useChoosingLocationState} from '../../../../../../_hooks_/useChoosingLocationState';
-import {LocationCords} from '../../../../../../../../@types/LocationCords';
 
 const LocationInput = () => {
   const navigation = useNavigation<HomeStackScreenProps<'Profile'>['navigation']>();
 
-  const {restaurantInfo, setRestaurantInfo} = useEditRestaurantFormContext();
   const {onConfirm} = useChoosingLocationState();
+  const {restaurantInfo, setRestaurantInfo} = useEditRestaurantFormContext();
   const {adress, isLoading} = useFromLocationCoordsToAdress(restaurantInfo.locationCoords);
 
   const handlePress = () => {

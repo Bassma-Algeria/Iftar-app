@@ -3,8 +3,9 @@ import React from 'react';
 
 import {styles} from '../Profile.style';
 
-import {Header} from '../../../../../components/Header/Header';
 import {ICONS} from '../../../../../utils/constants/Icons';
+
+import {Header} from '../../../../../components/Header/Header';
 
 const TopHead: React.FC = () => {
   return (

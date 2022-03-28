@@ -13,11 +13,7 @@ const ConfirmButton: React.FC = () => {
   const location = selectedLocation.get();
 
   const handlePress = () => {
-    if (!location) {
-      return;
-    }
-
-    onConfirm.get()?.(location);
+    location && onConfirm.get()?.(location);
   };
 
   return (

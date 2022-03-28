@@ -12,7 +12,7 @@ const RestaurantPopup: React.FC = () => {
   const {selectedRestaurant, setSelectedRestaurant} = useDiscoverModeContext();
 
   return (
-    <Popup isOpen={!!selectedRestaurant} onClose={() => setSelectedRestaurant(undefined)}>
+    <Popup isOpen={!!selectedRestaurant} setIsOpen={() => setSelectedRestaurant(undefined)}>
       {!selectedRestaurant ? (
         <Loader style={styles.restaurantPopupLoader} color="brown" size={50} />
       ) : (

@@ -11,11 +11,11 @@ class FakeRestaurantsGateway implements IRestaurantsGateway {
     return await new Promise((resolve, reject) => {
       setTimeout(() => {
         if (keyword === 'wrong') {
-          return reject('something went wrong');
+          reject('something went wrong');
+        } else {
+          const result = RESTAURANTS.filter(({name}) => name.includes(keyword));
+          resolve(result);
         }
-
-        const result = RESTAURANTS.filter(({name}) => name.includes(keyword));
-        resolve(result);
       }, 600);
     });
   }
@@ -25,9 +25,9 @@ class FakeRestaurantsGateway implements IRestaurantsGateway {
       setTimeout(() => {
         if (info.name === 'wrongName') {
           reject('something went wrong');
+        } else {
+          resolve();
         }
-
-        resolve();
       }, 600);
     });
   }

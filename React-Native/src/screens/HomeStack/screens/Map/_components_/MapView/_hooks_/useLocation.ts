@@ -21,7 +21,7 @@ const useLocation = () => {
       Geolocation.getCurrentPosition(
         position => setCurrentLocation(position.coords),
         err => setError(err.message),
-        {enableHighAccuracy: true, timeout: 100000, maximumAge: 10000},
+        {enableHighAccuracy: false, timeout: 100000, maximumAge: 10000},
       );
     });
   }, []);
@@ -37,7 +37,7 @@ const askForLocationPermission = async (): Promise<boolean> => {
 
   const granted = await request(locationPermission, {
     title: 'Iftar',
-    message: 'Iftar would like access to your location ',
+    message: 'Iftar would like access to your location',
     buttonPositive: 'Yeah Of course',
   });
 

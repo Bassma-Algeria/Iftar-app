@@ -1,5 +1,5 @@
-import React, {useEffect, useLayoutEffect} from 'react';
-import {View, Animated, Pressable, ScrollView, StyleProp, ViewStyle} from 'react-native';
+import React, {useCallback, useEffect} from 'react';
+import {View, Animated, Pressable, StyleProp, ViewStyle} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {styles} from './Popup.style';
@@ -10,72 +10,66 @@ import {COLORS} from '../../theme/Colors';
 
 interface Props {
   isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   fullHight?: boolean;
-  onOpen?: Function;
-  onClose?: Function;
+  onAutoClose?: Function;
   backgroundColor?: keyof typeof COLORS;
-  containerStyle?: StyleProp<ViewStyle>;
 }
 
-const Popup: React.FC<Props> = ({
-  isOpen,
-  children,
-  onOpen,
-  onClose,
-  fullHight,
-  containerStyle,
-  backgroundColor,
-}) => {
+const Popup: React.FC<Props> = ({children, ...props}) => {
   const navigation = useNavigation();
-  const height = fullHight ? '100%' : 'auto';
-  const {translateY, closePopup, openPopup, isPopupOpened} = usePopupAnimation(onOpen, onClose);
+  const {translateY, overlayOpacity} = usePopupAnimation(props.isOpen);
 
-  useEffect(() => {
-    if (isOpen) {
-      openPopup();
-    } else {
-      closePopup();
-    }
-  }, [closePopup, openPopup, isOpen]);
+  let customStyle: StyleProp<ViewStyle> = {};
+  customStyle.height = props.fullHight ? '100%' : 'auto';
+
+  if (props.backgroundColor) {
+    customStyle.backgroundColor = COLORS[props.backgroundColor];
+  }
+
+  const onClose = useCallback(() => {
+    props.setIsOpen(false);
+    props.onAutoClose?.();
+  }, [props]);
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('beforeRemove', e => {
-      if (!isOpen) {
-        return;
+      if (props.isOpen) {
+        e.preventDefault();
+        onClose();
       }
-
-      e.preventDefault();
-      closePopup();
     });
 
     return unsubscribe;
-  }, [closePopup, navigation, isOpen]);
-
-  let customStyle: StyleProp<ViewStyle> = {};
-
-  if (backgroundColor) {
-    customStyle.backgroundColor = COLORS[backgroundColor];
-  }
+  }, [navigation, onClose, props.isOpen]);
 
   return (
     <>
-      {isPopupOpened && <Overlay closePopup={closePopup} />}
+      <Overlay onPress={onClose} isOpen={props.isOpen} opacity={overlayOpacity} />
 
-      <Animated.View style={[styles.container, customStyle, {height, transform: [{translateY}]}]}>
+      <Animated.View style={[styles.container, customStyle, {transform: [{translateY}]}]}>
         <View style={styles.topBar} />
 
-        <ScrollView contentContainerStyle={containerStyle}>{children}</ScrollView>
+        {children}
       </Animated.View>
     </>
   );
 };
 
 interface OverlayProp {
-  closePopup: () => void;
+  opacity: Animated.Value;
+  isOpen: boolean;
+  onPress: () => void;
 }
 
-const Overlay: React.FC<OverlayProp> = ({closePopup}) => {
-  return <Pressable style={styles.overlay} onPress={closePopup} />;
+const Overlay: React.FC<OverlayProp> = ({onPress, opacity, isOpen}) => {
+  const zIndex = isOpen ? 2 : -1;
+
+  return (
+    <Animated.View style={[styles.overlay, {opacity, zIndex}]}>
+      <Pressable style={{flex: 1}} onPress={onPress} />
+    </Animated.View>
+  );
 };
 
 export {Popup};
