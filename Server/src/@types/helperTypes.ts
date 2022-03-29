@@ -3,3 +3,5 @@ type NonFunctionPropertyNames<T> = {
 }[keyof T];
 
 export type NonFunctionProperties<T> = Pick<T, NonFunctionPropertyNames<T>>;
+export type Time = { hour: number; minute: number };
+export type Coords = { latitude: number; longitude: number };

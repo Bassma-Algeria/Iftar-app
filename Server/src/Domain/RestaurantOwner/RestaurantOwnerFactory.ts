@@ -82,8 +82,7 @@ const makeRestaurantOwner = (idGenerator: IIdGenerator) => {
     public set phoneNumber(number: string | undefined) {
       number = number?.replace(/ /g, "");
 
-      if (number && !this.isValidPhoneNumber(number))
-        this.InvalidPhoneNumberException();
+      if (number && !this.isValidPhoneNumber(number)) this.InvalidPhoneNumberException();
 
       this._phoneNumber = number;
     }

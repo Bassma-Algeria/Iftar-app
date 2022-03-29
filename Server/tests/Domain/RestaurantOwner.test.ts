@@ -1,14 +1,10 @@
 import { expect } from "chai";
-import { FakeIdGenerator } from "../../src/Adapters/DrivenAdapters/IdGenerator/FakeIdGenerator";
-
-import { makeRestaurantOwner } from "../../src/Domain/RestaurantOwner/RestaurantOwnerFactory";
+import { RestaurantOwner } from "../../src/Domain/RestaurantOwner/RestaurantOwner";
 
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 
 describe("RestaurantOwner Entity", () => {
   const ownerInfo = getResturantOwnerInfo();
-
-  const RestaurantOwner = makeRestaurantOwner(new FakeIdGenerator());
 
   it("should not have a RestaurantOwner with an invalid email", () => {
     ["invalidEmail 1", "email@.com", "someEmail@gmail"].map((email) => {
@@ -17,9 +13,7 @@ describe("RestaurantOwner Entity", () => {
   });
 
   it("should have a RestaurantOwner with an emtpy password", () => {
-    expect(
-      () => new RestaurantOwner({ ...ownerInfo, password: "" })
-    ).to.throw();
+    expect(() => new RestaurantOwner({ ...ownerInfo, password: "" })).to.throw();
   });
 
   it("should set the ownerId to an emtpy string", () => {
@@ -71,10 +65,8 @@ describe("RestaurantOwner Entity", () => {
       expect(() => (owner.phoneNumber = number)).to.throw();
     });
 
-    ["05 40 39 28 12", "0771 29 20 10", "078919 29 19", "078 827 1020"].map(
-      (number) => {
-        expect(() => (owner.phoneNumber = number)).to.not.throw();
-      }
-    );
+    ["05 40 39 28 12", "0771 29 20 10", "078919 29 19", "078 827 1020"].map((number) => {
+      expect(() => (owner.phoneNumber = number)).to.not.throw();
+    });
   });
 });

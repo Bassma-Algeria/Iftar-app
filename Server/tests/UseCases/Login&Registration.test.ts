@@ -1,9 +1,9 @@
 import { expect } from "chai";
 
-import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/PasswordManager/FakePasswordManager";
+import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
-import { FakeTokenManager } from "../../src/Adapters/DrivenAdapters/TokenManager/FakeTokenManager";
+import { TokenManager } from "../../src/Adapters/DrivenAdapters/TokenManager";
 
 import { LoginFactory } from "../../src/UseCases/Login/LoginFactory";
 import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
@@ -19,12 +19,12 @@ describe("Registration & Login Use cases", () => {
   const registerFactory = new RegisterFactory(
     new RestaurantOwnersGateway(ownersPersistence),
     new FakePasswordManager(),
-    new FakeTokenManager()
+    new TokenManager()
   );
 
   const loginFactory = new LoginFactory(
     new RestaurantOwnersGateway(ownersPersistence),
-    new FakeTokenManager(),
+    new TokenManager(),
     new FakePasswordManager()
   );
 

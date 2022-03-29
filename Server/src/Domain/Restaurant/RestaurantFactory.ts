@@ -1,51 +1,57 @@
-import { NonFunctionProperties } from "../../@types/helperTypes";
+import { Coords, NonFunctionProperties, Time } from "../../@types/helperTypes";
 import { IIdGenerator } from "../../Ports/DrivenPorts/IdGenerator/IdGenerator.interface";
 
-interface Time {
-  hour: number;
-  minute: number;
-}
 export interface IRestaurant {
-  restaurantId: string;
+  restaurantId?: string;
   name: string;
-  ownerToken: string;
+  ownerName: string;
   openingTime: Time;
   closingTime: Time;
   locationName: string;
-  info(): NonFunctionProperties<IRestaurant>;
+  locationCoords: Coords;
+  pictures: any[];
+  createdAt?: Date;
 }
-type ConstructurParams = Partial<NonFunctionProperties<IRestaurant>>;
 
 const makeRestaurant = (idGenerator: IIdGenerator) => {
-  return class RestaurantFactory implements IRestaurant {
-    private _restarantId?: string;
+  return class Restaurant implements IRestaurant {
+    restaurantId?: string | undefined;
     private _name?: string;
-    private _ownerToken?: string;
-    private _openingTime?: {
-      hour: number;
-      minute: number;
-    };
-    private _closingTime?: {
-      hour: number;
-      minute: number;
-    };
+    private _ownerName?: string;
+    openingTime: Time;
+    closingTime: Time;
     private _locationName?: string;
-    constructor(params: ConstructurParams) {
-      this.restarantId = params.restaurantId;
-      this.name = params.name;
-      this.ownerToken = params.ownerToken;
-      this.openingTime = params.openingTime;
-      this.closingTime = params.closingTime;
-      this.locationName = params.locationName;
-    }
-    public get ownerId(): string {
-      if (!this._ownerId) this.IdNotSetException();
-      return this._ownerId;
+    locationCoords: Coords;
+    pictures: any[];
+    createdAt?: Date | undefined;
+
+    constructor(restaurantInfo: NonFunctionProperties<IRestaurant>) {
+      this.restaurantId = restaurantInfo.restaurantId || idGenerator.generate();
+      this.name = restaurantInfo.name;
+      this.ownerName = restaurantInfo.ownerName;
+      this.openingTime = restaurantInfo.openingTime;
+      this.closingTime = restaurantInfo.closingTime;
+      this.createdAt = restaurantInfo.createdAt || new Date();
+      this.locationCoords = restaurantInfo.locationCoords;
+      this.pictures = restaurantInfo.pictures;
+      this.locationName = restaurantInfo.locationName;
     }
 
-    public set ownerId(id: string) {
-      if (!id) this.InvalidIdException();
-      this._ownerId = id;
+    public set name(value: string) {
+      if (!value) throw new Error("Name should not be empty");
+      this._name = value;
+    }
+
+    public set ownerName(value: string) {
+      if (!value) throw new Error("ownerName should not be empty");
+      this._ownerName = value;
+    }
+
+    public set locationName(value: string) {
+      if (!value) throw new Error("locationName should not be empty");
+      this._locationName = value;
     }
   };
 };
+
+export { makeRestaurant };

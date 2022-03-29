@@ -1,6 +1,6 @@
-import { FakeIdGenerator } from "../../Adapters/DrivenAdapters/IdGenerator/FakeIdGenerator";
+import { idGenerator } from "../../Ports/DrivenPorts/IdGenerator/IdGenerator";
 import { makeRestaurantOwner } from "./RestaurantOwnerFactory";
 
-const RestaurantOwner = makeRestaurantOwner(new FakeIdGenerator());
+const RestaurantOwner = makeRestaurantOwner(idGenerator);
 
 export { RestaurantOwner };

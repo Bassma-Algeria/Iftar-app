@@ -1,19 +1,19 @@
-import faker from "faker";
+import faker, { fake } from "faker";
 
-const getResturantInfo = () => {
+import { NonFunctionProperties } from "../../src/@types/helperTypes";
+import { IRestaurant } from "../../src/Domain/Restaurant/RestaurantFactory";
+
+const getResturantInfo = (): NonFunctionProperties<IRestaurant> => {
   return {
     name: "some name",
+    ownerName: faker.internet.userName(),
     restaurantId: faker.datatype.uuid(),
-    ownerToken: faker.datatype.uuid(),
-    openingTime: {
-      hour: 10,
-      minute: 0,
-    },
-    closingTime: {
-      hour: 20,
-      minute: 0,
-    },
+    openingTime: { hour: 10, minute: 0 },
+    closingTime: { hour: 20, minute: 0 },
     locationName: faker.internet.userName(),
+    locationCoords: { latitude: 10, longitude: 100 },
+    pictures: [],
+    createdAt: faker.date.recent(),
   };
 };
 

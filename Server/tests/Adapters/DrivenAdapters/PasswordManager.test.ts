@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { FakePasswordManager } from "../../../src/Adapters/DrivenAdapters/PasswordManager/FakePasswordManager";
+import { FakePasswordManager } from "../../../src/Adapters/DrivenAdapters/FakePasswordManager";
 
 describe("PasswordManager", () => {
   const passwordManager = new FakePasswordManager();
