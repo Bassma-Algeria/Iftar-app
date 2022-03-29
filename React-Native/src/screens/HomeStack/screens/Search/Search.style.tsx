@@ -4,7 +4,7 @@ import {COLORS} from '../../../../theme/Colors';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.beigeShade,
-    padding: 20,
+    padding: 10,
     flex: 1,
   },
 

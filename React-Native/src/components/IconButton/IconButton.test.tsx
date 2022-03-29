@@ -20,6 +20,11 @@ describe('IconButton component', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should be able to change the size of the button', () => {
+    const tree = renderer.create(<IconButton size={10} {...defaultProps} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should run the function passed in the props when pressed', () => {
     const mockFunction = jest.fn();
     const instance = render(<IconButton {...defaultProps} onPress={mockFunction} />);

@@ -23,7 +23,7 @@ const SearchBar: React.FC<Props> = ({searchValue, setSearchValue}) => {
         value={searchValue}
         onTextChange={setSearchValue}
         style={styles.input}
-        radius={24}
+        radius={30}
         focused
       />
       <Pressable style={styles.backIconContainer} onPress={() => navigation.goBack()}>

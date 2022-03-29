@@ -6,6 +6,7 @@ import {styles} from '../../Profile.style';
 import {EditRestaurantFormContextProvider} from './_context_/EditRestaurantFormContextProvider';
 
 import {useProfileContext} from '../../_hooks_/useProfileContext';
+import {useChoosingLocationState} from '../../../../_hooks_/useChoosingLocationState';
 
 import {Popup} from '../../../../../../components/Popup/Popup';
 import {Header} from '../../../../../../components/Header/Header';
@@ -17,10 +18,12 @@ import {SubmitButton} from './_components_/SubmitButton';
 
 const EditRestaurantFormPopup: React.FC = () => {
   const {restaurantToEdit, setRestaurantToEdit} = useProfileContext();
+  const {selectedLocation} = useChoosingLocationState();
 
   return (
     <Popup
       backgroundColor="beigeShade"
+      onAutoClose={() => selectedLocation.set(undefined)}
       setIsOpen={() => setRestaurantToEdit(undefined)}
       isOpen={!!restaurantToEdit}
       fullHight>
