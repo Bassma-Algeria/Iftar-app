@@ -1,7 +1,7 @@
 import {View, ImageSourcePropType, Image} from 'react-native';
 import React from 'react';
 
-import {styles} from '../../../RestaurantPopup.style';
+import {styles} from '../../../../../DiscoverMode.style';
 
 import type {Time} from '../../../../../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 

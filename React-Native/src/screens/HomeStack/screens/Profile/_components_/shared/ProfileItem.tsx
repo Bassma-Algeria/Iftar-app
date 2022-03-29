@@ -27,10 +27,11 @@ interface Props {
   title: string;
   icon: ImageSourcePropType;
   Details: React.FC<{isExpanded: boolean}>;
+  defaultState?: 'collapsed' | 'expanded';
 }
 
-const ProfileItem: React.FC<Props> = ({title, icon, Details}) => {
-  const [isDetailsOpen, setIsDetailsOpen] = useState<boolean>(false);
+const ProfileItem: React.FC<Props> = ({title, icon, defaultState, Details}) => {
+  const [isDetailsOpen, setIsDetailsOpen] = useState<boolean>(defaultState === 'expanded');
   const {rotate} = useArrowAnimation(isDetailsOpen);
 
   const maxHeight = !isDetailsOpen ? 0 : '100%';

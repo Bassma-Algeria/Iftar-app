@@ -3,8 +3,8 @@ import {View} from 'react-native';
 
 import {styles} from '../Profile.style';
 
-const Seperator: React.FC = () => {
-  return <View style={styles.separator} />;
+const Devider: React.FC = () => {
+  return <View style={styles.devider} />;
 };
 
-export {Seperator};
+export {Devider};

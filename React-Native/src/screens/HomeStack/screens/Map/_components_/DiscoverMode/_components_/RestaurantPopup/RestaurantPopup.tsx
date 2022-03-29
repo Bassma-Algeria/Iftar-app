@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {styles} from './RestaurantPopup.style';
+import {styles} from '../../DiscoverMode.style';
 
 import {useDiscoverModeContext} from '../../../../_hooks_/useDiscoverModeContext';
 

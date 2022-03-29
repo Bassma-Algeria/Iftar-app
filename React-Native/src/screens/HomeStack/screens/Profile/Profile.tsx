@@ -9,8 +9,6 @@ import {ProfileContextProvider} from './_context_/ProfileContextProvider';
 
 import {TopHead} from './_components_/TopHead';
 import {RestaurantsList} from './_components_/RestaurantsList';
-import {Settings} from './_components_/Settings';
-import {Seperator} from './_components_/Seperator';
 import {EditRestaurantFormPopup} from './_components_/EditRestaurantForm/EditRestaurantForm';
 
 interface Props {}
@@ -23,11 +21,10 @@ const Profile: React.FC<Props> = () => {
         <TopHead />
 
         <View style={styles.content}>
-          <Settings />
-          <Seperator />
           <RestaurantsList />
         </View>
       </ScrollView>
+
       <EditRestaurantFormPopup />
     </ProfileContextProvider>
   );

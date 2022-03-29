@@ -6,62 +6,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  shadowContainer: {
-    width: '100%',
-  },
-
-  topBarContainer: {
-    position: 'absolute',
-    top: 0,
-    padding: 10,
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    zIndex: 1,
-  },
-
-  searchBarContainer: {
-    flex: 1,
-    height: 60,
-    borderRadius: 30,
-    padding: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: COLORS.white,
-  },
-
-  profileButton: {
-    marginLeft: 5,
-  },
-
-  textIconContainer: {
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    flex: 1,
-    flexDirection: 'row',
-  },
-
-  searchIconContainer: {
-    width: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  searchIcon: {
-    width: '40%',
-  },
-
-  addRestaurantButtonContainer: {
-    position: 'absolute',
-    bottom: 0,
-    padding: 10,
-    paddingBottom: 20,
-    width: '100%',
-    zIndex: 1,
-  },
-
   map: {
     position: 'absolute',
     width: '100%',

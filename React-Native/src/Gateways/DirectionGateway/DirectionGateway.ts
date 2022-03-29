@@ -34,7 +34,7 @@ class MapBoxDirectionGateway implements IDirectionGateway {
       const resp = await fetch(this.getDirectionUrl(start, dest));
       const respJson = await resp.json();
 
-      console.log(respJson.routes[0].duration);
+      console.log(respJson.routes[0].distance);
 
       return respJson.routes[0].geometry.coordinates.map(([longitude, latitude]: number[]) => ({
         latitude,

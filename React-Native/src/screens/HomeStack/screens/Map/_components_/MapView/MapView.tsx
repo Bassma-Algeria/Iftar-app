@@ -87,7 +87,7 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
       initialRegion={{...initialLocation, latitudeDelta, longitudeDelta}}>
       <MyPositionMarker />
 
-      <PathToRestaurant currentLocation={initialLocation} />
+      <PathToRestaurant />
       <RestaurantsMarkers />
 
       <SelectedLocationMarker />

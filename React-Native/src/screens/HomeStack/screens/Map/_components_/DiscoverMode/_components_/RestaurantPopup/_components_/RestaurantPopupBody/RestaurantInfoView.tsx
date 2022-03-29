@@ -1,9 +1,9 @@
 import {View} from 'react-native';
 import React from 'react';
 
-import {styles} from '../../RestaurantPopup.style';
-
 import type {RestaurantInfo} from '../../../../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+
+import {styles} from '../../../../DiscoverMode.style';
 
 import {ICONS} from '../../../../../../../../../../utils/constants/Icons';
 

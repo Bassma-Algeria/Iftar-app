@@ -2,7 +2,7 @@ import React from 'react';
 import {Dimensions, Image, View} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
-import {styles} from '../../../RestaurantPopup.style';
+import {styles} from '../../../../../DiscoverMode.style';
 
 import {Header} from '../../../../../../../../../../../components/Header/Header';
 

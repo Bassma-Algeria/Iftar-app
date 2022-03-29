@@ -19,7 +19,9 @@ import {Input} from '../../../../../components/Inputs/TextInput/Input';
 import {Header} from '../../../../../components/Header/Header';
 
 const RestaurantsList: React.FC = () => {
-  return <ProfileItem title="قائمة المطاعم" icon={ICONS.list} Details={List} />;
+  return (
+    <ProfileItem title="قائمة المطاعم" icon={ICONS.list} Details={List} defaultState="expanded" />
+  );
 };
 
 const List: React.FC<{isExpanded: boolean}> = ({isExpanded}) => {

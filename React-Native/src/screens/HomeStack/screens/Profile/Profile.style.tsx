@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
   item: {},
 
-  separator: {
+  devider: {
     width: '80%',
     backgroundColor: COLORS.brown,
     alignSelf: 'center',

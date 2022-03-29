@@ -3,7 +3,7 @@ import {Image, Pressable, View} from 'react-native';
 import {Shadow} from 'react-native-shadow-2';
 import {useNavigation} from '@react-navigation/native';
 
-import {styles} from '../../../../Map.style';
+import {styles} from '../../DiscoverMode.style';
 
 import type {HomeStackScreenProps} from '../../../../../../HomeStack.types';
 
