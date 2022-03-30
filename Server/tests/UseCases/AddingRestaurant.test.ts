@@ -10,8 +10,8 @@ import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePassw
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 
 /**
- * closing time should be after opening time;
- * pictures are optional;
+ *
+ * should upload the pictures;
  */
 
 const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
@@ -45,6 +45,16 @@ describe("Adding a Restaurant use case", () => {
     await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;
 
     info = { ...restaurantInfo, locationName: "" };
+    await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;
+  });
+
+  it("should not be able to register a restaurant with wrong working time", async () => {
+    let info: typeof restaurantInfo = {
+      ...restaurantInfo,
+      openingTime: { hour: 10, minute: 0 },
+      closingTime: { hour: 9, minute: 0 },
+    };
+
     await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;
   });
 });

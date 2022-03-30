@@ -4,10 +4,6 @@ import { makeRestaurant } from "../../src/Domain/Restaurant/RestaurantFactory";
 import { idGenerator } from "../../src/Ports/DrivenPorts/IdGenerator/IdGenerator";
 import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
 
-/**
- * should identify the resturant when no id is provided
- */
-
 describe("Restaurant Entity", () => {
   const restaurantInfo = getResturantInfo();
   const Restaurant = makeRestaurant(idGenerator);
@@ -33,5 +29,20 @@ describe("Restaurant Entity", () => {
 
     const restaurant2 = new Restaurant(restaurantInfo);
     expect(restaurant2.createdAt).to.equal(restaurantInfo.createdAt);
+  });
+
+  it("should not have a restaurant with an opening time bigger than the closing time", () => {
+    let info = {
+      ...restaurantInfo,
+      openingTime: { hour: 10, minute: 0 },
+      closingTime: { hour: 9, minute: 0 },
+    };
+    expect(() => new Restaurant(info)).to.throw();
+
+    info.openingTime.hour = 9;
+    info.openingTime.minute = 20;
+    info.closingTime.hour = 9;
+    info.closingTime.minute = 0;
+    expect(() => new Restaurant(info)).to.throw();
   });
 });
