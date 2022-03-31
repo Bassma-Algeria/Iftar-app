@@ -49,7 +49,7 @@ describe("Adding a Restaurant use case", () => {
   });
 
   it("should not be able to register a restaurant with wrong working time", async () => {
-    let info: typeof restaurantInfo = {
+    let info = {
       ...restaurantInfo,
       openingTime: { hour: 10, minute: 0 },
       closingTime: { hour: 9, minute: 0 },

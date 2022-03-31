@@ -17,11 +17,7 @@ const ChooseLocationMode: React.FC = () => {
     }
   }, [routes, setUsageMode]);
 
-  return usageMode === 'chooseLocation' ? (
-    <>
-      <ConfirmButton />
-    </>
-  ) : null;
+  return usageMode === 'chooseLocation' ? <ConfirmButton /> : null;
 };
 
 export {ChooseLocationMode};

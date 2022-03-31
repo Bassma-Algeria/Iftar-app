@@ -4,9 +4,7 @@ import { OwerInfo } from "./@types/Helpers";
 
 import { IRestaurantOwnersPersistenceFacade } from "./RestaurantOwnerGateway";
 
-class FakeRestaurantOwnersPersistenceFacade
-  implements IRestaurantOwnersPersistenceFacade
-{
+class FakeRestaurantOwnersPersistenceFacade implements IRestaurantOwnersPersistenceFacade {
   private store = new Map<string, OwerInfo>();
 
   async save(ownerInfo: OwerInfo) {
