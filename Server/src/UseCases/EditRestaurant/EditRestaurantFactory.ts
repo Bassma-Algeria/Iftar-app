@@ -1,12 +1,20 @@
-import { Coords } from "../../@types/helperTypes";
+import { Coords, Time } from "../../@types/helperTypes";
+import { IRestaurant } from "../../Domain/Restaurant/RestaurantFactory";
 import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+
+export interface EditInfo {
+  restaurantId: string;
+  name?: string;
+  locationCoords?: Coords;
+  locationName?: string;
+  ownerName?: string;
+  openingTime?: Time;
+  closingTime?: Time;
+}
 
 export class EditRestaurentsFactory {
   constructor(private readonly restaurantGateway: IRestaurantsGateway) {}
-  updateLocation(restaurantId: string, coords: Coords, locationName: string) {
-    return this.restaurantGateway.updateLocation(restaurantId, coords, locationName);
-  }
-  async updateName(restaurantId: string, name: string) {
-    return this.restaurantGateway.updateName(restaurantId, name);
+  update(newRestaurentInfo: EditInfo): Promise<IRestaurant | undefined> {
+    return this.restaurantGateway.update(newRestaurentInfo);
   }
 }

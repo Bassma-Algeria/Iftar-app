@@ -12,7 +12,7 @@ class AddRestaurantFactory {
 
   async add({ authToken, restaurantInfo }: Args) {
     const userId = this.tokenManager.decode(authToken);
-    const restaurant = new Restaurant(restaurantInfo);
+    const restaurant = new Restaurant({ ...restaurantInfo, ownerId: userId });
     const savedRestaurant = await this.restaurantsGateway.save(restaurant);
   }
 }

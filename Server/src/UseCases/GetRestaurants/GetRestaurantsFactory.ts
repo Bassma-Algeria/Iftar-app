@@ -4,10 +4,12 @@ export class GetRestaurentsFactory {
   constructor(private readonly restaurantGateway: IRestaurantsGateway) {}
   async getAll() {
     const restaurants = await this.restaurantGateway.getAll();
-    return restaurants;
+    return restaurants.map((restaurant) => {
+      return restaurant.info();
+    });
   }
   async getRestaurantById(restaurantId: string) {
     const restaurant = await this.restaurantGateway.getRestaurantById(restaurantId);
-    return restaurant;
+    return restaurant?.info();
   }
 }

@@ -4,7 +4,6 @@ export interface Args {
   authToken: string;
   restaurantInfo: {
     restaurantId: string;
-    ownerId: string;
     name: string;
     ownerName: string;
     openingTime: Time;

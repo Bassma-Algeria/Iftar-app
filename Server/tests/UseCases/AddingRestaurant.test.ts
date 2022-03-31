@@ -62,6 +62,6 @@ describe("Adding a Restaurant use case", () => {
 
     await expect(searchRestaurantFactory.search(restaurantInfo.name))
       .to.eventually.have.lengthOf(1)
-      .and.deep.equal([restaurantInfo]);
+      .and.deep.equal([{ ...restaurantInfo, ownerId: tokenManager.decode(authToken) }]);
   });
 });

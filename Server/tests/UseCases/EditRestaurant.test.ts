@@ -30,28 +30,57 @@ describe("Edit restaurant use case", () => {
     const confirmPassword = ownerInfo.password;
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
   });
-  it("should update name by id", async () => {
+  it("should update restaurant info", async () => {
     const restaurant = addRestaurantFactory.add({
       authToken,
-      restaurantInfo: { ...restaurantInfo, name: "restaurant1" },
-    });
-    const updatedRestaurant = await editRestaurantFactory.updateName(
-      restaurantInfo.restaurantId,
-      "restaurant2"
-    );
-    expect(updatedRestaurant.info().name).to.equal("restaurant2");
-  });
-  it("Should be able to update coordinates and location name", async () => {
-    const updatedRestaurant = await editRestaurantFactory.updateLocation(
-      restaurantInfo.restaurantId,
-      {
-        latitude: 1,
-        longitude: 1,
+      restaurantInfo: {
+        ...restaurantInfo,
+        name: "restaurant1",
+        ownerName: "owner1",
+        locationCoords: {
+          latitude: 1,
+          longitude: 1,
+        },
+        closingTime: {
+          hour: 10,
+          minute: 10,
+        },
+        openingTime: {
+          hour: 9,
+          minute: 0,
+        },
       },
-      "locationName"
-    );
-    expect(updatedRestaurant.info().locationCoords.latitude).to.equal(1);
-    expect(updatedRestaurant.info().locationCoords.longitude).to.equal(1);
-    expect(updatedRestaurant.info().locationName).to.equal("locationName");
+    });
+    const updatedRestaurant = await editRestaurantFactory.update({
+      restaurantId: restaurantInfo.restaurantId,
+      name: "restaurant2",
+      ownerName: "owner2",
+      locationCoords: {
+        latitude: 10,
+        longitude: 10,
+      },
+      closingTime: {
+        hour: 20,
+        minute: 10,
+      },
+      openingTime: {
+        hour: 19,
+        minute: 0,
+      },
+    });
+    expect(updatedRestaurant?.info().name).to.equal("restaurant2");
+    expect(updatedRestaurant?.info().ownerName).to.equal("owner2");
+    expect(updatedRestaurant?.info().locationCoords).to.deep.equal({
+      latitude: 10,
+      longitude: 10,
+    });
+    expect(updatedRestaurant?.info().closingTime).to.deep.equal({
+      hour: 20,
+      minute: 10,
+    });
+    expect(updatedRestaurant?.info().openingTime).to.deep.equal({
+      hour: 19,
+      minute: 0,
+    });
   });
 });
