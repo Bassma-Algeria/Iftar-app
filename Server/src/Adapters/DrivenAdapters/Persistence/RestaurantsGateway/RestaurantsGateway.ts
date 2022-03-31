@@ -12,10 +12,15 @@ export interface IRestaurantPersistance {
   getRestaurantById(restaurantId: string): Promise<RestaurantInfo | undefined>;
   update(newRestaurentInfo: EditInfo): Promise<RestaurantInfo | undefined> | undefined;
   deleteAll(): Promise<void>;
+  getRestaurantsByOwnerId: (ownerId: string) => Promise<RestaurantInfo[]>;
 }
 
 class RestaurantsGateway implements IRestaurantsGateway {
   constructor(private readonly restaurantPersistence: IRestaurantPersistance) {}
+  async getRestaurantsByOwnerId(ownerId: string): Promise<IRestaurant[]> {
+    const restaurants = await this.restaurantPersistence.getRestaurantsByOwnerId(ownerId);
+    return restaurants.map((restaurant) => new Restaurant(restaurant));
+  }
   async update(newRestaurentInfo: EditInfo): Promise<IRestaurant | undefined> {
     let restaurant = await this.restaurantPersistence.getRestaurantById(
       newRestaurentInfo.restaurantId

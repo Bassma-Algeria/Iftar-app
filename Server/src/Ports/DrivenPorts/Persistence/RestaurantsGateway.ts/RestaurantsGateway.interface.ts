@@ -8,4 +8,5 @@ export interface IRestaurantsGateway {
   save(owner: IRestaurant): Promise<IRestaurant>;
   getAll(): Promise<IRestaurant[]>;
   update(newRestaurentInfo: EditInfo): Promise<IRestaurant | undefined>;
+  getRestaurantsByOwnerId(ownerId: string): Promise<IRestaurant[]>;
 }
