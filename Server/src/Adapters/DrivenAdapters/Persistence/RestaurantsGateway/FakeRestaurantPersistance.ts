@@ -6,6 +6,15 @@ import { RestaurantInfo } from "./@types/Helpers";
 import { IRestaurantPersistance } from "./RestaurantsGateway";
 
 export class FakeRestaurantPersistence implements IRestaurantPersistance {
+  getRestaurantsByOwnerId(ownerId: string): Promise<NonFunctionProperties<IRestaurant>[]> {
+    let results: NonFunctionProperties<IRestaurant>[] = [];
+    this.store.forEach((restaurant) => {
+      if (restaurant.ownerId === ownerId) {
+        results.push(restaurant);
+      }
+    });
+    return Promise.resolve(results);
+  }
   async update(
     newRestaurentInfo: EditInfo
   ): Promise<NonFunctionProperties<IRestaurant> | undefined> {

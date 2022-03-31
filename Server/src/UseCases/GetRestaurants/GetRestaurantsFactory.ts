@@ -12,4 +12,10 @@ export class GetRestaurentsFactory {
     const restaurant = await this.restaurantGateway.getRestaurantById(restaurantId);
     return restaurant?.info();
   }
+  async getRestaurantsByOwnerId(ownerId: string) {
+    const restaurants = await this.restaurantGateway.getRestaurantsByOwnerId(ownerId);
+    return restaurants.map((restaurant) => {
+      return restaurant.info();
+    });
+  }
 }
