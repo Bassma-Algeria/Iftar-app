@@ -31,7 +31,7 @@ const useLocation = () => {
 
 const askForLocationPermission = async (): Promise<boolean> => {
   const locationPermission = Platform.select({
-    android: PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION,
+    android: PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
     ios: PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
   }) as Permission;
 

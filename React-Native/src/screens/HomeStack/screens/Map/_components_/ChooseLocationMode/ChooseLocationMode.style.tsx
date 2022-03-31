@@ -11,7 +11,9 @@ const styles = StyleSheet.create({
   },
 
   chooseLocationMessage: {
-    marginTop: 40,
+    position: 'absolute',
+    alignSelf: 'center',
+    top: 40,
   },
 });
 

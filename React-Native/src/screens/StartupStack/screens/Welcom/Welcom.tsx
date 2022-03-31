@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import {View} from 'react-native';
 
 import {styles} from './Welcom.style';
+
+import type {StartupStackScreenProps} from '../../StartupStack.types';
+
+import {localStorage} from '../../../../utils/helpers/LocalStorage';
 
 import {Layout} from '../../_components_/Layout/Layout';
 import {Logo} from '../../../../components/Logo/Logo';
 import {Header} from '../../../../components/Header/Header';
 import {Button} from '../../../../components/Button/Button';
-
-import type {StartupStackScreenProps} from '../../StartupStack.types';
 
 interface Props extends StartupStackScreenProps<'Welcom'> {}
 

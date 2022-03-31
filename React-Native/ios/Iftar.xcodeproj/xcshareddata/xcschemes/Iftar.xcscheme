@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "my_app.app"
-               BlueprintName = "my_app"
-               ReferencedContainer = "container:my_app.xcodeproj">
+               BuildableName = "Iftar.app"
+               BlueprintName = "Iftar"
+               ReferencedContainer = "container:Iftar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "my_appTests.xctest"
-               BlueprintName = "my_appTests"
-               ReferencedContainer = "container:my_app.xcodeproj">
+               BuildableName = "IftarTests.xctest"
+               BlueprintName = "IftarTests"
+               ReferencedContainer = "container:Iftar.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "my_app.app"
-            BlueprintName = "my_app"
-            ReferencedContainer = "container:my_app.xcodeproj">
+            BuildableName = "Iftar.app"
+            BlueprintName = "Iftar"
+            ReferencedContainer = "container:Iftar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "my_app.app"
-            BlueprintName = "my_app"
-            ReferencedContainer = "container:my_app.xcodeproj">
+            BuildableName = "Iftar.app"
+            BlueprintName = "Iftar"
+            ReferencedContainer = "container:Iftar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

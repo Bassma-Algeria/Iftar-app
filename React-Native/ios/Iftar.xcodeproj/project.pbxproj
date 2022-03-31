@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* my_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* my_appTests.m */; };
+		00E356F31AD99517003FC87E /* IftarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IftarTests.m */; };
 		11765F1FB83242DBB0C346E6 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 217FACEF483145429A12429F /* Cairo-SemiBold.ttf */; };
 		12E6325405AE44E6BEC65CA0 /* Cairo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8AB447893544D38B8A8FBA0 /* Cairo-Light.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		237B0C7E7B6278021961E83D /* libPods-my_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688F7DC339AFC947966B11B /* libPods-my_app.a */; };
+		237B0C7E7B6278021961E83D /* libPods-Iftar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688F7DC339AFC947966B11B /* libPods-Iftar.a */; };
 		3362B1D3895548C5A44CFA80 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1F71726C5D47B2BD3326B0 /* Cairo-Bold.ttf */; };
 		50CF93EB6B134580B70DC757 /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 307EA11F27D44BC4AF78C532 /* Cairo-Medium.ttf */; };
 		787C6597F4DD4106A298F2FB /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6223E503E361425FA7E6A893 /* Cairo-Regular.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A8D5B0362B1E436A978EB92D /* Cairo-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5001F83AA2424297A76CC675 /* Cairo-ExtraLight.ttf */; };
 		D2EB3112375B407EBF78845E /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2423500D07F84DD0AE2EBF4F /* Cairo-Black.ttf */; };
-		DD805D79076C7997E512D11B /* libPods-my_app-my_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-my_app-my_appTests.a */; };
+		DD805D79076C7997E512D11B /* libPods-Iftar-IftarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-Iftar-IftarTests.a */; };
 		E74FF60281044F61B8D98DE7 /* Cairo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21FF6669E0BC47BD82C9CACF /* Cairo-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
@@ -30,34 +30,34 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = my_app;
+			remoteInfo = Iftar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* my_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = my_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* IftarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IftarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* my_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = my_appTests.m; sourceTree = "<group>"; };
-		03806B57AA76E8459CF4C4EC /* Pods-my_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app.release.xcconfig"; path = "Target Support Files/Pods-my_app/Pods-my_app.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* my_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = my_app/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = my_app/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = my_app/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = my_app/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = my_app/main.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* IftarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IftarTests.m; sourceTree = "<group>"; };
+		03806B57AA76E8459CF4C4EC /* Pods-Iftar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iftar.release.xcconfig"; path = "Target Support Files/Pods-Iftar/Pods-Iftar.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Iftar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iftar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Iftar/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Iftar/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Iftar/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Iftar/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Iftar/main.m; sourceTree = "<group>"; };
 		217FACEF483145429A12429F /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-SemiBold.ttf"; path = "../src/assets/fonts/Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		21FF6669E0BC47BD82C9CACF /* Cairo-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-ExtraBold.ttf"; path = "../src/assets/fonts/Cairo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		2423500D07F84DD0AE2EBF4F /* Cairo-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Black.ttf"; path = "../src/assets/fonts/Cairo-Black.ttf"; sourceTree = "<group>"; };
-		2839BF484E66F25A262110C8 /* Pods-my_app-my_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app-my_appTests.release.xcconfig"; path = "Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		2839BF484E66F25A262110C8 /* Pods-Iftar-IftarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iftar-IftarTests.release.xcconfig"; path = "Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests.release.xcconfig"; sourceTree = "<group>"; };
 		307EA11F27D44BC4AF78C532 /* Cairo-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Medium.ttf"; path = "../src/assets/fonts/Cairo-Medium.ttf"; sourceTree = "<group>"; };
-		3688F7DC339AFC947966B11B /* libPods-my_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EB50E6FA471854559016C3C /* Pods-my_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app.debug.xcconfig"; path = "Target Support Files/Pods-my_app/Pods-my_app.debug.xcconfig"; sourceTree = "<group>"; };
+		3688F7DC339AFC947966B11B /* libPods-Iftar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iftar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB50E6FA471854559016C3C /* Pods-Iftar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iftar.debug.xcconfig"; path = "Target Support Files/Pods-Iftar/Pods-Iftar.debug.xcconfig"; sourceTree = "<group>"; };
 		5001F83AA2424297A76CC675 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-ExtraLight.ttf"; path = "../src/assets/fonts/Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		6223E503E361425FA7E6A893 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Regular.ttf"; path = "../src/assets/fonts/Cairo-Regular.ttf"; sourceTree = "<group>"; };
-		6317EC8864E9EBF5347F014A /* Pods-my_app-my_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my_app-my_appTests.debug.xcconfig"; path = "Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = my_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6317EC8864E9EBF5347F014A /* Pods-Iftar-IftarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iftar-IftarTests.debug.xcconfig"; path = "Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Iftar/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB1F71726C5D47B2BD3326B0 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Bold.ttf"; path = "../src/assets/fonts/Cairo-Bold.ttf"; sourceTree = "<group>"; };
-		C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-my_app-my_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-my_app-my_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-Iftar-IftarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iftar-IftarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8AB447893544D38B8A8FBA0 /* Cairo-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Light.ttf"; path = "../src/assets/fonts/Cairo-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD805D79076C7997E512D11B /* libPods-my_app-my_appTests.a in Frameworks */,
+				DD805D79076C7997E512D11B /* libPods-Iftar-IftarTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,20 +75,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237B0C7E7B6278021961E83D /* libPods-my_app.a in Frameworks */,
+				237B0C7E7B6278021961E83D /* libPods-Iftar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* my_appTests */ = {
+		00E356EF1AD99517003FC87E /* IftarTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* my_appTests.m */,
+				00E356F21AD99517003FC87E /* IftarTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = my_appTests;
+			path = IftarTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -99,7 +99,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* my_app */ = {
+		13B07FAE1A68108700A75B9A /* Iftar */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -109,15 +109,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = my_app;
+			name = Iftar;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				3688F7DC339AFC947966B11B /* libPods-my_app.a */,
-				C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-my_app-my_appTests.a */,
+				3688F7DC339AFC947966B11B /* libPods-Iftar.a */,
+				C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-Iftar-IftarTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,10 +125,10 @@
 		52DA9C246B8F88B9EE6EB5DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4EB50E6FA471854559016C3C /* Pods-my_app.debug.xcconfig */,
-				03806B57AA76E8459CF4C4EC /* Pods-my_app.release.xcconfig */,
-				6317EC8864E9EBF5347F014A /* Pods-my_app-my_appTests.debug.xcconfig */,
-				2839BF484E66F25A262110C8 /* Pods-my_app-my_appTests.release.xcconfig */,
+				4EB50E6FA471854559016C3C /* Pods-Iftar.debug.xcconfig */,
+				03806B57AA76E8459CF4C4EC /* Pods-Iftar.release.xcconfig */,
+				6317EC8864E9EBF5347F014A /* Pods-Iftar-IftarTests.debug.xcconfig */,
+				2839BF484E66F25A262110C8 /* Pods-Iftar-IftarTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -143,9 +143,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* my_app */,
+				13B07FAE1A68108700A75B9A /* Iftar */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* my_appTests */,
+				00E356EF1AD99517003FC87E /* IftarTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				8F7ACF2D52804FF190F374BA /* Resources */,
@@ -159,8 +159,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* my_app.app */,
-				00E356EE1AD99517003FC87E /* my_appTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Iftar.app */,
+				00E356EE1AD99517003FC87E /* IftarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,9 +183,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* my_appTests */ = {
+		00E356ED1AD99517003FC87E /* IftarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "my_appTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IftarTests" */;
 			buildPhases = (
 				8E3A8148C6BD8F5046AD9E2A /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -199,14 +199,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = my_appTests;
-			productName = my_appTests;
-			productReference = 00E356EE1AD99517003FC87E /* my_appTests.xctest */;
+			name = IftarTests;
+			productName = IftarTests;
+			productReference = 00E356EE1AD99517003FC87E /* IftarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* my_app */ = {
+		13B07F861A680F5B00A75B9A /* Iftar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "my_app" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Iftar" */;
 			buildPhases = (
 				59DF44C85ABF4E7F3B07CEA2 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -221,9 +221,9 @@
 			);
 			dependencies = (
 			);
-			name = my_app;
-			productName = my_app;
-			productReference = 13B07F961A680F5B00A75B9A /* my_app.app */;
+			name = Iftar;
+			productName = Iftar;
+			productReference = 13B07F961A680F5B00A75B9A /* Iftar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -243,7 +243,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "my_app" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Iftar" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -256,8 +256,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* my_app */,
-				00E356ED1AD99517003FC87E /* my_appTests */,
+				13B07F861A680F5B00A75B9A /* Iftar */,
+				00E356ED1AD99517003FC87E /* IftarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,15 +310,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar/Pods-Iftar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar/Pods-Iftar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Iftar/Pods-Iftar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		26354AFFA62670DA51F6912F /* [CP] Copy Pods Resources */ = {
@@ -327,15 +327,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		59DF44C85ABF4E7F3B07CEA2 /* [CP] Check Pods Manifest.lock */ = {
@@ -353,7 +353,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-my_app-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Iftar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -366,15 +366,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar/Pods-Iftar-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar/Pods-Iftar-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app/Pods-my_app-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Iftar/Pods-Iftar-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E3A8148C6BD8F5046AD9E2A /* [CP] Check Pods Manifest.lock */ = {
@@ -392,7 +392,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-my_app-my_appTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Iftar-IftarTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,15 +405,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-my_app-my_appTests/Pods-my_app-my_appTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -442,7 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* my_appTests.m in Sources */,
+				00E356F31AD99517003FC87E /* IftarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +460,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* my_app */;
+			target = 13B07F861A680F5B00A75B9A /* Iftar */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -468,7 +468,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6317EC8864E9EBF5347F014A /* Pods-my_app-my_appTests.debug.xcconfig */;
+			baseConfigurationReference = 6317EC8864E9EBF5347F014A /* Pods-Iftar-IftarTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = ZR73SVJPCG;
@@ -476,7 +476,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = my_appTests/Info.plist;
+				INFOPLIST_FILE = IftarTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,18 +490,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/my_app.app/my_app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iftar.app/Iftar";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2839BF484E66F25A262110C8 /* Pods-my_app-my_appTests.release.xcconfig */;
+			baseConfigurationReference = 2839BF484E66F25A262110C8 /* Pods-Iftar-IftarTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = ZR73SVJPCG;
-				INFOPLIST_FILE = my_appTests/Info.plist;
+				INFOPLIST_FILE = IftarTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -515,20 +515,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/my_app.app/my_app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iftar.app/Iftar";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EB50E6FA471854559016C3C /* Pods-my_app.debug.xcconfig */;
+			baseConfigurationReference = 4EB50E6FA471854559016C3C /* Pods-Iftar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZR73SVJPCG;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = my_app/Info.plist;
+				INFOPLIST_FILE = Iftar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +539,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "iftar.reactjs.native.example.my-app";
-				PRODUCT_NAME = my_app;
+				PRODUCT_NAME = Iftar;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -548,13 +548,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03806B57AA76E8459CF4C4EC /* Pods-my_app.release.xcconfig */;
+			baseConfigurationReference = 03806B57AA76E8459CF4C4EC /* Pods-Iftar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZR73SVJPCG;
-				INFOPLIST_FILE = my_app/Info.plist;
+				INFOPLIST_FILE = Iftar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +565,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "iftar.reactjs.native.example.my-app";
-				PRODUCT_NAME = my_app;
+				PRODUCT_NAME = Iftar;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -699,7 +699,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "my_appTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IftarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -708,7 +708,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "my_app" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Iftar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -717,7 +717,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "my_app" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Iftar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
