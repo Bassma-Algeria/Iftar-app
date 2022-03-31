@@ -8,21 +8,21 @@ import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persi
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
-import { SearchRestaurentFactory } from "../../src/UseCases/SearchForRestaurant/SearchRestaurantFactory";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
+import { GetRestaurentsFactory } from "../../src/UseCases/GetRestaurants/GetRestaurantsFactory";
 
 const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
 const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
 const passwordManager = new FakePasswordManager();
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
-const searchRestaurantFactory = new SearchRestaurentFactory(restaurantsGateway_);
-describe("Adding a Restaurant use case", () => {
+describe("Get Restaurants use case", () => {
   const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
 
   const ownerInfo = getResturantOwnerInfo();
-  const restaurantInfo = getResturantInfo();
+  let restaurantInfo = getResturantInfo();
   const addRestaurantFactory = new AddRestaurantFactory(tokenManager, restaurantsGateway_);
+  const getRestaurantsFactory = new GetRestaurentsFactory(restaurantsGateway_);
 
   let authToken: string;
 
@@ -30,38 +30,21 @@ describe("Adding a Restaurant use case", () => {
     const confirmPassword = ownerInfo.password;
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
   });
-
-  it("should not be able to register a restaurant with an invalid token", async () => {
-    await expect(addRestaurantFactory.add({ authToken: "", restaurantInfo })).to.be.rejected;
-    await expect(addRestaurantFactory.add({ authToken: "invalid", restaurantInfo })).to.be.rejected;
-  });
-
-  it("should not be able to register with invalid values", async () => {
-    let info = { ...restaurantInfo, name: "" };
-    await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;
-
-    info = { ...restaurantInfo, ownerName: "" };
-    await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;
-
-    info = { ...restaurantInfo, locationName: "" };
-    await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;
-  });
-
-  it("should not be able to register a restaurant with wrong working time", async () => {
-    let info = {
-      ...restaurantInfo,
-      openingTime: { hour: 10, minute: 0 },
-      closingTime: { hour: 9, minute: 0 },
-    };
-
-    await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;
-  });
-
-  it("Should register the restaurent when all inputs are valid", async () => {
-    await addRestaurantFactory.add({ authToken, restaurantInfo });
-
-    await expect(searchRestaurantFactory.search(restaurantInfo.name))
-      .to.eventually.have.lengthOf(1)
-      .and.deep.equal([restaurantInfo]);
+  it("Should return all restaurants", async () => {
+    restaurantInfo.restaurantId = "";
+    await addRestaurantFactory.add({
+      authToken,
+      restaurantInfo: { ...restaurantInfo, name: "restaurant1" },
+    });
+    await addRestaurantFactory.add({
+      authToken,
+      restaurantInfo: { ...restaurantInfo, name: "restaurant2" },
+    });
+    await addRestaurantFactory.add({
+      authToken,
+      restaurantInfo: { ...restaurantInfo, name: "restaurant3" },
+    });
+    const result = await getRestaurantsFactory.getAll();
+    expect(result).to.have.lengthOf(3);
   });
 });

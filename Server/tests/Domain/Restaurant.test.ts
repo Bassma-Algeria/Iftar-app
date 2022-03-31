@@ -15,8 +15,8 @@ describe("Restaurant Entity", () => {
   });
 
   it("should identify the resturant when no id is provided", () => {
-    const restaurant1 = new Restaurant({ ...restaurantInfo, restaurantId: undefined });
-    const restaurant2 = new Restaurant({ ...restaurantInfo, restaurantId: undefined });
+    const restaurant1 = new Restaurant({ ...restaurantInfo, restaurantId: "" });
+    const restaurant2 = new Restaurant({ ...restaurantInfo, restaurantId: "" });
     expect(restaurant1.restaurantId).to.be.a("string").and.to.not.equal(restaurant2.restaurantId);
 
     const restaurant3 = new Restaurant(restaurantInfo);

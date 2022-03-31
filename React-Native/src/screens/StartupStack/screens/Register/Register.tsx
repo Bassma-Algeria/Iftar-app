@@ -5,8 +5,7 @@ import {styles} from './Register.style';
 import {Layout} from '../../_components_/Layout/Layout';
 import {Header} from '../../../../components/Header/Header';
 
-import {RegisterationForm} from './_components_/RegisterForm';
-import {RegistrationContextProvider} from '../../_context_/RegistrationContext';
+import {RegistrationForm} from './_components_/RegisterForm/RegisterForm';
 
 interface Props {}
 
@@ -16,9 +15,8 @@ const Register: React.FC<Props> = () => {
       <Header color="brown" align="center" variant="h1" fontWeight="semibold">
         تسجيل
       </Header>
-      <RegistrationContextProvider>
-        <RegisterationForm />
-      </RegistrationContextProvider>
+
+      <RegistrationForm />
     </Layout>
   );
 };

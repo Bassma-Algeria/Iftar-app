@@ -1,35 +1,40 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 
-import {styles} from '../../../Login.style';
+import {styles} from '../../../Register.style';
 
 import {restaurentOwner} from '../../../../../../../Gateways';
 
-import {useLoginContext} from '../_hooks_/UseLoginContext';
+import {useRegisterContext} from '../_hooks_/UseRegisterContext';
 
 import {Button} from '../../../../../../../components/Button/Button';
 import {Loader} from '../../../../../../../components/Loader/Loader';
 
 import {localStorage} from '../../../../../../../utils/helpers/LocalStorage';
 import {useNavigation} from '@react-navigation/native';
-import {MainStackScreenProps} from '../../../../../../MainStack.types';
+import {HomeStackScreenProps} from '../../../../../../HomeStack/HomeStack.types';
 
 interface Props {}
-const SubmitButton: React.FC<Props> = () => {
-  const navigation = useNavigation<MainStackScreenProps<'HomeStack'>['navigation']>();
 
+const SubmitButton: React.FC<Props> = ({}) => {
+  const navigation = useNavigation<HomeStackScreenProps<'Map'>['navigation']>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const {loginInfo, setServerError} = useLoginContext();
+  const {registerInfo, setServerError} = useRegisterContext();
 
   const handleSubmit = () => {
-    if (!loginInfo.email && !loginInfo.password) {
+    if (
+      !registerInfo.email &&
+      !registerInfo.password &&
+      !registerInfo.confirmPassword &&
+      !registerInfo.phoneNumber
+    ) {
       //Will add shaker
       return;
     }
 
     setIsLoading(true);
     restaurentOwner
-      .login(loginInfo)
+      .signup(registerInfo)
       .then(resp => {
         console.log(resp);
         localStorage.save('token', resp);
@@ -37,14 +42,14 @@ const SubmitButton: React.FC<Props> = () => {
       .catch(err => setServerError(err.message))
       .finally(() => {
         setIsLoading(false);
-        navigation.navigate('HomeStack', {screen: 'Map'});
+        navigation.navigate('Map');
       });
   };
 
   return (
-    <View style={styles.loginButton}>
+    <View style={styles.registerButton}>
       <Button onPress={handleSubmit}>
-        {isLoading ? <Loader size={31} color="whiteShade" /> : 'تسجيل الدخول'}
+        {isLoading ? <Loader size={31} color="whiteShade" /> : 'تسجيل '}
       </Button>
     </View>
   );
