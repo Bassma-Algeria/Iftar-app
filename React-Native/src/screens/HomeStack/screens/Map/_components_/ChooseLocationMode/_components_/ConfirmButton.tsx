@@ -22,7 +22,7 @@ const ConfirmButton: React.FC = () => {
       onPress={handlePress}
       style={styles.confirmButtonContainer}
       icon={ICONS.done}>
-      Confirm
+      تأكيد الموقع
     </Button>
   );
 };

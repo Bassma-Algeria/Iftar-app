@@ -16,7 +16,7 @@ const SelectedLocationMarker: React.FC = () => {
     <Marker
       coordinate={{latitude: location.latitude, longitude: location.longitude}}
       style={styles.markerContainer}>
-      <Image source={ICONS.restaurantMarker} style={styles.pin} resizeMode="contain" />
+      <Image source={ICONS.locationFilled} style={styles.pin} resizeMode="contain" />
     </Marker>
   ) : null;
 };

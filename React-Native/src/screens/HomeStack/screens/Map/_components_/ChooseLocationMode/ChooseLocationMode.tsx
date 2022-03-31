@@ -4,6 +4,7 @@ import React, {useEffect} from 'react';
 import {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 import {useMapContext} from '../../_hooks_/useMapContext';
+import {ChooseLocationMessage} from './_components_/ChooseLocationMessage';
 
 import {ConfirmButton} from './_components_/ConfirmButton';
 
@@ -17,7 +18,12 @@ const ChooseLocationMode: React.FC = () => {
     }
   }, [routes, setUsageMode]);
 
-  return usageMode === 'chooseLocation' ? <ConfirmButton /> : null;
+  return usageMode === 'chooseLocation' ? (
+    <>
+      <ChooseLocationMessage />
+      <ConfirmButton />
+    </>
+  ) : null;
 };
 
 export {ChooseLocationMode};

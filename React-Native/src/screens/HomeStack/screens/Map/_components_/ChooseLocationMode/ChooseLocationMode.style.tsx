@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
     width: '100%',
     zIndex: 1,
   },
+
+  chooseLocationMessage: {
+    marginTop: 40,
+  },
 });
 
 export {styles};
