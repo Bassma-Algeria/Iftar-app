@@ -2,7 +2,8 @@ import { Coords, NonFunctionProperties, Time } from "../../@types/helperTypes";
 import { IIdGenerator } from "../../Ports/DrivenPorts/IdGenerator/IdGenerator.interface";
 
 export interface IRestaurant {
-  restaurantId?: string;
+  ownerId: string;
+  restaurantId: string;
   name: string;
   ownerName: string;
   openingTime: Time;
@@ -11,17 +12,19 @@ export interface IRestaurant {
   locationCoords: Coords;
   pictures: any[];
   createdAt?: Date;
+  info(): NonFunctionProperties<IRestaurant>;
 }
 
 const makeRestaurant = (idGenerator: IIdGenerator) => {
   return class Restaurant implements IRestaurant {
-    restaurantId?: string;
-    private _name?: string;
-    private _ownerName?: string;
+    ownerId: string;
+    restaurantId: string;
+    private _name!: string;
+    private _ownerName!: string;
 
     private _workingTime?: { opening: Time; closing: Time };
 
-    private _locationName?: string;
+    private _locationName!: string;
     locationCoords: Coords;
     pictures: any[];
     createdAt?: Date;
@@ -40,6 +43,7 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
       this.locationCoords = restaurantInfo.locationCoords;
       this.pictures = restaurantInfo.pictures;
       this.locationName = restaurantInfo.locationName;
+      this.ownerId = restaurantInfo.ownerId;
     }
 
     public get openingTime(): Time {
@@ -50,6 +54,21 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
     public get closingTime(): Time {
       if (!this._workingTime) throw new Error("working time not set");
       return this._workingTime.closing;
+    }
+
+    public info(): NonFunctionProperties<IRestaurant> {
+      return {
+        ownerId: this.ownerId,
+        restaurantId: this.restaurantId,
+        name: this._name,
+        ownerName: this._ownerName,
+        openingTime: this.openingTime,
+        closingTime: this.closingTime,
+        locationName: this._locationName,
+        locationCoords: this.locationCoords,
+        pictures: this.pictures,
+        createdAt: this.createdAt,
+      };
     }
 
     private set workingTime(time: { opening: Time; closing: Time }) {
