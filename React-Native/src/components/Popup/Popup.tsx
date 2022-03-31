@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect} from 'react';
-import {View, Animated, Pressable, StyleProp, ViewStyle} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {View, Animated, Pressable, StyleProp, ViewStyle} from 'react-native';
 
 import {styles} from './Popup.style';
 

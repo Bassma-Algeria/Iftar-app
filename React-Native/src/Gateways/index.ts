@@ -1,15 +1,18 @@
-import {IAuthGateway} from './AuthGateway/AuthGateway.interface';
-import {RestaurantsOwnersFakeGateway} from './AuthGateway/Fake/RestaurantOwnersFakeGateway';
+import type {IAuthGateway} from './AuthGateway/AuthGateway.interface';
+import {FakeAuthGateway} from './AuthGateway/Fake/FakAuthGateway';
+
+import type {IDirectionGateway} from './DirectionGateway/DirectionGateway.interface';
 import {MapBoxDirectionGateway} from './DirectionGateway/DirectionGateway';
-import {IDirectionGateway} from './DirectionGateway/DirectionGateway.interface';
+
+import type {IGeoCodingGateway} from './GeoCodingGateway/GeoCodingGateway.interface';
 import {GeoapifyGeoCodingGateway} from './GeoCodingGateway/GeoCodingGateway';
-import {IGeoCodingGateway} from './GeoCodingGateway/GeoCodingGateway.interface';
+
+import type {IRestaurantsGateway} from './RestaurantsGateway/RestaurantsGateway.interface';
 import {FakeRestaurantsGateway} from './RestaurantsGateway/Fake/FakeRestaurantsGateway';
-import {IRestaurantsGateway} from './RestaurantsGateway/RestaurantsGateway.interface';
 
 const restuarantsGateway: IRestaurantsGateway = new FakeRestaurantsGateway();
-const restaurentOwner: IAuthGateway = new RestaurantsOwnersFakeGateway();
+const authGateway: IAuthGateway = new FakeAuthGateway();
 const geoCodingGateway: IGeoCodingGateway = new GeoapifyGeoCodingGateway();
 const directionGateway: IDirectionGateway = new MapBoxDirectionGateway();
 
-export {restuarantsGateway, restaurentOwner, geoCodingGateway, directionGateway};
+export {restuarantsGateway, authGateway, geoCodingGateway, directionGateway};

@@ -4,7 +4,7 @@ import {View} from 'react-native';
 
 import {styles} from '../../../Register.style';
 
-import {restaurentOwner} from '../../../../../../../Gateways';
+import {authGateway} from '../../../../../../../Gateways';
 import type {MainStackScreenProps} from '../../../../../../MainStack.types';
 
 import {useRegisterContext} from '../_hooks_/UseRegisterContext';
@@ -13,6 +13,7 @@ import {Button} from '../../../../../../../components/Button/Button';
 import {Loader} from '../../../../../../../components/Loader/Loader';
 
 import {localStorage} from '../../../../../../../utils/helpers/LocalStorage';
+import {useAuthContext} from '../../../../../../_hooks_/useAuthContext';
 
 interface Props {}
 
@@ -20,6 +21,7 @@ const SubmitButton: React.FC<Props> = ({}) => {
   const navigation = useNavigation<MainStackScreenProps<'HomeStack'>['navigation']>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const {registerInfo, setServerError} = useRegisterContext();
+  const {setIsRestaurantOwner} = useAuthContext();
 
   const handleSubmit = async () => {
     if (isOneRegiterValueEmpty(registerInfo)) {
@@ -30,14 +32,14 @@ const SubmitButton: React.FC<Props> = ({}) => {
     try {
       setIsLoading(true);
 
-      const token = await restaurentOwner.signup(registerInfo);
+      const token = await authGateway.signup(registerInfo);
       await localStorage.save('token', token);
 
+      setIsRestaurantOwner(true);
       navigation.replace('HomeStack', {screen: 'Map'});
     } catch (error: any) {
-      setServerError(error);
-    } finally {
       setIsLoading(false);
+      setServerError(error);
     }
   };
 

@@ -3,11 +3,11 @@ import {View} from 'react-native';
 
 import {styles} from './ChooseUsageType.style';
 
+import type {MainStackScreenProps} from '../../../MainStack.types';
+
 import {Layout} from '../../_components_/Layout/Layout';
 import {Logo} from '../../../../components/Logo/Logo';
 import {Button} from '../../../../components/Button/Button';
-
-import type {MainStackScreenProps} from '../../../MainStack.types';
 
 interface Props extends MainStackScreenProps<'StartupStack'> {}
 

@@ -3,7 +3,7 @@ import {View} from 'react-native';
 
 import {styles} from '../../../Login.style';
 
-import {restaurentOwner} from '../../../../../../../Gateways';
+import {authGateway} from '../../../../../../../Gateways';
 
 import {useLoginContext} from '../_hooks_/UseLoginContext';
 
@@ -13,9 +13,11 @@ import {Loader} from '../../../../../../../components/Loader/Loader';
 import {localStorage} from '../../../../../../../utils/helpers/LocalStorage';
 import {useNavigation} from '@react-navigation/native';
 import {MainStackScreenProps} from '../../../../../../MainStack.types';
+import {useAuthContext} from '../../../../../../_hooks_/useAuthContext';
 
 interface Props {}
 const SubmitButton: React.FC<Props> = () => {
+  const {setIsRestaurantOwner} = useAuthContext();
   const navigation = useNavigation<MainStackScreenProps<'HomeStack'>['navigation']>();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -30,14 +32,14 @@ const SubmitButton: React.FC<Props> = () => {
     try {
       setIsLoading(true);
 
-      const token = await restaurentOwner.login(loginInfo);
+      const token = await authGateway.login(loginInfo);
       await localStorage.save('token', token);
 
+      setIsRestaurantOwner(true);
       navigation.replace('HomeStack', {screen: 'Map'});
     } catch (error: any) {
-      setServerError(error.message);
-    } finally {
       setIsLoading(false);
+      setServerError(error.message);
     }
   };
 

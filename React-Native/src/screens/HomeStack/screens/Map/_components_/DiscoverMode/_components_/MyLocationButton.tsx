@@ -4,10 +4,13 @@ import {styles} from '../DiscoverMode.style';
 
 import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {IconButton} from '../../../../../../../components/IconButton/IconButton';
 import {useMapContext} from '../../../_hooks_/useMapContext';
+import {useAuthContext} from '../../../../../../_hooks_/useAuthContext';
+
+import {IconButton} from '../../../../../../../components/IconButton/IconButton';
 
 const MyLocationButton: React.FC = () => {
+  const {isRestaurantOwner} = useAuthContext();
   const {currentLocation, mapRef} = useMapContext();
 
   const handlePress = () => {
@@ -24,7 +27,7 @@ const MyLocationButton: React.FC = () => {
     <IconButton
       icon={ICONS.GPS}
       onPress={handlePress}
-      style={styles.myLocationButtonTop}
+      style={isRestaurantOwner ? styles.myLocationButtonTop : styles.myLocationButtonBottom}
       iconWidthPercentage={'50%'}
     />
   );

@@ -27,11 +27,11 @@ const Splash: React.FC<Props> = ({navigation}) => {
     }
 
     setIsRestaurantOwner(true);
-    navigation.replace('HomeStack', {screen: 'Map'});
+    navigation.navigate('HomeStack', {screen: 'Map'});
   }, [navigation, setIsRestaurantOwner]);
 
   useEffect(() => {
-    // setup();
+    setup();
   }, [setup]);
 
   return (
