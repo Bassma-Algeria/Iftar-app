@@ -7,6 +7,7 @@ import {
 import type {StartupStackStackParamsList} from './StartupStack.types';
 import type {MainStackScreenProps} from '../MainStack.types';
 
+import {Splash} from './screens/Splash/Splash';
 import {Welcom} from './screens/Welcom/Welcom';
 import {ChooseUsageType} from './screens/ChooseUsageType/ChooseUsageType';
 import {Register} from './screens/Register/Register';
@@ -23,6 +24,7 @@ const StartupStack: React.FC<Props> = () => {
 
   return (
     <Stack.Navigator screenOptions={screensOptions}>
+      <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Welcom" component={Welcom} />
       <Stack.Screen name="ChooseUsageType" component={ChooseUsageType} />
       <Stack.Screen name="Register" component={Register} />

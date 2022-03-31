@@ -2,10 +2,10 @@ import React from 'react';
 
 import {useMapContext} from '../../_hooks_/useMapContext';
 
-import {AddRestaurantButton} from './_components_/AddRestaurantButton/AddRestaurantButton';
-import {MyLocationButton} from './_components_/MyLocationButton/MyLocationButton';
+import {AddRestaurantButton} from './_components_/AddRestaurantButton';
+import {MyLocationButton} from './_components_/MyLocationButton';
 import {RestaurantPopup} from './_components_/RestaurantPopup/RestaurantPopup';
-import {TopBar} from './_components_/TopBar/TopBar';
+import {TopBar} from './_components_/TopBar';
 
 const DiscoverMode: React.FC = () => {
   const {usageMode} = useMapContext();

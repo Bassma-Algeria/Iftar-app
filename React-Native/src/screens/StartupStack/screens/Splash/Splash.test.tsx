@@ -1,12 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import {Welcom} from './Welcom';
+import {Splash} from './Splash';
 
-describe('Welcom Screen', () => {
+describe('Splash Screen', () => {
   it('should render correctly', () => {
     const props: any = {};
-    const tree = renderer.create(<Welcom {...props} />).toJSON();
+    const tree = renderer.create(<Splash {...props} />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

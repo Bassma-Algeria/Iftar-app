@@ -33,7 +33,7 @@ const SubmitButton: React.FC<Props> = () => {
       const token = await restaurentOwner.login(loginInfo);
       await localStorage.save('token', token);
 
-      navigation.navigate('HomeStack', {screen: 'Map'});
+      navigation.replace('HomeStack', {screen: 'Map'});
     } catch (error: any) {
       setServerError(error.message);
     } finally {

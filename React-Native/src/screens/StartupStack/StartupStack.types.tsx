@@ -1,6 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export type StartupStackStackParamsList = {
+  Splash: undefined;
   Welcom: undefined;
   ChooseUsageType: undefined;
   Register: undefined;

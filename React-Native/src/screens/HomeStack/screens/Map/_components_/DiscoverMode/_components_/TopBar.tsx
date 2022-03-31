@@ -3,14 +3,16 @@ import {Image, Pressable, View} from 'react-native';
 import {Shadow} from 'react-native-shadow-2';
 import {useNavigation} from '@react-navigation/native';
 
-import {styles} from '../../DiscoverMode.style';
+import {styles} from '../DiscoverMode.style';
 
-import type {HomeStackScreenProps} from '../../../../../../HomeStack.types';
+import type {HomeStackScreenProps} from '../../../../../HomeStack.types';
 
-import {ICONS} from '../../../../../../../../utils/constants/Icons';
+import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {IconButton} from '../../../../../../../../components/IconButton/IconButton';
-import {Header} from '../../../../../../../../components/Header/Header';
+import {useAuthContext} from '../../../../../../_hooks_/useAuthContext';
+
+import {IconButton} from '../../../../../../../components/IconButton/IconButton';
+import {Header} from '../../../../../../../components/Header/Header';
 
 const TopBar: React.FC = () => {
   const navigation = useNavigation<HomeStackScreenProps<'Search'>['navigation']>();
@@ -24,12 +26,7 @@ const TopBar: React.FC = () => {
         viewStyle={styles.shadowContainer}
         containerViewStyle={styles.shadowContainer}>
         <View style={styles.searchBarContainer}>
-          <IconButton
-            icon={ICONS.profile}
-            size={35}
-            style={styles.profileButton}
-            onPress={() => navigation.navigate('Profile')}
-          />
+          <ProfileIcon />
 
           <Pressable style={styles.textIconContainer} onPress={() => navigation.navigate('Search')}>
             <Header color="grey">ابحث عن مطعم...</Header>
@@ -42,6 +39,20 @@ const TopBar: React.FC = () => {
       </Shadow>
     </View>
   );
+};
+
+const ProfileIcon = () => {
+  const {isRestaurantOwner} = useAuthContext();
+  const navigation = useNavigation<HomeStackScreenProps<'Search'>['navigation']>();
+
+  return isRestaurantOwner ? (
+    <IconButton
+      icon={ICONS.profile}
+      size={35}
+      style={styles.profileButton}
+      onPress={() => navigation.navigate('Profile')}
+    />
+  ) : null;
 };
 
 export {TopBar};

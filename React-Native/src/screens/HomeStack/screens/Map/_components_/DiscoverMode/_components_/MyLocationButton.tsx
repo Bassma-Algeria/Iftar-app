@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {styles} from '../../DiscoverMode.style';
+import {styles} from '../DiscoverMode.style';
 
-import {ICONS} from '../../../../../../../../utils/constants/Icons';
+import {ICONS} from '../../../../../../../utils/constants/Icons';
 
-import {IconButton} from '../../../../../../../../components/IconButton/IconButton';
-import {useMapContext} from '../../../../_hooks_/useMapContext';
+import {IconButton} from '../../../../../../../components/IconButton/IconButton';
+import {useMapContext} from '../../../_hooks_/useMapContext';
 
 const MyLocationButton: React.FC = () => {
   const {currentLocation, mapRef} = useMapContext();

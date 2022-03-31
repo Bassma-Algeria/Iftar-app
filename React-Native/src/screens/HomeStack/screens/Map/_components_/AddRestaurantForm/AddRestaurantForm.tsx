@@ -4,6 +4,7 @@ import React from 'react';
 import {styles} from './AddRestaurantForm.style';
 
 import {useMapContext} from '../../_hooks_/useMapContext';
+import {useAuthContext} from '../../../../../_hooks_/useAuthContext';
 import {useChoosingLocationState} from '../../../../_hooks_/useChoosingLocationState';
 
 import {AddRestaurantFormContextProvider} from './_context_/AddRestaurantFormContextProvider';
@@ -17,6 +18,7 @@ import {WorkTimesInputs} from './_components_/WorkTimesInputs';
 import {SubmitButton} from './_components_/SubmitButton';
 
 const AddRestaurantFormPopup: React.FC = () => {
+  const {isRestaurantOwner} = useAuthContext();
   const {isAddRestaurantFormOpen, setIsAddRestaurantFormOpen, setUsageMode} = useMapContext();
   const {selectedLocation, onConfirm} = useChoosingLocationState();
 
@@ -26,7 +28,7 @@ const AddRestaurantFormPopup: React.FC = () => {
     onConfirm.set(undefined);
   };
 
-  return (
+  return isRestaurantOwner ? (
     <Popup
       onAutoClose={onClosePopup}
       isOpen={isAddRestaurantFormOpen}
@@ -39,7 +41,7 @@ const AddRestaurantFormPopup: React.FC = () => {
         </ScrollView>
       </AddRestaurantFormContextProvider>
     </Popup>
-  );
+  ) : null;
 };
 
 const AddRestaurantForm = () => {
