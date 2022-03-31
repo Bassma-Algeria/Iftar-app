@@ -1,22 +1,22 @@
 import React from 'react';
 
-import {styles} from '../../../Login.style';
+import {styles} from '../../../Register.style';
 
-import {useLoginContext} from '../_hooks_/UseLoginContext';
+import {useRegisterContext} from '../_hooks_/UseRegisterContext';
 
 import {PasswordInput as BasePasswordInput} from '../../../../../../../components/Inputs/passwordInput/PasswordInput';
 
 const PasswordInput: React.FC = () => {
-  const {loginInfo, setLoginInfo, setServerError} = useLoginContext();
+  const {registerInfo, setRegisterInfo, setServerError} = useRegisterContext();
 
   const onTextChange = (value: string) => {
     setServerError('');
-    setLoginInfo({...loginInfo, password: value});
+    setRegisterInfo({...registerInfo, password: value});
   };
 
   return (
     <BasePasswordInput
-      value={loginInfo.password}
+      value={registerInfo.password}
       onTextChange={onTextChange}
       style={styles.spaceInputs}
       placeholder="كلمة المرور"

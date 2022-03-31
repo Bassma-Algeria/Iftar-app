@@ -3,6 +3,8 @@ import { Coords, Time } from "../../@types/helperTypes";
 export interface Args {
   authToken: string;
   restaurantInfo: {
+    restaurantId: string;
+    ownerId: string;
     name: string;
     ownerName: string;
     openingTime: Time;

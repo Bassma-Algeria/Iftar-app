@@ -5,6 +5,7 @@ import { IRestaurant } from "../../src/Domain/Restaurant/RestaurantFactory";
 
 const getResturantInfo = (): NonFunctionProperties<IRestaurant> => {
   return {
+    ownerId: faker.datatype.uuid(),
     name: "some name",
     ownerName: faker.internet.userName(),
     restaurantId: faker.datatype.uuid(),
