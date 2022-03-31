@@ -6,7 +6,7 @@ const useDiscoverModeContext = () => {
   const values = useContext(DiscoverModeContext);
 
   if (!values) {
-    throw new Error('The component should be wrapped with MapContextProvider');
+    throw new Error('The component should be wrapped with DiscoverContextProvider');
   }
 
   return values;

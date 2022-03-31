@@ -1,5 +1,8 @@
 import {LocationCords} from '../../@types/LocationCords';
 
 export interface IDirectionGateway {
-  getDirectionCoords(start: LocationCords, dest: LocationCords): Promise<LocationCords[]>;
+  getDirection(
+    start: LocationCords,
+    dest: LocationCords,
+  ): Promise<{coordinates: LocationCords[]; distance: number}>;
 }

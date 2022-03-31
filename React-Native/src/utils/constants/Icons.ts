@@ -27,6 +27,9 @@ const ICONS = {
   list: require('../../assets/icons/list.png'),
   arrowDown: require('../../assets/icons/arrow-down.png'),
   GPS: require('../../assets/icons/gps.png'),
+  rightArrowWhite: require('../../assets/icons/right-arrow-white.png'),
+  close: require('../../assets/icons/close.png'),
+  locationWhite: require('../../assets/icons/location-white.png'),
 };
 
 export {ICONS};

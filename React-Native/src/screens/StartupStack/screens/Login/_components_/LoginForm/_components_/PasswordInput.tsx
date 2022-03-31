@@ -4,7 +4,7 @@ import {styles} from '../../../Login.style';
 
 import {useLoginContext} from '../_hooks_/UseLoginContext';
 
-import {PasswordInput as BasePasswordInput} from '../../../../../../../components/Inputs/passwordInput/PasswordInput';
+import {PasswordInput as BasePasswordInput} from '../../../../../../../components/Inputs/PasswordInput/PasswordInput';
 
 const PasswordInput: React.FC = () => {
   const {loginInfo, setLoginInfo, setServerError} = useLoginContext();

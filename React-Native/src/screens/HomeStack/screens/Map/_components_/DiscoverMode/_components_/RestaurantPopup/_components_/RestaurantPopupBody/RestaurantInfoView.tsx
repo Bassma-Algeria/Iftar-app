@@ -8,6 +8,8 @@ import {styles} from '../../../../DiscoverMode.style';
 import {ICONS} from '../../../../../../../../../../utils/constants/Icons';
 
 import {useDiscoverModeContext} from '../../../../../../_hooks_/useDiscoverModeContext';
+import {useDirectionModeContext} from '../../../../../../_hooks_/useDirectionModeContext';
+import {useMapContext} from '../../../../../../_hooks_/useMapContext';
 
 import {Button} from '../../../../../../../../../../components/Button/Button';
 import {Header} from '../../../../../../../../../../components/Header/Header';
@@ -15,11 +17,14 @@ import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
 
 const RestaurantInfoView: React.FC<RestaurantInfo> = props => {
-  const {setDestinationLocation, setSelectedRestaurant} = useDiscoverModeContext();
+  const {setSelectedRestaurant} = useDiscoverModeContext();
+  const {setDestinationLocation} = useDirectionModeContext();
+  const {setUsageMode} = useMapContext();
 
   const handleDirectionButtonClick = () => {
     setSelectedRestaurant(undefined);
     setDestinationLocation(props.locationCoords);
+    setUsageMode('direction');
   };
 
   return (

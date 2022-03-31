@@ -4,7 +4,7 @@ import {styles} from '../../../Register.style';
 
 import {useRegisterContext} from '../_hooks_/UseRegisterContext';
 
-import {PasswordInput as BasePasswordInput} from '../../../../../../../components/Inputs/passwordInput/PasswordInput';
+import {PasswordInput as BasePasswordInput} from '../../../../../../../components/Inputs/PasswordInput/PasswordInput';
 
 const ConfirmPasswordInput: React.FC = () => {
   const {registerInfo, setRegisterInfo, setServerError} = useRegisterContext();

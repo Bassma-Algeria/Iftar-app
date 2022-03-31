@@ -24,12 +24,9 @@ const SubmitButton: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSubmit = async () => {
-    setIsLoading(true);
-    console.log('====================================');
-    console.log(restaurantInfo);
-    console.log('====================================');
-
     try {
+      setIsLoading(true);
+
       await restuarantsGateway.addRestaurant(restaurantInfo);
 
       setUsageMode('discover');

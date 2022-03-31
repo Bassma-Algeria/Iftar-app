@@ -21,24 +21,24 @@ const SubmitButton: React.FC<Props> = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const {loginInfo, setServerError} = useLoginContext();
 
-  const handleSubmit = () => {
-    if (!loginInfo.email && !loginInfo.password) {
+  const handleSubmit = async () => {
+    if (!loginInfo.email || !loginInfo.password) {
       //Will add shaker
       return;
     }
 
-    setIsLoading(true);
-    restaurentOwner
-      .login(loginInfo)
-      .then(resp => {
-        console.log(resp);
-        localStorage.save('token', resp);
-      })
-      .catch(err => setServerError(err.message))
-      .finally(() => {
-        setIsLoading(false);
-        navigation.navigate('HomeStack', {screen: 'Map'});
-      });
+    try {
+      setIsLoading(true);
+
+      const token = await restaurentOwner.login(loginInfo);
+      await localStorage.save('token', token);
+
+      navigation.navigate('HomeStack', {screen: 'Map'});
+    } catch (error: any) {
+      setServerError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

@@ -5,16 +5,20 @@ import {LocationCords} from '../../../../../../../../@types/LocationCords';
 
 import {COLORS} from '../../../../../../../../theme/Colors';
 
-import {useDiscoverModeContext} from '../../../../_hooks_/useDiscoverModeContext';
+import {useDirectionModeContext} from '../../../../_hooks_/useDirectionModeContext';
 import {useMapContext} from '../../../../_hooks_/useMapContext';
-import {usePathCoordinatesFetcher} from './_hooks_/usePathCoordinatesFetcher';
+import {useDirectionFetcher} from './_hooks_/useDirectionFetcher';
 
 const PathToRestaurant: React.FC = () => {
-  const {destinationLocation} = useDiscoverModeContext();
+  const {destinationLocation, setDistance} = useDirectionModeContext();
   const {currentLocation} = useMapContext();
-  const {coordinates} = usePathCoordinatesFetcher(currentLocation, destinationLocation);
+  const {coordinates, distance} = useDirectionFetcher(currentLocation, destinationLocation);
 
-  return coordinates ? <Path coordinates={coordinates} /> : null;
+  useEffect(() => {
+    setDistance(distance);
+  }, [setDistance, distance]);
+
+  return destinationLocation && coordinates ? <Path coordinates={coordinates} /> : null;
 };
 
 interface PathProps {
@@ -22,7 +26,7 @@ interface PathProps {
 }
 
 const Path: React.FC<PathProps> = ({coordinates}) => {
-  const {destinationLocation} = useDiscoverModeContext();
+  const {destinationLocation} = useDirectionModeContext();
   const {currentLocation, mapRef} = useMapContext();
 
   useEffect(() => {

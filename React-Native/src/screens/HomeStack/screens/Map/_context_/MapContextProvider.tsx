@@ -3,7 +3,7 @@ import GoogleMapView from 'react-native-maps';
 
 import type {LocationCords} from '../../../../../@types/LocationCords';
 
-export type UsageModes = 'discover' | 'chooseLocation';
+export type UsageModes = 'discover' | 'chooseLocation' | 'direction';
 
 interface MapContextValues {
   currentLocation?: LocationCords;
