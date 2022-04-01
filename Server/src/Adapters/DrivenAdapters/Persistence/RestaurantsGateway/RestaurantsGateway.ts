@@ -21,41 +21,9 @@ class RestaurantsGateway implements IRestaurantsGateway {
     const restaurants = await this.restaurantPersistence.getRestaurantsByOwnerId(ownerId);
     return restaurants.map((restaurant) => new Restaurant(restaurant));
   }
-  async update({ ownerId, newRestaurantInfo }: updateArgs): Promise<IRestaurant | undefined> {
-    let restaurant = await this.restaurantPersistence.getRestaurantById(
-      newRestaurantInfo.restaurantId
-    );
-    if (restaurant) {
-      if (ownerId !== restaurant.ownerId) {
-        throw new Error("You are not the owner of this restaurant");
-      } else {
-        restaurant = {
-          ...restaurant,
-          name: newRestaurantInfo.name ? newRestaurantInfo.name : restaurant.name,
-          locationCoords: newRestaurantInfo.locationCoords
-            ? newRestaurantInfo.locationCoords
-            : restaurant.locationCoords,
-          locationName: newRestaurantInfo.locationName
-            ? newRestaurantInfo.locationName
-            : restaurant.locationName,
-          openingTime: newRestaurantInfo.openingTime
-            ? newRestaurantInfo.openingTime
-            : restaurant.openingTime,
-          closingTime: newRestaurantInfo.closingTime
-            ? newRestaurantInfo.closingTime
-            : restaurant.closingTime,
-          ownerName: newRestaurantInfo.ownerName
-            ? newRestaurantInfo.ownerName
-            : restaurant.ownerName,
-        };
-        const newRestaurant = await this.restaurantPersistence.update(restaurant);
-        if (newRestaurant) {
-          return new Restaurant(newRestaurant);
-        } else {
-          return undefined;
-        }
-      }
-    }
+  async update(newRestaurantInfo: IRestaurant): Promise<IRestaurant | undefined> {
+    const updatedRestaurant = await this.restaurantPersistence.update(newRestaurantInfo.info());
+    return updatedRestaurant ? new Restaurant(updatedRestaurant) : undefined;
   }
 
   async searchByName(keyword: string): Promise<IRestaurant[]> {
