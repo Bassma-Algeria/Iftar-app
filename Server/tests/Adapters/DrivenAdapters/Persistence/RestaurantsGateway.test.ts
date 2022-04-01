@@ -1,4 +1,6 @@
 import { expect } from "chai";
+import * as chai from "chai";
+import chaiExclude from "chai-exclude";
 
 import { getResturantOwnerInfo } from "../../../_Fakes_/RestaurantOwnerInfo";
 import {
@@ -15,6 +17,8 @@ import { tokenManager } from "../../../../src/Ports/DrivenPorts/TokenManager/Tok
 import { FakeRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { AddRestaurantFactory } from "../../../../src/UseCases/AddRestaurant/AddRestaurantFactory";
 import { CloudGateway } from "../../../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
+
+chai.use(chaiExclude);
 
 const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
   const ownerInfo = getResturantOwnerInfo();
@@ -50,10 +54,13 @@ const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
     restaurantInfo.ownerId = tokenManager.decode(authToken);
     await addRestaurantFactory.add({ restaurantInfo, authToken });
     const restaurant = await restaurantsGateway.getRestaurantById(restaurantInfo.restaurantId);
-    expect(restaurant?.info()).to.deep.equal({
-      ...restaurantInfo,
-      pictures: ["https://www.google.com", "https://www.google.com", "https://www.google.com"],
-    });
+    expect(restaurant?.info())
+      .excluding("pictures")
+      .to.deep.equal({
+        ...restaurantInfo,
+      });
+
+    expect(restaurant?.info().pictures.length).to.be.equal(restaurantInfo.pictures.length);
   });
   it("should add a restaurant and get it by name ", async () => {
     restaurantInfo.ownerId = tokenManager.decode(authToken);
