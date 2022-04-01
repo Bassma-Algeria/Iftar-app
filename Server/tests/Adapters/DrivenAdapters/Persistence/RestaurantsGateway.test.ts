@@ -32,7 +32,26 @@ const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
   });
 
   afterEach(() => {
+    restaurantsPresistence.deleteAll();
     RestaurantsPersistence.deleteAll();
+  });
+
+  it("should return undefined when searching for non existing userId", async () => {
+    const restaurant = await restaurantsGateway.getRestaurantById("nonExistingUserId");
+    expect(restaurant).to.be.undefined;
+  });
+  it("should add restaurant and get it by id", async () => {
+    restaurantInfo.ownerId = tokenManager.decode(authToken);
+    await addRestaurantFactory.add({ restaurantInfo, authToken });
+    const restaurant = await restaurantsGateway.getRestaurantById(restaurantInfo.restaurantId);
+    expect(restaurant?.info()).to.deep.equal(restaurantInfo);
+  });
+  it("should add a restaurant and get it by name ", async () => {
+    restaurantInfo.ownerId = tokenManager.decode(authToken);
+    await addRestaurantFactory.add({ restaurantInfo, authToken });
+    const restaurants = await restaurantsGateway.searchByName(restaurantInfo.name);
+    expect(restaurants).to.have.lengthOf(1);
+    expect(restaurants[0].info()).to.deep.equal(restaurantInfo);
   });
 };
 

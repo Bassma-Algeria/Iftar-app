@@ -52,33 +52,36 @@ describe("Edit restaurant use case", () => {
       },
     });
     const updatedRestaurant = await editRestaurantFactory.update({
-      restaurantId: restaurantInfo.restaurantId,
-      name: "restaurant2",
-      ownerName: "owner2",
-      locationCoords: {
-        latitude: 10,
-        longitude: 10,
-      },
-      closingTime: {
-        hour: 20,
-        minute: 10,
-      },
-      openingTime: {
-        hour: 19,
-        minute: 0,
+      authToken,
+      newRestaurantInfo: {
+        restaurantId: restaurantInfo.restaurantId,
+        name: "restaurant2",
+        ownerName: "owner2",
+        locationCoords: {
+          latitude: 10,
+          longitude: 10,
+        },
+        closingTime: {
+          hour: 20,
+          minute: 10,
+        },
+        openingTime: {
+          hour: 19,
+          minute: 0,
+        },
       },
     });
-    expect(updatedRestaurant?.info().name).to.equal("restaurant2");
-    expect(updatedRestaurant?.info().ownerName).to.equal("owner2");
-    expect(updatedRestaurant?.info().locationCoords).to.deep.equal({
+    expect(updatedRestaurant?.name).to.equal("restaurant2");
+    expect(updatedRestaurant?.ownerName).to.equal("owner2");
+    expect(updatedRestaurant?.locationCoords).to.deep.equal({
       latitude: 10,
       longitude: 10,
     });
-    expect(updatedRestaurant?.info().closingTime).to.deep.equal({
+    expect(updatedRestaurant?.closingTime).to.deep.equal({
       hour: 20,
       minute: 10,
     });
-    expect(updatedRestaurant?.info().openingTime).to.deep.equal({
+    expect(updatedRestaurant?.openingTime).to.deep.equal({
       hour: 19,
       minute: 0,
     });

@@ -44,9 +44,7 @@ describe("Get Restaurants of an auth user use case", () => {
       authToken,
       restaurantInfo: { ...restaurantInfo, name: "restaurant3" },
     });
-    const result = await getRestaurantsFactory.getRestaurantsByOwnerId(
-      tokenManager.decode(authToken)
-    );
+    const result = await getRestaurantsFactory.getRestaurantsByOwnerId(authToken);
     expect(result).to.have.lengthOf(3);
   });
 });
