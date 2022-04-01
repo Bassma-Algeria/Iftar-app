@@ -10,11 +10,11 @@ import {useChoosingLocationState} from '../../../../../_hooks_/useChoosingLocati
 
 const SelectedLocationMarker: React.FC = () => {
   const {selectedLocation} = useChoosingLocationState();
-  const location = selectedLocation.get();
+  const coordinates = selectedLocation.value;
 
-  return location ? (
+  return coordinates ? (
     <Marker
-      coordinate={{latitude: location.latitude, longitude: location.longitude}}
+      coordinate={{latitude: coordinates.latitude, longitude: coordinates.longitude}}
       style={styles.markerContainer}>
       <Image source={ICONS.locationFilled} style={styles.pin} resizeMode="contain" />
     </Marker>

@@ -134,7 +134,14 @@ Array [
       }
     }
   >
-    <View>
+    <View
+      style={
+        Array [
+          undefined,
+          Object {},
+        ]
+      }
+    >
       <View
         pointerEvents="box-none"
       >
@@ -779,7 +786,14 @@ Array [
         }
       }
     />
-    <View>
+    <View
+      style={
+        Array [
+          undefined,
+          Object {},
+        ]
+      }
+    >
       <View
         pointerEvents="box-none"
       >

@@ -12,7 +12,7 @@ describe('Popup Component', () => {
     const tree = renderer
       .create(
         <NavigationContainer>
-          <Popup isOpen={false}>
+          <Popup isOpen={false} setIsOpen={() => {}}>
             <Text>Some content</Text>
           </Popup>
         </NavigationContainer>,
@@ -26,7 +26,7 @@ describe('Popup Component', () => {
     const tree = renderer
       .create(
         <NavigationContainer>
-          <Popup isOpen>
+          <Popup isOpen setIsOpen={() => {}}>
             <Text>Some content</Text>
           </Popup>
         </NavigationContainer>,
@@ -36,26 +36,12 @@ describe('Popup Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should call the onOpen the popup is opened', () => {
-    const onOpen = jest.fn();
-
-    render(
-      <NavigationContainer>
-        <Popup isOpen onOpen={onOpen}>
-          <Text>Some content</Text>
-        </Popup>
-      </NavigationContainer>,
-    );
-
-    expect(onOpen).toBeCalledTimes(1);
-  });
-
-  it('should call the onClose the popup is closed', () => {
+  it('should call the onAuthClose the popup is auto closed', () => {
     const onClose = jest.fn();
 
     render(
       <NavigationContainer>
-        <Popup isOpen={false} onClose={onClose}>
+        <Popup isOpen={false} setIsOpen={() => {}} onAutoClose={onClose}>
           <Text>Some content</Text>
         </Popup>
       </NavigationContainer>,
@@ -64,22 +50,10 @@ describe('Popup Component', () => {
     expect(onClose).toBeCalledTimes(1);
   });
 
-  it('should be able to change the container style', () => {
-    const tree = render(
-      <NavigationContainer>
-        <Popup isOpen={false} containerStyle={{margin: 30}}>
-          <Text>Some content</Text>
-        </Popup>
-      </NavigationContainer>,
-    ).toJSON();
-
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should be able to change the background color', () => {
     const tree = render(
       <NavigationContainer>
-        <Popup isOpen backgroundColor="black">
+        <Popup isOpen setIsOpen={() => {}} backgroundColor="black">
           <Text>Some content</Text>
         </Popup>
       </NavigationContainer>,

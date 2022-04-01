@@ -22,8 +22,10 @@ const Splash: React.FC<Props> = ({navigation}) => {
     }
 
     const token = await localStorage.get('token');
+    navigation.replace('StartupStack', {screen: 'ChooseUsageType'});
+
     if (!token) {
-      return navigation.replace('StartupStack', {screen: 'ChooseUsageType'});
+      return;
     }
 
     setIsRestaurantOwner(true);

@@ -2,7 +2,8 @@ import {createState, useState} from '@hookstate/core';
 
 import type {LocationCords} from '../../../@types/LocationCords';
 
-type OnConfirmFunction = (selectedLocation: LocationCords) => void;
+export type OnConfirmArgs = {coordinates: LocationCords; name: string};
+type OnConfirmFunction = (selectedLocation: OnConfirmArgs) => void;
 
 interface ChooseLocationState {
   selectedLocation?: LocationCords;

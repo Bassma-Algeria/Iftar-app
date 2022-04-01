@@ -12,7 +12,7 @@ import {Popup} from '../../../../../../components/Popup/Popup';
 import {Header} from '../../../../../../components/Header/Header';
 import {Pictures} from './_components_/Pictures';
 import {RestaurantAndOwnerNameInputs} from './_components_/RestaurantAndOwnerNameInputs';
-import {LocationInput} from './_components_/LocationInput/LocationInput';
+import {LocationInput} from './_components_/LocationInput';
 import {WorkTimesInputs} from './_components_/WorkTimesInputs';
 import {SubmitButton} from './_components_/SubmitButton';
 

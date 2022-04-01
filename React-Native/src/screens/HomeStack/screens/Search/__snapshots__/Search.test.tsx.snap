@@ -6,7 +6,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
     Object {
       "backgroundColor": "#F9F6EB",
       "flex": 1,
-      "padding": 20,
+      "padding": 10,
     }
   }
 >
@@ -56,7 +56,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
               Object {
                 "left": -2,
                 "position": "absolute",
-                "top": 24,
+                "top": 30,
               },
               Object {
                 "flex": 0,
@@ -102,7 +102,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
               }
               width={2}
               x={0}
-              y={-48}
+              y={-60}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
@@ -120,7 +120,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
               Object {
                 "left": "100%",
                 "position": "absolute",
-                "top": 24,
+                "top": 30,
               },
               Object {
                 "flex": 0,
@@ -166,7 +166,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
               }
               width={2}
               x={0}
-              y={-48}
+              y={-60}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
@@ -182,7 +182,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 "borderWidth": 0,
               },
               Object {
-                "left": 24,
+                "left": 30,
                 "position": "absolute",
                 "top": "100%",
               },
@@ -229,7 +229,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 ]
               }
               width="100%"
-              x={-48}
+              x={-60}
               y={0}
             />
           </RNSVGGroup>
@@ -246,7 +246,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 "borderWidth": 0,
               },
               Object {
-                "left": 24,
+                "left": 30,
                 "position": "absolute",
                 "top": -2,
               },
@@ -293,16 +293,16 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 ]
               }
               width="100%"
-              x={-48}
+              x={-60}
               y={0}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -316,23 +316,23 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup>
             <RNSVGDefs>
               <RNSVGRadialGradient
-                cx={26}
-                cy={26}
-                fx={26}
-                fy={26}
+                cx={32}
+                cy={32}
+                fx={32}
+                fy={32}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -341,12 +341,12 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 gradientTransform={null}
                 gradientUnits={1}
                 name="topLeft"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M0,26 a26,26 0 0 1 26 -26 v2 v24 h-24 h-2 Z"
+              d="M0,32 a32,32 0 0 1 32 -32 v2 v30 h-30 h-2 Z"
               fill={
                 Array [
                   1,
@@ -362,10 +362,10 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -378,18 +378,18 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 "top": -2,
                 "transform": Array [
                   Object {
-                    "translateX": -24,
+                    "translateX": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -406,12 +406,12 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
             <RNSVGDefs>
               <RNSVGRadialGradient
                 cx={0}
-                cy={26}
+                cy={32}
                 fx={0}
-                fy={26}
+                fy={32}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -420,12 +420,12 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 gradientTransform={null}
                 gradientUnits={1}
                 name="topRight"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M0,0 a26,26 0 0 1 26,26 h-2 h-24 v-24 v-2 Z"
+              d="M0,0 a32,32 0 0 1 32,32 h-2 h-30 v-30 v-2 Z"
               fill={
                 Array [
                   1,
@@ -441,10 +441,10 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -457,18 +457,18 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 "top": "100%",
                 "transform": Array [
                   Object {
-                    "translateY": -24,
+                    "translateY": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -484,13 +484,13 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
           >
             <RNSVGDefs>
               <RNSVGRadialGradient
-                cx={26}
+                cx={32}
                 cy={0}
-                fx={26}
+                fx={32}
                 fy={0}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -499,12 +499,12 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 gradientTransform={null}
                 gradientUnits={1}
                 name="bottomLeft"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M26,26 a26,26 0 0 1 -26,-26 h2 h24 v24 v2 Z"
+              d="M32,32 a32,32 0 0 1 -32,-32 h2 h30 v30 v2 Z"
               fill={
                 Array [
                   1,
@@ -520,10 +520,10 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -536,21 +536,21 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 "top": "100%",
                 "transform": Array [
                   Object {
-                    "translateX": -24,
+                    "translateX": -30,
                   },
                   Object {
-                    "translateY": -24,
+                    "translateY": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -572,7 +572,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 fy={0}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -581,12 +581,12 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 gradientTransform={null}
                 gradientUnits={1}
                 name="bottomRight"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M26,0 a26,26 0 0 1 -26,26 v-2 v-24 h24 h2 Z"
+              d="M32,0 a32,32 0 0 1 -32,32 v-2 v-30 h30 h2 Z"
               fill={
                 Array [
                   1,
@@ -659,26 +659,26 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   propList={
                     Array [
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x={0}
                   y={0}
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
                       0,
                       0,
                       1,
-                      -24,
+                      -30,
                       0,
                     ]
                   }
@@ -687,13 +687,13 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x="100%"
                   y={0}
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
@@ -701,7 +701,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                       0,
                       1,
                       0,
-                      -24,
+                      -30,
                     ]
                   }
                   propList={
@@ -709,21 +709,21 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x={0}
                   y="100%"
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
                       0,
                       0,
                       1,
-                      -24,
-                      -24,
+                      -30,
+                      -30,
                     ]
                   }
                   propList={
@@ -731,7 +731,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x="100%"
                   y="100%"
                 />
@@ -783,7 +783,7 @@ exports[`HomeStack -> Search Screen should renders correctly by default with the
                 "width": "100%",
               },
               Object {
-                "borderRadius": 24,
+                "borderRadius": 30,
               },
             ]
           }
@@ -857,7 +857,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
     Object {
       "backgroundColor": "#F9F6EB",
       "flex": 1,
-      "padding": 20,
+      "padding": 10,
     }
   }
 >
@@ -907,7 +907,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
               Object {
                 "left": -2,
                 "position": "absolute",
-                "top": 24,
+                "top": 30,
               },
               Object {
                 "flex": 0,
@@ -953,7 +953,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
               }
               width={2}
               x={0}
-              y={-48}
+              y={-60}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
@@ -971,7 +971,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
               Object {
                 "left": "100%",
                 "position": "absolute",
-                "top": 24,
+                "top": 30,
               },
               Object {
                 "flex": 0,
@@ -1017,7 +1017,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
               }
               width={2}
               x={0}
-              y={-48}
+              y={-60}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
@@ -1033,7 +1033,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 "borderWidth": 0,
               },
               Object {
-                "left": 24,
+                "left": 30,
                 "position": "absolute",
                 "top": "100%",
               },
@@ -1080,7 +1080,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 ]
               }
               width="100%"
-              x={-48}
+              x={-60}
               y={0}
             />
           </RNSVGGroup>
@@ -1097,7 +1097,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 "borderWidth": 0,
               },
               Object {
-                "left": 24,
+                "left": 30,
                 "position": "absolute",
                 "top": -2,
               },
@@ -1144,16 +1144,16 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 ]
               }
               width="100%"
-              x={-48}
+              x={-60}
               y={0}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -1167,23 +1167,23 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup>
             <RNSVGDefs>
               <RNSVGRadialGradient
-                cx={26}
-                cy={26}
-                fx={26}
-                fy={26}
+                cx={32}
+                cy={32}
+                fx={32}
+                fy={32}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -1192,12 +1192,12 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 gradientTransform={null}
                 gradientUnits={1}
                 name="topLeft"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M0,26 a26,26 0 0 1 26 -26 v2 v24 h-24 h-2 Z"
+              d="M0,32 a32,32 0 0 1 32 -32 v2 v30 h-30 h-2 Z"
               fill={
                 Array [
                   1,
@@ -1213,10 +1213,10 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -1229,18 +1229,18 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 "top": -2,
                 "transform": Array [
                   Object {
-                    "translateX": -24,
+                    "translateX": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -1257,12 +1257,12 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
             <RNSVGDefs>
               <RNSVGRadialGradient
                 cx={0}
-                cy={26}
+                cy={32}
                 fx={0}
-                fy={26}
+                fy={32}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -1271,12 +1271,12 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 gradientTransform={null}
                 gradientUnits={1}
                 name="topRight"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M0,0 a26,26 0 0 1 26,26 h-2 h-24 v-24 v-2 Z"
+              d="M0,0 a32,32 0 0 1 32,32 h-2 h-30 v-30 v-2 Z"
               fill={
                 Array [
                   1,
@@ -1292,10 +1292,10 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -1308,18 +1308,18 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 "top": "100%",
                 "transform": Array [
                   Object {
-                    "translateY": -24,
+                    "translateY": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -1335,13 +1335,13 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
           >
             <RNSVGDefs>
               <RNSVGRadialGradient
-                cx={26}
+                cx={32}
                 cy={0}
-                fx={26}
+                fx={32}
                 fy={0}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -1350,12 +1350,12 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 gradientTransform={null}
                 gradientUnits={1}
                 name="bottomLeft"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M26,26 a26,26 0 0 1 -26,-26 h2 h24 v24 v2 Z"
+              d="M32,32 a32,32 0 0 1 -32,-32 h2 h30 v30 v2 Z"
               fill={
                 Array [
                   1,
@@ -1371,10 +1371,10 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -1387,21 +1387,21 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 "top": "100%",
                 "transform": Array [
                   Object {
-                    "translateX": -24,
+                    "translateX": -30,
                   },
                   Object {
-                    "translateY": -24,
+                    "translateY": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -1423,7 +1423,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 fy={0}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -1432,12 +1432,12 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 gradientTransform={null}
                 gradientUnits={1}
                 name="bottomRight"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M26,0 a26,26 0 0 1 -26,26 v-2 v-24 h24 h2 Z"
+              d="M32,0 a32,32 0 0 1 -32,32 v-2 v-30 h30 h2 Z"
               fill={
                 Array [
                   1,
@@ -1510,26 +1510,26 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   propList={
                     Array [
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x={0}
                   y={0}
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
                       0,
                       0,
                       1,
-                      -24,
+                      -30,
                       0,
                     ]
                   }
@@ -1538,13 +1538,13 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x="100%"
                   y={0}
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
@@ -1552,7 +1552,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                       0,
                       1,
                       0,
-                      -24,
+                      -30,
                     ]
                   }
                   propList={
@@ -1560,21 +1560,21 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x={0}
                   y="100%"
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
                       0,
                       0,
                       1,
-                      -24,
-                      -24,
+                      -30,
+                      -30,
                     ]
                   }
                   propList={
@@ -1582,7 +1582,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x="100%"
                   y="100%"
                 />
@@ -1634,7 +1634,7 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                 "width": "100%",
               },
               Object {
-                "borderRadius": 24,
+                "borderRadius": 30,
               },
             ]
           }
@@ -1699,10 +1699,925 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
       }
     }
   >
-    <ActivityIndicator
-      color="#7C4908"
-      size={40}
-    />
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "closingTime": Object {
+              "hour": 19,
+              "minut": 20,
+            },
+            "locationCoords": Object {
+              "latitude": 37.421083,
+              "longitude": -122.104,
+            },
+            "locationName": "الحراش وسط",
+            "name": "اسم المطعم",
+            "openingTime": Object {
+              "hour": 20,
+              "minut": 0,
+            },
+            "ownerName": "عبد القادر",
+            "ownerNumber": "07 98 98 09 75",
+            "pictures": Array [
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+            ],
+            "restaurantId": "0",
+          },
+          Object {
+            "closingTime": Object {
+              "hour": 19,
+              "minut": 20,
+            },
+            "locationCoords": Object {
+              "latitude": 37.421083,
+              "longitude": -122.104,
+            },
+            "locationName": "الحراش وسط",
+            "name": "اسم المطعم",
+            "openingTime": Object {
+              "hour": 20,
+              "minut": 0,
+            },
+            "ownerName": "عبد القادر",
+            "ownerNumber": "07 98 98 09 75",
+            "pictures": Array [
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+            ],
+            "restaurantId": "1",
+          },
+          Object {
+            "closingTime": Object {
+              "hour": 19,
+              "minut": 20,
+            },
+            "locationCoords": Object {
+              "latitude": 37.421083,
+              "longitude": -122.104,
+            },
+            "locationName": "الحراش وسط",
+            "name": "اسم المطعم",
+            "openingTime": Object {
+              "hour": 20,
+              "minut": 0,
+            },
+            "ownerName": "عبد القادر",
+            "ownerNumber": "07 98 98 09 75",
+            "pictures": Array [
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+            ],
+            "restaurantId": "2",
+          },
+          Object {
+            "closingTime": Object {
+              "hour": 19,
+              "minut": 20,
+            },
+            "locationCoords": Object {
+              "latitude": 37.421083,
+              "longitude": -122.104,
+            },
+            "locationName": "الحراش وسط",
+            "name": "اسم المطعم",
+            "openingTime": Object {
+              "hour": 20,
+              "minut": 0,
+            },
+            "ownerName": "عبد القادر",
+            "ownerNumber": "07 98 98 09 75",
+            "pictures": Array [
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+            ],
+            "restaurantId": "3",
+          },
+          Object {
+            "closingTime": Object {
+              "hour": 19,
+              "minut": 20,
+            },
+            "locationCoords": Object {
+              "latitude": 37.421083,
+              "longitude": -122.104,
+            },
+            "locationName": "الحراش وسط",
+            "name": "اسم المطعم",
+            "openingTime": Object {
+              "hour": 20,
+              "minut": 0,
+            },
+            "ownerName": "عبد القادر",
+            "ownerNumber": "07 98 98 09 75",
+            "pictures": Array [],
+            "restaurantId": "4",
+          },
+          Object {
+            "closingTime": Object {
+              "hour": 19,
+              "minut": 20,
+            },
+            "locationCoords": Object {
+              "latitude": 37.421083,
+              "longitude": -122.104,
+            },
+            "locationName": "الحراش وسط",
+            "name": "اسم المطعم",
+            "openingTime": Object {
+              "hour": 20,
+              "minut": 0,
+            },
+            "ownerName": "عبد القادر",
+            "ownerNumber": "07 98 98 09 75",
+            "pictures": Array [
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+            ],
+            "restaurantId": "5",
+          },
+        ]
+      }
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      viewabilityConfigCallbackPairs={Array []}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-end",
+                "marginBottom": 10,
+                "marginTop": 5,
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "marginRight": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#7C4908",
+                      "fontFamily": "Cairo-Bold",
+                      "fontSize": 20,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                اسم المطعم
+              </Text>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "flex-end",
+                    "marginTop": -10,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#7C4908",
+                        "fontFamily": "Cairo-Regular",
+                        "fontSize": 16,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  الحراش وسط
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "marginLeft": 5,
+                      "width": 20,
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={
+                      Object {
+                        "process": [Function],
+                      }
+                    }
+                    style={
+                      Object {
+                        "width": "70%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": 70,
+                  "justifyContent": "center",
+                  "width": 70,
+                }
+              }
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "borderRadius": 10,
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-end",
+                "marginBottom": 10,
+                "marginTop": 5,
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "marginRight": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#7C4908",
+                      "fontFamily": "Cairo-Bold",
+                      "fontSize": 20,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                اسم المطعم
+              </Text>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "flex-end",
+                    "marginTop": -10,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#7C4908",
+                        "fontFamily": "Cairo-Regular",
+                        "fontSize": 16,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  الحراش وسط
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "marginLeft": 5,
+                      "width": 20,
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={
+                      Object {
+                        "process": [Function],
+                      }
+                    }
+                    style={
+                      Object {
+                        "width": "70%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": 70,
+                  "justifyContent": "center",
+                  "width": 70,
+                }
+              }
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "borderRadius": 10,
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-end",
+                "marginBottom": 10,
+                "marginTop": 5,
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "marginRight": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#7C4908",
+                      "fontFamily": "Cairo-Bold",
+                      "fontSize": 20,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                اسم المطعم
+              </Text>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "flex-end",
+                    "marginTop": -10,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#7C4908",
+                        "fontFamily": "Cairo-Regular",
+                        "fontSize": 16,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  الحراش وسط
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "marginLeft": 5,
+                      "width": 20,
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={
+                      Object {
+                        "process": [Function],
+                      }
+                    }
+                    style={
+                      Object {
+                        "width": "70%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": 70,
+                  "justifyContent": "center",
+                  "width": 70,
+                }
+              }
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "borderRadius": 10,
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-end",
+                "marginBottom": 10,
+                "marginTop": 5,
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "marginRight": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#7C4908",
+                      "fontFamily": "Cairo-Bold",
+                      "fontSize": 20,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                اسم المطعم
+              </Text>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "flex-end",
+                    "marginTop": -10,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#7C4908",
+                        "fontFamily": "Cairo-Regular",
+                        "fontSize": 16,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  الحراش وسط
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "marginLeft": 5,
+                      "width": 20,
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={
+                      Object {
+                        "process": [Function],
+                      }
+                    }
+                    style={
+                      Object {
+                        "width": "70%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": 70,
+                  "justifyContent": "center",
+                  "width": 70,
+                }
+              }
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "borderRadius": 10,
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-end",
+                "marginBottom": 10,
+                "marginTop": 5,
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "marginRight": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#7C4908",
+                      "fontFamily": "Cairo-Bold",
+                      "fontSize": 20,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                اسم المطعم
+              </Text>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "flex-end",
+                    "marginTop": -10,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#7C4908",
+                        "fontFamily": "Cairo-Regular",
+                        "fontSize": 16,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  الحراش وسط
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "marginLeft": 5,
+                      "width": 20,
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={
+                      Object {
+                        "process": [Function],
+                      }
+                    }
+                    style={
+                      Object {
+                        "width": "70%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": 70,
+                  "justifyContent": "center",
+                  "width": 70,
+                }
+              }
+            >
+              <Image
+                resizeMode="contain"
+                source={
+                  Object {
+                    "process": [Function],
+                  }
+                }
+                style={
+                  Object {
+                    "width": "70%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-end",
+                "marginBottom": 10,
+                "marginTop": 5,
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                  "marginRight": 10,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#7C4908",
+                      "fontFamily": "Cairo-Bold",
+                      "fontSize": 20,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                اسم المطعم
+              </Text>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "flex-end",
+                    "marginTop": -10,
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#7C4908",
+                        "fontFamily": "Cairo-Regular",
+                        "fontSize": 16,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  الحراش وسط
+                </Text>
+                <View
+                  style={
+                    Object {
+                      "marginLeft": 5,
+                      "width": 20,
+                    }
+                  }
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={
+                      Object {
+                        "process": [Function],
+                      }
+                    }
+                    style={
+                      Object {
+                        "width": "70%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": 70,
+                  "justifyContent": "center",
+                  "width": 70,
+                }
+              }
+            >
+              <Image
+                resizeMode="cover"
+                source={
+                  Object {
+                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "borderRadius": 10,
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
   </View>
 </View>
 `;
@@ -1713,7 +2628,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
     Object {
       "backgroundColor": "#F9F6EB",
       "flex": 1,
-      "padding": 20,
+      "padding": 10,
     }
   }
 >
@@ -1763,7 +2678,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
               Object {
                 "left": -2,
                 "position": "absolute",
-                "top": 24,
+                "top": 30,
               },
               Object {
                 "flex": 0,
@@ -1809,7 +2724,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
               }
               width={2}
               x={0}
-              y={-48}
+              y={-60}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
@@ -1827,7 +2742,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
               Object {
                 "left": "100%",
                 "position": "absolute",
-                "top": 24,
+                "top": 30,
               },
               Object {
                 "flex": 0,
@@ -1873,7 +2788,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
               }
               width={2}
               x={0}
-              y={-48}
+              y={-60}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
@@ -1889,7 +2804,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 "borderWidth": 0,
               },
               Object {
-                "left": 24,
+                "left": 30,
                 "position": "absolute",
                 "top": "100%",
               },
@@ -1936,7 +2851,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 ]
               }
               width="100%"
-              x={-48}
+              x={-60}
               y={0}
             />
           </RNSVGGroup>
@@ -1953,7 +2868,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 "borderWidth": 0,
               },
               Object {
-                "left": 24,
+                "left": 30,
                 "position": "absolute",
                 "top": -2,
               },
@@ -2000,16 +2915,16 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 ]
               }
               width="100%"
-              x={-48}
+              x={-60}
               y={0}
             />
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -2023,23 +2938,23 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup>
             <RNSVGDefs>
               <RNSVGRadialGradient
-                cx={26}
-                cy={26}
-                fx={26}
-                fy={26}
+                cx={32}
+                cy={32}
+                fx={32}
+                fy={32}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -2048,12 +2963,12 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 gradientTransform={null}
                 gradientUnits={1}
                 name="topLeft"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M0,26 a26,26 0 0 1 26 -26 v2 v24 h-24 h-2 Z"
+              d="M0,32 a32,32 0 0 1 32 -32 v2 v30 h-30 h-2 Z"
               fill={
                 Array [
                   1,
@@ -2069,10 +2984,10 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -2085,18 +3000,18 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 "top": -2,
                 "transform": Array [
                   Object {
-                    "translateX": -24,
+                    "translateX": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -2113,12 +3028,12 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
             <RNSVGDefs>
               <RNSVGRadialGradient
                 cx={0}
-                cy={26}
+                cy={32}
                 fx={0}
-                fy={26}
+                fy={32}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -2127,12 +3042,12 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 gradientTransform={null}
                 gradientUnits={1}
                 name="topRight"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M0,0 a26,26 0 0 1 26,26 h-2 h-24 v-24 v-2 Z"
+              d="M0,0 a32,32 0 0 1 32,32 h-2 h-30 v-30 v-2 Z"
               fill={
                 Array [
                   1,
@@ -2148,10 +3063,10 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -2164,18 +3079,18 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 "top": "100%",
                 "transform": Array [
                   Object {
-                    "translateY": -24,
+                    "translateY": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -2191,13 +3106,13 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
           >
             <RNSVGDefs>
               <RNSVGRadialGradient
-                cx={26}
+                cx={32}
                 cy={0}
-                fx={26}
+                fx={32}
                 fy={0}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -2206,12 +3121,12 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 gradientTransform={null}
                 gradientUnits={1}
                 name="bottomLeft"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M26,26 a26,26 0 0 1 -26,-26 h2 h24 v24 v2 Z"
+              d="M32,32 a32,32 0 0 1 -32,-32 h2 h30 v30 v2 Z"
               fill={
                 Array [
                   1,
@@ -2227,10 +3142,10 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
           </RNSVGGroup>
         </RNSVGSvgView>
         <RNSVGSvgView
-          bbHeight={27}
-          bbWidth={27}
+          bbHeight={33}
+          bbWidth={33}
           focusable={false}
-          height={27}
+          height={33}
           style={
             Array [
               Object {
@@ -2243,21 +3158,21 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 "top": "100%",
                 "transform": Array [
                   Object {
-                    "translateX": -24,
+                    "translateX": -30,
                   },
                   Object {
-                    "translateY": -24,
+                    "translateY": -30,
                   },
                 ],
               },
               Object {
                 "flex": 0,
-                "height": 27,
-                "width": 27,
+                "height": 33,
+                "width": 33,
               },
             ]
           }
-          width={27}
+          width={33}
         >
           <RNSVGGroup
             matrix={
@@ -2279,7 +3194,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 fy={0}
                 gradient={
                   Array [
-                    0.9230769230769231,
+                    0.9375,
                     335544320,
                     1,
                     0,
@@ -2288,12 +3203,12 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 gradientTransform={null}
                 gradientUnits={1}
                 name="bottomRight"
-                rx={26}
-                ry={26}
+                rx={32}
+                ry={32}
               />
             </RNSVGDefs>
             <RNSVGPath
-              d="M26,0 a26,26 0 0 1 -26,26 v-2 v-24 h24 h2 Z"
+              d="M32,0 a32,32 0 0 1 -32,32 v-2 v-30 h30 h2 Z"
               fill={
                 Array [
                   1,
@@ -2366,26 +3281,26 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   propList={
                     Array [
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x={0}
                   y={0}
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
                       0,
                       0,
                       1,
-                      -24,
+                      -30,
                       0,
                     ]
                   }
@@ -2394,13 +3309,13 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x="100%"
                   y={0}
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
@@ -2408,7 +3323,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                       0,
                       1,
                       0,
-                      -24,
+                      -30,
                     ]
                   }
                   propList={
@@ -2416,21 +3331,21 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x={0}
                   y="100%"
                 />
                 <RNSVGRect
                   fill={4278190080}
-                  height={24}
+                  height={30}
                   matrix={
                     Array [
                       1,
                       0,
                       0,
                       1,
-                      -24,
-                      -24,
+                      -30,
+                      -30,
                     ]
                   }
                   propList={
@@ -2438,7 +3353,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                       "fill",
                     ]
                   }
-                  width={24}
+                  width={30}
                   x="100%"
                   y="100%"
                 />
@@ -2490,7 +3405,7 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
                 "width": "100%",
               },
               Object {
-                "borderRadius": 24,
+                "borderRadius": 30,
               },
             ]
           }
@@ -2555,10 +3470,21 @@ exports[`HomeStack -> Search Screen should show a not found message when nothing
       }
     }
   >
-    <ActivityIndicator
-      color="#7C4908"
-      size={40}
-    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#7C4908",
+            "fontFamily": "Cairo-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      لا يوجد مطعم بهذا الاسم
+    </Text>
   </View>
 </View>
 `;

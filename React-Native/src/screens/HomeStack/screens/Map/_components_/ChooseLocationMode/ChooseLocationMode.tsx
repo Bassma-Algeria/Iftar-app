@@ -1,12 +1,11 @@
 import {useRoute} from '@react-navigation/native';
 import React, {useEffect} from 'react';
 
-import {HomeStackScreenProps} from '../../../../HomeStack.types';
+import type {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 import {useMapContext} from '../../_hooks_/useMapContext';
-import {ChooseLocationMessage} from './_components_/ChooseLocationMessage';
 
-import {ConfirmButton} from './_components_/ConfirmButton';
+import {ChoosedLocationBanner} from './_components_/ChoosedLocationBanner';
 
 const ChooseLocationMode: React.FC = () => {
   const routes = useRoute<HomeStackScreenProps<'Map'>['route']>();
@@ -18,12 +17,7 @@ const ChooseLocationMode: React.FC = () => {
     }
   }, [routes, setUsageMode]);
 
-  return usageMode === 'chooseLocation' ? (
-    <>
-      <ChooseLocationMessage />
-      <ConfirmButton />
-    </>
-  ) : null;
+  return usageMode === 'chooseLocation' ? <ChoosedLocationBanner /> : null;
 };
 
 export {ChooseLocationMode};

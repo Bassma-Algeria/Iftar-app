@@ -7,7 +7,7 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transformIgnorePatterns: [
-    'node_modules/(?!(@react-native|react-native|react-clone-referenced-element|react-navigation|react-native-shadow-2|react-native-maps|react-native-geolocation-service|react-native-simple-toast)/)',
+    'node_modules/(?!(@react-native|react-native|react-clone-referenced-element|react-navigation|react-native-shadow-2|react-native-maps|react-native-geolocation-service|react-native-simple-toast|react-native-snap-carousel|react-native-image-picker|@react-native-community/datetimepicker)/)',
   ],
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
