@@ -22,20 +22,13 @@ export class FakeRestaurantPersistence implements IRestaurantPersistance {
     if (restaurant) {
       restaurant = {
         ...restaurant,
-        name: newRestaurentInfo.name ? newRestaurentInfo.name : restaurant.name,
-        locationCoords: newRestaurentInfo.locationCoords
-          ? newRestaurentInfo.locationCoords
-          : restaurant.locationCoords,
-        locationName: newRestaurentInfo.locationName
-          ? newRestaurentInfo.locationName
-          : restaurant.locationName,
-        openingTime: newRestaurentInfo.openingTime
-          ? newRestaurentInfo.openingTime
-          : restaurant.openingTime,
-        closingTime: newRestaurentInfo.closingTime
-          ? newRestaurentInfo.closingTime
-          : restaurant.closingTime,
-        ownerName: newRestaurentInfo.ownerName ? newRestaurentInfo.ownerName : restaurant.ownerName,
+        name: newRestaurentInfo.name,
+        locationCoords: newRestaurentInfo.locationCoords,
+        locationName: newRestaurentInfo.locationName,
+        openingTime: newRestaurentInfo.openingTime,
+        closingTime: newRestaurentInfo.closingTime,
+        ownerName: newRestaurentInfo.ownerName,
+        pictures: newRestaurentInfo.pictures,
       };
       const updatedRestaurant = this.save(restaurant);
       return Promise.resolve(updatedRestaurant);

@@ -11,18 +11,24 @@ import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 import { SearchRestaurentFactory } from "../../src/UseCases/SearchForRestaurant/SearchRestaurantFactory";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
+import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
 
 const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
 const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
 const passwordManager = new FakePasswordManager();
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
 const searchRestaurantFactory = new SearchRestaurentFactory(restaurantsGateway_);
+const cloudGateway = new CloudGateway();
 describe("Adding a Restaurant use case", () => {
   const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
 
   const ownerInfo = getResturantOwnerInfo();
   const restaurantInfo = getResturantInfo();
-  const addRestaurantFactory = new AddRestaurantFactory(tokenManager, restaurantsGateway_);
+  const addRestaurantFactory = new AddRestaurantFactory(
+    tokenManager,
+    restaurantsGateway_,
+    cloudGateway
+  );
 
   let authToken: string;
 
@@ -62,6 +68,12 @@ describe("Adding a Restaurant use case", () => {
 
     await expect(searchRestaurantFactory.search(restaurantInfo.name))
       .to.eventually.have.lengthOf(1)
-      .and.deep.equal([{ ...restaurantInfo, ownerId: tokenManager.decode(authToken) }]);
+      .and.deep.equal([
+        {
+          ...restaurantInfo,
+          ownerId: tokenManager.decode(authToken),
+          pictures: ["https://www.google.com", "https://www.google.com", "https://www.google.com"],
+        },
+      ]);
   });
 });

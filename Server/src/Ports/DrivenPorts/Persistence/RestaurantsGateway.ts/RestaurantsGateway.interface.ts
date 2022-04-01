@@ -1,6 +1,4 @@
-import { Coords, Time } from "../../../../@types/helperTypes";
 import { IRestaurant } from "../../../../Domain/Restaurant/RestaurantFactory";
-import { EditInfo, updateArgs } from "../../../../UseCases/EditRestaurant/EditRestaurantFactory";
 
 export interface IRestaurantsGateway {
   getRestaurantById(restaurantId: string): Promise<IRestaurant | undefined>;

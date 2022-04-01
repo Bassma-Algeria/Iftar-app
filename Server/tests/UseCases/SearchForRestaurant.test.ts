@@ -11,6 +11,7 @@ import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 import { SearchRestaurentFactory } from "../../src/UseCases/SearchForRestaurant/SearchRestaurantFactory";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
+import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
 /**
  * search by region
  */
@@ -19,13 +20,18 @@ const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
 const passwordManager = new FakePasswordManager();
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
 const searchRestaurantFactory = new SearchRestaurentFactory(restaurantsGateway_);
+const cloudGateway = new CloudGateway();
 
 describe("Searching for Restaurant use case", () => {
   const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
 
   const ownerInfo = getResturantOwnerInfo();
   let restaurantInfo = getResturantInfo();
-  const addRestaurantFactory = new AddRestaurantFactory(tokenManager, restaurantsGateway_);
+  const addRestaurantFactory = new AddRestaurantFactory(
+    tokenManager,
+    restaurantsGateway_,
+    cloudGateway
+  );
 
   let authToken: string;
 

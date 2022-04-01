@@ -13,7 +13,7 @@ const getResturantInfo = (): NonFunctionProperties<IRestaurant> => {
     closingTime: { hour: 20, minute: 0 },
     locationName: faker.internet.userName(),
     locationCoords: { latitude: 10, longitude: 100 },
-    pictures: [],
+    pictures: ["image1", "image2", "image3"],
     createdAt: faker.date.recent(),
   };
 };
