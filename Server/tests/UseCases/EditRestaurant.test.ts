@@ -77,7 +77,7 @@ describe("Edit restaurant use case", () => {
           hour: 19,
           minute: 0,
         },
-        pictures: ["url1", "url2", "url3"],
+        pictures: ["url1", "http://www.google.com", "url3"],
       },
     });
     expect(updatedRestaurant?.name).to.equal("restaurant2");
@@ -94,6 +94,5 @@ describe("Edit restaurant use case", () => {
       hour: 19,
       minute: 0,
     });
-    //idk what to expect since i can't compare new and old url pictures
   });
 });
