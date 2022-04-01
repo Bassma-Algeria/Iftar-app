@@ -2,7 +2,7 @@ import { Coords, Time } from "../../../../@types/helperTypes";
 import { Restaurant } from "../../../../Domain/Restaurant/Restaurant";
 import { IRestaurant } from "../../../../Domain/Restaurant/RestaurantFactory";
 import { IRestaurantsGateway } from "../../../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
-import { EditInfo } from "../../../../UseCases/EditRestaurant/EditRestaurantFactory";
+import { EditInfo, updateArgs } from "../../../../UseCases/EditRestaurant/EditRestaurantFactory";
 import { RestaurantInfo } from "./@types/Helpers";
 
 export interface IRestaurantPersistance {
@@ -21,34 +21,39 @@ class RestaurantsGateway implements IRestaurantsGateway {
     const restaurants = await this.restaurantPersistence.getRestaurantsByOwnerId(ownerId);
     return restaurants.map((restaurant) => new Restaurant(restaurant));
   }
-  async update(newRestaurentInfo: EditInfo): Promise<IRestaurant | undefined> {
+  async update({ ownerId, newRestaurantInfo }: updateArgs): Promise<IRestaurant | undefined> {
     let restaurant = await this.restaurantPersistence.getRestaurantById(
-      newRestaurentInfo.restaurantId
+      newRestaurantInfo.restaurantId
     );
     if (restaurant) {
-      restaurant = {
-        ...restaurant,
-        name: newRestaurentInfo.name ? newRestaurentInfo.name : restaurant.name,
-        locationCoords: newRestaurentInfo.locationCoords
-          ? newRestaurentInfo.locationCoords
-          : restaurant.locationCoords,
-        locationName: newRestaurentInfo.locationName
-          ? newRestaurentInfo.locationName
-          : restaurant.locationName,
-        openingTime: newRestaurentInfo.openingTime
-          ? newRestaurentInfo.openingTime
-          : restaurant.openingTime,
-        closingTime: newRestaurentInfo.closingTime
-          ? newRestaurentInfo.closingTime
-          : restaurant.closingTime,
-        ownerName: newRestaurentInfo.ownerName ? newRestaurentInfo.ownerName : restaurant.ownerName,
-      };
-      const newRestaurant = await this.restaurantPersistence.update(restaurant);
-
-      if (newRestaurant) {
-        return new Restaurant(newRestaurant);
+      if (ownerId !== restaurant.ownerId) {
+        throw new Error("You are not the owner of this restaurant");
       } else {
-        return undefined;
+        restaurant = {
+          ...restaurant,
+          name: newRestaurantInfo.name ? newRestaurantInfo.name : restaurant.name,
+          locationCoords: newRestaurantInfo.locationCoords
+            ? newRestaurantInfo.locationCoords
+            : restaurant.locationCoords,
+          locationName: newRestaurantInfo.locationName
+            ? newRestaurantInfo.locationName
+            : restaurant.locationName,
+          openingTime: newRestaurantInfo.openingTime
+            ? newRestaurantInfo.openingTime
+            : restaurant.openingTime,
+          closingTime: newRestaurantInfo.closingTime
+            ? newRestaurantInfo.closingTime
+            : restaurant.closingTime,
+          ownerName: newRestaurantInfo.ownerName
+            ? newRestaurantInfo.ownerName
+            : restaurant.ownerName,
+        };
+        const newRestaurant = await this.restaurantPersistence.update(restaurant);
+        if (newRestaurant) {
+          return new Restaurant(newRestaurant);
+        } else {
+          return undefined;
+        }
       }
     }
   }
