@@ -7,6 +7,6 @@ export interface IRestaurantsGateway {
   searchByName(name: string): Promise<IRestaurant[]>;
   save(owner: IRestaurant): Promise<IRestaurant>;
   getAll(): Promise<IRestaurant[]>;
-  update({ ownerId, newRestaurantInfo }: updateArgs): Promise<IRestaurant | undefined>;
+  update(newRestaurantInfo: IRestaurant): Promise<IRestaurant | undefined>;
   getRestaurantsByOwnerId(ownerId: string): Promise<IRestaurant[]>;
 }
