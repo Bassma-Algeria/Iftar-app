@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Splash Screen should render correctly 1`] = `
+<RCTScrollView
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#F4E6CA",
+        "height": "100%",
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "position": "absolute",
+          "top": -30,
+          "width": "100%",
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={
+          Object {
+            "process": [Function],
+          }
+        }
+        style={
+          Object {
+            "maxWidth": 200,
+          }
+        }
+      />
+      <Image
+        resizeMode="contain"
+        source={
+          Object {
+            "process": [Function],
+          }
+        }
+        style={
+          Object {
+            "maxWidth": 200,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginTop": "60%",
+          "padding": 15,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "paddingTop": 100,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "baseline",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#7C4908",
+                    "fontFamily": "Cairo-Bold",
+                    "fontSize": 35,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              إفطار
+            </Text>
+            <Image
+              collapsable={false}
+              nativeID="animatedComponent"
+              resizeMode="contain"
+              source={
+                Object {
+                  "process": [Function],
+                }
+              }
+              style={
+                Object {
+                  "height": 22,
+                  "left": 3,
+                  "position": "absolute",
+                  "top": -5,
+                  "transform": Array [
+                    Object {
+                      "rotate": "0deg",
+                    },
+                  ],
+                  "width": 22,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

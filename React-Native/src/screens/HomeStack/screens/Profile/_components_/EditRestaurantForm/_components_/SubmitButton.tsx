@@ -30,7 +30,7 @@ const SubmitButton: React.FC = () => {
       await restuarantsGateway.editRestaurant(restaurantInfo);
 
       setRestaurantToEdit(undefined);
-      selectedLocation.set({coordinates: undefined, name: undefined});
+      selectedLocation.set(undefined);
       setRestaurantInfo(initialEditRestaurantFormState);
       showToast('تمت تعديل المطعم بنجاح');
     } catch (error) {

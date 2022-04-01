@@ -67,7 +67,7 @@ const Overlay: React.FC<OverlayProp> = ({onPress, opacity, isOpen}) => {
 
   return (
     <Animated.View style={[styles.overlay, {opacity, zIndex}]}>
-      <Pressable style={{flex: 1}} onPress={onPress} />
+      <Pressable testID="overlay" style={{flex: 1}} onPress={onPress} />
     </Animated.View>
   );
 };

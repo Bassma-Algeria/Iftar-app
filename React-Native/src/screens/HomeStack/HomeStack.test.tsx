@@ -3,18 +3,19 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {NavigationContainer} from '@react-navigation/native';
 
-// import {fireEvent, render} from '@testing-library/react-native';
-
 import {HomeStack} from './HomeStack';
+import {AuthContextProvider} from '../_context_/AuthContextProvider';
 
 describe('HomeStack', () => {
   const props: any = {};
 
-  it.skip('should renders correctly', () => {
+  it('should renders correctly', () => {
     const tree = renderer
       .create(
         <NavigationContainer>
-          <HomeStack {...props} />
+          <AuthContextProvider>
+            <HomeStack {...props} />
+          </AuthContextProvider>
         </NavigationContainer>,
       )
       .toJSON();

@@ -2503,7 +2503,7 @@ exports[`Register Screen should render correctly 1`] = `
               </View>
               <TextInput
                 onChangeText={[Function]}
-                placeholder="تأكيد كلمة المرور"
+                placeholder="كلمة المرور"
                 placeholderTextColor="#C4C4C4"
                 secureTextEntry={true}
                 style={
@@ -3335,11 +3335,18 @@ exports[`Register Screen should render correctly 1`] = `
         <View
           style={
             Object {
-              "marginTop": 30,
+              "marginTop": 60,
             }
           }
         >
-          <View>
+          <View
+            style={
+              Array [
+                undefined,
+                Object {},
+              ]
+            }
+          >
             <View
               pointerEvents="box-none"
             >
@@ -3971,7 +3978,7 @@ exports[`Register Screen should render correctly 1`] = `
                       ]
                     }
                   >
-                    سجل الآن
+                    تسجيل 
                   </Text>
                 </View>
               </View>

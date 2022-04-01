@@ -7,16 +7,11 @@ import {restuarantsGateway} from '../../../../Gateways';
 import {RESTAURANTS} from '../../../../Gateways/RestaurantsGateway/Fake/RESTAURANTS';
 
 import {Search} from './Search';
-import {NavigationContainer} from '@react-navigation/native';
 
 describe('HomeStack -> Search Screen', () => {
   const props: any = {};
 
-  const SearchScreen = () => (
-    <NavigationContainer>
-      <Search {...props} />
-    </NavigationContainer>
-  );
+  const SearchScreen = () => <Search {...props} />;
 
   it('should renders correctly by default with the keyboard open', () => {
     const instance = render(<SearchScreen />);

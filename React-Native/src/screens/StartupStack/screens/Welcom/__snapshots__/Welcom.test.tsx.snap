@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WelcomScreen /> should render correctly 1`] = `
+exports[`Welcom Screen should render correctly 1`] = `
 Array [
   <RCTScrollView
     style={
@@ -175,7 +175,14 @@ Array [
       }
     }
   >
-    <View>
+    <View
+      style={
+        Array [
+          undefined,
+          Object {},
+        ]
+      }
+    >
       <View
         pointerEvents="box-none"
       >

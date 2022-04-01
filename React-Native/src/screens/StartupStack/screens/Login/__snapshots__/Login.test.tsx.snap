@@ -1740,7 +1740,14 @@ exports[`Login Screen should render correctly 1`] = `
               }
             }
           >
-            <View>
+            <View
+              style={
+                Array [
+                  undefined,
+                  Object {},
+                ]
+              }
+            >
               <View
                 pointerEvents="box-none"
               >
