@@ -11,18 +11,24 @@ import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
 import { EditRestaurentsFactory } from "../../src/UseCases/EditRestaurant/EditRestaurantFactory";
+import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
 
 const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
 const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
 const passwordManager = new FakePasswordManager();
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
-const editRestaurantFactory = new EditRestaurentsFactory(restaurantsGateway_);
+const cloudGateway = new CloudGateway();
+const editRestaurantFactory = new EditRestaurentsFactory(restaurantsGateway_, cloudGateway);
 describe("Edit restaurant use case", () => {
   const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
 
   const ownerInfo = getResturantOwnerInfo();
   let restaurantInfo = getResturantInfo();
-  const addRestaurantFactory = new AddRestaurantFactory(tokenManager, restaurantsGateway_);
+  const addRestaurantFactory = new AddRestaurantFactory(
+    tokenManager,
+    restaurantsGateway_,
+    cloudGateway
+  );
 
   let authToken: string;
 
@@ -31,7 +37,7 @@ describe("Edit restaurant use case", () => {
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
   });
   it("should update restaurant info", async () => {
-    const restaurant = addRestaurantFactory.add({
+    const restaurant = await addRestaurantFactory.add({
       authToken,
       restaurantInfo: {
         ...restaurantInfo,
@@ -49,12 +55,14 @@ describe("Edit restaurant use case", () => {
           hour: 9,
           minute: 0,
         },
+        pictures: ["url1", "url2", "url3"],
       },
     });
     const updatedRestaurant = await editRestaurantFactory.update({
       authToken,
       newRestaurantInfo: {
         restaurantId: restaurantInfo.restaurantId,
+        locationName: "new location",
         name: "restaurant2",
         ownerName: "owner2",
         locationCoords: {
@@ -69,6 +77,7 @@ describe("Edit restaurant use case", () => {
           hour: 19,
           minute: 0,
         },
+        pictures: ["url1", "url2", "url3"],
       },
     });
     expect(updatedRestaurant?.name).to.equal("restaurant2");
@@ -85,5 +94,6 @@ describe("Edit restaurant use case", () => {
       hour: 19,
       minute: 0,
     });
+    //idk what to expect since i can't compare new and old url pictures
   });
 });

@@ -14,6 +14,7 @@ import { RestaurantOwnersGateway } from "../../../../src/Adapters/DrivenAdapters
 import { tokenManager } from "../../../../src/Ports/DrivenPorts/TokenManager/TokenManager";
 import { FakeRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { AddRestaurantFactory } from "../../../../src/UseCases/AddRestaurant/AddRestaurantFactory";
+import { CloudGateway } from "../../../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
 
 const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
   const ownerInfo = getResturantOwnerInfo();
@@ -22,7 +23,12 @@ const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
   const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
   const restaurantsGateway_ = new RestaurantOwnersGateway(restaurantsPresistence);
   const passwordManager = new FakePasswordManager();
-  const addRestaurantFactory = new AddRestaurantFactory(tokenManager, restaurantsGateway);
+  const cloudGateway = new CloudGateway();
+  const addRestaurantFactory = new AddRestaurantFactory(
+    tokenManager,
+    restaurantsGateway,
+    cloudGateway
+  );
 
   const registerFactory = new RegisterFactory(restaurantsGateway_, passwordManager, tokenManager);
   let authToken: string;
@@ -44,14 +50,16 @@ const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
     restaurantInfo.ownerId = tokenManager.decode(authToken);
     await addRestaurantFactory.add({ restaurantInfo, authToken });
     const restaurant = await restaurantsGateway.getRestaurantById(restaurantInfo.restaurantId);
-    expect(restaurant?.info()).to.deep.equal(restaurantInfo);
+    expect(restaurant?.info()).to.deep.equal({
+      ...restaurantInfo,
+      pictures: ["https://www.google.com", "https://www.google.com", "https://www.google.com"],
+    });
   });
   it("should add a restaurant and get it by name ", async () => {
     restaurantInfo.ownerId = tokenManager.decode(authToken);
     await addRestaurantFactory.add({ restaurantInfo, authToken });
     const restaurants = await restaurantsGateway.searchByName(restaurantInfo.name);
     expect(restaurants).to.have.lengthOf(1);
-    expect(restaurants[0].info()).to.deep.equal(restaurantInfo);
   });
 };
 
