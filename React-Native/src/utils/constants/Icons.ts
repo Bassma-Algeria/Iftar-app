@@ -30,6 +30,7 @@ const ICONS = {
   rightArrowWhite: require('../../assets/icons/right-arrow-white.png'),
   close: require('../../assets/icons/close.png'),
   locationWhite: require('../../assets/icons/location-white.png'),
+  logout: require('../../assets/icons/logout.png'),
 };
 
 export {ICONS};

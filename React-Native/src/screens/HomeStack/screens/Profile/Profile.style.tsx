@@ -183,6 +183,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 20,
   },
+
+  logoutIcon: {
+    marginTop: 20,
+    width: 36,
+    height: 36,
+    marginLeft: 20,
+  },
 });
 
 export {styles};
