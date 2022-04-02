@@ -1,9 +1,12 @@
 import { Coords, Time } from "../../@types/helperTypes";
-import { RestaurantInfo } from "../../Adapters/DrivenAdapters/Persistence/RestaurantsGateway/@types/Helpers";
 import { Restaurant } from "../../Domain/Restaurant/Restaurant";
-import { ICloudGateway } from "../../Ports/DrivenPorts/Persistence/CloudGateway/CloudGateway.interface";
 import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+
 import { tokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager";
+
+import { RestaurantInfo } from "../../Adapters/DrivenAdapters/Persistence/RestaurantsGateway/@types/Helpers";
+
+import { ICloudGateway } from "../../Ports/DrivenPorts/Persistence/CloudGateway/CloudGateway.interface";
 
 export interface EditInfo {
   restaurantId: string;
@@ -25,6 +28,7 @@ export class EditRestaurentsFactory {
     private readonly restaurantGateway: IRestaurantsGateway,
     private readonly cloudGateway: ICloudGateway
   ) {}
+
   async update({
     authToken,
     newRestaurantInfo,
@@ -34,12 +38,17 @@ export class EditRestaurentsFactory {
   }): Promise<RestaurantInfo | undefined> {
     const ownerId = tokenManager.decode(authToken);
     let restaurant = await this.restaurantGateway.getRestaurantById(newRestaurantInfo.restaurantId);
+
     let picturesToUpload: any[] = [];
-    newRestaurantInfo.pictures = newRestaurantInfo.pictures.filter((item) => {
+    let validUrlPicures: string[] = [];
+    newRestaurantInfo.pictures.filter((item) => {
       if (!URL_PATTERN.test(item)) {
         picturesToUpload.push(item);
+      } else {
+        if (restaurant?.pictures.includes(item)) {
+          validUrlPicures.push(item);
+        }
       }
-      return URL_PATTERN.test(item);
     });
 
     let restaurantInfo = restaurant ? restaurant.info() : undefined;
@@ -48,7 +57,8 @@ export class EditRestaurentsFactory {
         throw new Error("You are not the owner of this restaurant");
       } else {
         const pictures = await this.cloudGateway.uploadImages(picturesToUpload);
-        newRestaurantInfo.pictures = [...newRestaurantInfo.pictures, ...pictures];
+        newRestaurantInfo.pictures = [...validUrlPicures, ...pictures];
+        console.log("final pictures array", newRestaurantInfo.pictures);
         restaurantInfo = {
           ...restaurantInfo,
           name: newRestaurantInfo.name,
@@ -57,7 +67,7 @@ export class EditRestaurentsFactory {
           openingTime: newRestaurantInfo.openingTime,
           closingTime: newRestaurantInfo.closingTime,
           ownerName: newRestaurantInfo.ownerName,
-          pictures: pictures,
+          pictures: newRestaurantInfo.pictures,
         };
 
         const newRestaurant = await this.restaurantGateway.update(new Restaurant(restaurantInfo));

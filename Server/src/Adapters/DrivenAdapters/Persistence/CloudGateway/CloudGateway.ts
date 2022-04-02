@@ -3,7 +3,7 @@ import faker from "faker";
 
 export class CloudGateway implements ICloudGateway {
   public async uploadImages(images: any[]): Promise<string[]> {
-    return images.map(() => faker.image.imageUrl());
+    return images.map(() => faker.internet.url());
   }
 
   public async deleteImage(image: string): Promise<void> {

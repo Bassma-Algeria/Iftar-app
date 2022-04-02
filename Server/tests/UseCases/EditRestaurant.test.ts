@@ -1,41 +1,69 @@
 import { expect } from "chai";
 
 import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
-import { AddRestaurantFactory } from "../../src/UseCases/AddRestaurant/AddRestaurantFactory";
-import { tokenManager } from "../../src/Ports/DrivenPorts/TokenManager/TokenManager";
-import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
-import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
-import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
-import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
-import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
-import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
+
+import { AddRestaurantFactory } from "../../src/UseCases/AddRestaurant/AddRestaurantFactory";
+import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
 import { EditRestaurentsFactory } from "../../src/UseCases/EditRestaurant/EditRestaurantFactory";
+
+import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
+import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
 import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
 
-const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
-const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
+import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
+import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
+
+import { tokenManager } from "../../src/Ports/DrivenPorts/TokenManager/TokenManager";
+import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
+
 const passwordManager = new FakePasswordManager();
+
+const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
+
+const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
 const cloudGateway = new CloudGateway();
+
+const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
 const editRestaurantFactory = new EditRestaurentsFactory(restaurantsGateway_, cloudGateway);
+const addRestaurantFactory = new AddRestaurantFactory(
+  tokenManager,
+  restaurantsGateway_,
+  cloudGateway
+);
+
+const ownerInfo = getResturantOwnerInfo();
+let restaurantInfo = getResturantInfo();
+
+let authToken: string;
+
 describe("Edit restaurant use case", () => {
-  const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
-
-  const ownerInfo = getResturantOwnerInfo();
-  let restaurantInfo = getResturantInfo();
-  const addRestaurantFactory = new AddRestaurantFactory(
-    tokenManager,
-    restaurantsGateway_,
-    cloudGateway
-  );
-
-  let authToken: string;
-
   before(async () => {
     const confirmPassword = ownerInfo.password;
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
   });
+
+  it("should throw invalidToken error when an invalid token is provided", async () => {
+    const invalidToken = "invalidToken";
+    await expect(
+      editRestaurantFactory.update({
+        authToken: invalidToken,
+        newRestaurantInfo: restaurantInfo,
+      })
+    ).to.be.rejected;
+  });
+
+  it("should not be able to edit restaurant if owner id does not match the new info ownerId", () => {
+    restaurantInfo.ownerId = "some other id";
+    expect(
+      editRestaurantFactory.update({
+        authToken,
+        newRestaurantInfo: restaurantInfo,
+      })
+    ).to.eventually.be.rejectedWith("You are not the owner of this restaurant");
+  });
+
   it("should update restaurant info", async () => {
     const restaurant = await addRestaurantFactory.add({
       authToken,
@@ -55,7 +83,7 @@ describe("Edit restaurant use case", () => {
           hour: 9,
           minute: 0,
         },
-        pictures: ["url1", "url2", "url3"],
+        pictures: ["image1", "image2", "image3"],
       },
     });
     const updatedRestaurant = await editRestaurantFactory.update({
@@ -77,7 +105,7 @@ describe("Edit restaurant use case", () => {
           hour: 19,
           minute: 0,
         },
-        pictures: ["url1", "http://www.google.com", "url3"],
+        pictures: [...restaurant.pictures, "image4", "image5", "image6"],
       },
     });
     expect(updatedRestaurant?.name).to.equal("restaurant2");
@@ -94,5 +122,6 @@ describe("Edit restaurant use case", () => {
       hour: 19,
       minute: 0,
     });
+    expect(updatedRestaurant?.pictures).to.have.lengthOf(6);
   });
 });
