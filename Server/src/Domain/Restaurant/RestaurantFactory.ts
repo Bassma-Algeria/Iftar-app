@@ -21,9 +21,7 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
     restaurantId: string;
     private _name!: string;
     private _ownerName!: string;
-
     private _workingTime?: { opening: Time; closing: Time };
-
     private _locationName!: string;
     locationCoords: Coords;
     pictures: any[];
@@ -33,12 +31,10 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
       this.restaurantId = restaurantInfo.restaurantId || idGenerator.generate();
       this.name = restaurantInfo.name;
       this.ownerName = restaurantInfo.ownerName;
-
       this.workingTime = {
         opening: restaurantInfo.openingTime,
         closing: restaurantInfo.closingTime,
       };
-
       this.createdAt = restaurantInfo.createdAt || new Date();
       this.locationCoords = restaurantInfo.locationCoords;
       this.pictures = restaurantInfo.pictures;

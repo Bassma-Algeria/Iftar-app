@@ -21,6 +21,7 @@ class AddRestaurantFactory {
       pictures: picturesUrls,
     });
     const savedRestaurant = await this.restaurantsGateway.save(restaurant);
+    return savedRestaurant.info();
   }
 }
 

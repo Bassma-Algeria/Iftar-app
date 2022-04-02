@@ -2,6 +2,7 @@ import { expect } from "chai";
 
 import { makeRestaurant } from "../../src/Domain/Restaurant/RestaurantFactory";
 import { idGenerator } from "../../src/Ports/DrivenPorts/IdGenerator/IdGenerator";
+
 import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
 
 describe("Restaurant Entity", () => {

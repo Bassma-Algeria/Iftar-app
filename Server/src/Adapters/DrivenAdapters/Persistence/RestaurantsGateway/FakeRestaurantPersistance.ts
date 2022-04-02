@@ -1,11 +1,12 @@
-import { Coords, NonFunctionProperties, Time } from "../../../../@types/helperTypes";
-import { Restaurant } from "../../../../Domain/Restaurant/Restaurant";
+import { NonFunctionProperties } from "../../../../@types/helperTypes";
 import { IRestaurant } from "../../../../Domain/Restaurant/RestaurantFactory";
 import { EditInfo } from "../../../../UseCases/EditRestaurant/EditRestaurantFactory";
 import { RestaurantInfo } from "./@types/Helpers";
 import { IRestaurantPersistance } from "./RestaurantsGateway";
 
 export class FakeRestaurantPersistence implements IRestaurantPersistance {
+  private store = new Map<string | undefined, RestaurantInfo>();
+
   getRestaurantsByOwnerId(ownerId: string): Promise<NonFunctionProperties<IRestaurant>[]> {
     let results: NonFunctionProperties<IRestaurant>[] = [];
     this.store.forEach((restaurant) => {
@@ -15,6 +16,7 @@ export class FakeRestaurantPersistence implements IRestaurantPersistance {
     });
     return Promise.resolve(results);
   }
+
   async update(
     newRestaurentInfo: EditInfo
   ): Promise<NonFunctionProperties<IRestaurant> | undefined> {
@@ -35,7 +37,6 @@ export class FakeRestaurantPersistence implements IRestaurantPersistance {
     }
     return Promise.resolve(undefined);
   }
-  private store = new Map<string | undefined, RestaurantInfo>();
 
   save(
     restaurant: NonFunctionProperties<IRestaurant>
@@ -53,9 +54,11 @@ export class FakeRestaurantPersistence implements IRestaurantPersistance {
     });
     return results;
   }
+
   async getAll(): Promise<RestaurantInfo[]> {
     return Array.from(this.store.values());
   }
+
   async getRestaurantById(restaurantId: string): Promise<RestaurantInfo | undefined> {
     return this.store.get(restaurantId);
   }
