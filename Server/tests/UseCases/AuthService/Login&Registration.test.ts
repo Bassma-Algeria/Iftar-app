@@ -5,12 +5,15 @@ import { authService } from "../../../src/Ports/DriverPorts/AuthService";
 import { getResturantOwnerInfo } from "../../_Fakes_/RestaurantOwnerInfo";
 
 describe("Registration & Login Use cases", () => {
-  const userInfo = getResturantOwnerInfo();
+  let userInfo = getResturantOwnerInfo();
 
   let registrationBody = { ...userInfo, confirmPassword: userInfo.password };
 
   beforeEach(() => {
-    registrationBody = { ...getResturantOwnerInfo(), confirmPassword: userInfo.password };
+    userInfo = getResturantOwnerInfo();
+
+    const confirmPassword = userInfo.password;
+    registrationBody = { ...userInfo, confirmPassword };
   });
 
   afterEach(() => {

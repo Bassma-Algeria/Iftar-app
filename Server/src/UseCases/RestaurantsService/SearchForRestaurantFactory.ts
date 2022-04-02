@@ -1,4 +1,4 @@
-import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway.interface";
 
 class SearchForRestaurantFactory {
   constructor(private readonly restaurantsGateway: IRestaurantsGateway) {}

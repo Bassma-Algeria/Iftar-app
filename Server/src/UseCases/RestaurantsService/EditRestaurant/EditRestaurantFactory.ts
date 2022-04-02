@@ -1,5 +1,5 @@
 import type { ITokenManager } from "../../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
-import type { IRestaurantsGateway } from "../../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+import type { IRestaurantsGateway } from "../../../Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway.interface";
 import type { ICloudGateway } from "../../../Ports/DrivenPorts/CloudGateway/CloudGateway.interface";
 
 import type { UpdateArgs } from "./EditRestaurantFactory.types";

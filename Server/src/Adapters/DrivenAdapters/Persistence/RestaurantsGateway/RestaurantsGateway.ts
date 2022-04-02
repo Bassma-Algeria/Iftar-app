@@ -1,6 +1,6 @@
 import { Restaurant } from "../../../../Domain/Restaurant/Restaurant";
 import { IRestaurant } from "../../../../Domain/Restaurant/RestaurantFactory";
-import { IRestaurantsGateway } from "../../../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+import { IRestaurantsGateway } from "../../../../Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway.interface";
 
 import { RestaurantInfo } from "./@types/Helpers";
 

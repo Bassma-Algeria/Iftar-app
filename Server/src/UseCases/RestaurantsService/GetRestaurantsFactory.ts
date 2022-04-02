@@ -1,4 +1,4 @@
-import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway.interface";
 import { tokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager";
 
 class GetRestaurentsFactory {
