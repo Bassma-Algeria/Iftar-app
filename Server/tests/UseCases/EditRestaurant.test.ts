@@ -38,7 +38,7 @@ let restaurantInfo = getResturantInfo();
 
 let authToken: string;
 
-describe("Edit restaurant use case", () => {
+describe.skip("Edit restaurant use case", () => {
   before(async () => {
     const confirmPassword = ownerInfo.password;
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });

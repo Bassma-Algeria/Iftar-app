@@ -5,15 +5,15 @@ import { IRestaurant } from "../../src/Domain/Restaurant/RestaurantFactory";
 
 const getResturantInfo = (): NonFunctionProperties<IRestaurant> => {
   return {
-    ownerId: faker.datatype.uuid(),
-    name: "some name",
-    ownerName: faker.internet.userName(),
     restaurantId: faker.datatype.uuid(),
+    ownerId: faker.datatype.uuid(),
+    name: faker.name.findName(),
+    ownerName: faker.internet.userName(),
     openingTime: { hour: 10, minute: 0 },
     closingTime: { hour: 20, minute: 0 },
     locationName: faker.internet.userName(),
     locationCoords: { latitude: 10, longitude: 100 },
-    pictures: ["image1", "image2", "image3"],
+    pictures: [faker.image.imageUrl(), faker.image.imageUrl()],
     createdAt: faker.date.recent(),
   };
 };

@@ -1,6 +1,5 @@
+import "chai-exclude";
 import { expect } from "chai";
-import * as chai from "chai";
-import chaiExclude from "chai-exclude";
 
 import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
@@ -18,8 +17,6 @@ import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Per
 
 import { tokenManager } from "../../src/Ports/DrivenPorts/TokenManager/TokenManager";
 import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
-
-chai.use(chaiExclude);
 
 const passwordManager = new FakePasswordManager();
 
@@ -78,13 +75,11 @@ describe("Adding a Restaurant use case", () => {
   it("Should register the restaurent when all inputs are valid", async () => {
     await addRestaurantFactory.add({ authToken, restaurantInfo });
     const searchResultRestaurant = await searchRestaurantFactory.search(restaurantInfo.name);
+
     expect(searchResultRestaurant).have.lengthOf(1);
     expect(searchResultRestaurant[0])
       .excluding("pictures")
-      .to.deep.equal({
-        ...restaurantInfo,
-        ownerId: tokenManager.decode(authToken),
-      });
+      .to.deep.equal({ ...restaurantInfo, ownerId: tokenManager.decode(authToken) });
     expect(searchResultRestaurant[0].pictures.length).to.equal(restaurantInfo.pictures.length);
   });
 });

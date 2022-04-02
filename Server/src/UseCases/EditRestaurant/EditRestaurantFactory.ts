@@ -23,6 +23,7 @@ export interface updateArgs {
   ownerId: string;
   newRestaurantInfo: EditInfo;
 }
+
 export class EditRestaurentsFactory {
   constructor(
     private readonly restaurantGateway: IRestaurantsGateway,

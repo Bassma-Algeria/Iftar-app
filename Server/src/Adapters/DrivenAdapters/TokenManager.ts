@@ -6,7 +6,7 @@ class TokenManager implements ITokenManager {
   private readonly SECRET_KEY: string;
 
   constructor() {
-    if (!process.env.JWT_SECRET_KEY) throw this.NoSecretKeyException();
+    if (!process.env.JWT_SECRET_KEY) this.NoSecretKeyException();
 
     this.SECRET_KEY = process.env.JWT_SECRET_KEY;
   }
@@ -23,8 +23,8 @@ class TokenManager implements ITokenManager {
     return value;
   }
 
-  private NoSecretKeyException() {
-    return new Error("no secret key in the envirenment variables");
+  private NoSecretKeyException(): never {
+    throw new Error("no secret key in the envirenment variables");
   }
 }
 
