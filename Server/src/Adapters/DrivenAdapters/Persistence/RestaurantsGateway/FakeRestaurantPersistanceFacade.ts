@@ -1,10 +1,10 @@
 import type { RestaurantInfo } from "./@types/Helpers";
 import { IRestaurantPersistanceFacade } from "./RestaurantsGateway";
 
-export class FakeRestaurantPersistence implements IRestaurantPersistanceFacade {
+class FakeRestaurantPersistenceFacade implements IRestaurantPersistanceFacade {
   private store = new Map<string | undefined, RestaurantInfo>();
 
-  findByOwnerId(ownerId: string): Promise<RestaurantInfo[]> {
+  findAllByOwnerId(ownerId: string): Promise<RestaurantInfo[]> {
     let results: RestaurantInfo[] = [];
 
     this.store.forEach((restaurant) => {
@@ -24,13 +24,13 @@ export class FakeRestaurantPersistence implements IRestaurantPersistanceFacade {
     return Promise.resolve(restaurant);
   }
 
-  async findByName(keyword: string): Promise<RestaurantInfo[]> {
+  async searchFor(keyword: string): Promise<RestaurantInfo[]> {
     let results: RestaurantInfo[] = [];
+
     this.store.forEach((restaurant) => {
-      if (restaurant.name.includes(keyword)) {
-        results.push(restaurant);
-      }
+      if (restaurant.name.includes(keyword)) results.push(restaurant);
     });
+
     return results;
   }
 
@@ -46,3 +46,5 @@ export class FakeRestaurantPersistence implements IRestaurantPersistanceFacade {
     this.store.clear();
   }
 }
+
+export { FakeRestaurantPersistenceFacade };

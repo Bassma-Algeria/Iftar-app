@@ -1,26 +1,28 @@
 import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
 import { tokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager";
 
-export class GetRestaurentsFactory {
+class GetRestaurentsFactory {
   constructor(private readonly restaurantGateway: IRestaurantsGateway) {}
 
   async getAll() {
     const restaurants = await this.restaurantGateway.getAll();
-    return restaurants.map((restaurant) => {
-      return restaurant.info();
-    });
+
+    return restaurants.map((restaurant) => restaurant.info());
   }
 
   async getById(restaurantId: string) {
     const restaurant = await this.restaurantGateway.getById(restaurantId);
-    return restaurant?.info();
+    if (!restaurant) throw new Error("restarant doesn't exist");
+
+    return restaurant.info();
   }
 
-  async findByOwnerId(authToken: string) {
+  async getRestaurantsOfAuthOwner(authToken: string) {
     const ownerId = tokenManager.decode(authToken);
-    const restaurants = await this.restaurantGateway.findByOwnerId(ownerId);
-    return restaurants.map((restaurant) => {
-      return restaurant.info();
-    });
+    const restaurants = await this.restaurantGateway.findAllByOwnerId(ownerId);
+
+    return restaurants.map((restaurant) => restaurant.info());
   }
 }
+
+export { GetRestaurentsFactory };

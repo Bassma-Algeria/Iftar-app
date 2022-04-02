@@ -4,7 +4,7 @@ import type { IPasswordManager } from "../../Ports/DrivenPorts/PasswordManager/P
 
 import { RestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwner";
 
-interface LoginBody {
+export interface LoginBody {
   email: string;
   password: string;
 }

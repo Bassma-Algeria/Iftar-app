@@ -1,84 +1,93 @@
 import { expect } from "chai";
-import * as chai from "chai";
-import chaiExclude from "chai-exclude";
-
-import { FakePasswordManager } from "../../../../src/Adapters/DrivenAdapters/FakePasswordManager";
-import { tokenManager } from "../../../../src/Ports/DrivenPorts/TokenManager/TokenManager";
 
 import {
   IRestaurantPersistanceFacade,
   RestaurantsGateway,
 } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { FakeRestaurantPersistence } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
-import { FakeRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
+import { FakeRestaurantPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistanceFacade";
 
-import { RestaurantOwnersGateway } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
-import { FakeCloudGateway } from "../../../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
+import { IRestaurant } from "../../../../src/Domain/Restaurant/RestaurantFactory";
+import { Restaurant } from "../../../../src/Domain/Restaurant/Restaurant";
 
-import { RegisterFactory } from "../../../../src/UseCases/Register/RegisterFactory";
-import { AddRestaurantFactory } from "../../../../src/UseCases/AddRestaurant/AddRestaurantFactory";
+import { getRestaurantInfo } from "../../../_Fakes_/RestaurantInfo";
 
-import { getResturantOwnerInfo } from "../../../_Fakes_/RestaurantOwnerInfo";
-import { getResturantInfo } from "../../../_Fakes_/RestaurantInfo";
-
-chai.use(chaiExclude);
-
-const testHandler = (RestaurantsPersistence: IRestaurantPersistanceFacade) => () => {
-  const ownerInfo = getResturantOwnerInfo();
-  const restaurantInfo = getResturantInfo();
-
-  const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
-
-  const restaurantsGateway = new RestaurantsGateway(RestaurantsPersistence);
-  const restaurantsGateway_ = new RestaurantOwnersGateway(restaurantsPresistence);
-  const cloudGateway = new FakeCloudGateway();
-
-  const passwordManager = new FakePasswordManager();
-  const addRestaurantFactory = new AddRestaurantFactory(
-    tokenManager,
-    restaurantsGateway,
-    cloudGateway
-  );
-  const registerFactory = new RegisterFactory(restaurantsGateway_, passwordManager, tokenManager);
-
-  let authToken: string;
+const testHandler = (restaurantsPersistence: IRestaurantPersistanceFacade) => () => {
+  const restaurantsGateway = new RestaurantsGateway(restaurantsPersistence);
+  let restaurant: IRestaurant;
 
   beforeEach(async () => {
-    const confirmPassword = ownerInfo.password;
-    authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
+    restaurant = new Restaurant(getRestaurantInfo());
   });
 
   afterEach(() => {
-    restaurantsPresistence.deleteAll();
-    RestaurantsPersistence.deleteAll();
+    restaurantsPersistence.deleteAll();
   });
 
-  it("should return undefined when searching for non existing userId", async () => {
+  it("should return undefined when trying to get a non existing restaurant", async () => {
     const restaurant = await restaurantsGateway.getById("nonExistingUserId");
     expect(restaurant).to.be.undefined;
   });
 
-  it("should add restaurant and get it by id", async () => {
-    restaurantInfo.ownerId = tokenManager.decode(authToken);
-    await addRestaurantFactory.add({ restaurantInfo, authToken });
-    const restaurant = await restaurantsGateway.getById(restaurantInfo.restaurantId);
-    expect(restaurant?.info())
-      .excluding("pictures")
-      .to.deep.equal({
-        ...restaurantInfo,
-      });
+  it("should save restaurant and get it by id", async () => {
+    await restaurantsGateway.save(restaurant);
+    const savedRestaurant = await restaurantsGateway.getById(restaurant.restaurantId);
 
-    expect(restaurant?.info().pictures.length).to.be.equal(restaurantInfo.pictures.length);
+    expect(savedRestaurant?.info()).to.deep.equal(restaurant.info());
   });
 
-  it("should add a restaurant and get it by name ", async () => {
-    restaurantInfo.ownerId = tokenManager.decode(authToken);
-    await addRestaurantFactory.add({ restaurantInfo, authToken });
-    const restaurants = await restaurantsGateway.findByName(restaurantInfo.name);
-    expect(restaurants).to.have.lengthOf(1);
+  it("should get all the saved restaurants", async () => {
+    for (let i = 0; i < 10; i++) {
+      const restaurant = new Restaurant(getRestaurantInfo());
+      await restaurantsGateway.save(restaurant);
+    }
+
+    const result = await restaurantsGateway.getAll();
+    expect(result).to.have.lengthOf(10);
+  });
+
+  it("should get all the restaurant of a specific owner", async () => {
+    await restaurantsGateway.save(new Restaurant(getRestaurantInfo()));
+
+    const ownerId = restaurant.ownerId;
+    for (let i = 0; i < 5; i++) {
+      const restaurant = new Restaurant({ ...getRestaurantInfo(), ownerId });
+      await restaurantsGateway.save(restaurant);
+    }
+
+    const result = await restaurantsGateway.findAllByOwnerId(ownerId);
+    expect(result).to.have.lengthOf(5);
+  });
+
+  it("should update a saved restaurant", async () => {
+    const restaurantId = restaurant.restaurantId;
+
+    await restaurantsGateway.save(restaurant);
+
+    const updated = new Restaurant({ ...getRestaurantInfo(), restaurantId });
+    await restaurantsGateway.update(updated);
+
+    const saved = await restaurantsGateway.getById(restaurantId);
+    expect(saved?.info()).to.deep.equal(updated.info());
+  });
+
+  it("should search for restaurants by name", async () => {
+    let restaurant = new Restaurant(getRestaurantInfo());
+    await restaurantsGateway.save(restaurant);
+
+    restaurant = new Restaurant({ ...getRestaurantInfo(), name: "ra7ma" });
+    await restaurantsGateway.save(restaurant);
+
+    restaurant = new Restaurant({ ...getRestaurantInfo(), name: "ra7ma food" });
+    await restaurantsGateway.save(restaurant);
+
+    restaurant = new Restaurant({ ...getRestaurantInfo(), name: "mat3am ra7ma" });
+    await restaurantsGateway.save(restaurant);
+
+    const result = await restaurantsGateway.searchFor("ra7ma");
+    expect(result).to.have.lengthOf(3);
   });
 };
 
 describe("RestaurantsGateway", () => {
-  describe("Fake Restaurants Persistence", testHandler(new FakeRestaurantPersistence()));
+  describe("Fake Persistence", testHandler(new FakeRestaurantPersistenceFacade()));
 });

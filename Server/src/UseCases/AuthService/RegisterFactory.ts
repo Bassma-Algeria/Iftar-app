@@ -5,7 +5,7 @@ import type { ITokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenMa
 import { RestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwner";
 import type { IRestaurantOwner } from "../../Domain/RestaurantOwner/RestaurantOwnerFactory";
 
-interface RegistrationBody {
+export interface RegistrationBody {
   email: string;
   password: string;
   confirmPassword: string;

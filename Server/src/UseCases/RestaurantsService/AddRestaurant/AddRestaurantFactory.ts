@@ -1,11 +1,11 @@
-import type { ITokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
-import type { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
-import type { ICloudGateway } from "../../Ports/DrivenPorts/Persistence/CloudGateway/CloudGateway.interface";
+import type { ITokenManager } from "../../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
+import type { IRestaurantsGateway } from "../../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+import type { ICloudGateway } from "../../../Ports/DrivenPorts/CloudGateway/CloudGateway.interface";
 
-import { Restaurant } from "../../Domain/Restaurant/Restaurant";
-import type { IRestaurant } from "../../Domain/Restaurant/RestaurantFactory";
+import { Restaurant } from "../../../Domain/Restaurant/Restaurant";
+import type { IRestaurant } from "../../../Domain/Restaurant/RestaurantFactory";
 
-import type { Args } from "./AddRestaurantFactory.types";
+import type { RegisterRestaurantArgs } from "./AddRestaurantFactory.types";
 
 class AddRestaurantFactory {
   constructor(
@@ -14,7 +14,7 @@ class AddRestaurantFactory {
     private readonly cloudGateway: ICloudGateway
   ) {}
 
-  async add({ authToken, restaurantInfo }: Args) {
+  async add({ authToken, restaurantInfo }: RegisterRestaurantArgs) {
     const ownerId = this.decodeToken(authToken);
 
     const { pictures, ...rest } = restaurantInfo;

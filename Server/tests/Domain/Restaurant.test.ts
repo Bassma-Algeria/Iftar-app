@@ -2,10 +2,10 @@ import { expect } from "chai";
 
 import { Restaurant } from "../../src/Domain/Restaurant/Restaurant";
 
-import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
+import { getRestaurantInfo } from "../_Fakes_/RestaurantInfo";
 
 describe("Restaurant Entity", () => {
-  const restaurantInfo = getResturantInfo();
+  const restaurantInfo = getRestaurantInfo();
 
   it("should not have a restaurant with an empty name or ownerName or locationName", () => {
     expect(() => new Restaurant({ ...restaurantInfo, name: "" })).to.throw();

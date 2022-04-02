@@ -1,42 +1,42 @@
 import { expect } from "chai";
 
-import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
+import { getRestaurantInfo } from "../_Fakes_/RestaurantInfo";
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 
-import { AddRestaurantFactory } from "../../src/UseCases/AddRestaurant/AddRestaurantFactory";
-import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
-import { SearchRestaurentFactory } from "../../src/UseCases/SearchForRestaurant/SearchRestaurantFactory";
+import { AddRestaurantFactory } from "../../src/UseCases/RestaurantsService/AddRestaurant/AddRestaurantFactory";
+import { RegisterFactory } from "../../src/UseCases/AuthService/RegisterFactory";
 
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
 import { FakeCloudGateway } from "../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
 
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
-import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
+import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistanceFacade";
 
 import { tokenManager } from "../../src/Ports/DrivenPorts/TokenManager/TokenManager";
-import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
-/**
- * search by region
- */
+import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/PasswordManager";
+
+import { SearchForRestaurantFactory } from "../../src/UseCases/RestaurantsService/SearchForRestaurantFactory";
+
 const passwordManager = new FakePasswordManager();
 
-const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
+const ownersPersistence = new FakeRestaurantOwnersPersistenceFacade();
+const restaurantsPersistence = new FakeRestaurantPersistence();
 
-const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
-const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
+const ownersGateway = new RestaurantOwnersGateway(ownersPersistence);
+const restaurantsGateway = new RestaurantsGateway(restaurantsPersistence);
 const cloudGateway = new FakeCloudGateway();
 
-const searchRestaurantFactory = new SearchRestaurentFactory(restaurantsGateway_);
-const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
+const registerFactory = new RegisterFactory(ownersGateway, passwordManager, tokenManager);
 const addRestaurantFactory = new AddRestaurantFactory(
   tokenManager,
-  restaurantsGateway_,
+  restaurantsGateway,
   cloudGateway
 );
+const searchForRestaurantFactory = new SearchForRestaurantFactory(restaurantsGateway);
 
 const ownerInfo = getResturantOwnerInfo();
-let restaurantInfo = getResturantInfo();
+let restaurantInfo = getRestaurantInfo();
 
 let authToken: string;
 
@@ -46,23 +46,32 @@ describe("Searching for Restaurant use case", () => {
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
   });
 
+  afterEach(() => {
+    restaurantsPersistence.deleteAll();
+  });
+
+  after(() => {
+    ownersPersistence.deleteAll();
+  });
+
   it("should return empty array when no restaurant is found", async () => {
-    const result = await searchRestaurantFactory.search("");
+    const result = await searchForRestaurantFactory.searchFor("not exsit");
     expect(result).to.be.empty;
   });
 
-  it("Should return restaurants by key word", async () => {
+  it("Should return restaurants that have a name match the search keyword", async () => {
     restaurantInfo.restaurantId = "";
-    await addRestaurantFactory.add({ authToken, restaurantInfo: { ...restaurantInfo, name: "a" } });
-    await addRestaurantFactory.add({
-      authToken,
-      restaurantInfo: { ...restaurantInfo, name: "aa" },
-    });
-    await addRestaurantFactory.add({
-      authToken,
-      restaurantInfo: { ...restaurantInfo, name: "aaa" },
-    });
-    const result = await searchRestaurantFactory.search("a");
+
+    restaurantInfo.name = "a";
+    await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    restaurantInfo.name = "aa";
+    await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    restaurantInfo.name = "a&a";
+    await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    const result = await searchForRestaurantFactory.searchFor("a");
     expect(result).to.have.lengthOf(3);
   });
 });

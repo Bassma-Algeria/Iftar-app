@@ -1,4 +1,4 @@
-import { Coords, Time } from "../../@types/helperTypes";
+import { Coords, Time } from "../../../@types/helperTypes";
 
 export interface EditInfo {
   restaurantId: string;

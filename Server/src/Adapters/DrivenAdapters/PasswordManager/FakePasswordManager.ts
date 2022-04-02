@@ -1,4 +1,4 @@
-import { IPasswordManager } from "../../Ports/DrivenPorts/PasswordManager/PasswordManager.interface";
+import { IPasswordManager } from "../../../Ports/DrivenPorts/PasswordManager/PasswordManager.interface";
 
 class FakePasswordManager implements IPasswordManager {
   async hash(password: string): Promise<string> {

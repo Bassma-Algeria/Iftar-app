@@ -4,9 +4,8 @@ import { FakeCloudGateway } from "../../../src/Adapters/DrivenAdapters/CloudGate
 describe("Cloud Gateway", () => {
   const cloudGateway = new FakeCloudGateway();
 
-  it("should take an iamge and return an url", async () => {
-    const image = {};
-    const result = await cloudGateway.uploadImage(image);
+  it("should take an image and return an url", async () => {
+    const result = await cloudGateway.uploadImage({});
     expect(result).to.be.a.string;
   });
 });

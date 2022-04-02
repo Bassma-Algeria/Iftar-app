@@ -1,23 +1,23 @@
 import Sinon from "sinon";
 import { expect } from "chai";
 
-import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
+import { getRestaurantInfo } from "../_Fakes_/RestaurantInfo";
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 
-import { AddRestaurantFactory } from "../../src/UseCases/AddRestaurant/AddRestaurantFactory";
-import { RegisterFactory } from "../../src/UseCases/Register/RegisterFactory";
-import { EditRestaurentsFactory } from "../../src/UseCases/EditRestaurant/EditRestaurantFactory";
+import { AddRestaurantFactory } from "../../src/UseCases/RestaurantsService/AddRestaurant/AddRestaurantFactory";
+import { RegisterFactory } from "../../src/UseCases/AuthService/RegisterFactory";
+import { EditRestaurentsFactory } from "../../src/UseCases/RestaurantsService/EditRestaurant/EditRestaurantFactory";
 
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
 import { FakeCloudGateway } from "../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
 
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
-import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
+import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistanceFacade";
 
 import { tokenManager } from "../../src/Ports/DrivenPorts/TokenManager/TokenManager";
-import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
-import { GetRestaurentsFactory } from "../../src/UseCases/GetRestaurants/GetRestaurantsFactory";
+import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/PasswordManager";
+import { GetRestaurentsFactory } from "../../src/UseCases/RestaurantsService/GetRestaurantsFactory";
 
 const passwordManager = new FakePasswordManager();
 
@@ -42,7 +42,7 @@ const addRestaurantFactory = new AddRestaurantFactory(
 );
 
 const ownerInfo = getResturantOwnerInfo();
-let restaurantInfo = getResturantInfo();
+let restaurantInfo = getRestaurantInfo();
 
 let authToken: string;
 

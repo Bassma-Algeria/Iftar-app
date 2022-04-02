@@ -1,6 +1,6 @@
-import { Coords, Time } from "../../@types/helperTypes";
+import { Coords, Time } from "../../../@types/helperTypes";
 
-export interface Args {
+export interface RegisterRestaurantArgs {
   authToken: string;
   restaurantInfo: {
     name: string;

@@ -3,7 +3,7 @@ import faker, { fake } from "faker";
 import { NonFunctionProperties } from "../../src/@types/helperTypes";
 import { IRestaurant } from "../../src/Domain/Restaurant/RestaurantFactory";
 
-const getResturantInfo = (): NonFunctionProperties<IRestaurant> => {
+const getRestaurantInfo = (): NonFunctionProperties<IRestaurant> => {
   return {
     restaurantId: faker.datatype.uuid(),
     ownerId: faker.datatype.uuid(),
@@ -17,4 +17,4 @@ const getResturantInfo = (): NonFunctionProperties<IRestaurant> => {
   };
 };
 
-export { getResturantInfo };
+export { getRestaurantInfo };
