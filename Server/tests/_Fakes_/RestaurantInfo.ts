@@ -9,11 +9,10 @@ const getResturantInfo = (): NonFunctionProperties<IRestaurant> => {
     ownerId: faker.datatype.uuid(),
     name: faker.name.findName(),
     ownerName: faker.internet.userName(),
-    openingTime: { hour: 10, minute: 0 },
-    closingTime: { hour: 20, minute: 0 },
+    workingTime: { opening: { hour: 10, minute: 0 }, closing: { hour: 20, minute: 0 } },
     locationName: faker.internet.userName(),
     locationCoords: { latitude: 10, longitude: 100 },
-    pictures: [faker.image.imageUrl(), faker.image.imageUrl()],
+    pictures: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()],
     createdAt: faker.date.recent(),
   };
 };

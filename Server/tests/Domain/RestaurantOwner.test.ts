@@ -28,20 +28,10 @@ describe("RestaurantOwner Entity", () => {
     expect(owner.password).to.equal(ownerInfo.password.trim());
   });
 
-  it("new created restaurantOwners should have the information passed to the contstructor ", () => {
-    const owner = new RestaurantOwner(ownerInfo);
-    expect(owner.info()).to.deep.equal(ownerInfo);
-  });
-
   it("new created restaurantOwners should have some default properties when we didn't pass all them in the contructor (generate a creation time, and a unique id)", () => {
-    const owner1 = new RestaurantOwner({
-      email: ownerInfo.email,
-      password: ownerInfo.password,
-    });
-    const owner2 = new RestaurantOwner({
-      email: ownerInfo.email,
-      password: ownerInfo.password,
-    });
+    const { email, password } = ownerInfo;
+    const owner1 = new RestaurantOwner({ email, password });
+    const owner2 = new RestaurantOwner({ email, password });
 
     expect(owner1.ownerId).to.be.a("string").and.to.not.equal(owner2.ownerId);
     expect(owner1.createdAt).to.be.a("Date");
@@ -51,11 +41,6 @@ describe("RestaurantOwner Entity", () => {
     const owner = new RestaurantOwner({ ...ownerInfo, phoneNumber: undefined });
 
     expect(() => owner.phoneNumber).to.throw();
-  });
-
-  it("should be able to retreive the owner data from the entity", () => {
-    const owner = new RestaurantOwner(ownerInfo);
-    expect(owner.info()).to.deep.equal(ownerInfo);
   });
 
   it("should not be able to put a wrong phone number", () => {

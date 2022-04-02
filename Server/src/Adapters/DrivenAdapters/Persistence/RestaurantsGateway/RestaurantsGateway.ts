@@ -1,34 +1,34 @@
 import { Restaurant } from "../../../../Domain/Restaurant/Restaurant";
 import { IRestaurant } from "../../../../Domain/Restaurant/RestaurantFactory";
 import { IRestaurantsGateway } from "../../../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
-import { EditInfo } from "../../../../UseCases/EditRestaurant/EditRestaurantFactory";
+
 import { RestaurantInfo } from "./@types/Helpers";
 
-export interface IRestaurantPersistance {
-  searchByName(keyword: string): Promise<RestaurantInfo[]>;
+export interface IRestaurantPersistanceFacade {
+  findByName(keyword: string): Promise<RestaurantInfo[]>;
   save(restaurant: RestaurantInfo): Promise<RestaurantInfo>;
   getAll(): Promise<RestaurantInfo[]>;
-  getRestaurantById(restaurantId: string): Promise<RestaurantInfo | undefined>;
-  update(newRestaurentInfo: EditInfo): Promise<RestaurantInfo | undefined> | undefined;
+  getById(restaurantId: string): Promise<RestaurantInfo | undefined>;
+  update(newRestaurentInfo: RestaurantInfo): Promise<RestaurantInfo>;
   deleteAll(): Promise<void>;
-  getRestaurantsByOwnerId: (ownerId: string) => Promise<RestaurantInfo[]>;
+  findByOwnerId: (ownerId: string) => Promise<RestaurantInfo[]>;
 }
 
 class RestaurantsGateway implements IRestaurantsGateway {
-  constructor(private readonly restaurantPersistence: IRestaurantPersistance) {}
+  constructor(private readonly restaurantPersistence: IRestaurantPersistanceFacade) {}
 
-  async getRestaurantsByOwnerId(ownerId: string): Promise<IRestaurant[]> {
-    const restaurants = await this.restaurantPersistence.getRestaurantsByOwnerId(ownerId);
+  async findByOwnerId(ownerId: string): Promise<IRestaurant[]> {
+    const restaurants = await this.restaurantPersistence.findByOwnerId(ownerId);
     return restaurants.map((restaurant) => new Restaurant(restaurant));
   }
 
-  async update(newRestaurantInfo: IRestaurant): Promise<IRestaurant | undefined> {
+  async update(newRestaurantInfo: IRestaurant): Promise<IRestaurant> {
     const updatedRestaurant = await this.restaurantPersistence.update(newRestaurantInfo.info());
-    return updatedRestaurant ? new Restaurant(updatedRestaurant) : undefined;
+    return new Restaurant(updatedRestaurant);
   }
 
-  async searchByName(keyword: string): Promise<IRestaurant[]> {
-    const restaurants = await this.restaurantPersistence.searchByName(keyword);
+  async findByName(keyword: string): Promise<IRestaurant[]> {
+    const restaurants = await this.restaurantPersistence.findByName(keyword);
     return restaurants.map((restaurant) => new Restaurant(restaurant));
   }
 
@@ -42,8 +42,8 @@ class RestaurantsGateway implements IRestaurantsGateway {
     return restaurants.map((restaurant) => new Restaurant(restaurant));
   }
 
-  async getRestaurantById(restaurantId: string): Promise<IRestaurant | undefined> {
-    const restaurant = await this.restaurantPersistence.getRestaurantById(restaurantId);
+  async getById(restaurantId: string): Promise<IRestaurant | undefined> {
+    const restaurant = await this.restaurantPersistence.getById(restaurantId);
     if (restaurant) {
       return new Restaurant(restaurant);
     } else {

@@ -31,8 +31,15 @@ class AddRestaurantFactory {
     return this.tokenManager.decode(token);
   }
 
-  private uploadPicsAndGetUrls(pics: any[]) {
-    return this.cloudGateway.uploadImages(pics);
+  private async uploadPicsAndGetUrls(pics: any[]) {
+    let picsUrls: string[] = [];
+
+    for (const pic of pics) {
+      const url = await this.cloudGateway.uploadImage(pic);
+      picsUrls.push(url);
+    }
+
+    return picsUrls;
   }
 
   private saveRestaurant(restaurant: IRestaurant) {

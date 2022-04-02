@@ -33,15 +33,15 @@ describe("Restaurant Entity", () => {
   it("should not have a restaurant with an opening time bigger than the closing time", () => {
     let info = {
       ...restaurantInfo,
-      openingTime: { hour: 10, minute: 0 },
-      closingTime: { hour: 9, minute: 0 },
+      workingTime: { opening: { hour: 10, minute: 0 }, closing: { hour: 9, minute: 0 } },
     };
     expect(() => new Restaurant(info)).to.throw();
 
-    info.openingTime.hour = 9;
-    info.openingTime.minute = 20;
-    info.closingTime.hour = 9;
-    info.closingTime.minute = 0;
+    info.workingTime.opening.hour = 9;
+    info.workingTime.closing.minute = 20;
+    info.workingTime.closing.hour = 9;
+    info.workingTime.closing.minute = 0;
+
     expect(() => new Restaurant(info)).to.throw();
   });
 

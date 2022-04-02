@@ -1,51 +1,30 @@
-import { NonFunctionProperties } from "../../../../@types/helperTypes";
-import { IRestaurant } from "../../../../Domain/Restaurant/RestaurantFactory";
-import { EditInfo } from "../../../../UseCases/EditRestaurant/EditRestaurantFactory";
-import { RestaurantInfo } from "./@types/Helpers";
-import { IRestaurantPersistance } from "./RestaurantsGateway";
+import type { RestaurantInfo } from "./@types/Helpers";
+import { IRestaurantPersistanceFacade } from "./RestaurantsGateway";
 
-export class FakeRestaurantPersistence implements IRestaurantPersistance {
+export class FakeRestaurantPersistence implements IRestaurantPersistanceFacade {
   private store = new Map<string | undefined, RestaurantInfo>();
 
-  getRestaurantsByOwnerId(ownerId: string): Promise<NonFunctionProperties<IRestaurant>[]> {
-    let results: NonFunctionProperties<IRestaurant>[] = [];
+  findByOwnerId(ownerId: string): Promise<RestaurantInfo[]> {
+    let results: RestaurantInfo[] = [];
+
     this.store.forEach((restaurant) => {
-      if (restaurant.ownerId === ownerId) {
-        results.push(restaurant);
-      }
+      if (restaurant.ownerId === ownerId) results.push(restaurant);
     });
+
     return Promise.resolve(results);
   }
 
-  async update(
-    newRestaurentInfo: EditInfo
-  ): Promise<NonFunctionProperties<IRestaurant> | undefined> {
-    let restaurant = await this.getRestaurantById(newRestaurentInfo.restaurantId);
-    if (restaurant) {
-      restaurant = {
-        ...restaurant,
-        name: newRestaurentInfo.name,
-        locationCoords: newRestaurentInfo.locationCoords,
-        locationName: newRestaurentInfo.locationName,
-        openingTime: newRestaurentInfo.openingTime,
-        closingTime: newRestaurentInfo.closingTime,
-        ownerName: newRestaurentInfo.ownerName,
-        pictures: newRestaurentInfo.pictures,
-      };
-      const updatedRestaurant = this.save(restaurant);
-      return Promise.resolve(updatedRestaurant);
-    }
-    return Promise.resolve(undefined);
+  async update(info: RestaurantInfo): Promise<RestaurantInfo> {
+    this.store.set(info.restaurantId, info);
+    return info;
   }
 
-  save(
-    restaurant: NonFunctionProperties<IRestaurant>
-  ): Promise<NonFunctionProperties<IRestaurant>> {
+  save(restaurant: RestaurantInfo) {
     this.store.set(restaurant.restaurantId, restaurant);
     return Promise.resolve(restaurant);
   }
 
-  async searchByName(keyword: string): Promise<RestaurantInfo[]> {
+  async findByName(keyword: string): Promise<RestaurantInfo[]> {
     let results: RestaurantInfo[] = [];
     this.store.forEach((restaurant) => {
       if (restaurant.name.includes(keyword)) {
@@ -59,7 +38,7 @@ export class FakeRestaurantPersistence implements IRestaurantPersistance {
     return Array.from(this.store.values());
   }
 
-  async getRestaurantById(restaurantId: string): Promise<RestaurantInfo | undefined> {
+  async getById(restaurantId: string): Promise<RestaurantInfo | undefined> {
     return this.store.get(restaurantId);
   }
 

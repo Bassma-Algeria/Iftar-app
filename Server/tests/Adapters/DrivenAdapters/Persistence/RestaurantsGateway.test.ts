@@ -6,14 +6,14 @@ import { FakePasswordManager } from "../../../../src/Adapters/DrivenAdapters/Fak
 import { tokenManager } from "../../../../src/Ports/DrivenPorts/TokenManager/TokenManager";
 
 import {
-  IRestaurantPersistance,
+  IRestaurantPersistanceFacade,
   RestaurantsGateway,
 } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
 import { FakeRestaurantPersistence } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
 import { FakeRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 
 import { RestaurantOwnersGateway } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
-import { CloudGateway } from "../../../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
+import { FakeCloudGateway } from "../../../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
 
 import { RegisterFactory } from "../../../../src/UseCases/Register/RegisterFactory";
 import { AddRestaurantFactory } from "../../../../src/UseCases/AddRestaurant/AddRestaurantFactory";
@@ -23,7 +23,7 @@ import { getResturantInfo } from "../../../_Fakes_/RestaurantInfo";
 
 chai.use(chaiExclude);
 
-const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
+const testHandler = (RestaurantsPersistence: IRestaurantPersistanceFacade) => () => {
   const ownerInfo = getResturantOwnerInfo();
   const restaurantInfo = getResturantInfo();
 
@@ -31,7 +31,7 @@ const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
 
   const restaurantsGateway = new RestaurantsGateway(RestaurantsPersistence);
   const restaurantsGateway_ = new RestaurantOwnersGateway(restaurantsPresistence);
-  const cloudGateway = new CloudGateway();
+  const cloudGateway = new FakeCloudGateway();
 
   const passwordManager = new FakePasswordManager();
   const addRestaurantFactory = new AddRestaurantFactory(
@@ -54,14 +54,14 @@ const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
   });
 
   it("should return undefined when searching for non existing userId", async () => {
-    const restaurant = await restaurantsGateway.getRestaurantById("nonExistingUserId");
+    const restaurant = await restaurantsGateway.getById("nonExistingUserId");
     expect(restaurant).to.be.undefined;
   });
 
   it("should add restaurant and get it by id", async () => {
     restaurantInfo.ownerId = tokenManager.decode(authToken);
     await addRestaurantFactory.add({ restaurantInfo, authToken });
-    const restaurant = await restaurantsGateway.getRestaurantById(restaurantInfo.restaurantId);
+    const restaurant = await restaurantsGateway.getById(restaurantInfo.restaurantId);
     expect(restaurant?.info())
       .excluding("pictures")
       .to.deep.equal({
@@ -74,7 +74,7 @@ const testHandler = (RestaurantsPersistence: IRestaurantPersistance) => () => {
   it("should add a restaurant and get it by name ", async () => {
     restaurantInfo.ownerId = tokenManager.decode(authToken);
     await addRestaurantFactory.add({ restaurantInfo, authToken });
-    const restaurants = await restaurantsGateway.searchByName(restaurantInfo.name);
+    const restaurants = await restaurantsGateway.findByName(restaurantInfo.name);
     expect(restaurants).to.have.lengthOf(1);
   });
 };

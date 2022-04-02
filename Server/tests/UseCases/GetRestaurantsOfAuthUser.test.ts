@@ -9,7 +9,7 @@ import { GetRestaurentsFactory } from "../../src/UseCases/GetRestaurants/GetRest
 
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
+import { FakeCloudGateway } from "../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
 
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
@@ -23,7 +23,7 @@ const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
 
 const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
-const cloudGateway = new CloudGateway();
+const cloudGateway = new FakeCloudGateway();
 
 const addRestaurantFactory = new AddRestaurantFactory(
   tokenManager,
@@ -59,7 +59,7 @@ describe("Get Restaurants of an auth user use case", () => {
       authToken,
       restaurantInfo: { ...restaurantInfo, name: "restaurant3" },
     });
-    const result = await getRestaurantsFactory.getRestaurantsByOwnerId(authToken);
+    const result = await getRestaurantsFactory.findByOwnerId(authToken);
     expect(result).to.have.lengthOf(3);
   });
 });

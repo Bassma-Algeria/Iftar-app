@@ -10,7 +10,7 @@ import { SearchRestaurentFactory } from "../../src/UseCases/SearchForRestaurant/
 
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
+import { FakeCloudGateway } from "../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
 
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
@@ -20,11 +20,11 @@ import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePassw
 
 const passwordManager = new FakePasswordManager();
 
-const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
+const ownersPresistence = new FakeRestaurantOwnersPersistenceFacade();
 
-const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
+const restaurantsGateway = new RestaurantOwnersGateway(ownersPresistence);
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
-const cloudGateway = new CloudGateway();
+const cloudGateway = new FakeCloudGateway();
 
 const searchRestaurantFactory = new SearchRestaurentFactory(restaurantsGateway_);
 
@@ -46,6 +46,10 @@ describe("Adding a Restaurant use case", () => {
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
   });
 
+  after(() => {
+    ownersPresistence.deleteAll();
+  });
+
   it("should not be able to register a restaurant with an invalid token", async () => {
     await expect(addRestaurantFactory.add({ authToken: "", restaurantInfo })).to.be.rejected;
     await expect(addRestaurantFactory.add({ authToken: "invalid", restaurantInfo })).to.be.rejected;
@@ -65,8 +69,7 @@ describe("Adding a Restaurant use case", () => {
   it("should not be able to register a restaurant with wrong working time", async () => {
     let info = {
       ...restaurantInfo,
-      openingTime: { hour: 10, minute: 0 },
-      closingTime: { hour: 9, minute: 0 },
+      workingTime: { opening: { hour: 10, minute: 0 }, closing: { hour: 9, minute: 0 } },
     };
 
     await expect(addRestaurantFactory.add({ authToken, restaurantInfo: info })).to.be.rejected;

@@ -1,3 +1,4 @@
+import Sinon from "sinon";
 import { expect } from "chai";
 
 import { getResturantInfo } from "../_Fakes_/RestaurantInfo";
@@ -9,27 +10,34 @@ import { EditRestaurentsFactory } from "../../src/UseCases/EditRestaurant/EditRe
 
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
+import { FakeCloudGateway } from "../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
 
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
 
 import { tokenManager } from "../../src/Ports/DrivenPorts/TokenManager/TokenManager";
 import { FakePasswordManager } from "../../src/Adapters/DrivenAdapters/FakePasswordManager";
+import { GetRestaurentsFactory } from "../../src/UseCases/GetRestaurants/GetRestaurantsFactory";
 
 const passwordManager = new FakePasswordManager();
 
-const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
+const ownersPresistence = new FakeRestaurantOwnersPersistenceFacade();
+const restaurantsPresistence = new FakeRestaurantPersistence();
 
-const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
-const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
-const cloudGateway = new CloudGateway();
+const ownersGateway = new RestaurantOwnersGateway(ownersPresistence);
+const restaurantsGateway = new RestaurantsGateway(restaurantsPresistence);
+const cloudGateway = new FakeCloudGateway();
 
-const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);
-const editRestaurantFactory = new EditRestaurentsFactory(restaurantsGateway_, cloudGateway);
+const registerFactory = new RegisterFactory(ownersGateway, passwordManager, tokenManager);
+const getRestaurantFacory = new GetRestaurentsFactory(restaurantsGateway);
+const editRestaurantFactory = new EditRestaurentsFactory(
+  restaurantsGateway,
+  cloudGateway,
+  tokenManager
+);
 const addRestaurantFactory = new AddRestaurantFactory(
   tokenManager,
-  restaurantsGateway_,
+  restaurantsGateway,
   cloudGateway
 );
 
@@ -38,90 +46,120 @@ let restaurantInfo = getResturantInfo();
 
 let authToken: string;
 
-describe.skip("Edit restaurant use case", () => {
+describe("Edit restaurant use case", () => {
   before(async () => {
     const confirmPassword = ownerInfo.password;
     authToken = await registerFactory.register({ ...ownerInfo, confirmPassword });
   });
 
-  it("should throw invalidToken error when an invalid token is provided", async () => {
-    const invalidToken = "invalidToken";
+  afterEach(() => {
+    restaurantsPresistence.deleteAll();
+  });
+
+  after(() => {
+    ownersPresistence.deleteAll();
+  });
+
+  it("should not be able to edit a restaurant with an invalid token", async () => {
+    const authToken = "invalidToken";
+    await expect(editRestaurantFactory.update({ authToken, newRestaurantInfo: restaurantInfo })).to
+      .be.rejected;
+  });
+
+  it("only the owner of the restaurant can edit it", async () => {
+    const anotherOwner = getResturantOwnerInfo();
+    const confirmPassword = anotherOwner.password;
+    const anotherToken = await registerFactory.register({ ...anotherOwner, confirmPassword });
+
+    const restaurant = await addRestaurantFactory.add({ authToken, restaurantInfo });
+    restaurant.name = "anothername";
+
     await expect(
-      editRestaurantFactory.update({
-        authToken: invalidToken,
-        newRestaurantInfo: restaurantInfo,
-      })
+      editRestaurantFactory.update({ authToken: anotherToken, newRestaurantInfo: restaurant })
     ).to.be.rejected;
   });
 
-  it("should not be able to edit restaurant if owner id does not match the new info ownerId", () => {
-    restaurantInfo.ownerId = "some other id";
-    expect(
-      editRestaurantFactory.update({
-        authToken,
-        newRestaurantInfo: restaurantInfo,
-      })
-    ).to.eventually.be.rejectedWith("You are not the owner of this restaurant");
+  it("should not be able to edit a non exsiting restaurant", async () => {
+    await expect(editRestaurantFactory.update({ authToken, newRestaurantInfo: restaurantInfo })).to
+      .be.rejected;
   });
 
-  it("should update restaurant info", async () => {
-    const restaurant = await addRestaurantFactory.add({
-      authToken,
-      restaurantInfo: {
-        ...restaurantInfo,
-        name: "restaurant1",
-        ownerName: "owner1",
-        locationCoords: {
-          latitude: 1,
-          longitude: 1,
-        },
-        closingTime: {
-          hour: 10,
-          minute: 10,
-        },
-        openingTime: {
-          hour: 9,
-          minute: 0,
-        },
-        pictures: ["image1", "image2", "image3"],
-      },
+  it("should update the restaurant info when everythink is ok", async () => {
+    const restaurant = await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    const newRestaurantInfo = { ...restaurant };
+    newRestaurantInfo.name = "anotherName";
+    newRestaurantInfo.ownerName = "another name";
+    newRestaurantInfo.workingTime = {
+      opening: { hour: 18, minute: 0 },
+      closing: { hour: 20, minute: 0 },
+    };
+
+    await editRestaurantFactory.update({ authToken, newRestaurantInfo });
+    const updatedRestaurant = await getRestaurantFacory.getById(restaurant.restaurantId);
+
+    expect(updatedRestaurant).to.deep.equal(newRestaurantInfo);
+  });
+
+  it("should not have the old restaurant pictures when no one of them exist in the upadated restaurant information", async () => {
+    const restaurant = await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    const newRestaurantInfo = { ...restaurant };
+    newRestaurantInfo.pictures = [];
+
+    await editRestaurantFactory.update({ authToken, newRestaurantInfo });
+    const updatedRestaurant = await getRestaurantFacory.getById(restaurant.restaurantId);
+
+    expect(updatedRestaurant?.pictures).be.an.empty("array");
+  });
+
+  it("should upload and save the new pictures when they are provided", async () => {
+    const restaurant = await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    const newRestaurantInfo: any = { ...restaurant };
+    newRestaurantInfo.pictures = [{}, {}];
+
+    await editRestaurantFactory.update({ authToken, newRestaurantInfo });
+    const updatedRestaurant = await getRestaurantFacory.getById(restaurant.restaurantId);
+
+    expect(updatedRestaurant?.pictures)
+      .be.an("array")
+      .and.have.lengthOf(2)
+      .and.not.deep.equal(restaurant.pictures);
+  });
+
+  it("should merge the picture when adding new once and keeping some of the old ones", async () => {
+    const restaurant = await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    const newRestaurantInfo: any = { ...restaurant };
+    newRestaurantInfo.pictures = [...restaurant.pictures.slice(0, 2), {}, {}];
+
+    await editRestaurantFactory.update({ authToken, newRestaurantInfo });
+    const updatedRestaurant = await getRestaurantFacory.getById(restaurant.restaurantId);
+
+    expect(updatedRestaurant?.pictures).be.an("array").and.have.lengthOf(4);
+    expect(updatedRestaurant?.pictures).to.not.deep.equal(restaurant.pictures);
+    expect(updatedRestaurant?.pictures).to.include(restaurant.pictures[0]);
+    expect(updatedRestaurant?.pictures).to.include(restaurant.pictures[1]);
+  });
+
+  it("should delete the pictures from the cloud we don't need anymore", async () => {
+    const deletePicSpy = Sinon.spy(cloudGateway, "deleteImageWithUrl");
+
+    const restaurant = await addRestaurantFactory.add({ authToken, restaurantInfo });
+
+    const newRestaurantInfo: any = { ...restaurant };
+    newRestaurantInfo.pictures = [restaurant.pictures[0]];
+
+    await editRestaurantFactory.update({ authToken, newRestaurantInfo });
+    const updatedRestaurant = await getRestaurantFacory.getById(restaurant.restaurantId);
+
+    expect(updatedRestaurant?.pictures).be.an("array").and.have.lengthOf(1);
+    expect(deletePicSpy.callCount).to.equal(restaurantInfo.pictures.length - 1);
+
+    restaurant.pictures.forEach((url, index) => {
+      if (index == 0) return;
+      expect(deletePicSpy.calledWith(url)).to.be.true;
     });
-    const updatedRestaurant = await editRestaurantFactory.update({
-      authToken,
-      newRestaurantInfo: {
-        restaurantId: restaurantInfo.restaurantId,
-        locationName: "new location",
-        name: "restaurant2",
-        ownerName: "owner2",
-        locationCoords: {
-          latitude: 10,
-          longitude: 10,
-        },
-        closingTime: {
-          hour: 20,
-          minute: 10,
-        },
-        openingTime: {
-          hour: 19,
-          minute: 0,
-        },
-        pictures: [...restaurant.pictures, "image4", "image5", "image6"],
-      },
-    });
-    expect(updatedRestaurant?.name).to.equal("restaurant2");
-    expect(updatedRestaurant?.ownerName).to.equal("owner2");
-    expect(updatedRestaurant?.locationCoords).to.deep.equal({
-      latitude: 10,
-      longitude: 10,
-    });
-    expect(updatedRestaurant?.closingTime).to.deep.equal({
-      hour: 20,
-      minute: 10,
-    });
-    expect(updatedRestaurant?.openingTime).to.deep.equal({
-      hour: 19,
-      minute: 0,
-    });
-    expect(updatedRestaurant?.pictures).to.have.lengthOf(6);
   });
 });

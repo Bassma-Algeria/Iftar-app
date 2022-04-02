@@ -5,8 +5,7 @@ export interface Args {
   restaurantInfo: {
     name: string;
     ownerName: string;
-    openingTime: Time;
-    closingTime: Time;
+    workingTime: { opening: Time; closing: Time };
     locationName: string;
     locationCoords: Coords;
     pictures: any[];

@@ -6,8 +6,7 @@ export interface IRestaurant {
   restaurantId: string;
   name: string;
   ownerName: string;
-  openingTime: Time;
-  closingTime: Time;
+  workingTime: { opening: Time; closing: Time };
   locationName: string;
   locationCoords: Coords;
   pictures: string[];
@@ -15,7 +14,7 @@ export interface IRestaurant {
   info(): NonFunctionProperties<IRestaurant>;
 }
 
-interface RestaurantContstructorArgs
+interface ContstructorArgs
   extends Omit<NonFunctionProperties<IRestaurant>, "createdAt" | "restaurantId"> {
   restaurantId?: string;
   createdAt?: Date;
@@ -33,27 +32,16 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
     private _locationName!: string;
     private _pictures!: string[];
 
-    constructor(restaurantInfo: RestaurantContstructorArgs) {
+    constructor(restaurantInfo: ContstructorArgs) {
       this.restaurantId = restaurantInfo.restaurantId || idGenerator.generate();
       this.ownerId = restaurantInfo.ownerId;
       this.name = restaurantInfo.name;
       this.ownerName = restaurantInfo.ownerName;
       this.locationName = restaurantInfo.locationName;
       this.locationCoords = restaurantInfo.locationCoords;
-      this.workingTime = {
-        opening: restaurantInfo.openingTime,
-        closing: restaurantInfo.closingTime,
-      };
+      this.workingTime = restaurantInfo.workingTime;
       this.pictures = restaurantInfo.pictures;
       this.createdAt = restaurantInfo.createdAt || new Date();
-    }
-
-    public get openingTime(): Time {
-      return this._workingTime.opening;
-    }
-
-    public get closingTime(): Time {
-      return this._workingTime.closing;
     }
 
     public set name(value: string) {
@@ -71,12 +59,20 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
       this._locationName = value;
     }
 
+    public get pictures() {
+      return this._pictures;
+    }
+
     public set pictures(picsUrls: string[]) {
       if (!picsUrls.every(this.isValidUrl)) throw new Error("picture url not valid");
       this._pictures = picsUrls;
     }
 
-    private set workingTime(time: { opening: Time; closing: Time }) {
+    public get workingTime() {
+      return this._workingTime;
+    }
+
+    public set workingTime(time: { opening: Time; closing: Time }) {
       if (!this.isValidWorkingTime(time)) throw new Error("invalid working time");
       this._workingTime = time;
     }
@@ -87,8 +83,7 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
         restaurantId: this.restaurantId,
         name: this._name,
         ownerName: this._ownerName,
-        openingTime: this.openingTime,
-        closingTime: this.closingTime,
+        workingTime: this._workingTime,
         locationName: this._locationName,
         locationCoords: this.locationCoords,
         pictures: this._pictures,

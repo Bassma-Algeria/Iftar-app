@@ -11,14 +11,14 @@ export class GetRestaurentsFactory {
     });
   }
 
-  async getRestaurantById(restaurantId: string) {
-    const restaurant = await this.restaurantGateway.getRestaurantById(restaurantId);
+  async getById(restaurantId: string) {
+    const restaurant = await this.restaurantGateway.getById(restaurantId);
     return restaurant?.info();
   }
 
-  async getRestaurantsByOwnerId(authToken: string) {
+  async findByOwnerId(authToken: string) {
     const ownerId = tokenManager.decode(authToken);
-    const restaurants = await this.restaurantGateway.getRestaurantsByOwnerId(ownerId);
+    const restaurants = await this.restaurantGateway.findByOwnerId(ownerId);
     return restaurants.map((restaurant) => {
       return restaurant.info();
     });

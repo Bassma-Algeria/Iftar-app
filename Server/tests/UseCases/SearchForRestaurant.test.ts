@@ -9,7 +9,7 @@ import { SearchRestaurentFactory } from "../../src/UseCases/SearchForRestaurant/
 
 import { RestaurantOwnersGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
 import { RestaurantsGateway } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { CloudGateway } from "../../src/Adapters/DrivenAdapters/Persistence/CloudGateway/CloudGateway";
+import { FakeCloudGateway } from "../../src/Adapters/DrivenAdapters/CloudGateway/FakeCloudGateway";
 
 import { FakeRestaurantOwnersPersistenceFacade } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
 import { FakeRestaurantPersistence } from "../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistance";
@@ -25,7 +25,7 @@ const restaurantsPresistence = new FakeRestaurantOwnersPersistenceFacade();
 
 const restaurantsGateway = new RestaurantOwnersGateway(restaurantsPresistence);
 const restaurantsGateway_ = new RestaurantsGateway(new FakeRestaurantPersistence());
-const cloudGateway = new CloudGateway();
+const cloudGateway = new FakeCloudGateway();
 
 const searchRestaurantFactory = new SearchRestaurentFactory(restaurantsGateway_);
 const registerFactory = new RegisterFactory(restaurantsGateway, passwordManager, tokenManager);

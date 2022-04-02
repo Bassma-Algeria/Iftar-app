@@ -1,85 +1,77 @@
-import { Coords, Time } from "../../@types/helperTypes";
-import { Restaurant } from "../../Domain/Restaurant/Restaurant";
-import { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+import type { ITokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
+import type { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway.ts/RestaurantsGateway.interface";
+import type { ICloudGateway } from "../../Ports/DrivenPorts/Persistence/CloudGateway/CloudGateway.interface";
 
-import { tokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager";
-
-import { RestaurantInfo } from "../../Adapters/DrivenAdapters/Persistence/RestaurantsGateway/@types/Helpers";
-
-import { ICloudGateway } from "../../Ports/DrivenPorts/Persistence/CloudGateway/CloudGateway.interface";
-
-export interface EditInfo {
-  restaurantId: string;
-  name: string;
-  locationCoords: Coords;
-  locationName: string;
-  ownerName: string;
-  openingTime: Time;
-  closingTime: Time;
-  pictures: string[];
-}
-
-export interface updateArgs {
-  ownerId: string;
-  newRestaurantInfo: EditInfo;
-}
+import { UpdateArgs } from "./EditRestaurantFactory.types";
+import { IRestaurant } from "../../Domain/Restaurant/RestaurantFactory";
 
 export class EditRestaurentsFactory {
   constructor(
     private readonly restaurantGateway: IRestaurantsGateway,
-    private readonly cloudGateway: ICloudGateway
+    private readonly cloudGateway: ICloudGateway,
+    private readonly tokenManager: ITokenManager
   ) {}
 
-  async update({
-    authToken,
-    newRestaurantInfo,
-  }: {
-    authToken: string;
-    newRestaurantInfo: EditInfo;
-  }): Promise<RestaurantInfo | undefined> {
-    const ownerId = tokenManager.decode(authToken);
-    let restaurant = await this.restaurantGateway.getRestaurantById(newRestaurantInfo.restaurantId);
+  async update({ authToken, newRestaurantInfo }: UpdateArgs) {
+    const ownerId = this.decodeToken(authToken);
 
-    let picturesToUpload: any[] = [];
-    let validUrlPicures: string[] = [];
-    newRestaurantInfo.pictures.filter((item) => {
-      if (!URL_PATTERN.test(item)) {
-        picturesToUpload.push(item);
-      } else {
-        if (restaurant?.pictures.includes(item)) {
-          validUrlPicures.push(item);
-        }
-      }
-    });
+    const restaurant = await this.findRestaurantById(newRestaurantInfo.restaurantId);
+    if (ownerId !== restaurant?.ownerId) throw new Error("Only the restaurant Owner can edit it");
 
-    let restaurantInfo = restaurant ? restaurant.info() : undefined;
-    if (restaurantInfo) {
-      if (ownerId !== restaurantInfo.ownerId) {
-        throw new Error("You are not the owner of this restaurant");
-      } else {
-        const pictures = await this.cloudGateway.uploadImages(picturesToUpload);
-        newRestaurantInfo.pictures = [...validUrlPicures, ...pictures];
-        console.log("final pictures array", newRestaurantInfo.pictures);
-        restaurantInfo = {
-          ...restaurantInfo,
-          name: newRestaurantInfo.name,
-          locationCoords: newRestaurantInfo.locationCoords,
-          locationName: newRestaurantInfo.locationName,
-          openingTime: newRestaurantInfo.openingTime,
-          closingTime: newRestaurantInfo.closingTime,
-          ownerName: newRestaurantInfo.ownerName,
-          pictures: newRestaurantInfo.pictures,
-        };
+    restaurant.name = newRestaurantInfo.name;
+    restaurant.ownerName = newRestaurantInfo.ownerName;
+    restaurant.locationName = newRestaurantInfo.locationName;
+    restaurant.locationCoords = newRestaurantInfo.locationCoords;
+    restaurant.workingTime = newRestaurantInfo.workingTime;
 
-        const newRestaurant = await this.restaurantGateway.update(new Restaurant(restaurantInfo));
-        if (newRestaurant) {
-          return newRestaurant.info();
-        } else {
-          return undefined;
-        }
-      }
+    const { commonPics, picsToDelete, picsToUpload } = this.filterOldAndNewPictures(
+      restaurant.pictures,
+      newRestaurantInfo.pictures
+    );
+
+    await this.deletePictures(picsToDelete);
+    const newPicsUrls = await this.uploadPicturesAndGetUrls(picsToUpload);
+
+    restaurant.pictures = [...commonPics, ...newPicsUrls];
+    const updatedRestaurant = await this.updateRestaurant(restaurant);
+
+    return updatedRestaurant.info();
+  }
+
+  private decodeToken(authToken: string) {
+    return this.tokenManager.decode(authToken);
+  }
+
+  private findRestaurantById(id: string) {
+    return this.restaurantGateway.getById(id);
+  }
+
+  private filterOldAndNewPictures(oldPicsUrls: string[], newPics: any[]) {
+    const commonPics = newPics.filter((pic) => oldPicsUrls.includes(pic));
+    const picsToUpload = newPics.filter((url) => !oldPicsUrls.includes(url));
+    const picsToDelete = oldPicsUrls.filter((url) => !newPics.includes(url));
+
+    return { commonPics, picsToDelete, picsToUpload };
+  }
+
+  private async deletePictures(picsUrls: string[]) {
+    for (const url of picsUrls) {
+      await this.cloudGateway.deleteImageWithUrl(url);
     }
   }
+
+  private async uploadPicturesAndGetUrls(pics: any[]) {
+    let urls: string[] = [];
+
+    for (const pic of pics) {
+      const url = await this.cloudGateway.uploadImage(pic);
+      urls.push(url);
+    }
+
+    return urls;
+  }
+
+  private updateRestaurant(restaurant: IRestaurant) {
+    return this.restaurantGateway.update(restaurant);
+  }
 }
-const URL_PATTERN =
-  /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
