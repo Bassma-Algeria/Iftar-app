@@ -3,12 +3,16 @@ import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
+import {StatusBar} from 'react-native';
+
+import {COLORS} from '../theme/Colors';
+
+import {AuthContextProvider} from './_context_/AuthContextProvider';
 
 import type {MainStackParamsList} from './MainStack.types';
 
 import {StartupStack} from './StartupStack/StartupStack';
 import {HomeStack} from './HomeStack/HomeStack';
-import {AuthContextProvider} from './_context_/AuthContextProvider';
 
 interface Props {}
 
@@ -20,12 +24,16 @@ const MainStack: React.FC<Props> = () => {
   };
 
   return (
-    <AuthContextProvider>
-      <Stack.Navigator screenOptions={screensOptions}>
-        <Stack.Screen name="StartupStack" component={StartupStack} />
-        <Stack.Screen name="HomeStack" component={HomeStack} />
-      </Stack.Navigator>
-    </AuthContextProvider>
+    <>
+      <StatusBar backgroundColor={COLORS.beige} barStyle="dark-content" />
+
+      <AuthContextProvider>
+        <Stack.Navigator screenOptions={screensOptions}>
+          <Stack.Screen name="StartupStack" component={StartupStack} />
+          <Stack.Screen name="HomeStack" component={HomeStack} />
+        </Stack.Navigator>
+      </AuthContextProvider>
+    </>
   );
 };
 
