@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Animated} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, Animated, Easing} from 'react-native';
 
 import {styles} from './Logo.style';
 
@@ -24,12 +24,44 @@ const Logo: React.FC<Props> = props => {
 };
 
 const Moon: React.FC<Props> = () => {
+  let spinValue = new Animated.Value(0);
+
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '35deg'],
+  });
+
+  const animatedStyle = {
+    transform: [{rotate: spin}],
+  };
+
+  const startAnimation = () => {
+    Animated.timing(spinValue, {
+      toValue: 1,
+      duration: 300,
+      easing: Easing.linear, // Easing is an additional import from react-native
+      useNativeDriver: true, // To make use of native driver for performance
+    }).start();
+  };
+  const endAnimation = () => {
+    Animated.timing(spinValue, {
+      toValue: 0,
+      duration: 1600,
+      easing: Easing.linear, // Easing is an additional import from react-native
+      useNativeDriver: true, // To make use of native driver for performance
+    }).start();
+  };
+
+  useEffect(() => {
+    setInterval(() => {
+      startAnimation();
+      setTimeout(() => {
+        endAnimation();
+      }, 300);
+    }, 2200);
+  });
   return (
-    <Animated.Image
-      source={ICONS.moon}
-      style={[styles.moon, {transform: [{rotate: '0deg'}]}]}
-      resizeMode="contain"
-    />
+    <Animated.Image source={ICONS.moon} style={[styles.moon, animatedStyle]} resizeMode="contain" />
   );
 };
 

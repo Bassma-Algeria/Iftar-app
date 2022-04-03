@@ -15,11 +15,8 @@ target 'Iftar' do
   pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
 
 
-  pod 'react-native-simple-toast', :path => '../node_modules/react-native-simple-toast'
 
-  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
 
-  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
   target 'IftarTests' do
     inherit! :complete

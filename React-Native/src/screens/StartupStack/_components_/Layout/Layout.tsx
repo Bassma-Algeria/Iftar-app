@@ -19,7 +19,6 @@ const Layout: React.FC<Props> = ({children, style}) => {
   );
 };
 
-// TODO: add the animation
 const Lanterns: React.FC<Props> = () => {
   return (
     <View style={styles.latternsContainer}>

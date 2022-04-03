@@ -1,4 +1,4 @@
-import {Pressable, View} from 'react-native';
+import {Platform, Pressable, View} from 'react-native';
 import React, {useState} from 'react';
 import DateTimePicker, {DateTimePickerEvent} from '@react-native-community/datetimepicker';
 
@@ -62,7 +62,15 @@ const TimeInput: React.FC<Props> = ({value, onChange, placeholder}) => {
           disable
         />
       </Pressable>
-      {showTimePicker && (
+      {showTimePicker && Platform.OS === 'ios' ? (
+        <DateTimePicker
+          value={new Date()}
+          mode={'time'}
+          is24Hour={true}
+          onChange={onTimeChange}
+          style={styles.timePicker}
+        />
+      ) : (
         <DateTimePicker value={new Date()} mode={'time'} is24Hour={true} onChange={onTimeChange} />
       )}
     </>
