@@ -4,7 +4,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: windowHeight <= 700 ? -100 : -60,
+    marginTop: windowHeight <= 700 ? -100 : -90,
   },
 
   form: {
