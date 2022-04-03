@@ -2,15 +2,16 @@ import "chai-exclude";
 import Sinon from "sinon";
 import { expect } from "chai";
 
-import { authService } from "../../../src/Ports/DriverPorts/AuthService";
-import { restaurantsService } from "../../../src/Ports/DriverPorts/RestaurantsService";
 import { ownersPersistence } from "../../../src/Ports/DrivenPorts/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway";
 import { cloudGateway } from "../../../src/Ports/DrivenPorts/CloudGateway/CloudGateway";
+import { restaurantsPersistence } from "../../../src/Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway";
+import { tokenManager } from "../../../src/Ports/DrivenPorts/TokenManager/TokenManager";
+
+import { authService } from "../../../src/Ports/DriverPorts/AuthService";
+import { restaurantsService } from "../../../src/Ports/DriverPorts/RestaurantsService";
 
 import { getRestaurantInfo } from "../../_Fakes_/RestaurantInfo";
 import { getResturantOwnerInfo } from "../../_Fakes_/RestaurantOwnerInfo";
-import { restaurantsPersistence } from "../../../src/Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { tokenManager } from "../../../src/Ports/DrivenPorts/TokenManager/TokenManager";
 
 describe("Adding Restaurants", () => {
   let restaurantInfo = getRestaurantInfo();
