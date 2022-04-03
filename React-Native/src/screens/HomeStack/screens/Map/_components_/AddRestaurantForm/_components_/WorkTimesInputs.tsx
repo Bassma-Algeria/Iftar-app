@@ -62,16 +62,25 @@ const TimeInput: React.FC<Props> = ({value, onChange, placeholder}) => {
           disable
         />
       </Pressable>
-      {showTimePicker && Platform.OS === 'ios' ? (
-        <DateTimePicker
-          value={new Date()}
-          mode={'time'}
-          is24Hour={true}
-          onChange={onTimeChange}
-          style={styles.timePicker}
-        />
-      ) : (
-        <DateTimePicker value={new Date()} mode={'time'} is24Hour={true} onChange={onTimeChange} />
+      {showTimePicker && (
+        <>
+          {Platform.OS === 'ios' ? (
+            <DateTimePicker
+              value={new Date()}
+              mode={'time'}
+              is24Hour={true}
+              onChange={onTimeChange}
+              style={styles.timePicker}
+            />
+          ) : (
+            <DateTimePicker
+              value={new Date()}
+              mode={'time'}
+              is24Hour={true}
+              onChange={onTimeChange}
+            />
+          )}
+        </>
       )}
     </>
   );
