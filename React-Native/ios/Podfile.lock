@@ -356,7 +356,7 @@ PODS:
     - React-Core
   - RNCAsyncStorage (1.17.0):
     - React-Core
-  - RNDateTimePicker (6.1.0):
+  - RNDateTimePicker (6.1.1):
     - React-Core
   - RNGestureHandler (2.1.1):
     - React-Core
@@ -632,7 +632,7 @@ SPEC CHECKSUMS:
   ReactCommon: 57b69f6383eafcbd7da625bfa6003810332313c4
   ReactNativeGetLocation: 8517f44ae7364ac45fa3946f8bffeaa73594ff0d
   RNCAsyncStorage: f385be27befc6e094ef1be9e5d640bdf4cc1be4e
-  RNDateTimePicker: 589ba17360d8861f7a4abe33fe8d5ad8a579d74e
+  RNDateTimePicker: 0e19344d8b4932a57aa8b5fb128ce50cfc939010
   RNGestureHandler: e1ad51d31a580755079d5124d3ab66f0fcaa8311
   RNPermissions: 7ad8d93b004e6bc85c89e27a102afcde90e07efa
   RNReanimated: ee33ab40fa252332a36aeed9d936801ed9700b24
@@ -642,6 +642,6 @@ SPEC CHECKSUMS:
   Yoga: e7dc4e71caba6472ff48ad7d234389b91dadc280
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: efe55dc676bde920445301fe74c35a997079ac72
+PODFILE CHECKSUM: ca3e6f3565e601dacd515783ad0153055f35d906
 
 COCOAPODS: 1.10.1

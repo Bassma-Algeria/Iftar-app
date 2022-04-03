@@ -99,6 +99,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 20,
   },
+  timePicker: {
+    flex: 1,
+  },
 });
 
 export {styles};

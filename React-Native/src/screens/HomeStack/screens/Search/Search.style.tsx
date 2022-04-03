@@ -1,8 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {COLORS} from '../../../../theme/Colors';
+import {NativeModules} from 'react-native';
 
+const {StatusBarManager} = NativeModules;
 const styles = StyleSheet.create({
   container: {
+    paddingTop: Platform.OS === 'ios' ? StatusBarManager.HEIGHT : 0,
     backgroundColor: COLORS.beigeShade,
     padding: 10,
     flex: 1,
