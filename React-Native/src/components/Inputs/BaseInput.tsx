@@ -9,8 +9,6 @@ import {COLORS} from '../../theme/Colors';
 import {Header} from '../Header/Header';
 
 interface Props {
-  iconPosition?: 'left' | 'right';
-  radius?: number;
   backgroundColor?: keyof typeof COLORS;
   style?: StyleProp<ViewStyle>;
   error?: string;
@@ -18,14 +16,6 @@ interface Props {
 
 const BaseInput: React.FC<Props> = ({children, ...props}) => {
   let customStyle: StyleProp<ViewStyle> = {};
-
-  if (props.iconPosition === 'right') {
-    customStyle.flexDirection = 'row-reverse';
-  }
-
-  if (props.radius) {
-    customStyle.borderRadius = props.radius;
-  }
 
   if (props.backgroundColor) {
     customStyle.backgroundColor = COLORS[props.backgroundColor];

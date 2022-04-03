@@ -15,17 +15,22 @@ import {Input} from '../../../../../../../components/Inputs/TextInput/Input';
 const WorkTimesInputs: React.FC = () => {
   const {restaurantInfo, setRestaurantInfo} = useAddRestaurantFormContext();
 
+  const handleTimeChange = (variant: 'opening' | 'closing') => (time: Time) => {
+    const workingTime = {...restaurantInfo.workingTime, [variant]: time};
+    setRestaurantInfo({...restaurantInfo, workingTime});
+  };
+
   return (
     <View style={styles.workTimesContainer}>
       <TimeInput
         placeholder="الى"
-        value={restaurantInfo.closingTime}
-        onChange={time => setRestaurantInfo({...restaurantInfo, closingTime: time})}
+        value={restaurantInfo.workingTime.closing}
+        onChange={handleTimeChange('closing')}
       />
       <TimeInput
         placeholder="من"
-        value={restaurantInfo.openingTime}
-        onChange={time => setRestaurantInfo({...restaurantInfo, openingTime: time})}
+        value={restaurantInfo.workingTime.opening}
+        onChange={handleTimeChange('opening')}
       />
     </View>
   );

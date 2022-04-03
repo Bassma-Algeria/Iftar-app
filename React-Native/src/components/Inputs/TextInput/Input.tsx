@@ -21,11 +21,9 @@ interface Props {
   onTextChange: (text: string) => void;
   icon?: ImageSourcePropType;
   keyboardType?: KeyboardTypeOptions;
-  iconPosition?: 'left' | 'right';
   style?: StyleProp<ViewStyle>;
   error?: string;
   disable?: boolean;
-  radius?: number;
   focused?: boolean;
   backgroundColor?: keyof typeof COLORS;
   placeholderColor?: string;
@@ -42,7 +40,7 @@ const Input: React.FC<Props> = props => {
 
   return (
     <BaseInput {...props}>
-      <Icon icon={props.icon} position={props.iconPosition} />
+      <Icon icon={props.icon} />
       <TextInput
         style={styles.input}
         value={props.value}

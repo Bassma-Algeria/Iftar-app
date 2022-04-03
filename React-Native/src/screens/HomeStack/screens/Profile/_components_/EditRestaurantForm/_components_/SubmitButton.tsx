@@ -27,7 +27,10 @@ const SubmitButton: React.FC = () => {
     setIsLoading(true);
 
     try {
-      await restuarantsGateway.editRestaurant(restaurantInfo);
+      const pictures = restaurantInfo.pictures.map(pic =>
+        typeof pic === 'string' ? pic : pic.base64,
+      );
+      await restuarantsGateway.addRestaurant({...restaurantInfo, pictures});
 
       setRestaurantToEdit(undefined);
       selectedLocation.set(undefined);

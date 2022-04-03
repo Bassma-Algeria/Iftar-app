@@ -27,7 +27,11 @@ const Pictures: React.FC = () => {
         onSnapToItem={setActiveIndex}
         inactiveSlideOpacity={0.6}
         renderItem={({item, index}) => (
-          <CarouselItem activeIndex={activeIndex} index={index} uri={item} />
+          <CarouselItem
+            activeIndex={activeIndex}
+            index={index}
+            uri={typeof item === 'string' ? item : item?.uri}
+          />
         )}
       />
     </View>
@@ -37,14 +41,11 @@ const Pictures: React.FC = () => {
 interface Props {
   index: number;
   activeIndex: number;
-  uri: string;
+  uri?: string;
 }
 
 const CarouselItem: React.FC<Props> = ({activeIndex, index, uri}) => {
-  const {restaurantInfo} = useEditRestaurantFormContext();
-  const isLastElement = index === restaurantInfo.pictures.length;
-
-  return isLastElement ? <AddPicture /> : <Picture uri={uri} isActive={index === activeIndex} />;
+  return !uri ? <AddPicture /> : <Picture uri={uri} isActive={index === activeIndex} />;
 };
 
 const AddPicture: React.FC = () => {
@@ -60,8 +61,13 @@ const AddPicture: React.FC = () => {
       return;
     }
 
-    const uris = assets.map(({uri}) => uri);
-    setRestaurantInfo({...restaurantInfo, pictures: [...restaurantInfo.pictures, ...uris]});
+    const pictures = [...restaurantInfo.pictures];
+
+    assets.forEach(({uri, base64}) => {
+      uri && base64 && pictures.push({uri, base64});
+    });
+
+    setRestaurantInfo({...restaurantInfo, pictures});
   };
 
   return (
@@ -121,8 +127,10 @@ const DeletePictureButton: React.FC<PictureProps> = ({uri: currentUri, isActive}
       return;
     }
 
-    const newPics = restaurantInfo.pictures.filter(uri => uri !== currentUri);
-    setRestaurantInfo({...restaurantInfo, pictures: newPics});
+    const pictures = restaurantInfo.pictures.filter(pic =>
+      typeof pic === 'string' ? pic !== currentUri : pic.uri !== currentUri,
+    );
+    setRestaurantInfo({...restaurantInfo, pictures});
   };
 
   return (

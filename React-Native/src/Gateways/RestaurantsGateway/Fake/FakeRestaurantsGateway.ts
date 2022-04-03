@@ -7,6 +7,20 @@ import type {
 import {RESTAURANTS} from './RESTAURANTS';
 
 class FakeRestaurantsGateway implements IRestaurantsGateway {
+  async getRestaurantInfo(id: string): Promise<RestaurantInfo & {ownerNumber: string}> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const info = RESTAURANTS.find(({restaurantId}) => restaurantId === id);
+
+        if (!info) {
+          reject();
+        } else {
+          resolve({...info, ownerNumber: '0798980975'});
+        }
+      }, 600);
+    });
+  }
+
   async searchFor(keyword: string): Promise<RestaurantInfo[]> {
     return await new Promise((resolve, reject) => {
       setTimeout(() => {

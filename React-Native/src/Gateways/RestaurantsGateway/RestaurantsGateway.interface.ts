@@ -4,28 +4,20 @@ export type Time = {hour: number; minut: number};
 
 export interface RestaurantInfo {
   restaurantId: string;
+  ownerId: string;
   name: string;
-  ownerName: string;
-  openingTime: Time;
-  closingTime: Time;
-  pictures: any[];
-  ownerNumber: string;
+  workingTime: {opening: Time; closing: Time};
+  pictures: string[];
   locationCoords: LocationCords;
   locationName: string;
 }
 
-export interface RestaurantInfoToAdd {
-  name: string;
-  ownerName: string;
-  locationCoords: LocationCords | undefined;
-  locationName: string;
-  openingTime: Time;
-  closingTime: Time;
-  pictures: any[];
-}
+export type RestaurantInfoToAdd = Omit<RestaurantInfo, 'restaurantId' | 'ownerId'>;
+export type RestaurantInMap = Pick<RestaurantInfo, 'locationCoords' | 'name' | 'restaurantId'>;
 
 export interface IRestaurantsGateway {
-  getRestaurants(): Promise<RestaurantInfo[]>;
+  getRestaurants(): Promise<RestaurantInMap[]>;
+  getRestaurantInfo(id: string): Promise<RestaurantInfo & {ownerNumber: string}>;
   addRestaurant(info: RestaurantInfoToAdd): Promise<void>;
   searchFor(keyword: string): Promise<RestaurantInfo[]>;
   getRestaurantsOfAuthUser(): Promise<RestaurantInfo[]>;

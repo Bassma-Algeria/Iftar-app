@@ -16,30 +16,16 @@ describe('Input component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should be able to change the icon position', () => {
-    const tree = renderer.create(<Input {...props} iconPosition={'right'} />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should be able to change the default style', () => {
-    const tree = renderer
-      .create(<Input {...props} style={{margin: 40}} iconPosition={'right'} />)
-      .toJSON();
+    const tree = renderer.create(<Input {...props} style={{margin: 40}} />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should show the error text when there is an error passed in the props', () => {
     const tree = renderer
-      .create(<Input {...props} style={{margin: 40}} error={'someError'} iconPosition={'right'} />)
+      .create(<Input {...props} style={{margin: 40}} error={'someError'} />)
       .toJSON();
-
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should be able to change the borderRadius of the input', () => {
-    const tree = renderer.create(<Input {...props} radius={30} />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
@@ -55,9 +41,7 @@ describe('Input component', () => {
   it('should call onTextChange each time the input value changed', () => {
     const onTextChange = jest.fn();
 
-    const instance = render(
-      <Input {...props} iconPosition={'right'} onTextChange={onTextChange} />,
-    );
+    const instance = render(<Input {...props} onTextChange={onTextChange} />);
     const TargetInput = instance.UNSAFE_getByType(TextInput);
 
     fireEvent(TargetInput, 'changeText', 's');

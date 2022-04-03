@@ -12,15 +12,15 @@ import {AddRestaurantFormContextProvider} from './_context_/AddRestaurantFormCon
 import {Popup} from '../../../../../../components/Popup/Popup';
 import {Header} from '../../../../../../components/Header/Header';
 import {Pictures} from './_components_/Pictures';
-import {RestaurantAndOwnerNameInputs} from './_components_/RestaurantAndOwnerNameInputs';
+import {RestaurantNameInput} from './_components_/RestaurantNameInput';
 import {LocationInput} from './_components_/LocationInput';
 import {WorkTimesInputs} from './_components_/WorkTimesInputs';
 import {SubmitButton} from './_components_/SubmitButton';
 
 const AddRestaurantFormPopup: React.FC = () => {
   const {isRestaurantOwner} = useAuthContext();
-  const {isAddRestaurantFormOpen, setIsAddRestaurantFormOpen, setUsageMode} = useMapContext();
   const {selectedLocation, onConfirm} = useChoosingLocationState();
+  const {isAddRestaurantFormOpen, setIsAddRestaurantFormOpen, setUsageMode} = useMapContext();
 
   const onClosePopup = () => {
     setUsageMode('discover');
@@ -52,7 +52,7 @@ const AddRestaurantForm = () => {
           يرجى إدخال بعض المعلومات الخاصة بالمطعم
         </Header>
 
-        <RestaurantAndOwnerNameInputs />
+        <RestaurantNameInput />
         <LocationInput />
 
         <Header>اوقات العمل</Header>

@@ -10,15 +10,15 @@ import {ICONS} from '../../../../../../../../../../../utils/constants/Icons';
 import {Header} from '../../../../../../../../../../../components/Header/Header';
 
 interface Props {
-  closingTime: Time;
-  openingTime: Time;
+  workingTime: {closing: Time; opening: Time};
   ownerNumber: string;
   locationName: string;
 }
 
 const RestaurantInfoItems: React.FC<Props> = props => {
-  const openingTime = getTimePresention(props.openingTime);
-  const closingTime = getTimePresention(props.closingTime);
+  const openingTime = getTimePresention(props.workingTime.opening);
+  const closingTime = getTimePresention(props.workingTime.closing);
+  const ownerNumber = formatPhoneNumber(props.ownerNumber);
 
   return (
     <View style={styles.restaurantInfoItems}>
@@ -28,7 +28,7 @@ const RestaurantInfoItems: React.FC<Props> = props => {
         text={`من الساعة ${openingTime} إلى الساعة ${closingTime}`}
       />
       <InfoItem icon={ICONS.location} text={props.locationName} />
-      <InfoItem icon={ICONS.phone} text={props.ownerNumber} />
+      <InfoItem icon={ICONS.phone} text={ownerNumber} />
     </View>
   );
 };
@@ -51,6 +51,19 @@ const getTimePresention = (time: Time) => {
   const {hour, minut} = time;
 
   return `${hour}`.padStart(2, '0') + ':' + `${minut}`.padStart(2, '0');
+};
+
+const formatPhoneNumber = (phoneNumber: string): string => {
+  let s: string = '';
+
+  for (let i = 0; i < phoneNumber.length; i++) {
+    s += phoneNumber[i];
+    if (i % 2) {
+      s += ' ';
+    }
+  }
+
+  return s;
 };
 
 export {RestaurantInfoItems};

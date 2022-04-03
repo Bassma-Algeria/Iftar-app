@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import {COLORS} from '../../../../../../theme/Colors';
 
 const styles = StyleSheet.create({
-  restaurantPopupLoader: {
+  restaurantPopupPadding: {
     padding: 40,
   },
 

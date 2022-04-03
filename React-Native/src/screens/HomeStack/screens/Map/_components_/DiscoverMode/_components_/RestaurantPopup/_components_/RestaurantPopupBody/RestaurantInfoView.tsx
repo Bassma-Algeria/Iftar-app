@@ -16,7 +16,7 @@ import {Header} from '../../../../../../../../../../components/Header/Header';
 import {RestaurantPics} from './_components_/RestaurantPics';
 import {RestaurantInfoItems} from './_components_/RestaurantInfoItems';
 
-const RestaurantInfoView: React.FC<RestaurantInfo> = props => {
+const RestaurantInfoView: React.FC<RestaurantInfo & {ownerNumber: string}> = props => {
   const {setSelectedRestaurant} = useDiscoverModeContext();
   const {setDestinationLocation} = useDirectionModeContext();
   const {setUsageMode} = useMapContext();

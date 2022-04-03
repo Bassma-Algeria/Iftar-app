@@ -24,10 +24,11 @@ const SubmitButton: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSubmit = async () => {
-    try {
-      setIsLoading(true);
+    setIsLoading(true);
 
-      await restuarantsGateway.addRestaurant(restaurantInfo);
+    try {
+      const pictures = restaurantInfo.pictures.map(({base64}) => base64);
+      await restuarantsGateway.addRestaurant({...restaurantInfo, pictures});
 
       setUsageMode('discover');
       selectedLocation.set(undefined);

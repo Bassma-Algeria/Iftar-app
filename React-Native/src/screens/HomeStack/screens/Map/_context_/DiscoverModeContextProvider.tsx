@@ -1,16 +1,16 @@
 import React, {createContext, useState} from 'react';
 
-import type {RestaurantInfo} from '../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+import type {RestaurantInMap} from '../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 
 interface DiscoverModeContextValues {
-  selectedRestaurant?: RestaurantInfo;
-  setSelectedRestaurant: React.Dispatch<React.SetStateAction<RestaurantInfo | undefined>>;
+  selectedRestaurant?: RestaurantInMap;
+  setSelectedRestaurant: React.Dispatch<React.SetStateAction<RestaurantInMap | undefined>>;
 }
 
 export const DiscoverModeContext = createContext<DiscoverModeContextValues | undefined>(undefined);
 
 const DiscoverModeContextProvider: React.FC = ({children}) => {
-  const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantInfo>();
+  const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantInMap>();
 
   return (
     <DiscoverModeContext.Provider

@@ -5,7 +5,7 @@ import {Marker} from 'react-native-maps';
 import {styles} from '../../../Map.style';
 
 import {restuarantsGateway} from '../../../../../../../Gateways';
-import type {RestaurantInfo} from '../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
+import type {RestaurantInMap} from '../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 
 import {ICONS} from '../../../../../../../utils/constants/Icons';
 
@@ -14,7 +14,7 @@ import {useDiscoverModeContext} from '../../../_hooks_/useDiscoverModeContext';
 import {Header} from '../../../../../../../components/Header/Header';
 
 const RestaurantsMarkers: React.FC = () => {
-  const [restaurants, setRestaurants] = useState<RestaurantInfo[]>();
+  const [restaurants, setRestaurants] = useState<RestaurantInMap[]>();
 
   useEffect(() => {
     restuarantsGateway.getRestaurants().then(setRestaurants);
@@ -29,7 +29,7 @@ const RestaurantsMarkers: React.FC = () => {
   );
 };
 
-const RestaurantMarker: React.FC<RestaurantInfo> = restaurantInfo => {
+const RestaurantMarker: React.FC<RestaurantInMap> = restaurantInfo => {
   const {setSelectedRestaurant} = useDiscoverModeContext();
 
   return (

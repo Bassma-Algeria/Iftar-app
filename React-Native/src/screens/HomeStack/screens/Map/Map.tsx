@@ -3,8 +3,6 @@ import {View} from 'react-native';
 
 import {styles} from './Map.style';
 
-import type {HomeStackScreenProps} from '../../HomeStack.types';
-
 import {DiscoverModeContextProvider} from './_context_/DiscoverModeContextProvider';
 import {MapContextProvider} from './_context_/MapContextProvider';
 
@@ -15,7 +13,7 @@ import {AddRestaurantFormPopup} from './_components_/AddRestaurantForm/AddRestau
 import {DirectionModeContextProvider} from './_context_/DirectionModeContextProvider';
 import {DirectionMode} from './_components_/DirectionMode/DirectionMode';
 
-interface Props extends HomeStackScreenProps<'Map'> {}
+interface Props {}
 
 const Map: React.FC<Props> = () => {
   return (

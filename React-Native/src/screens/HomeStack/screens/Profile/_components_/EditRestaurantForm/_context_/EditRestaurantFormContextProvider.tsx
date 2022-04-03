@@ -2,30 +2,32 @@ import React, {createContext, useLayoutEffect, useState} from 'react';
 
 import {RestaurantInfo} from '../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 
+interface IEditRestaurantForm extends Omit<RestaurantInfo, 'pictures'> {
+  pictures: ({uri: string; base64: string} | string)[];
+}
+
 interface EditRestaurantContextValues {
-  restaurantInfo: RestaurantInfo;
-  setRestaurantInfo: React.Dispatch<React.SetStateAction<RestaurantInfo>>;
+  restaurantInfo: IEditRestaurantForm;
+  setRestaurantInfo: React.Dispatch<React.SetStateAction<IEditRestaurantForm>>;
 }
 
 const EditRestaurantFormContext = createContext<EditRestaurantContextValues | undefined>(undefined);
 
-const initialEditRestaurantFormState: RestaurantInfo = {
+const initialEditRestaurantFormState: IEditRestaurantForm = {
+  ownerId: '',
   restaurantId: '',
   name: '',
-  ownerName: '',
-  openingTime: {hour: 0, minut: 0},
-  closingTime: {hour: 0, minut: 0},
-  pictures: [],
-  ownerNumber: '',
-  locationCoords: {latitude: 0, longitude: 0},
   locationName: '',
+  locationCoords: {latitude: 0, longitude: 0},
+  workingTime: {opening: {hour: 0, minut: 0}, closing: {hour: 0, minut: 0}},
+  pictures: [],
 };
 
 const EditRestaurantFormContextProvider: React.FC<{restaurant?: RestaurantInfo}> = ({
   children,
   restaurant,
 }) => {
-  const [restaurantInfo, setRestaurantInfo] = useState<RestaurantInfo>(
+  const [restaurantInfo, setRestaurantInfo] = useState<IEditRestaurantForm>(
     initialEditRestaurantFormState,
   );
 
