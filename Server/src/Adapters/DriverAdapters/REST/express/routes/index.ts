@@ -6,6 +6,6 @@ import { restaurantsRoutes } from "./RestaurantsRoutes";
 const allRoutes: Router = Router();
 
 allRoutes.use("/auth", authRoutes);
-allRoutes.post("/restaurants", restaurantsRoutes);
+allRoutes.use("/restaurants", restaurantsRoutes);
 
 export { allRoutes };
