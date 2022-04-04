@@ -1,4 +1,4 @@
 export interface ICloudGateway {
-  uploadImage(image: string): Promise<string>; //image in base64
-  deleteImageWithUrl(image: string): Promise<void>;
+  uploadImage(imageBase64: string): Promise<string>; //image in base64
+  deleteImageWithUrl(url: string): Promise<void>;
 }

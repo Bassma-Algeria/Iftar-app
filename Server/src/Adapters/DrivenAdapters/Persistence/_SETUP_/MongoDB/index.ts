@@ -10,7 +10,7 @@ const connectToMongo = () => {
   return mongoose.connect(uri);
 };
 
-const RestaurantOwnerModel = model("RestaurantOwners", restaurantOwnerSchema);
-const RestaurantModel = model("Restaurants", restaurantSchema);
+const RestaurantOwnerModel = model("restaurant_owners", restaurantOwnerSchema);
+const RestaurantModel = model("restaurants", restaurantSchema);
 
 export { RestaurantOwnerModel, RestaurantModel, connectToMongo };

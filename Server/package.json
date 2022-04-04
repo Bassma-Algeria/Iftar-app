@@ -29,6 +29,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "chai": "^4.3.6",
+    "cloudinary": "^1.29.0",
     "deep-equal-in-any-order": "^1.1.15",
     "dotenv": "^16.0.0",
     "jsonwebtoken": "^8.5.1",
