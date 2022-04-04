@@ -3,19 +3,17 @@ import { RestaurantOwner } from "../../../../Domain/RestaurantOwner/RestaurantOw
 import type { IRestaurantOwner } from "../../../../Domain/RestaurantOwner/RestaurantOwnerFactory";
 import type { IRestaurantOwnersGateway } from "../../../../Ports/DrivenPorts/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway.interface";
 
-import { OwerInfo } from "./@types/Helpers";
+import { OwnerInfo } from "./@types/Helpers";
 
 export interface IRestaurantOwnersPersistenceFacade {
-  getByEmail(email: string): Promise<OwerInfo | undefined>;
-  getByPhone(phone: string): Promise<OwerInfo | undefined>;
-  save(info: OwerInfo): Promise<OwerInfo>;
+  getByEmail(email: string): Promise<OwnerInfo | undefined>;
+  getByPhone(phone: string): Promise<OwnerInfo | undefined>;
+  save(info: OwnerInfo): Promise<OwnerInfo>;
   deleteAll(): Promise<void>;
 }
 
 class RestaurantOwnersGateway implements IRestaurantOwnersGateway {
-  constructor(
-    private readonly restaurantOwnersPersistence: IRestaurantOwnersPersistenceFacade
-  ) {}
+  constructor(private readonly restaurantOwnersPersistence: IRestaurantOwnersPersistenceFacade) {}
 
   async save(owner: IRestaurantOwner): Promise<IRestaurantOwner> {
     const ownerInfo = await this.restaurantOwnersPersistence.save(owner.info());

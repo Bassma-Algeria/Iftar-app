@@ -62,7 +62,6 @@ describe("Editing Restaurants", () => {
 
     const newRestaurantInfo = { ...restaurant };
     newRestaurantInfo.name = "anotherName";
-    newRestaurantInfo.ownerName = "another name";
     newRestaurantInfo.workingTime = {
       opening: { hour: 18, minute: 0 },
       closing: { hour: 20, minute: 0 },

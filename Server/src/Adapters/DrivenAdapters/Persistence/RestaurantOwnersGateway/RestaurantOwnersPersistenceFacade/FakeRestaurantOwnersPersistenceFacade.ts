@@ -1,19 +1,19 @@
-import { NonFunctionProperties } from "../../../../@types/helperTypes";
-import { IRestaurantOwner } from "../../../../Domain/RestaurantOwner/RestaurantOwnerFactory";
-import { OwerInfo } from "./@types/Helpers";
+import { NonFunctionProperties } from "../../../../../@types/helperTypes";
+import { IRestaurantOwner } from "../../../../../Domain/RestaurantOwner/RestaurantOwnerFactory";
+import { OwnerInfo } from "../@types/Helpers";
 
-import { IRestaurantOwnersPersistenceFacade } from "./RestaurantOwnerGateway";
+import { IRestaurantOwnersPersistenceFacade } from "../RestaurantOwnerGateway";
 
 class FakeRestaurantOwnersPersistenceFacade implements IRestaurantOwnersPersistenceFacade {
-  private store = new Map<string, OwerInfo>();
+  private store = new Map<string, OwnerInfo>();
 
-  async save(ownerInfo: OwerInfo) {
+  async save(ownerInfo: OwnerInfo) {
     this.store.set(ownerInfo.ownerId, ownerInfo);
     return ownerInfo;
   }
 
   async getByEmail(email: string) {
-    let targetOwner: OwerInfo | undefined;
+    let targetOwner: OwnerInfo | undefined;
 
     this.store.forEach((ownerInfo) => {
       if (ownerInfo.email === email) targetOwner = ownerInfo;
@@ -23,7 +23,7 @@ class FakeRestaurantOwnersPersistenceFacade implements IRestaurantOwnersPersiste
   }
 
   async getByPhone(phone: string) {
-    let targetOwner: OwerInfo | undefined;
+    let targetOwner: OwnerInfo | undefined;
 
     this.store.forEach((ownerInfo) => {
       if (ownerInfo.phoneNumber === phone) targetOwner = ownerInfo;

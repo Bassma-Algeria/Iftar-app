@@ -24,7 +24,7 @@ describe("Getting Restaurants", () => {
     restaurantsPersistence.deleteAll();
   });
 
-  it("should return an empty array when no restaurants exsit", async () => {
+  it("should return an empty array when no restaurants exsit when getting all the restaurants", async () => {
     await expect(restaurantsService.getAllRestaurants()).to.eventually.be.empty;
   });
 
@@ -48,7 +48,7 @@ describe("Getting Restaurants", () => {
     expect(result).to.have.lengthOf(3);
   });
 
-  it("should return an empty array when the owner didn't registerRestaurant any restaurant", async () => {
+  it("should return an empty array when the owner didn't register any restaurant", async () => {
     await expect(restaurantsService.getRestaurantsOfAuthOwner(authToken)).to.eventually.be.empty;
   });
 
@@ -90,7 +90,7 @@ describe("Getting Restaurants", () => {
     ).to.eventually.have.lengthOf(2);
   });
 
-  it("should return empty array when no restaurant is found from the seach", async () => {
+  it("should return empty array when no restaurant is found from the search", async () => {
     const result = await restaurantsService.searchFor("not exsit");
     expect(result).to.be.empty;
   });

@@ -43,10 +43,6 @@ describe("Adding Restaurants", () => {
     await expect(restaurantsService.registerRestaurant({ authToken, restaurantInfo: info })).to.be
       .rejected;
 
-    info = { ...restaurantInfo, ownerName: "" };
-    await expect(restaurantsService.registerRestaurant({ authToken, restaurantInfo: info })).to.be
-      .rejected;
-
     info = { ...restaurantInfo, locationName: "" };
     await expect(restaurantsService.registerRestaurant({ authToken, restaurantInfo: info })).to.be
       .rejected;

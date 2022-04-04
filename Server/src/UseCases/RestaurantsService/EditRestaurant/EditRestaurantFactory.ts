@@ -19,7 +19,6 @@ export class EditRestaurentsFactory {
     if (ownerId !== restaurant?.ownerId) throw new Error("Only the restaurant Owner can edit it");
 
     restaurant.name = newRestaurantInfo.name;
-    restaurant.ownerName = newRestaurantInfo.ownerName;
     restaurant.locationName = newRestaurantInfo.locationName;
     restaurant.locationCoords = newRestaurantInfo.locationCoords;
     restaurant.workingTime = newRestaurantInfo.workingTime;

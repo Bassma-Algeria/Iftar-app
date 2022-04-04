@@ -1,18 +1,18 @@
 import {
-  IRestaurantPersistanceFacade,
+  IRestaurantsPersistanceFacade,
   RestaurantsGateway,
 } from "../../../../Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { FakeRestaurantPersistenceFacade } from "../../../../Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistanceFacade";
+import { FakeRestaurantPersistenceFacade } from "../../../../Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsPersistenceFacade/FakeRestaurantsPersistanceFacade";
+import { MongoRestaurantsPersistenceFacade } from "../../../../Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsPersistenceFacade/MongoRestaurantsPersistenceFacade";
 
 import { IRestaurantsGateway } from "./RestaurantsGateway.interface";
 
-let restaurantsPersistence: IRestaurantPersistanceFacade;
+let restaurantsPersistence: IRestaurantsPersistanceFacade;
 
 if (process.env.NODE_ENV === "TEST") {
   restaurantsPersistence = new FakeRestaurantPersistenceFacade();
 } else {
-  // change this later when you implement the read persistence
-  restaurantsPersistence = new FakeRestaurantPersistenceFacade();
+  restaurantsPersistence = new MongoRestaurantsPersistenceFacade();
 }
 
 const restaurantsGateway: IRestaurantsGateway = new RestaurantsGateway(restaurantsPersistence);

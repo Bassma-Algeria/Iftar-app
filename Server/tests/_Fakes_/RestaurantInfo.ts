@@ -8,7 +8,6 @@ const getRestaurantInfo = (): NonFunctionProperties<IRestaurant> => {
     restaurantId: faker.datatype.uuid(),
     ownerId: faker.datatype.uuid(),
     name: faker.name.findName(),
-    ownerName: faker.internet.userName(),
     workingTime: { opening: { hour: 10, minute: 0 }, closing: { hour: 20, minute: 0 } },
     locationName: faker.internet.userName(),
     locationCoords: { latitude: 10, longitude: 100 },

@@ -1,17 +1,20 @@
+import "deep-equal-in-any-order";
 import { expect } from "chai";
 
 import {
-  IRestaurantPersistanceFacade,
+  IRestaurantsPersistanceFacade,
   RestaurantsGateway,
 } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { FakeRestaurantPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/FakeRestaurantPersistanceFacade";
+import { FakeRestaurantPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsPersistenceFacade/FakeRestaurantsPersistanceFacade";
+import { MongoRestaurantsPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsPersistenceFacade/MongoRestaurantsPersistenceFacade";
+import { connectToMongo } from "../../../../src/Adapters/DrivenAdapters/Persistence/_SETUP_/MongoDB";
 
 import { IRestaurant } from "../../../../src/Domain/Restaurant/RestaurantFactory";
 import { Restaurant } from "../../../../src/Domain/Restaurant/Restaurant";
 
 import { getRestaurantInfo } from "../../../_Fakes_/RestaurantInfo";
 
-const testHandler = (restaurantsPersistence: IRestaurantPersistanceFacade) => () => {
+const testHandler = (restaurantsPersistence: IRestaurantsPersistanceFacade) => () => {
   const restaurantsGateway = new RestaurantsGateway(restaurantsPersistence);
   let restaurant: IRestaurant;
 
@@ -32,7 +35,7 @@ const testHandler = (restaurantsPersistence: IRestaurantPersistanceFacade) => ()
     await restaurantsGateway.save(restaurant);
     const savedRestaurant = await restaurantsGateway.getById(restaurant.restaurantId);
 
-    expect(savedRestaurant?.info()).to.deep.equal(restaurant.info());
+    expect(savedRestaurant?.info()).to.deep.equalInAnyOrder(restaurant.info());
   });
 
   it("should get all the saved restaurants", async () => {
@@ -67,7 +70,7 @@ const testHandler = (restaurantsPersistence: IRestaurantPersistanceFacade) => ()
     await restaurantsGateway.update(updated);
 
     const saved = await restaurantsGateway.getById(restaurantId);
-    expect(saved?.info()).to.deep.equal(updated.info());
+    expect(saved?.info()).to.deep.equalInAnyOrder(updated.info());
   });
 
   it("should search for restaurants by name", async () => {
@@ -90,4 +93,13 @@ const testHandler = (restaurantsPersistence: IRestaurantPersistanceFacade) => ()
 
 describe("RestaurantsGateway", () => {
   describe("Fake Persistence", testHandler(new FakeRestaurantPersistenceFacade()));
+
+  describe("MongoDB Persistence", () => {
+    let mongoDB: any;
+
+    before(async () => (mongoDB = await connectToMongo()));
+    after(async () => await mongoDB.disconnect());
+
+    describe("", testHandler(new MongoRestaurantsPersistenceFacade()));
+  });
 });

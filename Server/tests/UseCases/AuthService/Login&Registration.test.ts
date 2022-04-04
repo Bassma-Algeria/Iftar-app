@@ -6,14 +6,11 @@ import { getResturantOwnerInfo } from "../../_Fakes_/RestaurantOwnerInfo";
 
 describe("Registration & Login Use cases", () => {
   let userInfo = getResturantOwnerInfo();
-
   let registrationBody = { ...userInfo, confirmPassword: userInfo.password };
 
   beforeEach(() => {
     userInfo = getResturantOwnerInfo();
-
-    const confirmPassword = userInfo.password;
-    registrationBody = { ...userInfo, confirmPassword };
+    registrationBody = { ...userInfo, confirmPassword: userInfo.password };
   });
 
   afterEach(() => {

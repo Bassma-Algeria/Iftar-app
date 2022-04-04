@@ -1,7 +1,7 @@
-import type { RestaurantInfo } from "./@types/Helpers";
-import { IRestaurantPersistanceFacade } from "./RestaurantsGateway";
+import type { RestaurantInfo } from "../@types/Helpers";
+import { IRestaurantsPersistanceFacade } from "../RestaurantsGateway";
 
-class FakeRestaurantPersistenceFacade implements IRestaurantPersistanceFacade {
+class FakeRestaurantPersistenceFacade implements IRestaurantsPersistanceFacade {
   private store = new Map<string | undefined, RestaurantInfo>();
 
   findAllByOwnerId(ownerId: string): Promise<RestaurantInfo[]> {

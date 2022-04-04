@@ -7,9 +7,8 @@ import { getRestaurantInfo } from "../_Fakes_/RestaurantInfo";
 describe("Restaurant Entity", () => {
   const restaurantInfo = getRestaurantInfo();
 
-  it("should not have a restaurant with an empty name or ownerName or locationName", () => {
+  it("should not have a restaurant with an empty name or locationName", () => {
     expect(() => new Restaurant({ ...restaurantInfo, name: "" })).to.throw();
-    expect(() => new Restaurant({ ...restaurantInfo, ownerName: "" })).to.throw();
     expect(() => new Restaurant({ ...restaurantInfo, locationName: "" })).to.throw();
   });
 

@@ -5,7 +5,6 @@ export interface EditInfo {
   name: string;
   locationCoords: Coords;
   locationName: string;
-  ownerName: string;
   workingTime: { opening: Time; closing: Time };
   pictures: string[];
 }

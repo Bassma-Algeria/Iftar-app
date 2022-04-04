@@ -31,7 +31,7 @@ class AddRestaurantFactory {
     return this.tokenManager.decode(token);
   }
 
-  private async uploadPicsAndGetUrls(pics: any[]) {
+  private async uploadPicsAndGetUrls(pics: string[]) {
     let picsUrls: string[] = [];
 
     for (const pic of pics) {

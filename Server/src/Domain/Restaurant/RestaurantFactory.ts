@@ -2,10 +2,9 @@ import { Coords, NonFunctionProperties, Time } from "../../@types/helperTypes";
 import { IIdGenerator } from "../../Ports/DrivenPorts/IdGenerator/IdGenerator.interface";
 
 export interface IRestaurant {
-  ownerId: string;
   restaurantId: string;
+  ownerId: string;
   name: string;
-  ownerName: string;
   workingTime: { opening: Time; closing: Time };
   locationName: string;
   locationCoords: Coords;
@@ -27,7 +26,6 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
     locationCoords: Coords;
     createdAt: Date;
     private _name!: string;
-    private _ownerName!: string;
     private _workingTime!: { opening: Time; closing: Time };
     private _locationName!: string;
     private _pictures!: string[];
@@ -36,7 +34,6 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
       this.restaurantId = restaurantInfo.restaurantId || idGenerator.generate();
       this.ownerId = restaurantInfo.ownerId;
       this.name = restaurantInfo.name;
-      this.ownerName = restaurantInfo.ownerName;
       this.locationName = restaurantInfo.locationName;
       this.locationCoords = restaurantInfo.locationCoords;
       this.workingTime = restaurantInfo.workingTime;
@@ -47,11 +44,6 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
     public set name(value: string) {
       if (!value) throw new Error("Name should not be empty");
       this._name = value;
-    }
-
-    public set ownerName(value: string) {
-      if (!value) throw new Error("ownerName should not be empty");
-      this._ownerName = value;
     }
 
     public set locationName(value: string) {
@@ -82,7 +74,6 @@ const makeRestaurant = (idGenerator: IIdGenerator) => {
         ownerId: this.ownerId,
         restaurantId: this.restaurantId,
         name: this._name,
-        ownerName: this._ownerName,
         workingTime: this._workingTime,
         locationName: this._locationName,
         locationCoords: this.locationCoords,

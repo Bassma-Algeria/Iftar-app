@@ -4,7 +4,9 @@ import {
   IRestaurantOwnersPersistenceFacade,
   RestaurantOwnersGateway,
 } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
-import { FakeRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
+import { FakeRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnersPersistenceFacade/FakeRestaurantOwnersPersistenceFacade";
+import { MongoRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnersPersistenceFacade/MongoRestaurantOwnersPersistenceFacade";
+import { connectToMongo } from "../../../../src/Adapters/DrivenAdapters/Persistence/_SETUP_/MongoDB";
 
 import { RestaurantOwner } from "../../../../src/Domain/RestaurantOwner/RestaurantOwner";
 import { IRestaurantOwner } from "../../../../src/Domain/RestaurantOwner/RestaurantOwnerFactory";
@@ -21,8 +23,8 @@ const testHandler = (ownersPersistence: IRestaurantOwnersPersistenceFacade) => (
     owner = new RestaurantOwner(ownerInfo);
   });
 
-  afterEach(() => {
-    ownersPersistence.deleteAll();
+  afterEach(async () => {
+    await ownersPersistence.deleteAll();
   });
 
   it("should return undefined when tryig to get an owner with an email not exist", async () => {
@@ -50,4 +52,13 @@ const testHandler = (ownersPersistence: IRestaurantOwnersPersistenceFacade) => (
 
 describe("RestaurantOwnersGateway", () => {
   describe("Fake Persistence", testHandler(new FakeRestaurantOwnersPersistenceFacade()));
+
+  describe("MongoDB Persistence", () => {
+    let mongoDB: any;
+
+    before(async () => (mongoDB = await connectToMongo()));
+    after(async () => await mongoDB.disconnect());
+
+    describe("", testHandler(new MongoRestaurantOwnersPersistenceFacade()));
+  });
 });

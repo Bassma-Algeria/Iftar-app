@@ -4,18 +4,18 @@ import { IRestaurantsGateway } from "../../../../Ports/DrivenPorts/Persistence/R
 
 import { RestaurantInfo } from "./@types/Helpers";
 
-export interface IRestaurantPersistanceFacade {
+export interface IRestaurantsPersistanceFacade {
   searchFor(keyword: string): Promise<RestaurantInfo[]>;
   save(restaurant: RestaurantInfo): Promise<RestaurantInfo>;
   getAll(): Promise<RestaurantInfo[]>;
   getById(restaurantId: string): Promise<RestaurantInfo | undefined>;
   update(newRestaurentInfo: RestaurantInfo): Promise<RestaurantInfo>;
   deleteAll(): Promise<void>;
-  findAllByOwnerId: (ownerId: string) => Promise<RestaurantInfo[]>;
+  findAllByOwnerId(ownerId: string): Promise<RestaurantInfo[]>;
 }
 
 class RestaurantsGateway implements IRestaurantsGateway {
-  constructor(private readonly restaurantPersistence: IRestaurantPersistanceFacade) {}
+  constructor(private readonly restaurantPersistence: IRestaurantsPersistanceFacade) {}
 
   async findAllByOwnerId(ownerId: string): Promise<IRestaurant[]> {
     const restaurants = await this.restaurantPersistence.findAllByOwnerId(ownerId);
@@ -44,11 +44,9 @@ class RestaurantsGateway implements IRestaurantsGateway {
 
   async getById(restaurantId: string): Promise<IRestaurant | undefined> {
     const restaurant = await this.restaurantPersistence.getById(restaurantId);
-    if (restaurant) {
-      return new Restaurant(restaurant);
-    } else {
-      return undefined;
-    }
+    if (!restaurant) return undefined;
+
+    return new Restaurant(restaurant);
   }
 }
 export { RestaurantsGateway };

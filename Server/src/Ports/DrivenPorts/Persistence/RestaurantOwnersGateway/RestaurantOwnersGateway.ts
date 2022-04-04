@@ -1,6 +1,8 @@
 import type { IRestaurantOwnersGateway } from "./RestaurantOwnersGateway.interface";
 
-import { FakeRestaurantOwnersPersistenceFacade } from "../../../../Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/FakeRestaurantOwnersPersistenceFacade";
+import { FakeRestaurantOwnersPersistenceFacade } from "../../../../Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnersPersistenceFacade/FakeRestaurantOwnersPersistenceFacade";
+import { MongoRestaurantOwnersPersistenceFacade } from "../../../../Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnersPersistenceFacade/MongoRestaurantOwnersPersistenceFacade";
+
 import {
   IRestaurantOwnersPersistenceFacade,
   RestaurantOwnersGateway,
@@ -8,11 +10,10 @@ import {
 
 let ownersPersistence: IRestaurantOwnersPersistenceFacade;
 
-if (process.env.NODE_END === "TEST") {
+if (process.env.NODE_ENV === "TEST") {
   ownersPersistence = new FakeRestaurantOwnersPersistenceFacade();
 } else {
-  // add here the real persistence later
-  ownersPersistence = new FakeRestaurantOwnersPersistenceFacade();
+  ownersPersistence = new MongoRestaurantOwnersPersistenceFacade();
 }
 
 const restaurantOwnersGateway: IRestaurantOwnersGateway = new RestaurantOwnersGateway(
