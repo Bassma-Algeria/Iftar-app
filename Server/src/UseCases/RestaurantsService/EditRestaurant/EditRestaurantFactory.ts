@@ -16,7 +16,7 @@ export class EditRestaurentsFactory {
     const ownerId = this.decodeToken(authToken);
 
     const restaurant = await this.findRestaurantById(newRestaurantInfo.restaurantId);
-    if (ownerId !== restaurant?.ownerId) throw new Error("Only the restaurant Owner can edit it");
+    if (ownerId !== restaurant?.ownerId) this.NotAuthorizeException();
 
     restaurant.name = newRestaurantInfo.name;
     restaurant.locationName = newRestaurantInfo.locationName;
@@ -35,6 +35,10 @@ export class EditRestaurentsFactory {
     const updatedRestaurant = await this.updateRestaurant(restaurant);
 
     return updatedRestaurant.info();
+  }
+
+  private NotAuthorizeException(): never {
+    throw { authorization: "Only the restaurant Owner can edit it" };
   }
 
   private decodeToken(authToken: string) {
