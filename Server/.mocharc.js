@@ -4,7 +4,7 @@ const chaiExclude = require("chai-exclude");
 const deepEqual = require("deep-equal-in-any-order");
 const chaiHttp = require("chai-http");
 
-process.env.NODE_ENV = process.env.NODE_ENV || "TEST";
+require("dotenv").config({ path: "./.env.test" });
 
 chai.use(chaiExclude);
 chai.use(chaiAsPromised);

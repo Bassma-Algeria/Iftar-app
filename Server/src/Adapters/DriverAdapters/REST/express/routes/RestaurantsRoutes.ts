@@ -12,10 +12,10 @@ import { searchForRestaurants } from "../../controllers/Restaurants/searchForRes
 const restaurantsRoutes: Router = Router();
 
 restaurantsRoutes.get("/", makeExpressController(getAllRestaurants));
-restaurantsRoutes.get("/:restaurantId", makeExpressController(getRestaurant));
-restaurantsRoutes.put("/:restaurantId", makeExpressController(updateRestaurant));
 restaurantsRoutes.post("/add", makeExpressController(addRestaurant));
 restaurantsRoutes.get("/myRestaurants", makeExpressController(getRestaurantsOfAuthOwner));
 restaurantsRoutes.get("/search/:keyword", makeExpressController(searchForRestaurants));
+restaurantsRoutes.get("/:restaurantId", makeExpressController(getRestaurant));
+restaurantsRoutes.put("/:restaurantId", makeExpressController(updateRestaurant));
 
 export { restaurantsRoutes };

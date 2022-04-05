@@ -1,6 +1,7 @@
 export interface HttpRequest {
   body: any;
-  queryParams: any;
+  query: any;
+  params: any;
   headers: {
     authorization?: string;
   };

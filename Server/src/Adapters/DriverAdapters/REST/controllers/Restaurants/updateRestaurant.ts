@@ -2,18 +2,16 @@ import { restaurantsService } from "../../../../../Ports/DriverPorts/Restaurants
 import { ControllerFunction } from "../../@types/RequestResponse.interfaces";
 import { makeRestController } from "../RestControllerFactory";
 
-const updateRestaurant: ControllerFunction = makeRestController(
-  ({ body, headers, queryParams }) => {
-    const { authorization: authToken } = headers;
-    if (!authToken) throw { authorization: "not authorized" };
+const updateRestaurant: ControllerFunction = makeRestController(({ body, headers, params }) => {
+  const { authorization: authToken } = headers;
+  if (!authToken) throw { authorization: "not authorized" };
 
-    const { restaurantId } = queryParams;
+  const { restaurantId } = params;
 
-    return restaurantsService.updateRestaurant({
-      authToken,
-      newRestaurantInfo: { ...body, restaurantId },
-    });
-  }
-);
+  return restaurantsService.updateRestaurant({
+    authToken,
+    newRestaurantInfo: { ...body, restaurantId },
+  });
+});
 
 export { updateRestaurant };

@@ -2,8 +2,8 @@ import { restaurantsService } from "../../../../../Ports/DriverPorts/Restaurants
 import { ControllerFunction } from "../../@types/RequestResponse.interfaces";
 import { makeRestController } from "../RestControllerFactory";
 
-const searchForRestaurants: ControllerFunction = makeRestController(({ queryParams }) => {
-  const { keyword } = queryParams;
+const searchForRestaurants: ControllerFunction = makeRestController(({ params }) => {
+  const { keyword } = params;
   return restaurantsService.searchFor(keyword);
 });
 

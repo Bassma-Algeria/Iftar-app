@@ -1,10 +1,13 @@
 import "chai-http";
 import chai, { expect } from "chai";
+
 import { getResturantOwnerInfo } from "../_Fakes_/RestaurantOwnerInfo";
 import { getRestaurantInfo } from "../_Fakes_/RestaurantInfo";
 
 import { restaurantsPersistence } from "../../src/Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway";
 import { ownersPersistence } from "../../src/Ports/DrivenPorts/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway";
+
+import { startApp } from "../../src/Adapters/DriverAdapters/REST";
 
 describe("Happy Path", () => {
   let userToken: string;
@@ -14,9 +17,16 @@ describe("Happy Path", () => {
   const ownerInfo = getResturantOwnerInfo();
   const restaurantInfo = getRestaurantInfo();
 
+  let server: any;
+
+  before(async () => {
+    server = await startApp();
+  });
+
   after(async () => {
     await restaurantsPersistence.deleteAll();
     await ownersPersistence.deleteAll();
+    await server.close();
   });
 
   it("new restaurant owner register and get a token", (done) => {
@@ -124,30 +134,32 @@ describe("Happy Path", () => {
   });
 
   it("another restaurant owner register and add 3 restaurants", (done) => {
+    const anotherOwner = getResturantOwnerInfo();
+    const registrationBody = { ...anotherOwner, confirmPassword: anotherOwner.password };
+
     let token: string = "";
 
     chai
       .request(server)
-      .post("/api/auth/regster")
-      .send(getResturantOwnerInfo())
+      .post("/api/auth/register")
+      .send(registrationBody)
       .end((err, res) => {
         if (err) done(err);
 
         token = res.body.data;
 
-        done();
-      });
+        for (let i = 0; i < 3; i++)
+          chai
+            .request(server)
+            .post("/api/restaurants/add")
+            .send(getRestaurantInfo())
+            .set("authorization", token)
+            .end((err, res) => {
+              if (err) done(err);
 
-    for (let i = 0; i < 3; i++)
-      chai
-        .request(server)
-        .post("/api/restaurants/add")
-        .send(getRestaurantInfo())
-        .set("authorization", token)
-        .end((err, res) => {
-          if (err) done(err);
-          done();
-        });
+              if (i === 2) done();
+            });
+      });
   });
 
   it("a normal user came and open the app, and he found 4 restaurants", (done) => {

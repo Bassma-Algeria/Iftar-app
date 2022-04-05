@@ -5,7 +5,7 @@ import { CloudinaryCloudGateway } from "../../../Adapters/DrivenAdapters/CloudGa
 
 let cloudGateway: ICloudGateway;
 
-if (process.env.NODE_ENV === "TEST") {
+if (process.env.NODE_ENV === "TEST" || process.env.NODE_ENV === "TEST_E2E") {
   cloudGateway = new FakeCloudGateway();
 } else {
   cloudGateway = new CloudinaryCloudGateway();

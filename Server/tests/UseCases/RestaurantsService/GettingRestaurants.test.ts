@@ -98,16 +98,16 @@ describe("Getting Restaurants", () => {
   it("Should return restaurants that have a name match the search keyword", async () => {
     restaurantInfo.restaurantId = "";
 
-    restaurantInfo.name = "a";
+    restaurantInfo.name = "ra7ma";
     await restaurantsService.registerRestaurant({ authToken, restaurantInfo });
 
-    restaurantInfo.name = "aa";
+    restaurantInfo.name = "mat3am ra7ma";
     await restaurantsService.registerRestaurant({ authToken, restaurantInfo });
 
-    restaurantInfo.name = "a&a";
+    restaurantInfo.name = "association ra7ma food";
     await restaurantsService.registerRestaurant({ authToken, restaurantInfo });
 
-    const result = await restaurantsService.searchFor("a");
+    const result = await restaurantsService.searchFor("ra7ma");
     expect(result).to.have.lengthOf(3);
   });
 });

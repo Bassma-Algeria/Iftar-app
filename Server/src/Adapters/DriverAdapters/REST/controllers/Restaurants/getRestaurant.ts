@@ -2,8 +2,9 @@ import { ControllerFunction, STATUS_CODES } from "../../@types/RequestResponse.i
 import { restaurantsService } from "../../../../../Ports/DriverPorts/RestaurantsService";
 import { makeRestController } from "../RestControllerFactory";
 
-const getRestaurant: ControllerFunction = makeRestController(({ queryParams }) => {
-  const { restaurantId } = queryParams;
+const getRestaurant: ControllerFunction = makeRestController(({ params }) => {
+  const { restaurantId } = params;
+
   return restaurantsService.getRestaurantById(restaurantId);
 });
 

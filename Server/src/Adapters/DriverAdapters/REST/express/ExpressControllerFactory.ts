@@ -6,7 +6,8 @@ const makeExpressController = (controller: ControllerFunction) => {
     const result = await controller({
       body: req.body,
       headers: req.headers,
-      queryParams: req.query,
+      query: req.query,
+      params: req.params,
     });
 
     const { status, ...rest } = result;

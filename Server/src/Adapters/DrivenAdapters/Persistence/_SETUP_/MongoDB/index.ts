@@ -5,7 +5,7 @@ import { restaurantSchema } from "./Schemas/Restaurant.schema";
 
 const connectToMongo = () => {
   const uri = process.env.MONGO_DB_URI;
-  if (!uri) throw new Error("must have the mongo db uri in your envirement");
+  if (!uri) throw new Error("must have the MONGO_DB_URI in your envirement");
 
   return mongoose.connect(uri);
 };
