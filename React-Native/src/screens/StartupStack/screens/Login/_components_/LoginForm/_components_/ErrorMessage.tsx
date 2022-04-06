@@ -8,7 +8,7 @@ const ErrorMessage = () => {
   const {serverError} = useLoginContext();
 
   return serverError ? (
-    <Header color="red" align="center" variant="h5" fontWeight="regular">
+    <Header color="red" align="center" style={{marginTop: 10}} fontWeight="regular">
       {serverError}
     </Header>
   ) : null;

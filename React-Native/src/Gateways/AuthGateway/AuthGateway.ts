@@ -1,11 +1,27 @@
+import axios from 'axios';
 import {IAuthGateway, LoginInfo, SignupInfo} from './AuthGateway.interface';
 
 class AuthGateway implements IAuthGateway {
-  login(info: LoginInfo): Promise<string> {
-    throw new Error('Login not implemented.');
+  private baseUrl: string = 'http://192.168.1.105:5000/api/auth';
+
+  async login(info: LoginInfo): Promise<string> {
+    try {
+      const res = await axios.post(`${this.baseUrl}/login`, info);
+
+      return res.data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
   }
-  signup(info: SignupInfo): Promise<string> {
-    throw new Error('Login not implemented.');
+
+  async signup(info: SignupInfo): Promise<string> {
+    try {
+      const res = await axios.post(`${this.baseUrl}/register`, info);
+
+      return res.data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
   }
 }
 

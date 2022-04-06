@@ -4,7 +4,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: windowHeight <= 700 ? -100 : -60,
+    marginTop: windowHeight <= 850 ? -110 : -60,
   },
 
   form: {
@@ -16,12 +16,13 @@ const styles = StyleSheet.create({
   },
 
   spaceInputs: {
-    marginTop: 20,
-    marginBottom: 10,
+    marginBottom: 22,
   },
+
   text: {
     textDecorationLine: 'underline',
   },
+
   registerButton: {
     marginTop: 60,
   },

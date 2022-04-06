@@ -8,7 +8,7 @@ const ErrorMessage = () => {
   const {serverError} = useRegisterContext();
 
   return serverError ? (
-    <Header color="red" align="center" variant="h5" fontWeight="regular">
+    <Header color="red" align="center" fontWeight="regular">
       {serverError}
     </Header>
   ) : null;

@@ -17,22 +17,29 @@ describe('Header Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should be able to change the max number of lines', () => {
+    const tree = rendered
+      .create(
+        <Header numberOfLines={1} color="black">
+          Hello
+        </Header>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should have mutiple variant and change the size depend on the variant', () => {
     const tree = rendered.create(<Header variant="h2">Hello</Header>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should be able to change the font weight', () => {
-    const tree = rendered
-      .create(<Header fontWeight="extraBold">Hello</Header>)
-      .toJSON();
+    const tree = rendered.create(<Header fontWeight="extraBold">Hello</Header>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should be able to change add custom styles', () => {
-    const tree = rendered
-      .create(<Header style={{backgroundColor: '#000'}}>Hello</Header>)
-      .toJSON();
+    const tree = rendered.create(<Header style={{backgroundColor: '#000'}}>Hello</Header>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

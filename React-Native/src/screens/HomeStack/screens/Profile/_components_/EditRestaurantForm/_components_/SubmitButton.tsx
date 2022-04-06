@@ -30,14 +30,14 @@ const SubmitButton: React.FC = () => {
       const pictures = restaurantInfo.pictures.map(pic =>
         typeof pic === 'string' ? pic : pic.base64,
       );
-      await restuarantsGateway.addRestaurant({...restaurantInfo, pictures});
+      await restuarantsGateway.editRestaurant({...restaurantInfo, pictures});
 
       setRestaurantToEdit(undefined);
       selectedLocation.set(undefined);
       setRestaurantInfo(initialEditRestaurantFormState);
       showToast('تمت تعديل المطعم بنجاح');
     } catch (error) {
-      showToast('يرجى التحقق من اتصالك بالإنترنت');
+      showToast('حدث خطأ ما ، يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى');
     } finally {
       setIsLoading(false);
     }

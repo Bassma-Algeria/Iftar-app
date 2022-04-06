@@ -37,7 +37,7 @@ const SubmitButton: React.FC = () => {
       setRestaurantInfo(initialAddRestaurantFormState);
       showToast('تمت إضافة المطعم بنجاح');
     } catch (error) {
-      showToast('يرجى التحقق من اتصالك بالإنترنت');
+      showToast('حدث خطأ ما ، يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى');
     } finally {
       setIsLoading(false);
     }

@@ -19,7 +19,7 @@ const initialEditRestaurantFormState: IEditRestaurantForm = {
   name: '',
   locationName: '',
   locationCoords: {latitude: 0, longitude: 0},
-  workingTime: {opening: {hour: 0, minut: 0}, closing: {hour: 0, minut: 0}},
+  workingTime: {opening: {hour: 0, minute: 0}, closing: {hour: 0, minute: 0}},
   pictures: [],
 };
 

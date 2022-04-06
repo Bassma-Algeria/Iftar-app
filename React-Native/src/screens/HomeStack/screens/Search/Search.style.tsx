@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    marginTop: -10,
+    marginTop: -5,
   },
 
   locationIconContainer: {

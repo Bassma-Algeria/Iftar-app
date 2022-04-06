@@ -39,7 +39,16 @@ const SubmitButton: React.FC<Props> = ({}) => {
       navigation.replace('HomeStack', {screen: 'Map'});
     } catch (error: any) {
       setIsLoading(false);
-      setServerError(error);
+
+      if (error.email) {
+        return setServerError('بريد إلكتروني مستخدم');
+      }
+
+      if (error.phoneNumber) {
+        return setServerError('رقم الهاتف مستخدم');
+      }
+
+      setServerError('حدث خطأ ما ، يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى');
     }
   };
 

@@ -54,7 +54,7 @@ const TimeInput: React.FC<Props> = ({value, onChange, placeholder}) => {
     }
 
     const time = new Date(e.nativeEvent.timestamp);
-    onChange({hour: time.getHours(), minut: time.getMinutes()});
+    onChange({hour: time.getHours(), minute: time.getMinutes()});
   };
 
   return (
@@ -78,12 +78,12 @@ const TimeInput: React.FC<Props> = ({value, onChange, placeholder}) => {
 };
 
 const getTimeToShow = (time: Time): string => {
-  const {hour, minut} = time;
-  if (!hour && !minut) {
+  const {hour, minute} = time;
+  if (!hour && !minute) {
     return '';
   }
 
-  return `${hour}`.padStart(2, '0') + ':' + `${minut}`.padStart(2, '0');
+  return `${hour}`.padStart(2, '0') + ':' + `${minute}`.padStart(2, '0');
 };
 
 export {WorkTimesInputs};

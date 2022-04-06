@@ -7,7 +7,7 @@ class FakeAuthGateway implements IAuthGateway {
         if (userInfo.email === 'admin@gmial.com' && userInfo.password === 'admin') {
           resolve('token');
         } else {
-          reject({message: 'Invalid credentials'});
+          reject('Invalid credentials');
         }
       }, 400);
     });

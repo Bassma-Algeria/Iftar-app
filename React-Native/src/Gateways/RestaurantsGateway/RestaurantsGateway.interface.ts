@@ -1,6 +1,6 @@
 import type {LocationCords} from '../../@types/LocationCords';
 
-export type Time = {hour: number; minut: number};
+export type Time = {hour: number; minute: number};
 
 export interface RestaurantInfo {
   restaurantId: string;

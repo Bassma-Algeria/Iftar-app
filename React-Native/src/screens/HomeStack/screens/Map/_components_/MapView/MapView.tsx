@@ -84,6 +84,7 @@ const Map: React.FC<MapProps> = ({initialLocation}) => {
       ref={mapRef}
       style={styles.map}
       onPress={handlePress}
+      onMarkerPress={handlePress}
       initialRegion={{...initialLocation, latitudeDelta, longitudeDelta}}>
       <MyPositionMarker />
 

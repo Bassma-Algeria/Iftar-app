@@ -1,28 +1,82 @@
+import axios from 'axios';
+import {localStorage} from '../../utils/helpers/LocalStorage';
 import {
   IRestaurantsGateway,
   RestaurantInfo,
   RestaurantInfoToAdd,
+  RestaurantInMap,
 } from './RestaurantsGateway.interface';
 
 class RestaurantsGateway implements IRestaurantsGateway {
-  getRestaurantsOfAuthUser(): Promise<RestaurantInfo[]> {
-    throw new Error('Method not implemented.');
+  private baseUrl: string = 'http://192.168.1.105:5000/api/restaurants';
+
+  async getRestaurantInfo(id: string): Promise<RestaurantInfo & {ownerNumber: string}> {
+    try {
+      const {data} = await axios.get(`${this.baseUrl}/${id}`);
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
   }
 
-  editRestaurant(info: RestaurantInfo): Promise<void> {
-    throw new Error('Method not implemented.');
+  async getRestaurantsOfAuthUser(): Promise<RestaurantInfo[]> {
+    try {
+      const token = await localStorage.get('token');
+      const {data} = await axios.get(`${this.baseUrl}/myRestaurants`, {
+        headers: {authorization: token as string},
+      });
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
   }
 
-  searchFor(keyword: string): Promise<RestaurantInfo[]> {
-    throw new Error('Method not implemented.');
+  async editRestaurant(info: RestaurantInfo): Promise<void> {
+    try {
+      const token = await localStorage.get('token');
+      const {data} = await axios.put(`${this.baseUrl}/${info.restaurantId}`, info, {
+        headers: {authorization: token as string},
+      });
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
   }
 
-  addRestaurant(info: RestaurantInfoToAdd): Promise<void> {
-    throw new Error('Method not implemented.');
+  async searchFor(keyword: string): Promise<RestaurantInfo[]> {
+    try {
+      const {data} = await axios.get(`${this.baseUrl}/search/${keyword}`);
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
   }
 
-  getRestaurants(): Promise<RestaurantInfo[]> {
-    throw new Error('Method not implemented.');
+  async addRestaurant(info: RestaurantInfoToAdd): Promise<void> {
+    try {
+      const token = await localStorage.get('token');
+      const {data} = await axios.post(`${this.baseUrl}/add`, info, {
+        headers: {authorization: token as string},
+      });
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
+  }
+
+  async getRestaurants(): Promise<RestaurantInMap[]> {
+    try {
+      const {data} = await axios.get(`${this.baseUrl}`);
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
   }
 }
 

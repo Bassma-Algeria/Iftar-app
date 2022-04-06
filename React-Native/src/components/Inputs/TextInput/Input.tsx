@@ -25,6 +25,7 @@ interface Props {
   error?: string;
   disable?: boolean;
   focused?: boolean;
+  radius?: number;
   backgroundColor?: keyof typeof COLORS;
   placeholderColor?: string;
 }

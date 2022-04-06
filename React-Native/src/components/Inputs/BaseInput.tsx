@@ -11,6 +11,7 @@ import {Header} from '../Header/Header';
 interface Props {
   backgroundColor?: keyof typeof COLORS;
   style?: StyleProp<ViewStyle>;
+  radius?: number;
   error?: string;
 }
 
@@ -19,6 +20,10 @@ const BaseInput: React.FC<Props> = ({children, ...props}) => {
 
   if (props.backgroundColor) {
     customStyle.backgroundColor = COLORS[props.backgroundColor];
+  }
+
+  if (props.radius) {
+    customStyle.borderRadius = props.radius;
   }
 
   return (

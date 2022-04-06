@@ -10,6 +10,7 @@ interface Props {
   color?: keyof typeof COLORS;
   fontWeight?: keyof typeof FONTS;
   style?: StyleProp<TextStyle>;
+  numberOfLines?: number;
   align?: 'auto' | 'left' | 'right' | 'center' | 'justify';
   onPress?: (event: GestureResponderEvent) => void;
 }
@@ -21,6 +22,7 @@ const Header: React.FC<Props> = ({
   fontWeight,
   onPress,
   align,
+  numberOfLines,
   style,
 }) => {
   let elementStyles: StyleProp<TextStyle> = {
@@ -37,7 +39,7 @@ const Header: React.FC<Props> = ({
   }
 
   return (
-    <Text onPress={onPress} style={[elementStyles, style]}>
+    <Text onPress={onPress} numberOfLines={numberOfLines} style={[elementStyles, style]}>
       {children}
     </Text>
   );

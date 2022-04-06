@@ -42,15 +42,17 @@ const InfoItem: React.FC<{text: string; icon: ImageSourcePropType; iconWidth?: s
         <Image resizeMode="contain" style={{width}} source={props.icon} />
       </View>
 
-      <Header variant="h5">{props.text}</Header>
+      <Header align="right" variant="h5">
+        {props.text}
+      </Header>
     </View>
   );
 };
 
 const getTimePresention = (time: Time) => {
-  const {hour, minut} = time;
+  const {hour, minute} = time;
 
-  return `${hour}`.padStart(2, '0') + ':' + `${minut}`.padStart(2, '0');
+  return `${hour}`.padStart(2, '0') + ':' + `${minute}`.padStart(2, '0');
 };
 
 const formatPhoneNumber = (phoneNumber: string): string => {

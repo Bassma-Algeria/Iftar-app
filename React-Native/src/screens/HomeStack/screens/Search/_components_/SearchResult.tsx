@@ -77,7 +77,9 @@ const RestaurantItem: React.FC<RestaurantInfo> = props => {
         </Header>
 
         <View style={styles.locationContainer}>
-          <Header>{props.locationName}</Header>
+          <Header numberOfLines={1} align="right">
+            {props.locationName}
+          </Header>
 
           <View style={styles.locationIconContainer}>
             <Image source={ICONS.location} style={styles.locationIcon} resizeMode="contain" />
