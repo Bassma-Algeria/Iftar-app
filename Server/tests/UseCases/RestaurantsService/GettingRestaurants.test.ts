@@ -10,18 +10,37 @@ import { getResturantOwnerInfo } from "../../_Fakes_/RestaurantOwnerInfo";
 
 describe("Getting Restaurants", () => {
   let restaurantInfo = getRestaurantInfo();
+  let ownerInfo = getResturantOwnerInfo();
   let authToken: string;
 
   beforeEach(async () => {
     restaurantInfo = getRestaurantInfo();
+    ownerInfo = getResturantOwnerInfo();
 
-    const ownerInfo = getResturantOwnerInfo();
     const confirmPassword = ownerInfo.password;
     authToken = await authService.register({ ...ownerInfo, confirmPassword });
   });
 
   afterEach(() => {
     restaurantsPersistence.deleteAll();
+  });
+
+  it("should not be able to get a restaurant with a non existing id", async () => {
+    await expect(restaurantsService.getRestaurantById("not exsit")).to.be.rejected;
+  });
+
+  it("should get the restaurant inforation by its id + the restaurant owner phone number number", async () => {
+    const { restaurantId } = await restaurantsService.registerRestaurant({
+      authToken,
+      restaurantInfo,
+    });
+
+    const { ownerNumber, ...info } = await restaurantsService.getRestaurantById(restaurantId);
+
+    expect(ownerNumber).to.equal(ownerInfo.phoneNumber.replace(/ /g, ""));
+    expect(info)
+      .excluding(["pictures", "ownerId"])
+      .to.deep.equal({ ...restaurantInfo, restaurantId });
   });
 
   it("should return an empty array when no restaurants exsit when getting all the restaurants", async () => {

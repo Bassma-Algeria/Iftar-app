@@ -3,6 +3,17 @@ import type { OwnerInfo } from "../@types/Helpers";
 import { IRestaurantOwnersPersistenceFacade } from "../RestaurantOwnerGateway";
 
 class MongoRestaurantOwnersPersistenceFacade implements IRestaurantOwnersPersistenceFacade {
+  async getById(ownerId: string) {
+    try {
+      const info = await RestaurantOwnerModel.findOne({ ownerId });
+      if (!info) return undefined;
+
+      return info;
+    } catch (error) {
+      throw new Error(`MongoDB : ${error}`);
+    }
+  }
+
   async save(info: OwnerInfo): Promise<OwnerInfo> {
     try {
       return await RestaurantOwnerModel.create(info);

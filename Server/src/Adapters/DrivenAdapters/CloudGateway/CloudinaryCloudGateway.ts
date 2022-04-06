@@ -29,7 +29,7 @@ class CloudinaryCloudGateway implements ICloudGateway {
   }
 
   private formatBase64ImageDataIntoUploadableString(base64: string) {
-    return `data:image/*;base64,${base64}`;
+    return `data:image/png;base64,${base64}`;
   }
 
   private getPublicIdFromUrl(url: string): string {

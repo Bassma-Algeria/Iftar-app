@@ -64,7 +64,9 @@ describe("Adding Restaurants", () => {
       restaurantInfo,
     });
 
-    const searchResultRestaurant = await restaurantsService.getRestaurantById(restaurantId);
+    const { ownerNumber, ...searchResultRestaurant } = await restaurantsService.getRestaurantById(
+      restaurantId
+    );
     expect(searchResultRestaurant)
       .excluding("pictures")
       .to.deep.equal({ ...restaurantInfo, ownerId: tokenManager.decode(authToken) });

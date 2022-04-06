@@ -1,4 +1,5 @@
 import type { ICloudGateway } from "../../Ports/DrivenPorts/CloudGateway/CloudGateway.interface";
+import type { IRestaurantOwnersGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantOwnersGateway/RestaurantOwnersGateway.interface";
 import type { IRestaurantsGateway } from "../../Ports/DrivenPorts/Persistence/RestaurantsGateway/RestaurantsGateway.interface";
 import type { ITokenManager } from "../../Ports/DrivenPorts/TokenManager/TokenManager.interface";
 
@@ -14,24 +15,37 @@ import { SearchForRestaurantFactory } from "./SearchForRestaurantFactory";
 class RestaurantsServiceFacade {
   constructor(
     private readonly restaurantsGateway: IRestaurantsGateway,
+    private readonly ownersGateway: IRestaurantOwnersGateway,
     private readonly tokenManager: ITokenManager,
     private readonly cloudGateway: ICloudGateway
   ) {}
 
   async getRestaurantById(id: string) {
-    const getRestaurantFactory = new GetRestaurentsFactory(this.restaurantsGateway);
+    const getRestaurantFactory = new GetRestaurentsFactory(
+      this.restaurantsGateway,
+      this.ownersGateway,
+      this.tokenManager
+    );
 
     return getRestaurantFactory.getById(id);
   }
 
   async getAllRestaurants() {
-    const getRestaurantFactory = new GetRestaurentsFactory(this.restaurantsGateway);
+    const getRestaurantFactory = new GetRestaurentsFactory(
+      this.restaurantsGateway,
+      this.ownersGateway,
+      this.tokenManager
+    );
 
     return getRestaurantFactory.getAll();
   }
 
   async getRestaurantsOfAuthOwner(authToken: string) {
-    const getRestaurantFactory = new GetRestaurentsFactory(this.restaurantsGateway);
+    const getRestaurantFactory = new GetRestaurentsFactory(
+      this.restaurantsGateway,
+      this.ownersGateway,
+      this.tokenManager
+    );
 
     return getRestaurantFactory.getRestaurantsOfAuthOwner(authToken);
   }

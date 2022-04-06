@@ -1,18 +1,29 @@
+import "deep-equal-in-any-order";
 import { expect } from "chai";
 
+import { connectToMongo } from "../../../../src/Adapters/DrivenAdapters/Persistence/_SETUP_/MongoDB";
+import { MongoRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnersPersistenceFacade/MongoRestaurantOwnersPersistenceFacade";
 import { RestaurantOwnersGateway } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnerGateway";
-import { FakeRestaurantOwnersPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantOwnersGateway/RestaurantOwnersPersistenceFacade/FakeRestaurantOwnersPersistenceFacade";
 
-import { RestaurantOwner } from "../../../../src/Domain/RestaurantOwner/RestaurantOwner";
 import { IRestaurantOwner } from "../../../../src/Domain/RestaurantOwner/RestaurantOwnerFactory";
+import { RestaurantOwner } from "../../../../src/Domain/RestaurantOwner/RestaurantOwner";
 
 import { getResturantOwnerInfo } from "../../../_Fakes_/RestaurantOwnerInfo";
 
-describe("Fake RestaurantOwnersGateway", () => {
-  const ownersPersistence = new FakeRestaurantOwnersPersistenceFacade();
+describe("Mongo RestaurantOwnersGateway", () => {
+  const ownersPersistence = new MongoRestaurantOwnersPersistenceFacade();
   const ownersGateway = new RestaurantOwnersGateway(ownersPersistence);
 
   let owner: IRestaurantOwner;
+  let mongoDB: any;
+
+  before(async () => {
+    mongoDB = await connectToMongo();
+  });
+
+  after(async () => {
+    await mongoDB.disconnect();
+  });
 
   beforeEach(() => {
     owner = new RestaurantOwner(getResturantOwnerInfo());

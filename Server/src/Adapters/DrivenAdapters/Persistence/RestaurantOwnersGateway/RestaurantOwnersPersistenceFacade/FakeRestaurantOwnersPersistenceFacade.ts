@@ -7,6 +7,13 @@ import { IRestaurantOwnersPersistenceFacade } from "../RestaurantOwnerGateway";
 class FakeRestaurantOwnersPersistenceFacade implements IRestaurantOwnersPersistenceFacade {
   private store = new Map<string, OwnerInfo>();
 
+  async getById(id: string) {
+    const owner = this.store.get(id);
+    if (!owner) return undefined;
+
+    return owner;
+  }
+
   async save(ownerInfo: OwnerInfo) {
     this.store.set(ownerInfo.ownerId, ownerInfo);
     return ownerInfo;

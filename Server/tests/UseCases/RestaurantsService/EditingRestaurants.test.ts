@@ -68,9 +68,8 @@ describe("Editing Restaurants", () => {
     };
 
     await restaurantsService.updateRestaurant({ authToken, newRestaurantInfo });
-    const updateRestaurantdRestaurant = await restaurantsService.getRestaurantById(
-      restaurant.restaurantId
-    );
+    const { ownerNumber, ...updateRestaurantdRestaurant } =
+      await restaurantsService.getRestaurantById(restaurant.restaurantId);
 
     expect(updateRestaurantdRestaurant).to.deep.equal(newRestaurantInfo);
   });

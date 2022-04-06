@@ -2,18 +2,28 @@ import "deep-equal-in-any-order";
 import { expect } from "chai";
 
 import { RestaurantsGateway } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsGateway";
-import { FakeRestaurantPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsPersistenceFacade/FakeRestaurantsPersistanceFacade";
+import { MongoRestaurantsPersistenceFacade } from "../../../../src/Adapters/DrivenAdapters/Persistence/RestaurantsGateway/RestaurantsPersistenceFacade/MongoRestaurantsPersistenceFacade";
+import { connectToMongo } from "../../../../src/Adapters/DrivenAdapters/Persistence/_SETUP_/MongoDB";
 
 import { IRestaurant } from "../../../../src/Domain/Restaurant/RestaurantFactory";
 import { Restaurant } from "../../../../src/Domain/Restaurant/Restaurant";
 
 import { getRestaurantInfo } from "../../../_Fakes_/RestaurantInfo";
 
-describe("Fake RestaurantsGateway", () => {
-  const restaurantsPersistence = new FakeRestaurantPersistenceFacade();
+describe("Mongo RestaurantGateway", () => {
+  const restaurantsPersistence = new MongoRestaurantsPersistenceFacade();
   const restaurantsGateway = new RestaurantsGateway(restaurantsPersistence);
 
   let restaurant: IRestaurant;
+  let mongoDB: any;
+
+  before(async () => {
+    mongoDB = await connectToMongo();
+  });
+
+  after(async () => {
+    await mongoDB.disconnect();
+  });
 
   beforeEach(async () => {
     restaurant = new Restaurant(getRestaurantInfo());
