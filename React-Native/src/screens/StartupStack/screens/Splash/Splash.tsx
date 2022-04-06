@@ -9,6 +9,7 @@ import {useAuthContext} from '../../../_hooks_/useAuthContext';
 import {localStorage} from '../../../../utils/helpers/LocalStorage';
 import {Layout} from '../../_components_/Layout/Layout';
 import {Logo} from '../../../../components/Logo/Logo';
+import {Loader} from './_components_/Loader/Loader';
 
 interface Props extends MainStackScreenProps<'StartupStack'> {}
 
@@ -40,6 +41,7 @@ const Splash: React.FC<Props> = ({navigation}) => {
     <Layout>
       <View style={styles.container}>
         <Logo />
+        <Loader />
       </View>
     </Layout>
   );

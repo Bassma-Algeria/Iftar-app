@@ -7,6 +7,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: screenHight < 700 ? 50 : 100,
   },
+
+  loader: {
+    marginTop: 20,
+  },
 });
 
 export {styles};

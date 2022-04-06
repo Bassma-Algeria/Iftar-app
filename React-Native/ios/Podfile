@@ -21,6 +21,10 @@ target 'Iftar' do
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
+  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+
+  pod 'lottie-ios', :path => '../node_modules/lottie-ios'
+
   target 'IftarTests' do
     inherit! :complete
     # Pods for testing
