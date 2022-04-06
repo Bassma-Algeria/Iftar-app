@@ -8,6 +8,7 @@ import {restuarantsGateway} from '../../../../../../../Gateways';
 import type {RestaurantInMap} from '../../../../../../../Gateways/RestaurantsGateway/RestaurantsGateway.interface';
 
 import {ICONS} from '../../../../../../../utils/constants/Icons';
+import {showToast} from '../../../../../../../utils/helpers/showToast';
 
 import {useDiscoverModeContext} from '../../../_hooks_/useDiscoverModeContext';
 
@@ -19,7 +20,10 @@ const RestaurantsMarkers: React.FC = () => {
   const {isAddRestaurantFormOpen} = useMapContext();
 
   useEffect(() => {
-    restuarantsGateway.getRestaurants().then(setRestaurants);
+    restuarantsGateway
+      .getRestaurants()
+      .then(setRestaurants)
+      .catch(() => showToast('يرجى التحقق من اتصالك بالإنترنت'));
   }, [isAddRestaurantFormOpen]);
 
   return (
