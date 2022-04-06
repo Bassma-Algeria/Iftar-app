@@ -12,13 +12,15 @@ import {ICONS} from '../../../../../../../utils/constants/Icons';
 import {useDiscoverModeContext} from '../../../_hooks_/useDiscoverModeContext';
 
 import {Header} from '../../../../../../../components/Header/Header';
+import {useMapContext} from '../../../_hooks_/useMapContext';
 
 const RestaurantsMarkers: React.FC = () => {
   const [restaurants, setRestaurants] = useState<RestaurantInMap[]>();
+  const {isAddRestaurantFormOpen} = useMapContext();
 
   useEffect(() => {
     restuarantsGateway.getRestaurants().then(setRestaurants);
-  }, []);
+  }, [isAddRestaurantFormOpen]);
 
   return (
     <>
