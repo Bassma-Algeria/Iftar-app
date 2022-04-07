@@ -56,6 +56,7 @@ const AddPicture: React.FC = () => {
       mediaType: 'photo',
       quality: 0.3,
       selectionLimit: 5,
+      includeBase64: true,
     });
     if (!assets?.length) {
       return;
