@@ -2,7 +2,8 @@ import axios from 'axios';
 import {IAuthGateway, LoginInfo, SignupInfo} from './AuthGateway.interface';
 
 class AuthGateway implements IAuthGateway {
-  private baseUrl: string = 'http://192.168.1.105:5000/api/auth';
+  // private baseUrl: string = 'http://192.168.1.105:5000/api/auth';
+  private baseUrl: string = 'https://iftar-server.herokuapp.com/api/auth';
 
   async login(info: LoginInfo): Promise<string> {
     try {

@@ -8,7 +8,8 @@ import {
 } from './RestaurantsGateway.interface';
 
 class RestaurantsGateway implements IRestaurantsGateway {
-  private baseUrl: string = 'http://192.168.1.105:5000/api/restaurants';
+  // private baseUrl: string = 'http://192.168.1.105:5000/api/restaurants';
+  private baseUrl: string = 'https://iftar-server.herokuapp.com/api/restaurants';
 
   async getRestaurantInfo(id: string): Promise<RestaurantInfo & {ownerNumber: string}> {
     try {
