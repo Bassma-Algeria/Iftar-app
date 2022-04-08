@@ -184,11 +184,31 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
+  logoutButtonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    padding: 20,
+    paddingLeft: 40,
+    paddingRight: 50,
+    borderTopColor: COLORS.brown,
+    borderTopWidth: 0.7,
+    alignItems: 'center',
+    width: '100%',
+  },
+
+  logoutButton: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+  },
+
+  logoutIconContainer: {
+    width: 20,
+  },
+
   logoutIcon: {
-    marginTop: 20,
-    width: 36,
-    height: 36,
-    marginLeft: 20,
+    width: '100%',
   },
 });
 

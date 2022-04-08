@@ -21,10 +21,9 @@ const Profile: React.FC<Props> = () => {
         <View style={styles.content}>
           <RestaurantsList />
         </View>
-
-        <LogoutButton />
       </ScrollView>
 
+      <LogoutButton />
       <EditRestaurantFormPopup />
     </ProfileContextProvider>
   );
