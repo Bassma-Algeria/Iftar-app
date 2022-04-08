@@ -59,7 +59,7 @@ const DirectionInfoBody: React.FC<{distance: number}> = ({distance}) => {
 
   const handleGoogleMapClick = () => {
     const {latitude, longitude} = destinationLocation!;
-    Linking.openURL(`https://www.google.com/maps/@${latitude},${longitude},18z`);
+    Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`);
   };
 
   return (
