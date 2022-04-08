@@ -34,7 +34,7 @@ const Splash: React.FC<Props> = ({navigation}) => {
   }, [navigation, setIsRestaurantOwner]);
 
   useEffect(() => {
-    setup();
+    // setup();
   }, [setup]);
 
   return (
