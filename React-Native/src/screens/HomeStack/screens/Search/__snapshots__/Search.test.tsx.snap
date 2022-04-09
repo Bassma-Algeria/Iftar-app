@@ -1703,139 +1703,52 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
       data={
         Array [
           Object {
-            "closingTime": Object {
-              "hour": 19,
-              "minut": 20,
-            },
             "locationCoords": Object {
               "latitude": 37.421083,
               "longitude": -122.104,
             },
             "locationName": "الحراش وسط",
             "name": "اسم المطعم",
-            "openingTime": Object {
-              "hour": 20,
-              "minut": 0,
-            },
-            "ownerName": "عبد القادر",
-            "ownerNumber": "07 98 98 09 75",
+            "ownerId": "",
             "pictures": Array [
               "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
               "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
             ],
             "restaurantId": "0",
+            "workingTime": Object {
+              "closing": Object {
+                "hour": 21,
+                "minute": 0,
+              },
+              "opening": Object {
+                "hour": 20,
+                "minute": 0,
+              },
+            },
           },
           Object {
-            "closingTime": Object {
-              "hour": 19,
-              "minut": 20,
-            },
             "locationCoords": Object {
               "latitude": 37.421083,
               "longitude": -122.104,
             },
             "locationName": "الحراش وسط",
             "name": "اسم المطعم",
-            "openingTime": Object {
-              "hour": 20,
-              "minut": 0,
-            },
-            "ownerName": "عبد القادر",
-            "ownerNumber": "07 98 98 09 75",
+            "ownerId": "",
             "pictures": Array [
               "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
               "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
             ],
             "restaurantId": "1",
-          },
-          Object {
-            "closingTime": Object {
-              "hour": 19,
-              "minut": 20,
+            "workingTime": Object {
+              "closing": Object {
+                "hour": 21,
+                "minute": 0,
+              },
+              "opening": Object {
+                "hour": 20,
+                "minute": 0,
+              },
             },
-            "locationCoords": Object {
-              "latitude": 37.421083,
-              "longitude": -122.104,
-            },
-            "locationName": "الحراش وسط",
-            "name": "اسم المطعم",
-            "openingTime": Object {
-              "hour": 20,
-              "minut": 0,
-            },
-            "ownerName": "عبد القادر",
-            "ownerNumber": "07 98 98 09 75",
-            "pictures": Array [
-              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-            ],
-            "restaurantId": "2",
-          },
-          Object {
-            "closingTime": Object {
-              "hour": 19,
-              "minut": 20,
-            },
-            "locationCoords": Object {
-              "latitude": 37.421083,
-              "longitude": -122.104,
-            },
-            "locationName": "الحراش وسط",
-            "name": "اسم المطعم",
-            "openingTime": Object {
-              "hour": 20,
-              "minut": 0,
-            },
-            "ownerName": "عبد القادر",
-            "ownerNumber": "07 98 98 09 75",
-            "pictures": Array [
-              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-            ],
-            "restaurantId": "3",
-          },
-          Object {
-            "closingTime": Object {
-              "hour": 19,
-              "minut": 20,
-            },
-            "locationCoords": Object {
-              "latitude": 37.421083,
-              "longitude": -122.104,
-            },
-            "locationName": "الحراش وسط",
-            "name": "اسم المطعم",
-            "openingTime": Object {
-              "hour": 20,
-              "minut": 0,
-            },
-            "ownerName": "عبد القادر",
-            "ownerNumber": "07 98 98 09 75",
-            "pictures": Array [],
-            "restaurantId": "4",
-          },
-          Object {
-            "closingTime": Object {
-              "hour": 19,
-              "minut": 20,
-            },
-            "locationCoords": Object {
-              "latitude": 37.421083,
-              "longitude": -122.104,
-            },
-            "locationName": "الحراش وسط",
-            "name": "اسم المطعم",
-            "openingTime": Object {
-              "hour": 20,
-              "minut": 0,
-            },
-            "ownerName": "عبد القادر",
-            "ownerNumber": "07 98 98 09 75",
-            "pictures": Array [
-              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-              "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-            ],
-            "restaurantId": "5",
           },
         ]
       }
@@ -1912,18 +1825,20 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-end",
-                    "marginTop": -10,
+                    "marginTop": -5,
                     "width": "100%",
                   }
                 }
               >
                 <Text
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
                         "color": "#7C4908",
                         "fontFamily": "Cairo-Regular",
                         "fontSize": 16,
+                        "textAlign": "right",
                       },
                       undefined,
                     ]
@@ -2039,524 +1954,20 @@ exports[`HomeStack -> Search Screen should show a list of restaurants when searc
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-end",
-                    "marginTop": -10,
+                    "marginTop": -5,
                     "width": "100%",
                   }
                 }
               >
                 <Text
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
                         "color": "#7C4908",
                         "fontFamily": "Cairo-Regular",
                         "fontSize": 16,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  الحراش وسط
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "marginLeft": 5,
-                      "width": 20,
-                    }
-                  }
-                >
-                  <Image
-                    resizeMode="contain"
-                    source={
-                      Object {
-                        "process": [Function],
-                      }
-                    }
-                    style={
-                      Object {
-                        "width": "70%",
-                      }
-                    }
-                  />
-                </View>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "height": 70,
-                  "justifyContent": "center",
-                  "width": 70,
-                }
-              }
-            >
-              <Image
-                resizeMode="cover"
-                source={
-                  Object {
-                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-                  }
-                }
-                style={
-                  Object {
-                    "borderRadius": 10,
-                    "height": "100%",
-                    "width": "100%",
-                  }
-                }
-              />
-            </View>
-          </View>
-        </View>
-        <View
-          onLayout={[Function]}
-          style={null}
-        >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            nativeID="animatedComponent"
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "flex-end",
-                "marginBottom": 10,
-                "marginTop": 5,
-                "opacity": 1,
-                "width": "100%",
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                  "marginRight": 10,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "color": "#7C4908",
-                      "fontFamily": "Cairo-Bold",
-                      "fontSize": 20,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                اسم المطعم
-              </Text>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "flex-end",
-                    "marginTop": -10,
-                    "width": "100%",
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#7C4908",
-                        "fontFamily": "Cairo-Regular",
-                        "fontSize": 16,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  الحراش وسط
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "marginLeft": 5,
-                      "width": 20,
-                    }
-                  }
-                >
-                  <Image
-                    resizeMode="contain"
-                    source={
-                      Object {
-                        "process": [Function],
-                      }
-                    }
-                    style={
-                      Object {
-                        "width": "70%",
-                      }
-                    }
-                  />
-                </View>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "height": 70,
-                  "justifyContent": "center",
-                  "width": 70,
-                }
-              }
-            >
-              <Image
-                resizeMode="cover"
-                source={
-                  Object {
-                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-                  }
-                }
-                style={
-                  Object {
-                    "borderRadius": 10,
-                    "height": "100%",
-                    "width": "100%",
-                  }
-                }
-              />
-            </View>
-          </View>
-        </View>
-        <View
-          onLayout={[Function]}
-          style={null}
-        >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            nativeID="animatedComponent"
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "flex-end",
-                "marginBottom": 10,
-                "marginTop": 5,
-                "opacity": 1,
-                "width": "100%",
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                  "marginRight": 10,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "color": "#7C4908",
-                      "fontFamily": "Cairo-Bold",
-                      "fontSize": 20,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                اسم المطعم
-              </Text>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "flex-end",
-                    "marginTop": -10,
-                    "width": "100%",
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#7C4908",
-                        "fontFamily": "Cairo-Regular",
-                        "fontSize": 16,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  الحراش وسط
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "marginLeft": 5,
-                      "width": 20,
-                    }
-                  }
-                >
-                  <Image
-                    resizeMode="contain"
-                    source={
-                      Object {
-                        "process": [Function],
-                      }
-                    }
-                    style={
-                      Object {
-                        "width": "70%",
-                      }
-                    }
-                  />
-                </View>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "height": 70,
-                  "justifyContent": "center",
-                  "width": 70,
-                }
-              }
-            >
-              <Image
-                resizeMode="cover"
-                source={
-                  Object {
-                    "uri": "https://webgrowhub.com/wp-content/uploads/2020/12/photo-1552566626-52f8b828add9.jpg",
-                  }
-                }
-                style={
-                  Object {
-                    "borderRadius": 10,
-                    "height": "100%",
-                    "width": "100%",
-                  }
-                }
-              />
-            </View>
-          </View>
-        </View>
-        <View
-          onLayout={[Function]}
-          style={null}
-        >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            nativeID="animatedComponent"
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "flex-end",
-                "marginBottom": 10,
-                "marginTop": 5,
-                "opacity": 1,
-                "width": "100%",
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                  "marginRight": 10,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "color": "#7C4908",
-                      "fontFamily": "Cairo-Bold",
-                      "fontSize": 20,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                اسم المطعم
-              </Text>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "flex-end",
-                    "marginTop": -10,
-                    "width": "100%",
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#7C4908",
-                        "fontFamily": "Cairo-Regular",
-                        "fontSize": 16,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  الحراش وسط
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "marginLeft": 5,
-                      "width": 20,
-                    }
-                  }
-                >
-                  <Image
-                    resizeMode="contain"
-                    source={
-                      Object {
-                        "process": [Function],
-                      }
-                    }
-                    style={
-                      Object {
-                        "width": "70%",
-                      }
-                    }
-                  />
-                </View>
-              </View>
-            </View>
-            <View
-              style={
-                Object {
-                  "alignItems": "center",
-                  "height": 70,
-                  "justifyContent": "center",
-                  "width": 70,
-                }
-              }
-            >
-              <Image
-                resizeMode="contain"
-                source={
-                  Object {
-                    "process": [Function],
-                  }
-                }
-                style={
-                  Object {
-                    "width": "70%",
-                  }
-                }
-              />
-            </View>
-          </View>
-        </View>
-        <View
-          onLayout={[Function]}
-          style={null}
-        >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            nativeID="animatedComponent"
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "justifyContent": "flex-end",
-                "marginBottom": 10,
-                "marginTop": 5,
-                "opacity": 1,
-                "width": "100%",
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "flex": 1,
-                  "marginRight": 10,
-                }
-              }
-            >
-              <Text
-                style={
-                  Array [
-                    Object {
-                      "color": "#7C4908",
-                      "fontFamily": "Cairo-Bold",
-                      "fontSize": 20,
-                    },
-                    undefined,
-                  ]
-                }
-              >
-                اسم المطعم
-              </Text>
-              <View
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "flexDirection": "row",
-                    "justifyContent": "flex-end",
-                    "marginTop": -10,
-                    "width": "100%",
-                  }
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#7C4908",
-                        "fontFamily": "Cairo-Regular",
-                        "fontSize": 16,
+                        "textAlign": "right",
                       },
                       undefined,
                     ]

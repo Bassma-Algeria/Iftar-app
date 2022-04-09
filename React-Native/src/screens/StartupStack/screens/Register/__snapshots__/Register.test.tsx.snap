@@ -7,6 +7,7 @@ exports[`Register Screen should render correctly 1`] = `
       Object {
         "backgroundColor": "#F4E6CA",
         "height": "100%",
+        "paddingTop": undefined,
         "width": "100%",
       },
       Object {
@@ -90,8 +91,7 @@ exports[`Register Screen should render correctly 1`] = `
           pointerEvents="box-none"
           style={
             Object {
-              "marginBottom": 10,
-              "marginTop": 20,
+              "marginBottom": 22,
             }
           }
         >
@@ -903,8 +903,7 @@ exports[`Register Screen should render correctly 1`] = `
           pointerEvents="box-none"
           style={
             Object {
-              "marginBottom": 10,
-              "marginTop": 20,
+              "marginBottom": 22,
             }
           }
         >
@@ -1713,8 +1712,7 @@ exports[`Register Screen should render correctly 1`] = `
           pointerEvents="box-none"
           style={
             Object {
-              "marginBottom": 10,
-              "marginTop": 20,
+              "marginBottom": 22,
             }
           }
         >
@@ -2523,8 +2521,7 @@ exports[`Register Screen should render correctly 1`] = `
           pointerEvents="box-none"
           style={
             Object {
-              "marginBottom": 10,
-              "marginTop": 20,
+              "marginBottom": 22,
             }
           }
         >

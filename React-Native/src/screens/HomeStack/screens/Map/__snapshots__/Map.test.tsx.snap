@@ -4,6 +4,7 @@ exports[`HomeStack -> Map Screen should renders correctly 1`] = `
 <View
   style={
     Object {
+      "backgroundColor": "#F4E6CA",
       "flex": 1,
     }
   }

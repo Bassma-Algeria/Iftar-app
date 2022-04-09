@@ -53,6 +53,24 @@ exports[`Header Component should be able to change the font weight 1`] = `
 </Text>
 `;
 
+exports[`Header Component should be able to change the max number of lines 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    Array [
+      Object {
+        "color": "#000",
+        "fontFamily": "Cairo-Regular",
+        "fontSize": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  Hello
+</Text>
+`;
+
 exports[`Header Component should have mutiple variant and change the size depend on the variant 1`] = `
 <Text
   style={

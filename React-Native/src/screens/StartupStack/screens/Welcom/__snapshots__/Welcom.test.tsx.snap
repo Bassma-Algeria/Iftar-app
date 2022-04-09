@@ -8,6 +8,7 @@ Array [
         Object {
           "backgroundColor": "#F4E6CA",
           "height": "100%",
+          "paddingTop": undefined,
           "width": "100%",
         },
         undefined,
@@ -104,16 +105,16 @@ Array [
                 }
                 style={
                   Object {
-                    "height": 22,
-                    "left": 3,
+                    "height": 20,
+                    "left": 4,
                     "position": "absolute",
-                    "top": -5,
+                    "top": -3,
                     "transform": Array [
                       Object {
                         "rotate": "0deg",
                       },
                     ],
-                    "width": 22,
+                    "width": 20,
                   }
                 }
               />

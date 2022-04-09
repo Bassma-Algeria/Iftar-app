@@ -3,7 +3,7 @@ import {RestaurantInfo} from '../RestaurantsGateway.interface';
 export const RESTAURANTS: RestaurantInfo[] = [
   {
     restaurantId: '0',
-    workingTime: {opening: {hour: 20, minut: 0}, closing: {hour: 21, minut: 0}},
+    workingTime: {opening: {hour: 20, minute: 0}, closing: {hour: 21, minute: 0}},
     locationCoords: {latitude: 37.421083, longitude: -122.104},
     locationName: 'الحراش وسط',
     name: 'اسم المطعم',
@@ -16,7 +16,7 @@ export const RESTAURANTS: RestaurantInfo[] = [
 
   {
     restaurantId: '1',
-    workingTime: {opening: {hour: 20, minut: 0}, closing: {hour: 21, minut: 0}},
+    workingTime: {opening: {hour: 20, minute: 0}, closing: {hour: 21, minute: 0}},
     locationCoords: {latitude: 37.421083, longitude: -122.104},
     locationName: 'الحراش وسط',
     name: 'اسم المطعم',

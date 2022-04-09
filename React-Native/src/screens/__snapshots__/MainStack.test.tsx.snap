@@ -138,6 +138,7 @@ exports[`MainStack should renders correctly 1`] = `
                       Object {
                         "backgroundColor": "#F4E6CA",
                         "height": "100%",
+                        "paddingTop": undefined,
                         "width": "100%",
                       },
                       undefined,
@@ -234,20 +235,88 @@ exports[`MainStack should renders correctly 1`] = `
                               }
                               style={
                                 Object {
-                                  "height": 22,
-                                  "left": 3,
+                                  "height": 20,
+                                  "left": 4,
                                   "position": "absolute",
-                                  "top": -5,
+                                  "top": -3,
                                   "transform": Array [
                                     Object {
                                       "rotate": "0deg",
                                     },
                                   ],
-                                  "width": 22,
+                                  "width": 20,
                                 }
                               }
                             />
                           </View>
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "justifyContent": "center",
+                              "marginTop": 50,
+                            }
+                          }
+                        >
+                          <View
+                            collapsable={false}
+                            nativeID="animatedComponent"
+                            style={
+                              Object {
+                                "backgroundColor": "#CA8B32",
+                                "borderRadius": 10,
+                                "height": 15,
+                                "marginLeft": 15,
+                                "marginRight": 15,
+                                "transform": Array [
+                                  Object {
+                                    "scale": 1,
+                                  },
+                                ],
+                                "width": 15,
+                              }
+                            }
+                          />
+                          <View
+                            collapsable={false}
+                            nativeID="animatedComponent"
+                            style={
+                              Object {
+                                "backgroundColor": "#CA8B32",
+                                "borderRadius": 10,
+                                "height": 15,
+                                "marginLeft": 15,
+                                "marginRight": 15,
+                                "transform": Array [
+                                  Object {
+                                    "scale": 1,
+                                  },
+                                ],
+                                "width": 15,
+                              }
+                            }
+                          />
+                          <View
+                            collapsable={false}
+                            nativeID="animatedComponent"
+                            style={
+                              Object {
+                                "backgroundColor": "#CA8B32",
+                                "borderRadius": 10,
+                                "height": 15,
+                                "marginLeft": 15,
+                                "marginRight": 15,
+                                "transform": Array [
+                                  Object {
+                                    "scale": 1,
+                                  },
+                                ],
+                                "width": 15,
+                              }
+                            }
+                          />
                         </View>
                       </View>
                     </View>
