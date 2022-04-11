@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
   },
 
   spaceInputs: {
-    marginBottom: 22,
+    marginTop: windowHeight <= 850 ? 20 : 10,
+    marginBottom: windowHeight <= 850 ? 10 : 5,
   },
 
   text: {
