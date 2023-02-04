@@ -1,10 +1,9 @@
-import {useRoute} from '@react-navigation/native';
 import React, {useEffect} from 'react';
+import {useRoute} from "@react-navigation/native";
 
 import type {HomeStackScreenProps} from '../../../../HomeStack.types';
 
 import {useMapContext} from '../../_hooks_/useMapContext';
-
 import {ChoosedLocationBanner} from './_components_/ChoosedLocationBanner';
 
 const ChooseLocationMode: React.FC = () => {
