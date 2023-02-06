@@ -2,13 +2,13 @@
   "name": "iftar",
   "version": "1.0.0",
   "private": false,
-  "description": "Iftar, an app to find restaurants to eat for free in Ramadan.",
+  "description": "iftar, an app to find restaurants to eat for free in Ramadan.",
   "author": "Bassma Team",
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bassma-Algeria/Iftar-app.git"
+    "url": "https://github.com/Bassma-Algeria/iftar-app.git"
   },
   "scripts": {
     "android": "react-native run-android",
@@ -18,15 +18,17 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook",
+    "docker:backend": "docker-compose -f docker/docker-compose.dev.yml up",
     "prestorybook": "rnstl"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4.1.5",
     "@hookstate/core": "^3.0.13",
     "@mapbox/polyline": "^1.1.1",
-    "@react-native-async-storage/async-storage": "^1.15.15",
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-native-community/cli": "^7.0.3",
     "@react-native-community/datetimepicker": "^6.1.0",
+    "@react-navigation/core": "^6.4.6",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "axios": "^0.26.1",
@@ -36,6 +38,7 @@
     "react-native": "0.66.4",
     "react-native-animatable": "^1.3.3",
     "react-native-animated-loader": "^0.0.9",
+    "react-native-config": "^1.5.0",
     "react-native-eject": "^0.1.2",
     "react-native-geolocation-service": "^5.3.0-beta.4",
     "react-native-gesture-handler": "^2.1.1",

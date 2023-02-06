@@ -1,5 +1,7 @@
+import env from 'react-native-config';
+
 class GoogleService {
-  protected API_KEY = 'AIzaSyDMUiPh6nBOeX30N3U3W1f0GjpX_idS6D8';
+  protected API_KEY = env.GOOGLE_MAPS_API_KEY;
 }
 
 export {GoogleService};

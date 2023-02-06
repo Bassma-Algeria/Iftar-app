@@ -36,7 +36,8 @@ const SubmitButton: React.FC<Props> = () => {
       await localStorage.save('token', token);
 
       setIsRestaurantOwner(true);
-      navigation.replace('HomeStack', {screen: 'Map'});
+      navigation.replace('StartupStack', {screen: 'ChooseUsageType'});
+      navigation.navigate('HomeStack', {screen: 'Map'});
     } catch (error: any) {
       setIsLoading(false);
 

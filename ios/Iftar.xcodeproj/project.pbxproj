@@ -30,21 +30,21 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Iftar;
+			remoteInfo = "Iftar";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* IftarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IftarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* IftarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IftarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* IftarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IftarTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* IftarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IftarTests.m"; sourceTree = "<group>"; };
 		03806B57AA76E8459CF4C4EC /* Pods-Iftar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iftar.release.xcconfig"; path = "Target Support Files/Pods-Iftar/Pods-Iftar.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Iftar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iftar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Iftar/AppDelegate.h; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Iftar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Iftar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Iftar/AppDelegate.h"; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Iftar/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Iftar/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Iftar/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Iftar/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Iftar/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Iftar/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Iftar/main.m"; sourceTree = "<group>"; };
 		217FACEF483145429A12429F /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-SemiBold.ttf"; path = "../src/assets/fonts/Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		21FF6669E0BC47BD82C9CACF /* Cairo-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-ExtraBold.ttf"; path = "../src/assets/fonts/Cairo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		2423500D07F84DD0AE2EBF4F /* Cairo-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Black.ttf"; path = "../src/assets/fonts/Cairo-Black.ttf"; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		5001F83AA2424297A76CC675 /* Cairo-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-ExtraLight.ttf"; path = "../src/assets/fonts/Cairo-ExtraLight.ttf"; sourceTree = "<group>"; };
 		6223E503E361425FA7E6A893 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Regular.ttf"; path = "../src/assets/fonts/Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		6317EC8864E9EBF5347F014A /* Pods-Iftar-IftarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iftar-IftarTests.debug.xcconfig"; path = "Target Support Files/Pods-Iftar-IftarTests/Pods-Iftar-IftarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Iftar/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Iftar/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		BB1F71726C5D47B2BD3326B0 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Bold.ttf"; path = "../src/assets/fonts/Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		C3BB41AFBDFE9B6B4CA5F2D5 /* libPods-Iftar-IftarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Iftar-IftarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8AB447893544D38B8A8FBA0 /* Cairo-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Cairo-Light.ttf"; path = "../src/assets/fonts/Cairo-Light.ttf"; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				00E356F21AD99517003FC87E /* IftarTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = IftarTests;
+			path = "IftarTests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -109,7 +109,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Iftar;
+			name = "Iftar";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -199,8 +199,8 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = IftarTests;
-			productName = IftarTests;
+			name = "IftarTests";
+			productname = "IftarTests";
 			productReference = 00E356EE1AD99517003FC87E /* IftarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -221,8 +221,8 @@
 			);
 			dependencies = (
 			);
-			name = Iftar;
-			productName = Iftar;
+			name = "Iftar";
+			productName = "Iftar";
 			productReference = 13B07F961A680F5B00A75B9A /* Iftar.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -476,7 +476,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = IftarTests/Info.plist;
+				INFOPLIST_FILE = "IftarTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,7 +488,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bassma.iftar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iftar.app/Iftar";
 			};
@@ -501,7 +501,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = ZR73SVJPCG;
-				INFOPLIST_FILE = IftarTests/Info.plist;
+				INFOPLIST_FILE = "IftarTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -513,7 +513,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bassma.iftar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iftar.app/Iftar";
 			};
@@ -528,7 +528,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZR73SVJPCG;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Iftar/Info.plist;
+				INFOPLIST_FILE = "Iftar/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Iftar";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,8 +539,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "iftar.reactjs.native.example.my-app";
-				PRODUCT_NAME = Iftar;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bassma.iftar";
+				PRODUCT_NAME = "Iftar";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -554,7 +555,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZR73SVJPCG;
-				INFOPLIST_FILE = Iftar/Info.plist;
+				INFOPLIST_FILE = "Iftar/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Iftar";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,8 +566,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "iftar.reactjs.native.example.my-app";
-				PRODUCT_NAME = Iftar;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bassma.iftar";
+				PRODUCT_NAME = "Iftar";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

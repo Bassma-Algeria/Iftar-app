@@ -1,4 +1,6 @@
 import axios from 'axios';
+import env from 'react-native-config';
+
 import {localStorage} from '../../utils/helpers/LocalStorage';
 import {
   IRestaurantsGateway,
@@ -8,8 +10,7 @@ import {
 } from './RestaurantsGateway.interface';
 
 class RestaurantsGateway implements IRestaurantsGateway {
-  // private baseUrl: string = 'http://192.168.1.105:5000/api/restaurants';
-  private baseUrl: string = 'http://iftar-server.eastus.azurecontainer.io/api/restaurants';
+  private baseUrl: string = `${env.BACKEND_URL}/api/restaurants`;
 
   async getRestaurantInfo(id: string): Promise<RestaurantInfo & {ownerNumber: string}> {
     try {

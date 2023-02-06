@@ -25,6 +25,8 @@ target 'Iftar' do
 
   pod 'lottie-ios', :path => '../node_modules/lottie-ios'
 
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
   target 'IftarTests' do
     inherit! :complete
     # Pods for testing

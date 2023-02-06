@@ -1,52 +1,76 @@
-# Getting Started with This React Native Setup Template
+# Iftar app
 
-This project was bootstrapped with [React Native Cli](https://reactnative.dev/blog/2018/05/07/using-typescript-with-react-native#initializing), and edited by [me](https://www.linkedin.com/in/yasser-belatreche-6b450620a/), I add different libraries that I use in every React project, like `Typescript`, `storybook`, `react-native-navigation`, and `jest`. And I structure the files.\
-You can clone it and start coding your App immediately.
+This is the official repository for [iftar app](link to the app), which is a react native app that helps you find the nearest al-rahma restaurant to break your fasting during ramadan
 
-# First
+## Running the project locally
 
-make sure to setup your envirement for react-native app development by following the instructions in the [docs](https://reactnative.dev/docs/environment-setup). (Stop when you get to the part '`Creating a new application`'), after that clone this repo and start your project.
 
-## Available Scripts
+### 1. Setup your environment
 
-In the project directory, you can run:
+First, make sure to set up your environment for react-native app development by following the instructions in the [docs](https://reactnative.dev/docs/environment-setup). (Stop when you get to the part '`Creating a new application`'), after that clone this repo and start your project.
 
-### `npm install`
+Also, you need to have `docker` and `docker-compose` installed on your machine.
+Refer to the [download page](https://docs.docker.com/get-docker/) to get them.
 
-Install the different needed dependences.
+### 1. Install the dependencies
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the metro server locally.
+### 2. start the metro server
 
-The app will reload if you make edits.\
+```bash
+npm start
+```
+
+This will allow The app to reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm run android`
+### 3. start the backend locally
 
-Runs the App on an android device (make sure that you have an android phone pluged with the laptop, or open an android emulator)
+Pull the backend image from docker hub and setup the database locally by running the following command:
 
-### `npm run ios`
+```bash
+npm run docker:backend
+```
 
-Runs the App on an ios device (make sure that you have an ios phone pluged with the laptop, or open an ios emulator)
+You can check the data in the database by going to [http://localhost:8081](http://localhost:8081), and choosing the `iftar` database.
 
-### `npm test`
 
-Launches the tests.·\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 4. Run the app
 
-### `npm run storybook`
+##### Android
+
+```bash
+npm run android
+```
+
+##### IOS
+
+```bash
+npm run ios
+```
+
+> The IOS version is not developed yet, so you will get an error when you run the app on IOS. 
+> We will be happy to accept your contribution to develop the IOS version.
+
+
+## Storybook
+
+#### `npm run storybook`
 
 Runs the storybook and see the components.\
 Open [http://localhost:7007](http://localhost:7007) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm run prestorybook`
+#### `npm run prestorybook`
 
 Run this command everytime you create a new story, (it's gonna load the new story file and add it to the stories list).
 
-### `npm run build-storybook`
+#### `npm run build-storybook`
 
 Output a static Storybook in the storybook-static directory, which can then be deployed to any static site hosting service.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.

@@ -1,16 +1,17 @@
 import axios from 'axios';
+import env from  'react-native-config';
+
 import {IAuthGateway, LoginInfo, SignupInfo} from './AuthGateway.interface';
 
 class AuthGateway implements IAuthGateway {
-  // private baseUrl: string = 'http://192.168.1.105:5000/api/auth';
-  private baseUrl: string = 'http://iftar-server.eastus.azurecontainer.io/api/auth';
+  private baseUrl: string = `${env.BACKEND_URL}/api/auth`;
 
   async login(info: LoginInfo): Promise<string> {
     try {
       const res = await axios.post(`${this.baseUrl}/login`, info);
-
       return res.data.data;
     } catch (error: any) {
+      console.log(error);
       throw error.response.data.error;
     }
   }

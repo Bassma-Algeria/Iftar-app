@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  backend:
+    image: yasserbelatreche/iftar-backend:latest
+    container_name: iftar-backend-prod
+    ports:
+      - '5000:80'
+    env_file:
+      - ../.env.backend
+    environment:
+      - MONGO_DB_URI=mongodb://admin:password@mongo-db/iftar-db?authSource=admin
+    restart: always
+    depends_on:
+      - mongo-db
+
+  mongo-db:
+    image: mongo
+    container_name: iftar-mongo-db
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+
+  mongo-express:
+    image: mongo-express
+    container_name: iftar-mongo-express
+    restart: always # fixes MongoNetworkError when mongodb is not ready when mongo-express starts
+    ports:
+      - '8082:8081'
+    depends_on:
+      - mongo-db
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongo-db
+
+volumes:
+  mongo-data:
+    driver: local

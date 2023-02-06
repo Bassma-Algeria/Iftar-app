@@ -1,4 +1,5 @@
 import {decode} from '@mapbox/polyline';
+import env from 'react-native-config';
 
 import {LocationCords} from '../../@types/LocationCords';
 import {GoogleService} from '../_Helpers_/GoogleService';
@@ -32,8 +33,7 @@ class GoogleDirectionGateway extends GoogleService implements IDirectionGateway 
 }
 
 class MapBoxDirectionGateway implements IDirectionGateway {
-  private ACCESS_TOKEN =
-    'pk.eyJ1IjoieWFzc2VyLWJlbGF0cmVjaGUiLCJhIjoiY2wxYXo3cmczMG1pMDNic2VrMGMyZWRxZSJ9.cZkpSo_LoR4x4IuioUrYNg';
+  private ACCESS_TOKEN = env.MAPBOX_ACCESS_TOKEN;
 
   async getDirection(start: LocationCords, dest: LocationCords) {
     try {

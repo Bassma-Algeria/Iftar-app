@@ -1,3 +1,5 @@
+import env from 'react-native-config';
+
 import {LocationCords} from '../../@types/LocationCords';
 import {GoogleService} from '../_Helpers_/GoogleService';
 import type {IGeoCodingGateway} from './GeoCodingGateway.interface';
@@ -22,7 +24,7 @@ class GoogleGeoCodingGateway extends GoogleService implements IGeoCodingGateway 
 }
 
 class GeoapifyGeoCodingGateway implements IGeoCodingGateway {
-  private API_KEY = 'd17308a160bb4c3f926743b0e4b8ac84';
+  private API_KEY = env.GEO_APIFY_API_KEY
 
   async getAdressNameOf(coords: LocationCords): Promise<string> {
     try {

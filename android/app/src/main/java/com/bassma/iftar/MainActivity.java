@@ -1,4 +1,4 @@
-package com.Iftar;
+package com.bassma.iftar;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;

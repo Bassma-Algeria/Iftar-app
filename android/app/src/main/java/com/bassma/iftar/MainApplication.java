@@ -1,16 +1,16 @@
-package com.Iftar;
+package com.bassma.iftar;
 
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.lugg.RNCConfig.RNCConfigPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 import com.imagepicker.ImagePickerPackage;
 import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.horcrux.svg.SvgPackage;
-import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -69,7 +69,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.Iftar.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.bassma.iftar.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);
