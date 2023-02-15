@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
 
-import {styles} from './Welcom.style';
+import {styles} from './Welcome.style';
 
 import type {StartupStackScreenProps} from '../../StartupStack.types';
 
@@ -11,9 +11,9 @@ import {Header} from '../../../../components/Header/Header';
 import {Button} from '../../../../components/Button/Button';
 import {localStorage} from '../../../../utils/helpers/LocalStorage';
 
-interface Props extends StartupStackScreenProps<'Welcom'> {}
+interface Props extends StartupStackScreenProps<'Welcome'> {}
 
-const Welcom: React.FC<Props> = ({navigation}) => {
+const Welcome: React.FC<Props> = ({navigation}) => {
   useEffect(() => {
     localStorage.save('firstTime', 'first');
   }, []);
@@ -42,4 +42,4 @@ const Welcom: React.FC<Props> = ({navigation}) => {
   );
 };
 
-export {Welcom};
+export {Welcome};
